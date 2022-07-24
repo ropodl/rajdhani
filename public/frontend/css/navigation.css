@@ -56,7 +56,7 @@
 
 .nav-menus-wrapper-open .nav-menu > li {
   display: inline-block;
-  float: left;
+  /* float: left; */
   text-align: left;
 }
 /* .nav-menus-wrapper-open .nav-dropdown {
@@ -89,8 +89,7 @@
   padding: 12px 20px 12px 30px;
 } */
 .navigation-fixed-wrapper {
-  background:  #151b54;
-  border-bottom: 1px solid #eee;
+  background:  #2260bfe6;
   box-shadow: 0 0 65px rgba(0, 0, 0, 0.09);
   z-index: 2;
   position: relative;
@@ -160,7 +159,7 @@
 .navigation-fixed-wrapper .navigation {
   margin-right: auto;
   margin-left: auto;
-  background:  #151b54;
+  background:  #2260bf;
 }
 
 .navigation-fixed-placeholder {
