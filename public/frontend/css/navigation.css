@@ -159,7 +159,7 @@
 .navigation-fixed-wrapper .navigation {
   margin-right: auto;
   margin-left: auto;
-  background:  #2260bf;
+  background:  transparent;
 }
 
 .navigation-fixed-placeholder {
