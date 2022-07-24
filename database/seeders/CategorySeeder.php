@@ -37,17 +37,16 @@ class CategorySeeder extends Seeder
                 'under_news' => 0,
                 'sort' => 2
             ],
-
             [
-                'name' => 'बजार ',
-                'slug' => 'market',
-                'description' => 'This is बजार category.',
+                'name' => 'ताजा समाचार',
+                'slug' => 'fresh-News',
+                'description' => 'This is ताजा समाचार category.',
                 'status' => 1,
-                'show_on_menu' =>1,
-                'show_on_homepage' => 0,
-                'show_on_footer' => 0,
+                'show_on_menu' => 0,
+                'show_on_homepage' => 1,
+                'show_on_footer' => 1,
                 'under_news' => 0,
-                'sort' => 3
+                'sort' => 6
             ],
             [
                 'name' => 'रोजगार',
@@ -61,6 +60,28 @@ class CategorySeeder extends Seeder
                 'sort' => 4
             ],
             [
+                'name' => 'अन्तर्राष्ट्रिय',
+                'slug' => 'international ',
+                'description' => 'This is अन्तर्राष्ट्रिय category.',
+                'status' => 1,
+                'show_on_menu' =>0,
+                'show_on_homepage' => 1,
+                'show_on_footer' => 0,
+                'under_news' => 1,
+                'sort' => 7
+            ],
+            [
+                'name' => 'खेलकुद़़',
+                'slug' => 'sports',
+                'description' => 'This is खेलकुद़़ category.',
+                'status' => 1,
+                'show_on_menu' =>1,
+                'show_on_homepage' => 1,
+                'show_on_footer' => 0,
+                'under_news' => 0,
+                'sort' => 12
+            ],
+            [
                 'name' => 'स्थानिय निर्वाचन',
                 'slug' => 'local-election',
                 'description' => 'स्थानिय निर्वाचन',
@@ -72,29 +93,7 @@ class CategorySeeder extends Seeder
                 'sort' => 5
             ],
             [
-                'name' => 'ताजा समाचार',
-                'slug' => 'fresh-News',
-                'description' => 'This is ताजा समाचार category.',
-                'status' => 1,
-                'show_on_menu' => 0,
-                'show_on_homepage' => 1,
-                'show_on_footer' => 1,
-                'under_news' => 0,
-                'sort' => 6
-            ],
-            [
-                'name' => 'अन्तर्राष्ट्रिय ',
-                'slug' => 'international ',
-                'description' => 'This is अन्तर्राष्ट्रिय category.',
-                'status' => 1,
-                'show_on_menu' =>0,
-                'show_on_homepage' => 1,
-                'show_on_footer' => 0,
-                'under_news' => 1,
-                'sort' => 7
-            ],
-            [
-                'name' => 'जीवनशैली/स्वास्थ्य ',
+                'name' => 'जीवनशैली/स्वास्थ्य',
                 'slug' => 'lifestyle-Health ',
                 'description' => 'This is जीवनशैली/स्वास्थ्य category.',
                 'status' => 1,
@@ -105,7 +104,7 @@ class CategorySeeder extends Seeder
                 'sort' => 8
             ],
             [
-                'name' => 'बैँक/वित्त ',
+                'name' => 'बैँक/वित्त',
                 'slug' => 'bank-Finance',
                 'description' => 'This is बैँक/वित्त category.',
                 'status' => 1,
@@ -115,8 +114,20 @@ class CategorySeeder extends Seeder
                 'under_news' => 1,
                 'sort' => 9
             ],
+
             [
-                'name' => 'अन्तर्वार्ता ',
+                'name' => 'बजार',
+                'slug' => 'market',
+                'description' => 'This is बजार category.',
+                'status' => 1,
+                'show_on_menu' =>1,
+                'show_on_homepage' => 0,
+                'show_on_footer' => 0,
+                'under_news' => 0,
+                'sort' => 3
+            ],
+            [
+                'name' => 'अन्तर्वार्ता',
                 'slug' => 'interview',
                 'description' => 'This is अन्तर्वार्ता category.',
                 'status' => 1,
@@ -136,17 +147,6 @@ class CategorySeeder extends Seeder
                 'show_on_footer' => 0,
                 'under_news' => 0,
                 'sort' => 11
-            ],
-            [
-                'name' => 'खेलकुद़़',
-                'slug' => 'sports',
-                'description' => 'This is खेलकुद़़ category.',
-                'status' => 1,
-                'show_on_menu' =>1,
-                'show_on_homepage' => 1,
-                'show_on_footer' => 0,
-                'under_news' => 0,
-                'sort' => 12
             ],
             [
                 'name' => 'सूचना-प्रविधि',

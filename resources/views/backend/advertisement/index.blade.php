@@ -30,7 +30,6 @@
                         <table id="event-table" class="table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
-                                <th>Date</th>
                                 <th>Advertisement Layout</th>
                                 <th>Title</th>
                                 <th>URL</th>
@@ -41,13 +40,11 @@
                             <tbody>
                             @foreach($advertisements as $advertisement)
                                 <tr>
-                                    <td class="font-weight-bold">{{ Carbon::parse($advertisement->created_at)->format('Y M d H:i A')}}
-                                    </td>
                                     <td>{{$advertisement->advertisementLayout->title}} ({{$advertisement->advertisementLayout->code}})</td>
                                     <td>{{$advertisement->title}}</td>
                                     <td>{{$advertisement->url}}</td>
                                     <td class="advertisement-img">
-                                        <img src="{{$advertisement->image}}" alt="">
+                                        <img style="width:100% !important;" src="{{$advertisement->image}}" alt="">
                                     </td>
                                     <td class="col-md-2 col-sm-4">
                                         <div class="d-flex justify-content-center">

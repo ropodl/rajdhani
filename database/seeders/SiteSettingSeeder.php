@@ -27,6 +27,7 @@ class SiteSettingSeeder extends Seeder
         $model->map_iframe = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14134.065952909976!2d85.32395955!3d27.670427399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19eb1dad6439%3A0xbb1689fdcee3740b!2sLabim%20Mall!5e0!3m2!1sen!2snp!4v1645676905017!5m2!1sen!2snp';
         $model->description = 'This is your most relevant and bishwasilo news portal.';
         $model->addMediaFromUrl(asset('/frontend/img/logo.png'))->toMediaCollection();
+        $model->addMediaFromUrl(asset('/frontend/img/logo.png'))->toMediaCollection('logo_with_text');
         $model->save();
         $model->logo = $model->getMedia()[0]->getFullUrl();
     }

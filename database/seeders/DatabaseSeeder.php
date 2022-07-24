@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
          $this->call(CategorySeeder::class);
         $this->call(GroupSeeder::class);
         $this->call(ProvinceSeeder::class);
-        $this->call(NewsSeeder::class);
+        // $this->call(NewsSeeder::class);
         $this->call(TagSeeder::class);
         $this->call(AdvertisementLayoutSeeder::class);
         $this->call(LayoutPageSeeder::class);

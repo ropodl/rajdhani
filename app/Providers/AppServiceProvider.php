@@ -59,7 +59,6 @@ class AppServiceProvider extends ServiceProvider
             $detailAdvs = AdvertisementPageLayout::orderBy('order', 'asc')->with(['advertisement', 'advertisement.advertisementLayout'])->whereHas('layoutPages', function($query){
                 $query->where('code','detail_page');
             })->get()->groupBy('advertisement.advertisementLayout.code');
-//            dd($detailAdvs);
             $view->with(['detailAdvs' => $detailAdvs]);
         });
 

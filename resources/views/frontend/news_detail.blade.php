@@ -1,8 +1,9 @@
 @extends('frontend.layouts.app')
-@if(!empty($detailAdvs['l_ad']) || !empty($detailAdvs['sm_ad']))
+@if(!empty($detailAdvs['xl_ad']) || !empty($detailAdvs['sm_ad']))
     @php
-        $firstLAdv = $detailAdvs['l_ad'][0]->advertisement ?? '';
-        $secondLAdv = $detailAdvs['l_ad'][1]->advertisement ?? '';
+        $firstLAdv = $detailAdvs['xl_ad'][0]->advertisement ?? '';
+        $secondLAdv = $detailAdvs['xl_ad'][1]->advertisement ?? '';
+        $thirdLAdv = $detailAdvs['xl_ad'][2]->advertisement ?? '';
         $firstSmAdv = $detailAdvs['sm_ad'][0]->advertisement ?? '';
         $secondSmAdv = $detailAdvs['sm_ad'][1]->advertisement ?? '';
         $thirdSmAdv = $detailAdvs['sm_ad'][2]->advertisement ?? '';
@@ -34,13 +35,17 @@
 
                             <div class="news-short-detail-f">
                                     <small>{{ nepalidate($news->created_at)  }}</small>
-                                @if(!empty($firstLAdv))
-                                    @include('frontend.advertisement.l_ad', ['url' => $firstLAdv->url, 'image' => $firstLAdv->image])
-                                @endif
-                                <p>{!! $news->description !!}</p>
-                                @if(!empty($secondLAdv))
-                                    @include('frontend.advertisement.l_ad', ['url' => $secondLAdv->url, 'image' => $secondLAdv->image])
-                                @endif
+                                <?php $descriptions = explode('</p>',$news->description); $i=0?>
+                                @foreach($descriptions as $key => $paragraph)
+                                    @if($key %2 == 0 )
+                                    <?php $lgAd = $detailAdvs['xl_ad'][$i]->advertisement ?? ''; ?>
+                                    @if(!empty($lgAd))
+                                        @include('frontend.advertisement.l_ad', ['url' => $lgAd->url, 'image' => $lgAd->image])
+                                        @php $i++ ; @endphp
+                                    @endif
+                                    @endif
+                                    {!! $paragraph !!}</p>
+                                @endforeach
                                 {{--                            <div class="share">--}}
                                 <h5>Share This:</h5>
                                 <div class="sharethis-inline-share-buttons"></div>

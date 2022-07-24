@@ -21,10 +21,10 @@ class FetchApiNewsSeeder extends Seeder
         $newsData = Storage::disk('public')->get('news.json');
         $newsData = json_decode($newsData);
         // dd($newsData);
-        $categoryIds = Category::pluck('id');
+        $categoryIds = Category::where('id','<',6)->pluck('id');
         $provinceIds = Province::pluck('id');
         collect($newsData->data->news)->each(function($news) use($categoryIds, $provinceIds){
-            if(!empty($news->image)){
+                $isMainNews= rand(0,1); 
                 $newNews = News::create( [
                     'title' => $news->title,
                     'slug' => now()->timestamp,
@@ -34,12 +34,15 @@ class FetchApiNewsSeeder extends Seeder
     
                     यस सिजनको उपाधि जित्ने टोली र रेलिगेसन पर्ने दुई टोलीको टुङ्गो लागिसकेकाले अब बाँकी खेल शीर्ष तीनमा पर्न र सकेसम्म माथिल्लो स्थानमा लिग सकाउनका लागि हुनेछ ।',
                     'is_trending' => rand(0,1),
-                    'is_main_news' => rand(0,1),
-                    'status' => rand(0,1),
-                    'category_id' => $categoryIds->random()
+                    'is_main_news' => $isMainNews,
+                    'status' => 1,
+                    'category_id' => $categoryIds->random(),
+                    'created_at' => $news->published_date
                 ]);
-                $newNews->addMediaFromUrl($news->image)->toMediaCollection();
-            }
+
+            // if(!empty($news->post_image || !empty($news->post_full_image))){
+                $newNews->addMediaFromUrl($news->post_full_image)->toMediaCollection();
+            // }
         });
     }
 }

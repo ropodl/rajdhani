@@ -59,7 +59,7 @@ class News extends Model implements HasMedia
         return $query->where('is_trending', 1)->orderBy('id', 'desc');
     }
     public function scopeIsMainNews($query){
-        return $query->where('is_main_news', 1)->where('status', 1)->orderBy('id', 'desc')->take(3);
+        return $query->where('is_main_news', 1)->where('status', 1)->latest()->take(3);
     }
     public function scopeIsNotMainNews($query){
         return $query->where('is_main_news', 0);

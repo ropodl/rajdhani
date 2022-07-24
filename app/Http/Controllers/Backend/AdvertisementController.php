@@ -48,7 +48,7 @@ class AdvertisementController extends Controller
         if ($request->file('advertisement_image')){
             $advertisement->addMedia($request->file('advertisement_image'))->toMediaCollection();
         }
-        return redirect()->route('advertisement.layout')->withMsg('Your Advertisement has been successfully created.');
+        return redirect()->route('advertisement.index')->withMsg('Your Advertisement has been successfully created.');
     }
 
     /**
