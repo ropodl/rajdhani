@@ -703,7 +703,7 @@ section.top-news-section {
 }
 .footer-section {
     padding: 60px 0 10px;
-    background:  #151b54;
+    background:  rgba(34,96,191,.9);
 }
 .footer-text p {
   color: #fff;
