@@ -32,6 +32,7 @@
                             <div class="banner-image">
                                 <img src="{{$news->image}}" alt="">
                             </div>
+                            <div class="sharethis-inline-share-buttons"></div>
 
                             <div class="news-short-detail-f">
                                     <small>{{ nepalidate($news->created_at)  }}</small>
@@ -46,10 +47,7 @@
                                     @endif
                                     {!! $paragraph !!}</p>
                                 @endforeach
-                                {{--                            <div class="share">--}}
-                                <h5>Share This:</h5>
-                                <div class="sharethis-inline-share-buttons"></div>
-                                {{--                            </div>--}}
+                                <div class="sharethis-inline-reaction-buttons"></div>
                             </div>
                         </div>
                     </div>
