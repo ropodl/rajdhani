@@ -288,14 +288,14 @@ section.top-news-section {
   /*background: #f3f9fe;*/
   /*padding: 10px 10px 0px 10px;*/
 }
-.section-title::before {
+.section-title::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
-    width: 70px;
-    height: 3px;
-    bottom: 4px;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    /* bottom: 4px; */
     background: #151b54;
 }
 .section-title .head {
@@ -864,7 +864,7 @@ section.gif-section {
 }
 .pradesh-li {
     float: right;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     margin-left: 100px;
 }
 .pradesh-li li {
