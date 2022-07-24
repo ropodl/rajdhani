@@ -31,12 +31,13 @@ input:focus {
 
 .go-up {
   position: fixed;
-  width: 40px;
+  width: 80px;
   height: 40px;
+  border-radius: 100px;
   line-height: 2;
   font-size: 1.3rem;
-  right: -60px;
-  bottom: 20px;
+  right: -100px;
+  bottom: 60px;
   opacity: 0.6;
   cursor: pointer;
   text-align: center;

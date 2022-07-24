@@ -31,7 +31,7 @@
 
        @include('frontend.layouts.footer')
 
-       <div class="go-up" style="right: -60px;"><i class="fa fa-chevron-up"></i></div>
+       <div class="go-up"><i class="fa fa-chevron-up"></i></div>
    </body>
     @include('frontend.scripts.js')
     @yield('js')
