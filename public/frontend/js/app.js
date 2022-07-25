@@ -31,12 +31,12 @@ var $body = $("body");
 
 $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
-        $(".go-up").css("right", "20px");
+        $(".go-to-top").css("bottom", "20px");
     } else {
-        $(".go-up").css("right", "-60px");
+        $(".go-to-top").css("bottom", "-100px");
     }
 });
-$(".go-up").click(function () {
+$(".go-to-top").click(function () {
     $("html,body").animate({ scrollTop: 0 }, 500);
     return false;
 });

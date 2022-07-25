@@ -1023,7 +1023,13 @@ nav.pagination-news ul li a {
     text-align: right;
 }
 .footer-list-news ul {
-    display: inline-flex;
+    display: flex;
+    justify-content: end;
+}
+@media (max-width:728px) {
+  .footer-list-news ul{
+    justify-content: center;
+  }
 }
 .footer-list-news ul li {
     margin-left: 30px;

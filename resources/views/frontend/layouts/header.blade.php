@@ -80,7 +80,9 @@
              </span>
             <ul class="nav-menu align-to-left">
                 <li>
-                    <a href="{{route('frontend.index')}}">होमपेज</a>
+                    <a href="{{route('frontend.index')}}">
+                        <i class="fa fa-home"></i>
+                    </a>
                 </li>
                 @foreach($headerCats as $category)
                 @if($category->sort == 0)

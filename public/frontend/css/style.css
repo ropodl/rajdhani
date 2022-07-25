@@ -29,10 +29,28 @@ input:focus {
   outline: 0px auto -webkit-focus-ring-color;
 }
 
+.go-to-top{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #032961;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s linear;
+  z-index: 99;
+}
+.go-to-top i{
+  color: white;
+  font-size: 20px;
+}
 .go-up {
   position: fixed;
   width: 80px;
-  height: 40px;
+  height: 80px;
   border-radius: 100px;
   line-height: 2;
   font-size: 1.3rem;

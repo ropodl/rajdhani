@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="text-white mt-3">
-                        <p>
+                        <p class="text-sm-center text-md-left">
                             Copyright &copy;
                             <script>document.write(new Date().getFullYear())</script>
                             {{$siteSetting->name}}
