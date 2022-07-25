@@ -1,15 +1,6 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;700&display=swap"); */
-/*-----------------------
-# UNI
-------------------------*/
-
 :focus {
   outline: -webkit-focus-ring-color auto 0px;
 }
-/* @font-face {
-  font-family: shreenath;
-  src: url(../fonts/Shreenath_Bold_Regular.ttf) format("truetype");
-} */
 a {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -42,28 +33,11 @@ input:focus {
   justify-content: center;
   transition: all 0.3s linear;
   z-index: 99;
+  cursor: pointer;
 }
 .go-to-top i{
   color: white;
   font-size: 20px;
-}
-.go-up {
-  position: fixed;
-  width: 80px;
-  height: 80px;
-  border-radius: 100px;
-  line-height: 2;
-  font-size: 1.3rem;
-  right: -100px;
-  bottom: 60px;
-  opacity: 0.6;
-  cursor: pointer;
-  text-align: center;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-  z-index: 998;
-  background-color: #041424;
-  color: white;
 }
 
 ul {
@@ -585,10 +559,10 @@ body {
   font-weight: 700;
   color:  #041424;
 }
-.news-short-detail-f p {
+.news-short-detail-f {
     font-weight: 400;
     font-size: 17px;
-    line-height: 2;
+    line-height: 1.8rem;
     color: #222;
     text-align: left;
 }

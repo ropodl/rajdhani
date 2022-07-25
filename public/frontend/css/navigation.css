@@ -264,6 +264,12 @@
   box-shadow: 0 0.5em 0 0 #70798b, 0 1em 0 0 #70798b;
 } */
 
+@media (min-width:1002px) {
+  ul.home.m-0{
+    display: none;    
+  }
+}
+
 .navigation-portrait .nav-toggle {
   display: block;
 }

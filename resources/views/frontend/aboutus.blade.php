@@ -7,7 +7,6 @@
             <div class="about-us-part">
                <h4>{{$aboutus->title}}</h4>
                <p>{!!strip_tags($aboutus->description,'') !!}</p>
-
             </div>
          </div>
       </div>

@@ -1,4 +1,4 @@
-@media (max-width:992px) {
+@media (max-width:1002px) {
   section.topbar{
     display: none;
   }
@@ -803,8 +803,11 @@ section.top-news-section {
 .tab-part .nav-pills li {
   width: 50%;
 }
-.tab-part .nav-pills .nav-link {
-  border-radius: 0;
+.tab-part ul.nav-pills li:first-child a {
+  border-radius: 20px 0 0 20px;
+}
+.tab-part ul.nav-pills li:last-child a {
+  border-radius: 0 20px 20px 0;
 }
 .tab-part .nav-pills .nav-link.active,
 .tab-part .nav-pills .show > .nav-link {

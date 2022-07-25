@@ -69,6 +69,13 @@
         <div class="nav-header">
             <a class="nav-brand" href="index.php"><img src="{{asset ('frontend/img/ch/lo.png') }}" alt="logo"
                                                        id="main_logo" class="img-fluid"></a>
+            <ul class="home m-0">
+                <li>
+                    <a class="text-white" href="/">
+                        <i class="fa fa-home" style="font-size:34px;"></i>
+                    </a>
+                </li>
+            </ul>
             <div class="nav-toggle"></div>
         </div>
         <div class="nav-search d-flex">

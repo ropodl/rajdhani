@@ -30,11 +30,11 @@
                             <div class="banner-image">
                                 <img src="{{$news->image}}" alt="">
                                 <h6 class="news-detail-title"> {{$news->title}}</h6>
+                                <small class="mb-3">{{ nepalidate($news->created_at)  }}</small>
                             </div>
-                            <div class="sharethis-inline-share-buttons mb-3"></div>
+                            <div class="sharethis-inline-share-buttons mb-3 mt-3"></div>
 
                             <div class="news-short-detail-f">
-                                    <small>{{ nepalidate($news->created_at)  }}</small>
                                 <?php $descriptions = explode('</p>',$news->description); $i=0?>
                                 @foreach($descriptions as $key => $paragraph)
                                     @if($key %2 == 0 )
@@ -123,7 +123,7 @@
                                 @endif
                                 @if(!empty($thirdSmAdv))
                                     <div class=" bg-white p-md-3 p-2 news-taja">
-                                        @include('frontend.advertisement.sm_ad', ['url' => $thirdSmAdv->url, 'image' => $thirdSmAdv->image])
+                                        @include('frontend.advertiseNo News Were Availablement.sm_ad', ['url' => $thirdSmAdv->url, 'image' => $thirdSmAdv->image])
                                     </div>
                                 @endif
                                 @if(!empty($fourthSmAdv))
