@@ -89,7 +89,7 @@
   padding: 12px 20px 12px 30px;
 } */
 .navigation-fixed-wrapper {
-  background:  #151b54;
+  background:  #0473bb;
   border-bottom: 1px solid #eee;
   box-shadow: 0 0 65px rgba(0, 0, 0, 0.09);
   z-index: 2;
@@ -160,7 +160,7 @@
 .navigation-fixed-wrapper .navigation {
   margin-right: auto;
   margin-left: auto;
-  background:  #151b54;
+  background:  #0473bb;
 }
 
 .navigation-fixed-placeholder {

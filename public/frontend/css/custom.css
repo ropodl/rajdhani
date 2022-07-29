@@ -50,12 +50,12 @@
   z-index: 1;
 }
 .single-main-news:hover .news-content .tag {
-  background-color:  #151b54;
+  background-color:  #1d7eb7;
 }
 .single-main-news .news-content .tag {
   display: inline-block;
   font-size: 14px;
-  background-color:  #151b54;
+  background-color:  #1d7eb7;
   color: #fff;
   padding: 5px 10px 0;
   font-weight: 400;
@@ -101,7 +101,7 @@
   font-weight: 400;
 }
 .single-main-news .news-content span a:hover {
-  color:  #151b54;
+  color:  #1d7eb7;
 }
 .single-main-news-inner {
   position: relative;
@@ -138,7 +138,7 @@
 .single-main-news-inner .news-content .tag {
   display: inline-block;
   font-size: 14px;
-  background-color:  #151b54;
+  background-color:  #1d7eb7;
   color: #fff;
   padding: 5px 10px 1px;
   font-weight: 400;
@@ -170,7 +170,7 @@
 }
 
 .single-main-news-inner:hover .news-content h3 a {
-  color:  #151b54;
+  color:  #1d7eb7;
 }
 .tag a {
   color: #fff;
@@ -181,7 +181,7 @@
   font-size: 14px;
 }
 .single-main-news-inner .news-content span a:hover {
-  color:  #151b54;
+  color:  #1d7eb7;
 }
 .single-main-news-box {
   margin-top: 18px;
@@ -207,7 +207,7 @@
 .single-main-news-box .news-content .tag {
   display: inline-block;
   font-size: 14px;
-  background-color:  #151b54;
+  background-color:  #1d7eb7;
   color: #fff;
   padding: 5px 10px 1px;
   font-weight: 400;
@@ -236,7 +236,7 @@
   font-weight: 400;
 }
 .single-main-news-box:hover .news-content h3 a {
-  color:  #151b54;
+  color:  #1d7eb7;
 }
 section.top-news-section {
   z-index: 0;
@@ -259,17 +259,17 @@ section.top-news-section {
     width: 70px;
     height: 3px;
     bottom: 4px;
-    background: #151b54;
+    background: #1d7eb7;
 }
 .section-title .head {
   font-size: 26px;
   margin-bottom: 0;
-  color:  #151b54;
+  color:  #1d7eb7;
   font-weight: 600;
 }
 .section-title .all {
-    border: 2px solid  #151b54;
-    color:  #151b54;
+    border: 2px solid  #1d7eb7;
+    color:  #1d7eb7;
     font-weight: 600;
     border-radius: 20px;
     padding: 7px 20px;
@@ -283,13 +283,13 @@ section.top-news-section {
     font-size: 14px;
 }
 /*.section-title .all:hover {
-  border: 1px solid  #151b54;
+  border: 1px solid  #1d7eb7;
   color: #fff;
   font-weight: 500;
   border-radius: 20px;
   padding: 5px 20px;
   margin-bottom: 10px;
-  background:  #151b54;
+  background:  #1d7eb7;
 }*/
 .most-popular-news .popular-news-image {
   overflow: hidden;
@@ -315,7 +315,7 @@ section.top-news-section {
 .most-popular-news .popular-news-content span {
   font-size: 14px;
   font-weight: 500;
-  color:  #151b54;
+  color:  #1d7eb7;
 }
 .most-popular-news .popular-news-content h3 {
     font-size: 17px;
@@ -342,13 +342,13 @@ section.top-news-section {
   color: #656565;
 }
 .popular-news-content h3:hover a {
-  color:  #151b54;
+  color:  #1d7eb7;
 }
 .most-popular-news:hover .popular-news-content h3 a::before {
   width: 100%;
 }
 .most-popular-news:hover .popular-news-content p a {
-  color:  #151b54;
+  color:  #1d7eb7;
 }
 .most-popular-news:hover .popular-news-image img {
   -webkit-transform: scale(1.1);
@@ -364,7 +364,7 @@ section.top-news-section {
 .tag {
   display: inline-block;
   font-size: 14px;
-  background-color:  #151b54;
+  background-color:  #1d7eb7;
   color: #fff;
   padding: 5px 10px 1px;
   font-weight: 400;
@@ -376,11 +376,11 @@ section.top-news-section {
   font-weight: 500;
 }
 .read-more {
-  color:  #151b54;
+  color:  #1d7eb7;
   font-size: 14px;
 }
 .read-more:hover {
-  color: #151b54;
+  color: #1d7eb7;
 }
 .news-list-1 ul li img {
   height: 80px;
@@ -403,7 +403,7 @@ section.top-news-section {
     line-height: 30px;
 }
 .news-list-1 ul li .media .media-body h5 a:hover {
-  color: #151b54;
+  color: #1d7eb7;
 }
 .news-list-1 ul li {
   border-bottom: 1px solid #ccc;
@@ -429,7 +429,7 @@ section.top-news-section {
 .most-popular-post .post-content span {
   font-size: 14px;
   font-weight: 500;
-  color: #151b54;
+  color: #1d7eb7;
 }
 .most-popular-post .post-content h3 {
   font-size: 16px;
@@ -458,7 +458,7 @@ section.top-news-section {
   color: #656565;
 }
 .most-popular-post:hover .post-content h3 a {
-  color: #151b54;
+  color: #1d7eb7;
 }
 .most-popular-post:hover .post-content h3 a::before {
   width: 100%;
@@ -495,7 +495,7 @@ section.top-news-section {
     display: -webkit-box;
 }
 .topic-heading h3 a:hover {
-  color: #151b54;
+  color: #1d7eb7;
 }
 
 .business-popular-news {
@@ -516,7 +516,7 @@ section.top-news-section {
 .business-popular-news .popular-news-content span {
   font-size: 14px;
   font-weight: 500;
-  color: #151b54;
+  color: #1d7eb7;
 }
 .business-popular-news .popular-news-content h3 {
     font-size: 20px;
@@ -539,13 +539,13 @@ section.top-news-section {
   color: #656565;
 }
 .popular-news-content h3:hover a {
-  color: #151b54;
+  color: #1d7eb7;
 }
 .business-popular-news:hover .popular-news-content h3 a::before {
   width: 100%;
 }
 .business-popular-news:hover .popular-news-content p a {
-  color: #151b54;
+  color: #1d7eb7;
 }
 .business-popular-news:hover .popular-news-image img {
   -webkit-transform: scale(1.1);
@@ -596,7 +596,7 @@ section.top-news-section {
   transform: scale(1.05);
 }
 .hover:hover .topic-heading h3 a {
-  color:  #151b54;
+  color:  #1d7eb7;
 }
 .game-text .img img {
   width: 100%;
@@ -613,7 +613,7 @@ section.top-news-section {
   margin-top: 10px;
 }
 .topic-game h3 a {
-  color:  #151b54;
+  color:  #1d7eb7;
   position: relative;
   overflow: hidden;
   -webkit-box-orient: vertical !important;
@@ -621,7 +621,7 @@ section.top-news-section {
   display: -webkit-box;
 }
 .topic-game h3 a:hover {
-  color:  #151b54;
+  color:  #1d7eb7;
 }
 .game-list ul li {
   border-top: 2px solid #cfcfcf;
@@ -630,7 +630,7 @@ section.top-news-section {
   font-size: 20px;
   line-height: 29px;
   margin-top: 10px;
-  color:  #151b54;
+  color:  #1d7eb7;
   position: relative;
   overflow: hidden;
   -webkit-box-orient: vertical !important;
@@ -639,7 +639,7 @@ section.top-news-section {
   margin-bottom: 10px;
 }
 .game-list ul li a:hover {
-  color:  #151b54;
+  color:  #1d7eb7;
 }
 .video-slider.owl-theme .owl-nav {
   position: absolute;
@@ -647,7 +647,7 @@ section.top-news-section {
   right: 0;
 }
 .video-slider.owl-theme .owl-nav button {
-    border: 1px solid  #151b54;
+    border: 1px solid  #1d7eb7;
     border-radius: 0px;
     padding: 0px 10px 0px 10px !important;
     margin-left: 5px;
@@ -660,13 +660,13 @@ section.top-news-section {
   font-weight: 900;
 }
 .video-slider.owl-theme .owl-nav button:hover {
-  background:  #151b54;
+  background:  #1d7eb7;
   color: #fff;
-  border: 1px solid  #151b54;
+  border: 1px solid  #1d7eb7;
 }
 .footer-section {
     padding: 60px 0 10px;
-    background:  #151b54;
+    background:  #1d7eb7;
 }
 .footer-text p {
   color: #fff;
@@ -770,12 +770,12 @@ section.top-news-section {
 .tab-part .nav-pills .nav-link.active,
 .tab-part .nav-pills .show > .nav-link {
   color: #fff;
-  background-color:  #151b54;
+  background-color:  #1d7eb7;
 }
 .tab-part .nav-pills .nav-link {
     font-size: 18px;
     background: #f1f1f1;
-    color:  #151b54;
+    color:  #1d7eb7;
     font-weight: 600;
     font-size: 17px;
 }
@@ -791,7 +791,7 @@ section.top-news-section {
     width: 100%;
 }
 .trending-part span {
-    background:  #151b54;
+    background:  #1d7eb7;
     color: #fff;
     padding: 4px 10px;
 }
@@ -808,7 +808,7 @@ section.top-news-section {
     color: #424242;
 }
 .trending-part ul li a:hover {
-    color:  #151b54;
+    color:  #1d7eb7;
 }
 section.gif-section {
     padding: 30px 0;
@@ -819,7 +819,7 @@ section.gif-section {
     font-weight: 600;
 }
 .pradesh-li li a:hover  {
-    color:  #151b54;
+    color:  #1d7eb7;
 }
 .pradesh-li {
     float: right;
@@ -850,7 +850,7 @@ section.gif-section {
 }
 .pradesh-section .nav-pills .nav-link.active, .pradesh-section .nav-pills .show>.nav-link {
     color: #fff;
-    background-color:  #151b54;
+    background-color:  #1d7eb7;
 }
 
 @media (max-width: 575.98px) {
@@ -861,7 +861,7 @@ section.gif-section {
     width: 100%;
 }
 .trending-part span {
-    background:  #151b54;
+    background:  #1d7eb7;
     color: #fff;
     padding: 4px 10px;
     margin-bottom: 10px;
@@ -891,11 +891,11 @@ section.gif-section {
   display: none;
   }}
 nav.pagination-news ul li a {
-    color:  #151b54;
+    color:  #1d7eb7;
 }
 .pagination-news .page-link:hover {
     z-index: 2;
-    color:  #151b54;
+    color:  #1d7eb7;
     text-decoration: none;
     background-color: #e9ecef;
     border-color: #dee2e6;
@@ -918,7 +918,7 @@ nav.pagination-news ul li a {
 .address h3 {
     font-weight: 600;
     font-size: 22px;
-    color:  #151b54;
+    color:  #1d7eb7;
     margin-bottom: 5px;
 }
 .contact-form {
@@ -930,7 +930,7 @@ nav.pagination-news ul li a {
     border-radius: 0;
 }
 .contact-form label {
-    color:  #151b54;
+    color:  #1d7eb7;
     font-size: 18px;
     margin-bottom: 3px;
     font-weight: 500;
@@ -938,29 +938,29 @@ nav.pagination-news ul li a {
 .contact-form .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #151b54;
+    border-color: #1d7eb7;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
 }
 .contact-form button {
     background: transparent;
-    border: 1px solid  #151b54;
-    color:  #151b54;
+    border: 1px solid  #1d7eb7;
+    color:  #1d7eb7;
     padding: 10px 30px;
     margin-bottom: 0;
     font-weight: 600;
     font-size: 18px;
 }
 .contact-form button:hover {
-    background:  #151b54;
-    border: 1px solid  #151b54;
+    background:  #1d7eb7;
+    border: 1px solid  #1d7eb7;
     color: #fff;
 }
 .about-section {
     padding: 30px 0;
 }
 .about-us-part h4 {
-    color:  #151b54;
+    color:  #1d7eb7;
     font-weight: 600;
     font-size: 22px;
 }
@@ -972,7 +972,7 @@ nav.pagination-news ul li a {
     padding: 30px 0;
 }
 .terms h4 {
-    color:  #151b54;
+    color:  #1d7eb7;
     font-weight: 600;
     font-size: 22px;
 }
@@ -995,7 +995,7 @@ nav.pagination-news ul li a {
 .video-slider .owl-nav i {
     font-size: 16px !important;
     line-height: 32px;
-    color:  #151b54;
+    color:  #1d7eb7;
 }
 .video-slider.owl-theme .owl-nav button:hover i{
     color: #fff;
@@ -1048,7 +1048,7 @@ a.instagram{
 }
 .modal-part h3 {
     font-size: 22px;
-    color:  #151b54;
+    color:  #1d7eb7;
     margin-bottom: 15px;
 }
 .modal-part span {
@@ -1088,7 +1088,7 @@ a.instagram{
 .modal-part h4 {
     margin-bottom: 15px;
     font-size: 18px;
-    color: #151b54;
+    color: #1d7eb7;
 }
 .search-icon {
     position: relative;
@@ -1124,15 +1124,15 @@ div#searchmodal .close span {
 .no-result .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color:  #151b54;
+    border-color:  #1d7eb7;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
 }
 .no-result button {
-    border: 1px solid  #151b54;
+    border: 1px solid  #1d7eb7;
     border-radius: 0;
     color: #fff;
-    background:  #151b54;
+    background:  #1d7eb7;
     height: 45px;
     padding: 0 25px;
 }
@@ -1149,9 +1149,9 @@ div#searchmodal .close span {
     font-size: 30px;
 }
 .no-result button:hover {
-    border: 1px solid  #151b54;
+    border: 1px solid  #1d7eb7;
     border-radius: 0;
-    color:  #151b54;
+    color:  #1d7eb7;
     background: #fff;
 }
 .no-result {
@@ -1192,7 +1192,7 @@ div#popup {
 .skip {
     opacity: 1;
     color: #fff;
-    background-color: #151b54 !important;
+    background-color: #1d7eb7 !important;
     font-weight: 500;
     font-size: 14px;
     text-shadow: none;
@@ -1201,7 +1201,7 @@ div#popup {
     margin-bottom: 0px !important;
 }
 .skip:hover {
-    background: #151b54 !important;
+    background: #1d7eb7 !important;
     color: #fff;
     opacity: 1;
 }
@@ -1221,7 +1221,7 @@ div#popup {
     color: #424242;
 }
 .top-news h2 a:hover{
-    color:  #151b54;
+    color:  #1d7eb7;
 }
 .top-news p {
     width: 85%;
@@ -1268,23 +1268,23 @@ div#popup {
     color: #424242 !important;
 }
 .news-list ul li h5 a:hover {
-    color:  #151b54 !important;
+    color:  #1d7eb7 !important;
 }
 .news-list a.latest-news-all {
-    border: 1px solid  #151b54;
+    border: 1px solid  #1d7eb7;
     width: 100%;
     display: block;
     text-align: center;
     padding: 10px;
     font-weight: 600;
-    background:  #151b54;
+    background:  #1d7eb7;
     color: #fff;
     margin-bottom: 15px;
 }
 .news-list a.latest-news-all:hover {
-    border: 1px solid  #151b54;
+    border: 1px solid  #1d7eb7;
     background: #fff;
-    color:  #151b54;
+    color:  #1d7eb7;
 }
 .news-list span {
     font-size: 14px;
@@ -1320,8 +1320,8 @@ img.logo-image {
 .pagination-news .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #151b54;
-    border-color: #151b54;
+    background-color: #1d7eb7;
+    border-color: #1d7eb7;
 }
 .top-news span {
     /* margin-bottom: 15px; */
@@ -1378,7 +1378,7 @@ section.pradesh-section .section-title {
 }
 
 div#popup {
-    background: #151b54de !important;
+    background: #1d7eb7de !important;
     /* backdrop-filter: blur(10px); */
 }
 #popup .modal-content {

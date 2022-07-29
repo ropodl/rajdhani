@@ -11,14 +11,14 @@
        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=6230668fcedc410013fe5f17&product=inline-share-buttons' async='async'></script>
 
        <!-- Global site tag (gtag.js) - Google Analytics -->
-       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-222905304-1"></script>
-       <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRSHM8QWGN"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', 'UA-222905304-1');
-       </script>
+            gtag('config', 'G-KRSHM8QWGN');
+        </script>
    </head>
    <body>
        {{-- @dd($popUpAdv) --}}

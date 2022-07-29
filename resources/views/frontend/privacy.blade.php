@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="terms">
-                        <h4>{{$privacy->title}}</h4>
-                        <p>{!!strip_tags($privacy->description,'') !!}</p>
+                        <!-- <h4>{{$privacy->title}}</h4> -->
+                        <p>{!!$privacy->description !!}</p>
                     </div>
                 </div>
             </div>

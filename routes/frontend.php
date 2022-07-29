@@ -12,7 +12,7 @@ Route::get('/contactus', 'ContactController@index')->name('frontend.contactus');
 
 //Pages
 Route::get('/aboutus', 'PageController@aboutus')->name('frontend.aboutus');
-Route::get('/privacy', 'PageController@privacy')->name('frontend.privacy');
+Route::get('/terms-conditions', 'PageController@privacy')->name('frontend.privacy');
 
 Route::get('/province/{slug}', 'NewsController@provinceNews')->name('frontend.province_news');
 

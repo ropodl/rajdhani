@@ -15,7 +15,7 @@ class PageController extends Controller
     }
 
     public function privacy(){
-        $privacy = Page::where('name', 'privacy-policy')->where('status', 1)->firstOrFail();
+        $privacy = Page::where('name', 'terms-conditions')->where('status', 1)->firstOrFail();
           return view('frontend.privacy', compact('privacy'));
     }
 }
