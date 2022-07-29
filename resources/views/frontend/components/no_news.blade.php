@@ -1,9 +1,10 @@
 <section class="no-news-section">
     <div class="container">
         <div class="row">
-            <div class="no-news">
-                <img src="{{asset('frontend/img/news.png')}}" alt="">
-                <h5>No News Were Available</h5>
+            <div class="col">
+                <div class="no-news">
+                    <h5>कुनै समाचार उपलब्ध छैन</h5>
+                </div>
             </div>
         </div>
     </div>

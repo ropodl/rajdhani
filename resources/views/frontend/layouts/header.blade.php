@@ -3,8 +3,41 @@
         $firstHeaderAdv = $headerAds['l_ad'][0]->advertisement ?? '';
     @endphp
 @endif
+<section class="topbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="social-links">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-hidden col-md-6">
+                <div class="d-flex">
+                    <ul class="info-text">
+                        <li>Email: Rajdhanipress1@gmail.com</li>
+                        <li>Phone No.: 01-444444,01-5555555 </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section class="sc-logo my-3">
+    <section class="sc-logo my-2">
         <div class="container">
             <div class="row d-flex">
                 <div class="col-md-4">
@@ -36,6 +69,13 @@
         <div class="nav-header">
             <a class="nav-brand" href="index.php"><img src="{{asset ('frontend/img/ch/lo.png') }}" alt="logo"
                                                        id="main_logo" class="img-fluid"></a>
+            <ul class="home m-0">
+                <li>
+                    <a class="text-white" href="/">
+                        <i class="fa fa-home" style="font-size:34px;"></i>
+                    </a>
+                </li>
+            </ul>
             <div class="nav-toggle"></div>
         </div>
         <div class="nav-search d-flex">
@@ -47,7 +87,9 @@
              </span>
             <ul class="nav-menu align-to-left">
                 <li>
-                    <a href="{{route('frontend.index')}}">होमपेज</a>
+                    <a href="{{route('frontend.index')}}">
+                        <i class="fa fa-home"></i>
+                    </a>
                 </li>
                 @foreach($headerCats as $category)
                 @if($category->sort == 0)

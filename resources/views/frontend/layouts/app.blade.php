@@ -8,8 +8,8 @@
         @yield('meta')
         <title>{{$siteSetting->name}}</title>
         <link rel="icon" type="image/x-icon" href="{{ $siteSetting->logo }}">
-       <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=6230668fcedc410013fe5f17&product=inline-share-buttons' async='async'></script>
-
+        <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62dd2666987470001990b717&product=inline-reaction-buttons" async="async"></script>
+        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=60794599181bcb00113f8a4f&product=inline-share-buttons' async='async'></script>
        <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRSHM8QWGN"></script>
         <script>
@@ -31,7 +31,10 @@
 
        @include('frontend.layouts.footer')
 
-       <div class="go-up" style="right: -60px;"><i class="fa fa-chevron-up"></i></div>
+       <!-- <div class="go-up"><i class="fa fa-chevron-up"></i></div> -->
+       <div class="go-to-top">
+        <i class="fa fa-arrow-up"></i>
+       </div>
    </body>
     @include('frontend.scripts.js')
     @yield('js')

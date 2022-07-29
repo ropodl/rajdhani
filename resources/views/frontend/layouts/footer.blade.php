@@ -28,26 +28,21 @@
                 <div class="footer-text-add">
                     <h2>ई–मेल</h2>
                     <p>
-                        <a href="mailto:info@himali.com">{{$siteSetting->email}}</a><br>
-                        {{--                        <a href="mailto:info@news.com">info@news.com</a>--}}
+                        <a href="mailto:{{$siteSetting->email}}">{{$siteSetting->email}}</a><br>
                     </p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="footer-text-add">
-                    <h2>सामाजिक संजाल</h2>
+                    <h2>हाम्रो बारेमा</h2>
                     <ul>
-                        <li><a href="{{$media->facebook_link}}" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
-                        </li>
-                        <li><a href="{{$media->instagram_link}}" target="_blank"><i class="fa fa-instagram"></i>
-                                Instagram</a></li>
-                        <li><a href="{{$media->youtube_link}}" target="_blank"><i class="fa fa-youtube"></i> Youtube</a>
-                        </li>
-                        <li><a href="{{$media->twitter_link}}" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
-                        </li>
-                        <li><a href="{{$media->linkedin_link}}" target="_blank"><i class="fa fa-linkedin"></i> Linkedin</a>
-                        </li>
-                    </ul>
+                        <li>
+                            <a href="{{route('frontend.aboutus')}}">हाम्रो बारेमा</a></li>
+                        <li>
+                            <a href="{{route('frontend.contactus')}}">सम्पर्क</a></li>
+                        <li>
+                            <a href="{{route('frontend.privacy')}}">नियम र सर्तहरू</a></li>
+                        </ul>
                 </div>
             </div>
             <div class="col-md-6 col-lg-2">
@@ -65,7 +60,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="text-white mt-3">
-                        <p>
+                        <p class="text-sm-center text-md-left">
                             Copyright &copy;
                             <script>document.write(new Date().getFullYear())</script>
                             {{$siteSetting->name}}
@@ -75,9 +70,16 @@
                 <div class="col-md-6">
                     <div class="footer-list-news mt-3">
                         <ul>
-                            <li><a href="{{route('frontend.aboutus')}}">हाम्रो बारेमा</a></li>
-                            <li><a href="{{route('frontend.contactus')}}">सम्पर्क</a></li>
-                            <li><a href="{{route('frontend.privacy')}}">नियम र सर्तहरू</a></li>
+                        <li><a href="{{$media->facebook_link}}" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+                        </li>
+                        <li><a href="{{$media->instagram_link}}" target="_blank"><i class="fa fa-instagram"></i>
+                                Instagram</a></li>
+                        <li><a href="{{$media->youtube_link}}" target="_blank"><i class="fa fa-youtube"></i> Youtube</a>
+                        </li>
+                        <li><a href="{{$media->twitter_link}}" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+                        </li>
+                        <li><a href="{{$media->linkedin_link}}" target="_blank"><i class="fa fa-linkedin"></i> Linkedin</a>
+                        </li>
                         </ul>
                     </div>
                 </div>

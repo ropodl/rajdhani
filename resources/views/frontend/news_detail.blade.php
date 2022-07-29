@@ -25,16 +25,16 @@
             <div class="container">
                 <div class="row detail-row">
                     <div class="col-md-8">
-                        <div class="news-box px-md-3 px-2 py-md-4 py-3 bg-white mb-3">
-                            <h6 class="news-detail-title"> {{$news->title}}
-                            </h6>
-                            <hr>
+                        <div class="news-box px-md-3 px-2 py-md-4 bg-white mb-3">
+                            <!-- <hr> -->
                             <div class="banner-image">
                                 <img src="{{$news->image}}" alt="">
+                                <h6 class="news-detail-title"> {{$news->title}}</h6>
+                                <small class="mb-3">{{ nepalidate($news->created_at)  }}</small>
                             </div>
+                            <div class="sharethis-inline-share-buttons mb-3 mt-3"></div>
 
                             <div class="news-short-detail-f">
-                                    <small>{{ nepalidate($news->created_at)  }}</small>
                                 <?php $descriptions = explode('</p>',$news->description); $i=0?>
                                 @foreach($descriptions as $key => $paragraph)
                                     @if($key %2 == 0 )
@@ -46,10 +46,7 @@
                                     @endif
                                     {!! $paragraph !!}</p>
                                 @endforeach
-                                {{--                            <div class="share">--}}
-                                <h5>Share This:</h5>
-                                <div class="sharethis-inline-share-buttons"></div>
-                                {{--                            </div>--}}
+                                <div class="sharethis-inline-reaction-buttons"></div>
                             </div>
                         </div>
                     </div>
@@ -126,7 +123,7 @@
                                 @endif
                                 @if(!empty($thirdSmAdv))
                                     <div class=" bg-white p-md-3 p-2 news-taja">
-                                        @include('frontend.advertisement.sm_ad', ['url' => $thirdSmAdv->url, 'image' => $thirdSmAdv->image])
+                                        @include('frontend.advertiseNo News Were Availablement.sm_ad', ['url' => $thirdSmAdv->url, 'image' => $thirdSmAdv->image])
                                     </div>
                                 @endif
                                 @if(!empty($fourthSmAdv))
