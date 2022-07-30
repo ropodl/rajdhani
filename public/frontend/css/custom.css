@@ -1355,9 +1355,9 @@ div#popup {
     width: auto !important;
 }
 img.logo-image {
-    height: 60px!important;
+    height: 80px !important;
     width: auto !important;
-    margin: 12px 0 0;
+    /* margin: 12px 0 0; */
 }
 .sharethis-inline-share-buttons {
     text-align: start !important;
