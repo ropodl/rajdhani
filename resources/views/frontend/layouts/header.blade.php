@@ -41,7 +41,7 @@
 <!-- middle logo section -->
     <section class="sc-logo my-2">
         <div class="container">
-            <div class="row d-flex">
+            <div class="row">
                 <div class="col-md-4">
                     <a href="{{route('frontend.index')}}"><img class="logo-image"
                             src="{{ $siteSetting->logo_with_text }}"
@@ -51,7 +51,7 @@
                         <span>{{ nepalidate(now()) }}</span>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8">
                     <div class="d-flex justify-content-center align-items-center h-100">
                         <a class="info-image" href="#">
                             <img class="img-fluid" src="https://www.onlinekhabar.com/wp-content/uploads/2022/02/0DC4CFA3-FFBA-4FFB-857E-B484FDA10DAD.gif" alt="" srcset="">
