@@ -3,6 +3,7 @@
         $firstHeaderAdv = $headerAds['l_ad'][0]->advertisement ?? '';
     @endphp
 @endif
+<!-- topbar -->
 <section class="topbar">
     <div class="container">
         <div class="row">
@@ -37,6 +38,7 @@
     </div>
 </section>
 
+<!-- middle logo section -->
     <section class="sc-logo my-2">
         <div class="container">
             <div class="row d-flex">
@@ -50,7 +52,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="d-flex">
+                    <div class="d-flex justify-content-center align-items-center h-100">
                         <a class="info-image" href="#">
                             <img class="img-fluid" src="https://www.onlinekhabar.com/wp-content/uploads/2022/02/0DC4CFA3-FFBA-4FFB-857E-B484FDA10DAD.gif" alt="" srcset="">
                         </a>

@@ -35,7 +35,9 @@
                                         <span><i class="fa fa-history"></i> {{ $mNews->formated_post_date }}</span>
                                     </div>
                                 </div>
-                                <img src="{{$mNews->image}}" class="w-100" alt="">
+                                <a href="{{ route('frontend.news.detail', $mNews)}}" rel="noopener noreferrer">
+                                    <img src="{{$mNews->image}}" class="w-100" alt="">
+                                </a>
                                 <p>{!! str_limit(strip_tags($mNews->description,''), 500 ,'...') !!}</p>
                             </div>
                         </div>

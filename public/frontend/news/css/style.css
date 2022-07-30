@@ -566,10 +566,10 @@ body {
   font-weight: 700;
   color: #fb4c35;
 }
-.news-short-detail-f p {
+.news-short-detail-f,.news-short-detail-f p {
     font-weight: 400;
     font-size: 17px;
-    line-height: 2;
+    line-height: 2rem !important;
     color: #222;
     text-align: left;
 }
