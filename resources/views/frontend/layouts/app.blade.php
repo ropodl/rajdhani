@@ -8,7 +8,6 @@
         @yield('meta')
         <title>{{$siteSetting->name}}</title>
         <link rel="icon" type="image/x-icon" href="{{ $siteSetting->logo }}">
-        <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62dd2666987470001990b717&product=inline-reaction-buttons" async="async"></script>
         <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=60794599181bcb00113f8a4f&product=inline-share-buttons' async='async'></script>
        <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRSHM8QWGN"></script>
@@ -19,6 +18,10 @@
 
             gtag('config', 'G-KRSHM8QWGN');
         </script>
+        <!-- test -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
    </head>
    <body>
        {{-- @dd($popUpAdv) --}}
