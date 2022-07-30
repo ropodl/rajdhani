@@ -13,8 +13,7 @@
                   $ ('#popup').modal ("hide")
               }, 10000)
           });
-      </script>
-     <script>
+          
 $('.video-slider').owlCarousel({
     loop: true,
     margin: 10,
