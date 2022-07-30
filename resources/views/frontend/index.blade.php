@@ -78,9 +78,15 @@
                                             @if(!$loop->first)
                                                 <li>
                                                     <div class="media">
+                                                    <a href="{{  route('frontend.news.detail', $news ) }}">
                                                         <img class="mr-3" src="{{$news->image}}" alt="">
+                                                    </a>
                                                         <div class="media-body align-self-center">
-                                                            <h5 class="mt-0"><a href="{{  route('frontend.news.detail', $news ) }}">{{$news->title}}</a></h5>
+                                                            <h5 class="mt-0">
+                                                                <a href="{{  route('frontend.news.detail', $news ) }}">
+                                                                    {{$news->title}}
+                                                                </a>
+                                                            </h5>
                                                             <span><i class="fa fa-history"></i> {{ $news->formated_post_date }}</span>
                                                         </div>
                                                     </div>
@@ -161,11 +167,13 @@
                                             @if(!$loop->first)
                                                 <li>
                                                     <div class="media">
-                                                        <img class="mr-3" src="{{$news->small_image}}"
-                                                             alt="image">
-                                                        <div class="media-body align-self-center">
-                                                            <h5 class="mt-0"><a
-                                                                    href="{{route('frontend.news.detail', $news)}}">{{$news->title}}</a>
+                                                    <a href="{{route('frontend.news.detail', $news)}}">
+                                                                    <img class="mr-3" src="{{$news->small_image}}"
+                                                                    alt="image">
+                                                                    <div class="media-body align-self-center">
+                                                                        <h5 class="mt-0">
+                                                                            {{$news->title}}
+                                                                        </a>
                                                             </h5>
                                                         </div>
                                                     </div>
@@ -198,11 +206,15 @@
                                             @foreach($latestNews->take(6) as $news)
                                                 <li>
                                                     <div class="media">
+                                                    <a href="{{route('frontend.news.detail', $news)}}">
                                                         <img class="mr-3" src="{{$news->image}}"
                                                              alt="image">
+                                                            </a>
                                                         <div class="media-body align-self-center">
-                                                            <h5 class="mt-0"><a
-                                                                    href="{{route('frontend.news.detail', $news)}}">{{$news->title}}</a>
+                                                            <h5 class="mt-0">
+                                                                <a href="{{route('frontend.news.detail', $news)}}">
+                                                                    {{$news->title}}
+                                                                </a>
                                                             </h5>
                                                         </div>
                                                     </div>
@@ -219,11 +231,15 @@
                                                 @foreach($trendingNews as $news)
                                                     <li>
                                                         <div class="media">
+                                                        <a href="{{route('frontend.news.detail', $news)}}">
                                                             <img class="mr-3" src="{{$news->image}}"
                                                                  alt="image">
+                                                                </a>
                                                             <div class="media-body align-self-center">
-                                                                <h5 class="mt-0"><a
-                                                                        href="{{route('frontend.news.detail', $news)}}">{{$news->title}}</a>
+                                                                <h5 class="mt-0">
+                                                                    <a href="{{route('frontend.news.detail', $news)}}">
+                                                                        {{$news->title}}
+                                                                    </a>
                                                                 </h5>
                                                             </div>
                                                         </div>
@@ -325,9 +341,15 @@
                                             @if(!$loop->first)
                                                 <li>
                                                     <div class="media">
+                                                    <a href="{{ route('frontend.news.detail', $news )}}">
                                                         <img class="mr-3" src="{{$news->small_image}}" alt="">
+                                                    </a>
                                                         <div class="media-body align-self-center">
-                                                            <h5 class="mt-0"><a href="{{ route('frontend.news.detail', $news )}}">{{$news->title}}</a></h5>
+                                                            <h5 class="mt-0">
+                                                                <a href="{{ route('frontend.news.detail', $news )}}">
+                                                                    {{$news->title}}
+                                                                </a>
+                                                            </h5>
                                                         </div>
                                                     </div>
                                                 </li>
