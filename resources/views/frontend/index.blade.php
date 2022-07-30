@@ -136,7 +136,7 @@
                                class="all">सबै</a>
                         </div>
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                                 <div class="business-popular-news">
                                     <div class="popular-news-image banner-image">
                                         <a href="{{route('frontend.news.detail', $categoryWiseNews[0]->news[0])}}">
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-5">
                                 <div class="news-list-1 mt-4">
                                     <ul>
                                         @foreach($categoryWiseNews[0]->news->take(5) as $news)
