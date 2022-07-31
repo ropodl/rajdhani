@@ -24,7 +24,7 @@
                                 <label>Advertisement Image<span class="required">*</span></label>
                             </div>
                             <div class="col-md-7 card p-3">
-                                <img class="{{isset($advertisement)?'d-block':'d-none'}} m-auto" id="advertisement_image" src="{{isset($advertisement) ? $advertisement->image :''}}" width="150px" height="150px"/>
+                                <img class="{{isset($advertisement)?'d-block':'d-none'}} m-auto img-fluid" id="advertisement_image" src="{{isset($advertisement) ? $advertisement->image :''}}" width="150px" height="150px"/>
                                 <input class="form-control mt-2" type="file" id="mediaFile" name="advertisement_image"/>
                                 @if($errors->first('advertisement_image'))
                                     <div class="text text-danger">

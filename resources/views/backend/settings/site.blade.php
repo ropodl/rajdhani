@@ -27,9 +27,9 @@
                                 <label>Logo Image<span class="required">*</span></label>
                             </div>
                             <div class="col-md-7 card p-3">
-                                <img class="{{isset($edit)?'d-block':''}} m-auto" id="logo"
+                                <img class="{{isset($edit)?'d-block':''}} m-auto img-fluid" id="logo"
                                      src="{{isset($edit) ? $edit->logo : ''}}"
-                                     width="150px" height="150px"/>
+                                     style="max-height:150px;"/>
                                 <input class="form-control mt-2" type="file" id="mediaFile" name="logo"/>
                                 @if($errors->first('logo'))
                                     <div class="text text-danger">
@@ -45,9 +45,9 @@
                                 <label>Logo Image With Text<span class="required">*</span></label>
                             </div>
                             <div class="col-md-7 card p-3">
-                                <img class="{{isset($edit)?'d-block':''}} m-auto" id="logoWithText"
+                                <img class="{{isset($edit)?'d-block':''}} m-auto img-fluid" id="logoWithText"
                                      src="{{isset($edit) ? $edit->logo_with_text : ''}}"
-                                     width="150px" height="150px"/>
+                                     style="max-height:150px;"/>
                                 <input class="form-control mt-2" type="file" id="mediaFileWithText" name="logo_with_text"/>
                                 @if($errors->first('logo_with_text'))
                                     <div class="text text-danger">
