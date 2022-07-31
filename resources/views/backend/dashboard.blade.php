@@ -184,5 +184,5 @@
     </div>
 
 
-@endsectionz
+@endsection
 
