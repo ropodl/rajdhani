@@ -10,7 +10,7 @@ section.topbar ul.social-links{
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 0;
-  padding: 10px;
+  padding: 5px;
 }
 section.topbar ul.social-links li{
   margin-right: 20px;
@@ -25,7 +25,7 @@ section.topbar ul.social-links li a i{
 section.topbar ul.info-text{
   display: flex;
   flex-wrap: wrap;
-  padding: 10px;
+  padding: 5px;
   margin-bottom: 0;
   margin-left: auto;
 }
@@ -1355,7 +1355,7 @@ div#popup {
     width: auto !important;
 }
 img.logo-image {
-    height: 80px !important;
+    height: 60px !important;
     width: auto !important;
     /* margin: 12px 0 0; */
 }

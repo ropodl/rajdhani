@@ -9,21 +9,11 @@
         <div class="row">
             <div class="col-md-6">
                 <ul class="social-links">
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-youtube-play"></i>
-                        </a>
-                    </li>
+                        <li><a href="{{$media->facebook_link}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="{{$media->instagram_link}}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="{{$media->youtube_link}}" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+                        <li><a href="{{$media->twitter_link}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="{{$media->linkedin_link}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                 </ul>
             </div>
             <div class="col-sm-hidden col-md-6">
@@ -51,8 +41,8 @@
                         <span>{{ nepalidate(now()) }}</span>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-8">
-                    <div class="d-flex justify-content-center align-items-center h-100 pb-2">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 my-2">
+                    <div class="d-flex justify-content-center align-items-center h-100">
                         <a class="info-image" href="#">
                             <img class="img-fluid" src="https://www.onlinekhabar.com/wp-content/uploads/2022/02/0DC4CFA3-FFBA-4FFB-857E-B484FDA10DAD.gif" alt="" srcset="">
                         </a>
@@ -69,8 +59,8 @@
 <header>
     <nav id="navigation4" class="container container-fluid navigation">
         <div class="nav-header">
-            <a class="nav-brand" href="index.php"><img src="{{asset ('frontend/img/ch/lo.png') }}" alt="logo"
-                                                       id="main_logo" class="img-fluid"></a>
+            <!-- <a class="nav-brand" href="index.php">test<img src="{{asset ('frontend/img/ch/lo.png') }}" alt="logo"
+                                                       id="main_logo" class="img-fluid"></a> -->
             <ul class="home m-0">
                 <li>
                     <a class="text-white" href="/">
