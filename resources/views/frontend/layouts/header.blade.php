@@ -101,14 +101,14 @@
                 @endif
                 @endforeach
                 <li>
-                    <a href="#">समाचार</a>
-                    <ul class="nav-dropdown">
+                    <!-- <a href="#">समाचार</a> -->
+                    <!-- <ul class="nav-dropdown">
                         @foreach($underCats as $cat)
                         <li>
                             <a href="{{route('frontend.category_news', $cat->slug)}}">{{$cat->name}}</a>
                         </li>
                         @endforeach
-                    </ul>
+                    </ul> -->
                 </li>
                 <li>
                     <a href="#">प्रदेश</a>

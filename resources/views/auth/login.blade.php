@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div style="background-color: #fb4c35">
     <div class="container" style="min-height: 100vh;">
