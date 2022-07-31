@@ -866,7 +866,7 @@ section.gif-section {
 .pradesh-li {
     float: right;
     /* margin-top: 10px; */
-    margin-left: 100px;
+    margin-left: auto;
 }
 .pradesh-li li {
     margin-right: 0px;
@@ -1220,9 +1220,6 @@ div#searchmodal .close span {
     height: 70px;
     margin-bottom: 15px;
 }
-img.logo-image {
-    height: 50px!important;
-}
 div#popup {
     backdrop-filter: blur(2px);
 }
@@ -1355,7 +1352,7 @@ div#popup {
     width: auto !important;
 }
 img.logo-image {
-    height: 80px !important;
+    height: 60px !important;
     width: auto !important;
     /* margin: 12px 0 0; */
 }

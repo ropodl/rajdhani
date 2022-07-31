@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-@if(!empty($advertisements['xl_ad']) || !empty($advertisements['sm_ad']))
+@if(!empty($advertisements['xl_ad']) || !empty($advertisbishwash_khabarements['sm_ad']))
     @php
         $firstXlAdv = $advertisements['xl_ad'][0]->advertisement ?? '';
         $secondXlAdv = $advertisements['xl_ad'][1]->advertisement ?? '';

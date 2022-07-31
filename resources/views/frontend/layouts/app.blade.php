@@ -15,7 +15,6 @@
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'G-KRSHM8QWGN');
         </script>
         <!-- test -->
@@ -24,17 +23,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
    </head>
    <body>
-       {{-- @dd($popUpAdv) --}}
    @if(!empty($popUpAdv))
     @include('frontend.advertisement.popup')
    @endif
    @include('frontend.layouts.header')
-   {{-- @include('frontend.layouts.topbar') --}}
         @yield('content')
-
        @include('frontend.layouts.footer')
-
-       <!-- <div class="go-up"><i class="fa fa-chevron-up"></i></div> -->
        <div class="go-to-top">
         <i class="fa fa-arrow-up"></i>
        </div>
