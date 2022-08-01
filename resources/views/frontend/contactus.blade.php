@@ -17,17 +17,12 @@
                         </div>
                         <div class="address mb-3">
                             <h3>सम्पर्क</h3>
-                            {{--                  <h4>News Section: +977-98********</h4>--}}
                             <h4>Account Section: {{$siteSetting->phone1}}</h4>
                             <h4>Sales & Marketing: {{$siteSetting->phone2}}</h4>
-                            {{--                  <h4>Telephone Section: +977-98********</h4>--}}
                         </div>
                         <div class="address">
                             <h3>इमेल</h3>
                             <h4>{{$siteSetting->email}}</h4>
-                            {{--                  <h4>info@bishwashnews.com</h4>--}}
-                            {{--                  <h4>news@bishwashnews.com</h4>--}}
-                            {{--                  <h4>account@bishwashnews.com</h4>--}}
                         </div>
                     </div>
                 </div>

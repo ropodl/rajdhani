@@ -8,11 +8,30 @@
                     </div>
                     <div class="footer-text">
                         <p>खबर प्रालिद्वारा प्रकाशित</p>
-                        <p><strong>कार्यकारी प्रवन्धक :</strong> {{$siteSetting->executive_manager}}</p>
-                        <p><strong>सम्पादक :</strong> {{$siteSetting->editor}}</p>
-                        <p><strong>कार्यकारी सम्पादक :</strong> {{$siteSetting->executive_editor}}</p>
-                        <p><strong>सूचना विभाग दर्ता नं :</strong> {{$siteSetting->registration_no}}</p>
                     </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-2">
+                <div class="footer-text-add">
+                    <h2>अन्वेषण</h2>
+                    @foreach ($footerCategories as $category)
+                        <ul>
+                            <li><a href="{{route('frontend.category_news', $category->slug)}}">{{$category->name}}</a></li>
+                        </ul>
+                    @endforeach
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="footer-text-add">
+                    <h2>हाम्रो बारेमा</h2>
+                    <ul>
+                        <li>
+                            <a href="{{route('frontend.aboutus')}}">हाम्रो बारेमा</a></li>
+                        <li>
+                            <a href="{{route('frontend.contactus')}}">सम्पर्क</a></li>
+                        <li>
+                            <a href="{{route('frontend.privacy')}}">नियम र सर्तहरू</a></li>
+                        </ul>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
@@ -32,30 +51,26 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="footer-text-add">
-                    <h2>हाम्रो बारेमा</h2>
-                    <ul>
-                        <li>
-                            <a href="{{route('frontend.aboutus')}}">हाम्रो बारेमा</a></li>
-                        <li>
-                            <a href="{{route('frontend.contactus')}}">सम्पर्क</a></li>
-                        <li>
-                            <a href="{{route('frontend.privacy')}}">नियम र सर्तहरू</a></li>
-                        </ul>
-                </div>
+        </div>
+        <div class="editor">
+            <div class="row pt-3">
+                <div class="col-12 col-md-6 col-lg-3">
+            <p class="text-white"><strong>कार्यकारी प्रवन्धक :</strong><br/> {{$siteSetting->executive_manager}}</p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+                <p class="text-white"><strong>सम्पादक :</strong><br/> {{$siteSetting->editor}}</p>
+                
             </div>
-            <div class="col-md-6 col-lg-2">
-                <div class="footer-text-add">
-                    <h2>अन्वेषण</h2>
-                    @foreach ($footerCategories as $category)
-                        <ul>
-                            <li><a href="{{route('frontend.category_news', $category->slug)}}">{{$category->name}}</a></li>
-                        </ul>
-                    @endforeach
-                </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <p class="text-white"><strong>कार्यकारी सम्पादक :</strong><br/> {{$siteSetting->executive_editor}}</p>
+                
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <p class="text-white"><strong>सूचना विभाग दर्ता नं :</strong><br/> {{$siteSetting->registration_no}}</p>
+
             </div>
         </div>
+    </div>
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6">
