@@ -1,4 +1,4 @@
-<link rel="icon" type="image/png" sizes="96x96" href="img/meta.png">
+<!-- <link rel="icon" type="image/png" sizes="96x96" href="img/meta.png"> -->
  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"> -->
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
  <link rel="stylesheet" href="{{asset ('frontend/library/bootstrap.min.css')}}">

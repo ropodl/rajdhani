@@ -1363,9 +1363,9 @@ img.logo-image {
 .sharethis-inline-share-buttons {
     text-align: start !important;
 }
-.detail-row {
+/* .detail-row {
     border-bottom: 2px solid #dedede;
-}
+} */
 .pagination-news .page-item.active .page-link {
     z-index: 3;
     color: #fff;
@@ -1514,7 +1514,7 @@ div.category-title span::before{
   content: "";
   position: absolute;
   top: 0;
-  z-index: 5;
+  z-index: 2;
   border-top: 36px solid transparent;
   border-left: 31px solid var(--r-primary);
   right: -33px;
@@ -1525,7 +1525,7 @@ div.category-title span::after{
   content: "";
   top: 1px;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   border-top: 35px solid transparent;
   border-left: 33px solid #fff;
   box-shadow: -3px 0 0 #fff;
@@ -1554,4 +1554,13 @@ div.category-title a{
   position: relative;
   color: #fff;
   margin-top: 0;
+}
+div.category-title .pradesh-li a{
+  background-color: unset;
+  color: #323232;
+  font-size: 15px;
+  font-weight: 600;
+}
+div.category-title .pradesh-li a:hover{
+  color: var(--r-primary);
 }
