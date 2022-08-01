@@ -1447,13 +1447,13 @@ div#popup {
     height: 110px;
 }
 .ads-xlarge img{
-    height: 200px;
+  width: 100%;
+  height: auto;
 }
 .ads-popup img{
     height: 560px;
     width: 850px;
 }
-
 
 /* navbar logo */
 
@@ -1510,7 +1510,7 @@ div.category-title span{
   font-size: 20px;
 }
 
-div.category-title span::before{
+/* div.category-title span::before{
   content: "";
   position: absolute;
   top: 0;
@@ -1529,7 +1529,7 @@ div.category-title span::after{
   border-top: 35px solid transparent;
   border-left: 33px solid #fff;
   box-shadow: -3px 0 0 #fff;
-}
+} */
 
 div.category-title span a{
   float: right;

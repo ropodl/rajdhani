@@ -2,8 +2,11 @@
 @section('content')
     <section class="sc-news2 pb-4">
         <div class="container">
-            <div class="section-title d-flex justify-content-between mt-4">
+            {{--<div class="section-title d-flex justify-content-between mt-4">
                 <a href="#" class="head">{{$title}}</a>
+            </div>--}}
+            <div class="category-title mt-4">
+                <span><a>{{$title}}</a></span>
             </div>
             @if(!$news->isEmpty())
             <div class="row">

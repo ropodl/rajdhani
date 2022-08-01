@@ -308,35 +308,35 @@
         </div>
     </section>
     @endif
+    @if(!empty($secondXlAdv))
     <section class="gif-section">
         <div class="container">
             <div class="row">
-                @if(!empty($secondXlAdv))
                     @include('frontend.advertisement.xl_ad', ['url' => $secondXlAdv->url, 'image' => $secondXlAdv->image])
-                @endif
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+        @endif
     
     @if(!$provinceWiseNews->isEmpty())
         <section class="pradesh-section mt-3">
             <div class="container">
             <div class="category-title">
-        <span>
-            <a href="#">
-            प्रदेश समाचार
-            </a>
-        </span>
-        <ul class="nav nav-pills pradesh-li" id="pills-tab" role="tablist">
-                        @foreach($provinces as $key => $province)
+                <span>
+                    <a href="#">
+                    प्रदेश समाचार
+                    </a>
+                </span>
+                <ul class="nav nav-pills pradesh-li" id="pills-tab" role="tablist">
+                    @foreach($provinces as $key => $province)
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('frontend.province_news', $province->slug )}}">
                                     {{$province->name}}
                                 </a>
                             </li>
-                        @endforeach
-                    </ul>
-    </div>
+                    @endforeach
+                </ul>
+            </div>
                 <!-- <div class="section-title">
                     <a href="#" class="head">प्रदेश समाचार </a>
                     <ul class="nav nav-pills pradesh-li" id="pills-tab" role="tablist">
@@ -352,7 +352,7 @@
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade active show"
                          role="tabpanel" aria-labelledby="{{$news->id}}-tab">
-                        <div class="row">
+                        <div class="row" style="width:100%;">
                             <div class="col-lg-8 col-md-12 col-sm-12">
                                 <div class="single-main-news">
                                     <a href="{{route('frontend.news.detail', $provinceWiseNews[0])}}">
