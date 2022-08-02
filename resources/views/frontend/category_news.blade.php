@@ -15,7 +15,7 @@
                         <div class="col-md-12">
                             <div class="single-main-news">
                                 <a href="{{route('frontend.news.detail', $new)}}">
-                                    <img src="{{$new->image}}" alt="image"
+                                    <img loading="lazy" src="{{$new->image}}" alt="image"
                                          class="inner-list-big-image">
                                 </a>
                                 <div class="news-content">
@@ -31,7 +31,7 @@
                         <div class="mb-md-3 mb-2 pb-md-3 pb-2 border-bottom">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <a href="{{route('frontend.news.detail', $new)}}"><img
+                                    <a href="{{route('frontend.news.detail', $new)}}"><img loading="lazy"
                                             src="{{$new->image}}" alt="" class="news-img-ss"></a>
                                 </div>
                                 <div class="col-md-8">

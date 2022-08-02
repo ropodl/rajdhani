@@ -81,8 +81,11 @@
                                             @foreach($latestNews as $lnews)
                                                 <li>
                                                     <div class="media">
+                                                    <a
+                                                                    href="{{route('frontend.news.detail', $lnews)}}">
                                                         <img class="mr-3" src="{{$lnews->image}}"
                                                              alt="image">
+    </a>
                                                         <div class="media-body align-self-center">
                                                             <h5 class="mt-0"><a
                                                                     href="{{route('frontend.news.detail', $lnews)}}">{{$lnews->title}}</a>
@@ -102,10 +105,14 @@
                                                 @foreach($trendingNews as $tnews)
                                                     <li>
                                                         <div class="media">
-                                                            <img class="mr-3" src="{{$tnews->image}}"
+                                                        <a
+                                                                        href="{{route('frontend.news.detail', $tnews)}}">
+                                                            <img loading="lazy" class="mr-3" src="{{$tnews->image}}"
                                                                  alt="image">
+    </a>
                                                             <div class="media-body align-self-center">
-                                                                <h5 class="mt-0"><a
+                                                                <h5 class="mt-0">
+                                                                    <a
                                                                         href="{{route('frontend.news.detail', $tnews)}}">{{$tnews->title}}</a>
                                                                 </h5>
                                                             </div>
