@@ -31,9 +31,10 @@ class NewsController extends Controller
     public function newsDetail(News $news){
         $latestNews = News::isActive()->take(6)->get();
         $trendingNews = News::isTrending()->take(6)->get();
+        $relatedNews = News::latest()->limit(4)->where('category_id', $news->category_id)->get();
         // $news = News::isActive()->whereSlug($slug)->firstOrFail();
         $news->load(['relatedNews','media']);
-        return view('frontend.news_detail', compact('news', 'latestNews', 'trendingNews'));
+        return view('frontend.news_detail', compact('news', 'latestNews', 'trendingNews','relatedNews'));
     }
 
     public function oldSlugUrlRedirectToNews($slug){

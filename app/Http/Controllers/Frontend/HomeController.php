@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Group;
 use App\Models\News;
 use App\Models\Province;
+use App\Models\VideoIframe;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,7 @@ class HomeController extends Controller
         $categoryWiseNews = Category::has('news','>=', 4)->where('show_on_homepage', 1)->with('news')->orderBy('sort','asc')->get();
         $provinceWiseNews = News::has('province')->isActive()->limit(8)->get();
         $provinces = Province::get();
-
+        $videos = VideoIframe::limit(8)->orderBy('sort','asc')->get();
         // $newsCategoryNews = Category::has('news')->where('under_news', 1)->with(['news' => function($query){
         //     $query->latest();
         // }],'news.media')->get()->pluck('news')->collapse()->take(8);
@@ -26,6 +27,6 @@ class HomeController extends Controller
             $query->underNews();
             $query->isActive();
         })->isActive()->get();
-        return view('frontend.index', compact('latestNews','categoryWiseNews', 'trendingNews', 'mainNews','provinces','provinceWiseNews','newsCategoryNews'));
+        return view('frontend.index', compact('latestNews','categoryWiseNews', 'trendingNews', 'mainNews','provinces','provinceWiseNews','newsCategoryNews','videos'));
     }
 }

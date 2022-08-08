@@ -176,15 +176,15 @@
                         @endif
                     </div> -->
                     <div class="row">
-                        @forelse($news->relatedNews as $related)
+                        @forelse($relatedNews as $related)
                             <div class="col-md-3 mb-3">
                                 <div class="news-main">
-                                    <a href="{{route('frontend.news.detail', $related->news)}}"><img
-                                            src="{{ $related->news->image  }}"
+                                    <a href="{{route('frontend.news.detail', $related)}}"><img
+                                            src="{{ $related->image  }}"
                                             alt="" class="news-img-ss"></a>
-                                    <a href="{{route('frontend.news.detail', $related->news)}}"
+                                    <a href="{{route('frontend.news.detail', $related)}}"
                                        class="news-title">
-                                        <h6>{{$related->news->title}}</h6>
+                                        <h6>{{$related->title}}</h6>
                                     </a>
                                 </div>
                             </div>

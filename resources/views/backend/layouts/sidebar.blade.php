@@ -87,6 +87,10 @@
                 <i class="material-icons">note_add</i>
                 <span>Social Media Links</span>
               </a>
+              <a class="nav-link p-2 pl-5" href="{{route('video_iframe.index')}}">
+                <i class="material-icons">note_add</i>
+                <span>Video Iframe Links</span>
+              </a>
 {{--              <a class="nav-link p-2 pl-5" href="#">--}}
 {{--                <i class="material-icons">note_add</i>--}}
 {{--                <span>Requested Contacts</span>--}}

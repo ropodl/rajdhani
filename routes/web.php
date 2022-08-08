@@ -39,6 +39,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Backend', 'middleware' => 'au
 
     Route::resource('site-setting', 'SiteSettingController');
     Route::resource('social_media_link', 'SocialMediaLinkController');
+    Route::resource('video_iframe', 'VideoIframeController');
 
     Route::resource('category', 'CategoryController');
 

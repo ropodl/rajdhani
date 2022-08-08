@@ -515,46 +515,17 @@
                         <a href="#" class="head">भिडियो</a>
                     </div>
                     <div class="video-slider owl-carousel owl-theme" id="slider">
+                        @foreach($videos as $video)
                         <div class="item">
                             <div class="video">
-                                <iframe width="100%" height="300" src="https://www.youtube.com/embed/M4fJtHKtXEQ"
+                                <iframe width="100%" height="300" src="{{$video->iframe}}"
                                         frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen></iframe>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="video">
-                                <iframe width="100%" height="300" src="https://www.youtube.com/embed/D0UnqGm_miA"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="video">
-                                <iframe width="100%" height="300" src="https://www.youtube.com/watch?v=M4fJtHKtXEQ"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="video">
-                                <iframe width="100%" height="300" src="https://www.youtube.com/embed/D0UnqGm_miA"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="video">
-                                <iframe width="100%" height="300" src="https://www.youtube.com/embed/D0UnqGm_miA"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
-                            </div>
-                        </div>
+                        @endforeach
+                        @endnforeach
                     </div>
                 </div>
                 <div class="col-md-3">
