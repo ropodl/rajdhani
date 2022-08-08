@@ -506,6 +506,40 @@
     @endif
     <!-- End of News Category News -->
 
+    
+    <!-- image new section -->
+    <section class="image-section-wrapper">
+        <div class="bg-dark">
+            <div class="container">
+                <div class="row py-5 image-section">
+                    <div class="col-12">
+                        <div class="category-title">
+            <span>
+                <a href="#">
+                    फोटो फिचर
+                </a>
+            </span>
+        </div>
+                    </div>
+                    @foreach($latestNews->take(4) as $news)
+                    <div class="col-12 col-md-3 pb-2">
+                        <a class="image-section-item" href="{{route('frontend.news.detail', $news)}}">
+                            <img loading="lazy" src="{{$news->image}}" alt="{{$news->title}}">
+                            <div class="overlay">
+                                <div class="news-content">
+                                    <h3>
+                                        {{$news->title}}
+                                    </h3>
+                                </div>
+                            </div>
+                                    </a>
+                                </div>
+                                @endforeach
+                            </div>
+            </div>
+        </div>
+    </section>
+
 
     <section class="video-section mt-4">
         <div class="container">
@@ -542,36 +576,4 @@
             </div>
         </div>
     </section> 
-    <!-- image new section -->
-    <!-- <section class="image-section-wrapper">
-        <div class="bg-dark">
-            <div class="container">
-                <div class="row py-5 image-section">
-                    <div class="col-12">
-                        <div class="category-title">
-            <span>
-                <a href="#">
-                Image News
-                </a>
-            </span>
-        </div>
-                    </div>
-                    @foreach($newsCategoryNews as $news)
-                    <div class="col-12 col-md-3 pb-2">
-                        <a class="image-section-item" href="{{route('frontend.news.detail', $provinceWiseNews[0])}}">
-                            <img loading="lazy" src="{{$provinceWiseNews[0]->image}}" alt="{{$news->title}}">
-                            <div class="overlay">
-                                <div class="news-content">
-                                    <h3>
-                                        {{$news->title}}
-                                    </h3>
-                                </div>
-                            </div>
-                                    </a>
-                                </div>
-                                @endforeach
-                            </div>
-            </div>
-        </div>
-    </section> -->
 @endsection
