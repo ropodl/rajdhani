@@ -86,7 +86,7 @@
                             </li>
                             <li><a href="{{$media->instagram_link}}" target="_blank"><i class="fa fa-instagram"></i>
                                     Instagram</a></li>
-                            <li><a href="{{$media->youtube_link}}" target="_blank"><i class="fa fa-youtube"></i> Youtube</a>
+                            <li><a href="{{$media->youtube_link}}" target="_blank"><i class="fa fa-youtube-play"></i> Youtube</a>
                             </li>
                             <li><a href="{{$media->twitter_link}}" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
                             </li>
