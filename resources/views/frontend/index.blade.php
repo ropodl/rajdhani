@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
                                 <a href="{{ route('frontend.news.detail', $mNews)}}" rel="noopener noreferrer">
-                                    <img loading="lazy" src="{{$mNews->image}}" class="w-100" alt="">
+                                    <img loading="lazy" src="{{$mNews->image}}" class="w-100" alt="{{$mNews->title}}">
                                 </a>
                                 <p>{!! str_limit(strip_tags($mNews->description,''), 500 ,'...') !!}</p>
                             </div>
@@ -61,7 +61,7 @@
                             <div class="col-md-7">
                                 <div class="single-main-news">
                                     <a href="{{ route('frontend.news.detail', $firstNews ) }}">
-                                        <img loading="lazy" src="{{$firstNews->image}}" alt="image">
+                                        <img loading="lazy" src="{{$firstNews->image}}" alt="{{$firstNews->title}}">
                                     </a>
                                     <div class="news-content">
                                         <h3>
@@ -79,7 +79,7 @@
                                                 <li>
                                                     <div class="media">
                                                     <a href="{{  route('frontend.news.detail', $news ) }}">
-                                                        <img loading="lazy" class="mr-3" src="{{$news->image}}" alt="">
+                                                        <img loading="lazy" class="mr-3" src="{{$news->image}}" alt="{{$news->title}}">
                                                     </a>
                                                         <div class="media-body align-self-center">
                                                             <h5 class="mt-0">
@@ -152,7 +152,7 @@
                                         <a href="{{route('frontend.news.detail', $categoryWiseNews[0]->news[0])}}">
                                             <img loading="lazy"
                                                  src="{{$categoryWiseNews[0]->news[0]->image}}"
-                                                 alt="image">
+                                                 alt="{{$categoryWiseNews[0]->news[0]->title}}">
                                         </a>
                                     </div>
                                     <div class="popular-news-content">
@@ -173,7 +173,7 @@
                                                     <div class="media">
                                                     <a href="{{route('frontend.news.detail', $news)}}">
                                                                     <img loading="lazy" class="mr-3" src="{{$news->small_image}}"
-                                                                    alt="image">
+                                                                    alt="{{$news->title}}">
                                                                     <div class="media-body align-self-center">
                                                                         <h5 class="mt-0">
                                                                             {{$news->title}}
@@ -212,7 +212,7 @@
                                                     <div class="media">
                                                     <a href="{{route('frontend.news.detail', $news)}}">
                                                         <img loading="lazy" class="mr-3" src="{{$news->image}}"
-                                                             alt="image">
+                                                             alt="{{$news->title}}">
                                                             </a>
                                                         <div class="media-body align-self-center">
                                                             <h5 class="mt-0">
@@ -237,7 +237,7 @@
                                                         <div class="media">
                                                         <a href="{{route('frontend.news.detail', $news)}}">
                                                             <img loading="lazy" class="mr-3" src="{{$news->image}}"
-                                                                 alt="image">
+                                                                 alt="{{$news->title}}">
                                                                 </a>
                                                             <div class="media-body align-self-center">
                                                                 <h5 class="mt-0">
@@ -288,7 +288,7 @@
                             <div class="most-popular-news">
                                 <div class="popular-news-image">
                                     <a href="{{ route('frontend.news.detail', $news) }}">
-                                        <img loading="lazy" src="{{ $news->image }}" alt="image">
+                                        <img loading="lazy" src="{{ $news->image }}" alt="{{$news->title}}">
                                     </a>
                                 </div>
                                 <div class="popular-news-content">
@@ -356,7 +356,7 @@
                             <div class="col-lg-8 col-md-12 col-sm-12">
                                 <div class="single-main-news">
                                     <a href="{{route('frontend.news.detail', $provinceWiseNews[0])}}">
-                                        <img loading="lazy" src="{{$provinceWiseNews[0]->image}}" alt="image">
+                                        <img loading="lazy" src="{{$provinceWiseNews[0]->image}}" alt="{{$provinceWiseNews[0]->title}}">
                                     </a>
                                     <div class="news-content">
                                         <h3>
@@ -373,7 +373,7 @@
                                                 <li>
                                                     <div class="media">
                                                     <a href="{{ route('frontend.news.detail', $news )}}">
-                                                        <img loading="lazy" class="mr-3" src="{{$news->small_image}}" alt="">
+                                                        <img loading="lazy" class="mr-3" src="{{$news->small_image}}" alt="{{$news->title}}">
                                                     </a>
                                                         <div class="media-body align-self-center">
                                                             <h5 class="mt-0">
@@ -435,7 +435,7 @@
                             <div class="most-popular-news">
                                 <div class="popular-news-image">
                                     <a href="{{ route('frontend.news.detail', $news) }}">
-                                        <img loading="lazy" src="{{ $news->image }}" alt="image">
+                                        <img loading="lazy" src="{{ $news->image }}" alt="{{$news->title}}">
                                     </a>
                                 </div>
                                 <div class="popular-news-content">
@@ -484,7 +484,7 @@
                             <div class="most-popular-news">
                                 <div class="popular-news-image">
                                     <a href="{{ route('frontend.news.detail', $news) }}">
-                                        <img loading="lazy" src="{{ $news->image }}" alt="image">
+                                        <img loading="lazy" src="{{ $news->image }}" alt="{{$news->title}}">
                                     </a>
                                 </div>
                                 <div class="popular-news-content">
@@ -525,7 +525,6 @@
                             </div>
                         </div>
                         @endforeach
-                        @endnforeach
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -543,4 +542,36 @@
             </div>
         </div>
     </section> 
+    <!-- image new section -->
+    <!-- <section class="image-section-wrapper">
+        <div class="bg-dark">
+            <div class="container">
+                <div class="row py-5 image-section">
+                    <div class="col-12">
+                        <div class="category-title">
+            <span>
+                <a href="#">
+                Image News
+                </a>
+            </span>
+        </div>
+                    </div>
+                    @foreach($newsCategoryNews as $news)
+                    <div class="col-12 col-md-3 pb-2">
+                        <a class="image-section-item" href="{{route('frontend.news.detail', $provinceWiseNews[0])}}">
+                            <img loading="lazy" src="{{$provinceWiseNews[0]->image}}" alt="{{$news->title}}">
+                            <div class="overlay">
+                                <div class="news-content">
+                                    <h3>
+                                        {{$news->title}}
+                                    </h3>
+                                </div>
+                            </div>
+                                    </a>
+                                </div>
+                                @endforeach
+                            </div>
+            </div>
+        </div>
+    </section> -->
 @endsection

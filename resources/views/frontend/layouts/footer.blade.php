@@ -73,30 +73,30 @@
     </div>
         <div class="copyright">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="text-white mt-3">
-                        <p class="text-sm-center text-md-left">
+                <div class="col-12">
+                    <div class="text-white text-center mt-3">
+                        <p class="text-center">
                             Copyright &copy;
                             <script>document.write(new Date().getFullYear())</script>
                             {{$siteSetting->name}}
                         </p>
+                        <div class="footer-list-news mt-3">
+                            <ul class="text-center">
+                            <li><a href="{{$media->facebook_link}}" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+                            </li>
+                            <li><a href="{{$media->instagram_link}}" target="_blank"><i class="fa fa-instagram"></i>
+                                    Instagram</a></li>
+                            <li><a href="{{$media->youtube_link}}" target="_blank"><i class="fa fa-youtube"></i> Youtube</a>
+                            </li>
+                            <li><a href="{{$media->twitter_link}}" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+                            </li>
+                            <li><a href="{{$media->linkedin_link}}" target="_blank"><i class="fa fa-linkedin"></i> Linkedin</a>
+                            </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="footer-list-news mt-3">
-                        <ul>
-                        <li><a href="{{$media->facebook_link}}" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
-                        </li>
-                        <li><a href="{{$media->instagram_link}}" target="_blank"><i class="fa fa-instagram"></i>
-                                Instagram</a></li>
-                        <li><a href="{{$media->youtube_link}}" target="_blank"><i class="fa fa-youtube"></i> Youtube</a>
-                        </li>
-                        <li><a href="{{$media->twitter_link}}" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
-                        </li>
-                        <li><a href="{{$media->linkedin_link}}" target="_blank"><i class="fa fa-linkedin"></i> Linkedin</a>
-                        </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
