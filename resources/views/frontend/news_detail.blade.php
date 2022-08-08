@@ -159,12 +159,22 @@
                     </div>
                 </div>
                 <div class="rajniti pt-3 pb-3">
-                    <div class="section-title d-flex justify-content-between mt-4">
+                    <div class="category-title">
+                        <span>
+                            <a>
+                            सम्बन्धित खबर
+                            </a>
+                        </span>
+                        @if(!$news->relatedNews->isEmpty())
+                        <a>सबै</a>
+                    @endif
+                    </div>
+                    <!-- <div class="section-title d-flex justify-content-between mt-4">
                         <a href="#" class="head">सम्बन्धित खबर</a>
                         @if(!$news->relatedNews->isEmpty())
                             <a href="#" class="all">सबै</a>
                         @endif
-                    </div>
+                    </div> -->
                     <div class="row">
                         @forelse($news->relatedNews as $related)
                             <div class="col-md-3 mb-3">

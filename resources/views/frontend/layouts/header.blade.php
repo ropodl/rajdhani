@@ -9,21 +9,11 @@
         <div class="row">
             <div class="col-md-6">
                 <ul class="social-links">
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-youtube-play"></i>
-                        </a>
-                    </li>
+                        <li><a href="{{$media->facebook_link}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="{{$media->instagram_link}}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="{{$media->youtube_link}}" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+                        <li><a href="{{$media->twitter_link}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="{{$media->linkedin_link}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                 </ul>
             </div>
             <div class="col-sm-hidden col-md-6">
@@ -41,7 +31,7 @@
 <!-- middle logo section -->
     <section class="sc-logo">
         <div class="container">
-            <div class="row">
+            <div class="row my-2">
                 <div class="col-md-4">
                     <a href="{{route('frontend.index')}}"><img class="logo-image"
                             src="{{ $siteSetting->logo_with_text }}"
@@ -52,7 +42,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-8">
-                    <div class="d-flex justify-content-center align-items-center h-100 pb-2">
+                    <div class="d-flex justify-content-center align-items-center h-100">
                         @if($headerAds)
                         <a class="info-image" href="{{ $headerAds->advertisement->url }}">
                             <img class="img-fluid" src="{{ $headerAds->advertisement->image }}" alt="" srcset="">
