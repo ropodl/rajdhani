@@ -14,7 +14,6 @@
         <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-KRSHM8QWGN');</script>
         <!-- End of Google Analytics -->
         <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
-        <script src="{{asset ('frontend/library/jquery.min.js')}}"></script>
    </head>
    <body>
        <!-- {{-- @dd($popUpAdv) --}} -->
@@ -28,7 +27,8 @@
        <div class="go-to-top">
         <i class="fa fa-arrow-up"></i>
        </div>
-   </body>
-    @include('frontend.scripts.js')
-    @yield('js')
+       @include('frontend.scripts.js')
+       @yield('js')
+       @stack('inlinejs')
+    </body>
 </html>

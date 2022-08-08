@@ -577,3 +577,22 @@
         </div>
     </section> 
 @endsection
+@push('inlinejs')
+<script>
+    $('.video-slider').owlCarousel({
+            loop: false,
+            margin: 10,
+            nav: true,
+            navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+            items: 4,
+            responsive: {
+            0: {
+            items: 1
+            },
+            1000: {
+            items: 3
+            }
+            }
+    });
+</script>
+@endpush
