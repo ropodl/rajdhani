@@ -35,7 +35,10 @@ class AppServiceProvider extends ServiceProvider
         view()->composer(['frontend/layouts/header'], function($view){
             $headerAds = AdvertisementPageLayout::orderBy('order', 'asc')->with(['advertisement', 'advertisement.advertisementLayout'])->whereHas('layoutPages', function($query){
                     $query->where('code','header_section');
-            })->get()->groupBy('advertisement.advertisementLayout.code');
+            })->whereHas('advertisement.advertisementLayout', function($query){
+                $query->where('code', 'l_ad');
+            })->first();
+            // dd($headerAds);
             $provinces = Province::get();
             $headerCats = Category::isActive()->displayOnMenu()->limit(11)->orderBy('sort','asc')->get()->sortBy('sort');
             $underCats = Category::isActive()->underNews()->orderBy('sort','asc')->limit(10)->get();

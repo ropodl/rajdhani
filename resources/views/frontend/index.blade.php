@@ -456,7 +456,7 @@
     <!-- End of News Category News -->
 
 
-    {{-- <section class="video-section mt-4">
+    <section class="video-section mt-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
@@ -520,5 +520,5 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section> 
 @endsection
