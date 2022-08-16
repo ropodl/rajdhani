@@ -115,11 +115,33 @@
                     </ul>
                 </li>
                 @foreach($headerCats as $category)
-                @if($category->sort > 0)
+                @if($category->sort < 6)
                     <li>
                         <a href="{{ route('frontend.category_news' , $category->slug)}}">{{$category->name}}</a>
                     </li>
                 @endif
+
+                
+                @endforeach
+                <li>
+                    <a href="#">अर्थ</a>
+                    <ul class="nav-dropdown">
+                        @foreach($underCats as $cat)
+                        <li>
+                            <a href="{{route('frontend.province_news', $cat->slug )}}">{{$cat->name}}</a>
+                        </li>
+                        @endforeach
+                    </ul>
+                </li>
+                
+                @foreach($headerCats as $category)
+                @if($category->sort > 5 )
+                    <li>
+                        <a href="{{ route('frontend.category_news' , $category->slug)}}">{{$category->name}}</a>
+                    </li>
+                @endif
+
+                
                 @endforeach
             </ul>
         </div>

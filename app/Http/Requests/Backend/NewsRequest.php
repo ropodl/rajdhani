@@ -24,11 +24,12 @@ class NewsRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'news_image' => 'required|file|image:png,jpeg,jpg,gif',
+            'news_image' => 'nullable|file|image:png,jpeg,jpg,gif',
             'category_id' => 'required',
             'title' => 'required',
             'slug' => 'required',
             'province_id' => 'nullable',
+            'author' => 'nullable'
         ];
         if($this->method() == 'PATCH' || $this->method() == 'PUT'){
             $rules['news_image'] = 'nullable|file|image:png, jpeg,jpg,gif';

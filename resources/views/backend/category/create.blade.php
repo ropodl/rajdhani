@@ -129,7 +129,7 @@
                                         <input type="hidden" name="under_news" value="0">
                                         <input type="checkbox" class="custom-control-input" id="under_news" name="under_news"
                                                value="1" {{ (isset($category) && $category->under_news == 1) || old('under_news') ? 'checked' : ''}}>
-                                        <label class="custom-control-label" for="under_news">Display under News Category</label>
+                                        <label class="custom-control-label" for="under_news">Display under Finance Category</label>
                                     </div>
                                 </span>
                             </li>

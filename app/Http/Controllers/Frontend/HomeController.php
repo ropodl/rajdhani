@@ -13,6 +13,7 @@ class HomeController extends Controller
 {
     public function index(){
         $mainNews = News::isMainNews()->get();
+        $photoFeatures = News::isPhotoFeatures()->get();
         $latestNews = News::isActive()->isNotMainNews()->latest()->limit(5)->get();
         // return $latestNews;
         $trendingNews = News::isTrending()->isActive()->latest()->take(6)->get();
@@ -27,6 +28,6 @@ class HomeController extends Controller
             $query->underNews();
             $query->isActive();
         })->isActive()->get();
-        return view('frontend.index', compact('latestNews','categoryWiseNews', 'trendingNews', 'mainNews','provinces','provinceWiseNews','newsCategoryNews','videos'));
+        return view('frontend.index', compact('latestNews','categoryWiseNews', 'trendingNews', 'mainNews','provinces','provinceWiseNews','newsCategoryNews','photoFeatures','videos'));
     }
 }

@@ -19,6 +19,8 @@
     ])
     @endcomponent()
 @endsection
+<!-- @section('styles') -->
+<!-- @endsection -->
 @section('content')
     @if(!empty($news))
         <section class="home-news mt-3">
@@ -30,7 +32,10 @@
                             <div class="banner-image">
                                 <img src="{{$news->image}}" alt="">
                                 <h6 class="news-detail-title"> {{$news->title}}</h6>
-                                <small class="mb-3">{{ nepalidate($news->created_at)  }}</small>
+                                <small class="mb-3">{{ nepalidate($news->created_at)  }}</small><br>
+                                @if(!empty($news->author))
+                                <small class="mb-3">{{ $news->author  }}</small>
+                                @endif
                             </div>
                             <div class="sharethis-inline-share-buttons mb-3 mt-3"></div>
 
@@ -203,4 +208,10 @@
             </div>
         </section>
     @endif
-@endsection
+
+    <style>
+    .tab-general{
+        display:none;
+    }
+</style>
+    @endsection

@@ -15,15 +15,10 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="{{asset('styles/shards-dashboards.1.1.0.min.css')}}">
     <link rel="stylesheet" href="{{asset('styles/extras.1.1.0.min.css')}}">
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css"> --}}
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="{{asset('packages/tinymce/tinymce.min.js')}}"></script>
-    <script src="{{asset('js/tinymce-view.js')}}"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css"> --}}
     @yield('styles')
+
     <style>
         .wordwrap {
             overflow-wrap: break-word;
@@ -101,7 +96,7 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Main Sidebar -->
-    @extends('backend.layouts.sidebar')
+    @include('backend.layouts.sidebar')
     <!-- End Main Sidebar -->
         <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
             <div class="main-navbar sticky-top bg-white">
@@ -158,6 +153,41 @@
         </main>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="{{asset('packages/tinymce/tinymce.min.js')}}"></script>
+<script src="{{asset('js/tinymce-view.js')}}"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+<script src="{{asset('scripts/extras.1.1.0.min.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script type="text/javascript">
+  // $(function($) {
+    // });
+  $(document).ready(function() {
+    let url = '{{url()->current()}}';
+    $('.nav-item a').removeClass('active');
+    
+    $('.nav-item a').each(function() {
+      if (this.href === url) {
+        $(this).addClass('active');
+        // if($(this).parents('.has-child').length > 0){
+          $(this).parents('.collapse').addClass('show');
+        // }
+      }
+    });
+    setTimeout(function() {
+      $('.alert .close').click()
+    }, 3000);
+    $('#aboutus-table').DataTable();
+  });
+</script>
+@stack('js')
+
 </body>
 
 </html>

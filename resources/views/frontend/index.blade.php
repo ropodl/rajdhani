@@ -36,7 +36,9 @@
                                     </div>
                                 </div>
                                 <a href="{{ route('frontend.news.detail', $mNews)}}" rel="noopener noreferrer">
+                                    @if(!empty($mNews->image))
                                     <img loading="lazy" src="{{$mNews->image}}" class="w-100" alt="{{$mNews->title}}">
+                                    @endif
                                 </a>
                                 <p>{!! str_limit(strip_tags($mNews->description,''), 500 ,'...') !!}</p>
                             </div>
@@ -459,51 +461,7 @@
     @endif
 
     <!-- News Category News -->
-    @if(!$newsCategoryNews->isEmpty())
-    <section class="popular-section mt-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- <div class="section-title d-flex justify-content-between">
-                        <a href="#" class="head">अन्य समाचार</a>
-                        <a href="#" class="all">सबै</a>
-                    </div> -->
-                    <div class="category-title">
-        <span>
-            <a href="#">
-            अन्य समाचार
-            </a>
-        </span>
-        <a href="#">
-        सबै
-        </a>
-    </div>
-                    <div class="row">
-                        @foreach($newsCategoryNews as $news)
-                        <div class="col-md-3">
-                            <div class="most-popular-news">
-                                <div class="popular-news-image">
-                                    <a href="{{ route('frontend.news.detail', $news) }}">
-                                        <img loading="lazy" src="{{ $news->image }}" alt="{{$news->title}}">
-                                    </a>
-                                </div>
-                                <div class="popular-news-content">
-                                    <h3>
-                                    <a href="{{ route('frontend.news.detail', $news) }}">{{$news->title}}</a>
-                                    </h3>
-                                    {{-- <span><a href="{{ route('frontend.news.detail', $news->slug) }}" class="read-more">Read More  <i class="fa fa-angle-double-right"></i></a></span> --}}
-                                </div>
-                            </div>
-
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    @endif
+    
     <!-- End of News Category News -->
 
     
@@ -521,7 +479,7 @@
             </span>
         </div>
                     </div>
-                    @foreach($latestNews->take(4) as $news)
+                    @foreach($photoFeatures as $news)
                     <div class="col-12 col-md-3 pb-2">
                         <a class="image-section-item" href="{{route('frontend.news.detail', $news)}}">
                             <img loading="lazy" src="{{$news->image}}" alt="{{$news->title}}">

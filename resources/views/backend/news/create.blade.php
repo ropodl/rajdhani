@@ -1,5 +1,6 @@
 @extends('backend.layouts.app')
 @section('content')
+<!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
     <!-- Page Header -->
     <div class="page-header row no-gutters py-4">
         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
@@ -21,7 +22,7 @@
                         <input type="hidden" name="news_image" value="{{ isset($news)?$news->news_image:'empty' }}" />
                         <div class="row col-md-12 mb-5">
                             <div class="col-md-4">
-                                <label>News Image<span class="required">*</span></label>
+                                <label>News Image</label>
                             </div>
                             <div class="col-md-7 card p-3">
                                 <img class="{{isset($news)?'d-block':'d-none'}} m-auto" id="news_image" src="{{isset($news) ? $news->media[0]->getFullUrl() :''}}" width="150px" height="150px"/>
@@ -36,7 +37,7 @@
                         <div class="col-md-12 col-sm-12 p-0 pl-3">
                             <label>Select Category <span class="required">*</span></label>
                             <div class="mt-2">
-                                <select class="form-control form-control-lg mb-3"  name="category_id" id="category_id">
+                                <select class="form-control form-control-lg mb-3 category"  name="category_id" id="category_id" multiple>
                                     <option value="">Select Category</option>
                                     @foreach($categories as $c)
                                         <option value="{{ $c->id }}" @isset($news)@if($c->id == $news->category->id) selected @endif @endisset>{{ $c->name }}</option>
@@ -59,7 +60,7 @@
                             @endif
                         </div>
 
-                        <div class="col-md-12 col-sm-12 p-0 pl-3">
+                        <!-- <div class="col-md-12 col-sm-12 p-0 pl-3">
                             <label>Slug <span class="required">*</span> </label>
                             <input class="form-control form-control-lg mb-3" id="slug" type="text" name="slug" value="{{old('slug')?old('slug'):(isset($news)?$news->slug:'')}}" placeholder="Your News Slug">
                             @if($errors->first('slug'))
@@ -67,7 +68,7 @@
                                     {{$errors->first('slug')}}
                                 </div>
                             @endif
-                        </div>
+                        </div> -->
                         <div class="col-md-12 col-sm-12 p-0 pl-3">
                             <label>Select Province</label>
                             <div class="mt-2">
@@ -94,6 +95,12 @@
                                 </div>
                             @endif
                         </div><br>
+                        
+                        <div class="col-md-12 col-sm-12 p-0 pl-3">
+                            <label>Author </label>
+                            <input class="form-control form-control-lg mb-3" id="author" type="text" name="author" value="{{old('author')?old('author'):(isset($news)?$news->author:'')}}" placeholder="Your News Author Name">
+                        </div>
+                        <br>
                         <div class="col-md-12 col-sm-12 p-0 pl-3">
                             <label>Related News</label>
                             <div>
@@ -160,6 +167,17 @@
                                 </span>
                             </li>
 
+                            <li class="list-group-item p-3">
+                                <span class="d-flex">
+                                    <div class="custom-control">
+                                        <input type="hidden" name="is_photo_feature" value="0">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch3" name="is_photo_feature"
+                                            value="1" {{ (isset($news) && $news->is_photo_feature == 1) || old('is_photo_feature') ? 'checked' : ''}}>
+                                        <label class="custom-control-label" for="customSwitch3">Is Photo Feature</label>
+                                    </div>
+                                </span>
+                            </li>
+
                             <li class="list-group-item d-flex px-3">
                                 <button type="submit" id="draft" class="btn btn-sm btn-outline-accent" name="status" value="draft">
                                     <i class="material-icons">save</i> Save Draft
@@ -175,7 +193,11 @@
             </div>
         </div>
     </form>
-    <script type="text/javascript">
+
+@endsection
+@push('js')
+<script type="text/javascript">
+        
         //Slug
         $("#title").keyup(function(){
             var Text = $(this).val();
@@ -191,34 +213,15 @@
         });
 
         $(document).ready(function() {
-            $('.js-example-basic-multiple').select2();
-        });
-
-        //category related news
-        $(document).ready(function () {
-            $('#category_id').change(function(){
-                category_id = $(this).val();
-                // console.log(category_id)
-                path="{{route('category.news')}}";
-                $.ajax({
-                    url: path,
-                    data: {_token: "{{ csrf_token()}}", 'cid' :category_id},
-                    method: 'post',
-                    datatype: 'text',
-                    success: function (response) {
-                        console.log(response);
-                        $('#related_news').empty();
-                        $('#related_news').append(response);
-
-                    }
-                });
-            });
-
-            //tags
+            $('.category').select2();
             $(".js-example-placeholder-multiple").select2({
                 tags:true
             });
+            
+            //tags
         });
 
     </script>
-@endsection
+    
+<!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
+@endpush

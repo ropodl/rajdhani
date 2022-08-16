@@ -50,7 +50,7 @@ class NewsController extends Controller
         $news->tags()->sync($request->tags);
         $news->syncRelatedNews();
 
-        if ($request->file('news_image')){
+        if ($request->hasFile('news_image')){
             $news->addMedia($request->file('news_image'))->toMediaCollection();
         }
         return redirect()->route('news.index')->withMsg('Your News has been successfully created.');
