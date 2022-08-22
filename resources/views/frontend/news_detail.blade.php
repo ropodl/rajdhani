@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@if(!empty($detailAdvs['xl_ad']) || !empty($detailAdvs['sm_ad']))
+@if (!empty($detailAdvs['xl_ad']) || !empty($detailAdvs['sm_ad']))
     @php
         $firstLAdv = $detailAdvs['xl_ad'][0]->advertisement ?? '';
         $secondLAdv = $detailAdvs['xl_ad'][1]->advertisement ?? '';
@@ -11,18 +11,19 @@
     @endphp
 @endif
 @section('meta')
-    @component('frontend.components.meta',[
-        'title' => $news->title,
-        'description' => strip_tags( $news->description ,''),
-        'image' => $news->image,
-        'url' => request()->url()
-    ])
+    @component('frontend.components.meta',
+        [
+            'title' => $news->title,
+            'description' => strip_tags($news->description, ''),
+            'image' => $news->image,
+            'url' => request()->url(),
+        ])
     @endcomponent()
 @endsection
-<!-- @section('styles') -->
-<!-- @endsection -->
+{{-- <!-- @section('styles') -->
+<!-- @endsection --> --}}
 @section('content')
-    @if(!empty($news))
+    @if (!empty($news))
         <section class="home-news mt-3">
             <div class="container">
                 <div class="row detail-row">
@@ -30,24 +31,28 @@
                         <div class="news-box px-md-3 px-2 py-md-4 bg-white mb-3">
                             <!-- <hr> -->
                             <div class="banner-image">
-                                <img src="{{$news->image}}" alt="">
-                                <h6 class="news-detail-title"> {{$news->title}}</h6>
-                                <small class="mb-3">{{ nepalidate($news->created_at)  }}</small><br>
-                                @if(!empty($news->author))
-                                <small class="mb-3">{{ $news->author  }}</small>
+                                <img src="{{ $news->image }}" alt="">
+                                <h6 class="news-detail-title"> {{ $news->title }}</h6>
+                                <small class="mb-3">{{ nepalidate($news->created_at) }}</small><br>
+                                @if (!empty($news->author))
+                                    <small class="mb-3">{{ $news->author }}</small>
                                 @endif
                             </div>
                             <div class="sharethis-inline-share-buttons mb-3 mt-3"></div>
 
                             <div class="news-short-detail-f">
-                                <?php $descriptions = explode('</p>',$news->description); $i=0?>
-                                @foreach($descriptions as $key => $paragraph)
-                                    @if($key %2 == 0 )
-                                    <?php $lgAd = $detailAdvs['xl_ad'][$i]->advertisement ?? ''; ?>
-                                    @if(!empty($lgAd))
-                                        @include('frontend.advertisement.l_ad', ['url' => $lgAd->url, 'image' => $lgAd->image])
-                                        @php $i++ ; @endphp
-                                    @endif
+                                <?php $descriptions = explode('</p>', $news->description);
+                                $i = 0; ?>
+                                @foreach ($descriptions as $key => $paragraph)
+                                    @if ($key % 2 == 0)
+                                        <?php $lgAd = $detailAdvs['xl_ad'][$i]->advertisement ?? ''; ?>
+                                        @if (!empty($lgAd))
+                                            @include('frontend.advertisement.l_ad', [
+                                                'url' => $lgAd->url,
+                                                'image' => $lgAd->image,
+                                            ])
+                                            @php $i++ ; @endphp
+                                        @endif
                                     @endif
                                     {!! $paragraph !!}</p>
                                 @endforeach
@@ -56,44 +61,45 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        @if(!empty($firstSmAdv))
+                        @if (!empty($firstSmAdv))
                             <div class=" bg-white news-taja">
-                                @include('frontend.advertisement.sm_ad', ['url' => $firstSmAdv->url, 'image' => $firstSmAdv->image])
+                                @include('frontend.advertisement.sm_ad', [
+                                    'url' => $firstSmAdv->url,
+                                    'image' => $firstSmAdv->image,
+                                ])
                             </div>
                         @endif
-                        {{--                    <div class=" bg-white p-md-3 p-2 news-taja mt-3">--}}
-                        {{--                        <img src="{{asset ('frontend/img/biswas/ad4.gif') }}" alt="" class="img-fluid">--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class=" bg-white p-md-3 p-2 news-taja mt-3">--}}
-                        {{--                        <img src="{{asset ('frontend/img/biswas/ad4.gif') }}" alt="" class="img-fluid">--}}
-                        {{--                    </div>--}}
+                        {{-- <div class=" bg-white p-md-3 p-2 news-taja mt-3"> --}}
+                        {{-- <img src="{{asset ('frontend/img/biswas/ad4.gif') }}" alt="" class="img-fluid"> --}}
+                        {{-- </div> --}}
+                        {{-- <div class=" bg-white p-md-3 p-2 news-taja mt-3"> --}}
+                        {{-- <img src="{{asset ('frontend/img/biswas/ad4.gif') }}" alt="" class="img-fluid"> --}}
+                        {{-- </div> --}}
                         <div class="tab-part mt-3">
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
-                                       role="tab" aria-controls="pills-home" aria-selected="true">ताजा </a>
+                                        role="tab" aria-controls="pills-home" aria-selected="true">ताजा </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
-                                       role="tab" aria-controls="pills-profile" aria-selected="false">लोकप्रिय</a>
+                                        role="tab" aria-controls="pills-profile" aria-selected="false">लोकप्रिय</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                                     aria-labelledby="pills-home-tab">
+                                    aria-labelledby="pills-home-tab">
                                     <div class="news-list-1 mt-4">
                                         <ul>
-                                            @foreach($latestNews as $lnews)
+                                            @foreach ($latestNews as $lnews)
                                                 <li>
                                                     <div class="media">
-                                                    <a
-                                                                    href="{{route('frontend.news.detail', $lnews)}}">
-                                                        <img class="mr-3" src="{{$lnews->image}}"
-                                                             alt="image">
-    </a>
+                                                        <a href="{{ route('frontend.news.detail', $lnews) }}">
+                                                            <img class="mr-3" src="{{ $lnews->image }}" alt="image">
+                                                        </a>
                                                         <div class="media-body align-self-center">
                                                             <h5 class="mt-0"><a
-                                                                    href="{{route('frontend.news.detail', $lnews)}}">{{$lnews->title}}</a>
+                                                                    href="{{ route('frontend.news.detail', $lnews) }}">{{ $lnews->title }}</a>
                                                             </h5>
                                                         </div>
                                                     </div>
@@ -102,23 +108,22 @@
                                         </ul>
                                     </div>
                                 </div>
-                                @if(!empty($trendingNews))
+                                @if (!empty($trendingNews))
                                     <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                         aria-labelledby="pills-profile-tab">
+                                        aria-labelledby="pills-profile-tab">
                                         <div class="news-list-1 mt-4">
                                             <ul>
-                                                @foreach($trendingNews as $tnews)
+                                                @foreach ($trendingNews as $tnews)
                                                     <li>
                                                         <div class="media">
-                                                        <a
-                                                                        href="{{route('frontend.news.detail', $tnews)}}">
-                                                            <img loading="lazy" class="mr-3" src="{{$tnews->image}}"
-                                                                 alt="image">
-    </a>
+                                                            <a href="{{ route('frontend.news.detail', $tnews) }}">
+                                                                <img loading="lazy" class="mr-3" src="{{ $tnews->image }}"
+                                                                    alt="image">
+                                                            </a>
                                                             <div class="media-body align-self-center">
                                                                 <h5 class="mt-0">
                                                                     <a
-                                                                        href="{{route('frontend.news.detail', $tnews)}}">{{$tnews->title}}</a>
+                                                                        href="{{ route('frontend.news.detail', $tnews) }}">{{ $tnews->title }}</a>
                                                                 </h5>
                                                             </div>
                                                         </div>
@@ -128,19 +133,28 @@
                                         </div>
                                     </div>
                                 @endif
-                                @if(!empty($secondSmAdv))
+                                @if (!empty($secondSmAdv))
                                     <div class=" bg-white p-md-3 p-2 news-taja">
-                                        @include('frontend.advertisement.sm_ad', ['url' => $secondSmAdv->url, 'image' => $secondSmAdv->image])
+                                        @include('frontend.advertisement.sm_ad', [
+                                            'url' => $secondSmAdv->url,
+                                            'image' => $secondSmAdv->image,
+                                        ])
                                     </div>
                                 @endif
-                                @if(!empty($thirdSmAdv))
+                                @if (!empty($thirdSmAdv))
                                     <div class=" bg-white p-md-3 p-2 news-taja">
-                                        @include('frontend.advertiseNo News Were Availablement.sm_ad', ['url' => $thirdSmAdv->url, 'image' => $thirdSmAdv->image])
+                                        @include('frontend.advertiseNo News Were Availablement.sm_ad', [
+                                            'url' => $thirdSmAdv->url,
+                                            'image' => $thirdSmAdv->image,
+                                        ])
                                     </div>
                                 @endif
-                                @if(!empty($fourthSmAdv))
+                                @if (!empty($fourthSmAdv))
                                     <div class=" bg-white p-md-3 p-2 news-taja">
-                                        @include('frontend.advertisement.sm_ad', ['url' => $fourthSmAdv->url, 'image' => $fourthSmAdv->image])
+                                        @include('frontend.advertisement.sm_ad', [
+                                            'url' => $fourthSmAdv->url,
+                                            'image' => $fourthSmAdv->image,
+                                        ])
                                     </div>
                                 @endif
                             </div>
@@ -149,54 +163,54 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                    <div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://https-rajdhanipress-com-1.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                        <div id="disqus_thread"></div>
+                        <script>
+                            /**
+                             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                            /*
+                            var disqus_config = function () {
+                            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                            };
+                            */
+                            (function() { // DON'T EDIT BELOW THIS LINE
+                                var d = document,
+                                    s = d.createElement('script');
+                                s.src = 'https://https-rajdhanipress-com-1.disqus.com/embed.js';
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                                powered by Disqus.</a></noscript>
                     </div>
                 </div>
                 <div class="rajniti pt-3 pb-3">
                     <div class="category-title">
                         <span>
                             <a>
-                            सम्बन्धित खबर
+                                सम्बन्धित खबर
                             </a>
                         </span>
-                        @if(!$news->relatedNews->isEmpty())
-                        <a>सबै</a>
-                    @endif
+                        @if (!$news->relatedNews->isEmpty())
+                            <a>सबै</a>
+                        @endif
                     </div>
                     <!-- <div class="section-title d-flex justify-content-between mt-4">
-                        <a href="#" class="head">सम्बन्धित खबर</a>
-                        @if(!$news->relatedNews->isEmpty())
-                            <a href="#" class="all">सबै</a>
-                        @endif
-                    </div> -->
+                            <a href="#" class="head">सम्बन्धित खबर</a>
+                            @if (!$news->relatedNews->isEmpty())
+    <a href="#" class="all">सबै</a>
+    @endif
+                        </div> -->
                     <div class="row">
                         @forelse($relatedNews as $related)
                             <div class="col-md-3 mb-3">
                                 <div class="news-main">
-                                    <a href="{{route('frontend.news.detail', $related)}}"><img
-                                            src="{{ $related->image  }}"
-                                            alt="" class="news-img-ss"></a>
-                                    <a href="{{route('frontend.news.detail', $related)}}"
-                                       class="news-title">
-                                        <h6>{{$related->title}}</h6>
+                                    <a href="{{ route('frontend.news.detail', $related) }}"><img
+                                            src="{{ $related->image }}" alt="" class="news-img-ss"></a>
+                                    <a href="{{ route('frontend.news.detail', $related) }}" class="news-title">
+                                        <h6>{{ $related->title }}</h6>
                                     </a>
                                 </div>
                             </div>
@@ -210,8 +224,8 @@
     @endif
 
     <style>
-    .tab-general{
-        display:none;
-    }
-</style>
-    @endsection
+        .tab-general {
+            display: none;
+        }
+    </style>
+@endsection
