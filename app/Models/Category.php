@@ -26,7 +26,7 @@ class Category extends Model implements HasMedia
         return $query->where('under_news', 1);
     }
     public function news(){
-        return $this->hasMany(News::class)->isActive()->latest();
+        return $this->belongsToMany(News::class,'news_categories','category_id','news_id')->isActive()->latest();
     }
 
     public function group(){

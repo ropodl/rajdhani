@@ -20,7 +20,7 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Title</th>
-                                <th>Category</th>
+                                <!-- <th>Category</th> -->
                                 <th>Main News</th>
                                 <th>Status</th>
                                 <th>Actions</th>
@@ -32,7 +32,6 @@
                                         <td class="font-weight-bold">{{ \Carbon\Carbon::parse($new->created_at)->format('Y M d H:i A')}}
                                         </td>
                                         <td>{{$new->title}}</td>
-                                        <td>{{$new->category->name}}</td>
                                         <td class="text-center">
                                             @if($new->is_main_news==1)
                                                 <span class="shadow-none badge badge-success">Yes</span>

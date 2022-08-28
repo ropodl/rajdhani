@@ -5,7 +5,14 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+use App\Models\News;
 
+Route::get('/migrate', function(){
+    $data = News::get();
+    collect($data)->each(function($news){
+        $news->categories()->sync([$news->category_id]);
+    });
+});
 Route::get('/', 'HomeController@index')->name('frontend.index');
 
 Route::get('/contactus', 'ContactController@index')->name('frontend.contactus');

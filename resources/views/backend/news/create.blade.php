@@ -19,7 +19,7 @@
                         @if(isset($news))
                             @method('PATCH')
                         @endif
-                        <input type="hidden" name="news_image" value="{{ isset($news)?$news->news_image:'empty' }}" />
+                        <input type="hidden" name="news_image" value="{{ isset($news)?$news->news_image:'' }}" />
                         <div class="row col-md-12 mb-5">
                             <div class="col-md-4">
                                 <label>News Image</label>
@@ -37,15 +37,15 @@
                         <div class="col-md-12 col-sm-12 p-0 pl-3">
                             <label>Select Category <span class="required">*</span></label>
                             <div class="mt-2">
-                                <select class="form-control form-control-lg mb-3 category"  name="category_id" id="category_id" multiple>
+                                <select class="form-control form-control-lg mb-3 category"  name="categories[]" id="category_id" multiple>
                                     <option value="">Select Category</option>
                                     @foreach($categories as $c)
                                         <option value="{{ $c->id }}" @isset($news)@if($c->id == $news->category->id) selected @endif @endisset>{{ $c->name }}</option>
                                     @endforeach
                                 </select>
-                                @if($errors->first('category_id'))
+                                @if($errors->first('categories'))
                                     <div class="text text-danger">
-                                        * {{$errors->first('category_id')}}
+                                        * {{$errors->first('categories')}}
                                     </div>
                                 @endif
                             </div>
@@ -196,23 +196,27 @@
 
 @endsection
 @push('js')
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
+
 <script type="text/javascript">
         
         //Slug
-        $("#title").keyup(function(){
-            var Text = $(this).val();
-            Text = Text.toLowerCase();
-            Text = Text.replace(/ /g,'-').replace(/[-]+/g, '-').replace(/,/g,'').replace(/[']+/g,'').replace(/["]+/g,'').replace(/[?]+/g,'');
-            $("#slug").val(Text);
-        });
-
-        //Image
-        $('#mediaFile').on('change',function(){
-            $('#news_image').removeClass('d-none').addClass('d-block');
-            $('#news_image').attr('src',window.URL.createObjectURL(this.files[0]));
-        });
-
+        
         $(document).ready(function() {
+            $("#title").keyup(function(){
+                var Text = $(this).val();
+                Text = Text.toLowerCase();
+                Text = Text.replace(/ /g,'-').replace(/[-]+/g, '-').replace(/,/g,'').replace(/[']+/g,'').replace(/["]+/g,'').replace(/[?]+/g,'');
+                $("#slug").val(Text);
+            });
+    
+            //Image
+            $('#mediaFile').on('change',function(){
+                $('#news_image').removeClass('d-none').addClass('d-block');
+                $('#news_image').attr('src',window.URL.createObjectURL(this.files[0]));
+            });
             $('.category').select2();
             $(".js-example-placeholder-multiple").select2({
                 tags:true
@@ -223,5 +227,4 @@
 
     </script>
     
-<!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
 @endpush
