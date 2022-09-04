@@ -40,7 +40,7 @@
                                 <select class="form-control form-control-lg mb-3 category"  name="categories[]" id="category_id" multiple>
                                     <option value="">Select Category</option>
                                     @foreach($categories as $c)
-                                        <option value="{{ $c->id }}" @isset($news)@if($c->id == $news->category->id) selected @endif @endisset>{{ $c->name }}</option>
+                                        <option value="{{ $c->id }}" @isset($news)@if($news->categories->where('id', $c->id)->first()) selected @endif @endisset>{{ $c->name }}</option>
                                     @endforeach
                                 </select>
                                 @if($errors->first('categories'))
