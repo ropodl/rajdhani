@@ -24,7 +24,7 @@ class HomeController extends Controller
         // $newsCategoryNews = Category::has('news')->where('under_news', 1)->with(['news' => function($query){
         //     $query->latest();
         // }],'news.media')->get()->pluck('news')->collapse()->take(8);
-        $newsCategoryNews = News::latest()->limit(8)->with('media')->whereHas('category', function($query){
+        $newsCategoryNews = News::latest()->limit(8)->with('media')->whereHas('categories', function($query){
             $query->underNews();
             $query->isActive();
         })->isActive()->get();

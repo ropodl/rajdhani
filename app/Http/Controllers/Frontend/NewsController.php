@@ -31,7 +31,10 @@ class NewsController extends Controller
     public function newsDetail(News $news){
         $latestNews = News::isActive()->take(6)->get();
         $trendingNews = News::isTrending()->take(6)->get();
-        $relatedNews = News::latest()->limit(8)->where('category_id', $news->category_id)->get();
+        $categories = $news->categories->plucK('id');
+        $relatedNews = News::latest()->limit(8)->whereHas('categories', function($query) use($categories){
+            $query->whereIn('category_id', $categories);
+        })->get();
         // $news = News::isActive()->whereSlug($slug)->firstOrFail();
         $news->load(['relatedNews','media']);
         return view('frontend.news_detail', compact('news', 'latestNews', 'trendingNews','relatedNews'));

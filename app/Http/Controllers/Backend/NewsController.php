@@ -47,11 +47,16 @@ class NewsController extends Controller
     public function store(NewsRequest $request)
     {
         $news = News::create($request->all());
-        $news->tags()->sync($request->tags);
+        if($request->has('tags')){
+            $news->tags()->sync($request->tags);
+        }
         $news->syncRelatedNews();
 
         if ($request->hasFile('news_image')){
             $news->addMedia($request->file('news_image'))->toMediaCollection();
+        }
+        if($request->has('categories')){
+            $news->categories()->sync($request->categories);
         }
         return redirect()->route('news.index')->withMsg('Your News has been successfully created.');
     }

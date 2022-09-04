@@ -115,7 +115,7 @@
                     </ul>
                 </li>
                 @foreach($headerCats as $category)
-                @if($category->sort < 6)
+                @if($category->sort < 6 && $category->sort != 0)
                     <li>
                         <a href="{{ route('frontend.category_news' , $category->slug)}}">{{$category->name}}</a>
                     </li>
