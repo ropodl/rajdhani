@@ -103,7 +103,6 @@ class NewsController extends Controller
         $news->update($request->all());
         $news->syncRelatedNews();
         if($request->has('categories')){
-            $news->categories()->delete();
             $news->categories()->sync($request->categories);
         }
 
