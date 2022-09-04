@@ -79,6 +79,10 @@ class News extends Model implements HasMedia
         return $this->belongsTo(Category::class);
     }
 
+    public function categories(){
+        return $this->hasMany(Category::class, 'news_categories');
+    }
+
     public function relatedNews()
     {
         return $this->hasMany(RelatedNews::class);

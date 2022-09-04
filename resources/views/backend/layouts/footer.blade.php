@@ -23,5 +23,4 @@
     <a href="{{url('/')}}" rel="nofollow">{{$config->name_en ?? ''}}</a>
   </span>
 </footer>
-<!-- <script src="{{asset('scripts/app/app-blog-overview.1.1.0.js')}}"></script> -->
 
