@@ -16,7 +16,7 @@ class HomeController extends Controller
         $photoFeatures = News::isPhotoFeatures()->get();
         $latestNews = News::isActive()->latest()->limit(5)->get();
         // return $latestNews;
-        $trendingNews = News::isTrending()->isActive()->latest()->take(6)->get();
+        $trendingNews = News::isTrending()->isActive()->take(6)->get();
         $categoryWiseNews = Category::has('news','>=', 4)->where('show_on_homepage', 1)->with('news')->orderBy('sort','asc')->get();
         $provinceWiseNews = News::has('province')->isActive()->limit(8)->get();
         $provinces = Province::get();
