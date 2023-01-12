@@ -20,7 +20,6 @@
                 <div class="d-flex">
                     <ul class="info-text">
                         <li>Email: Rajdhanipress1@gmail.com</li>
-                        <li>Phone No.: 01-444444,01-5555555 </li>
                     </ul>
                 </div>
             </div>
