@@ -58,7 +58,7 @@ class News extends Model implements HasMedia
     }
 
     public function scopeIsTrending($query){
-        return $query->where('is_main_news', 1)->latest();
+        return $query->where('is_main_news', 1)->orderBy('id', 'desc');
     }
     public function scopeIsMainNews($query){
         return $query->where('is_main_news', 1)->where('status', 1)->where('created_at','>=', Carbon::now()->subHours(12) )->take(3);
