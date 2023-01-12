@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function index(){
         $mainNews = News::isMainNews()->get();
         $photoFeatures = News::isPhotoFeatures()->get();
-        $latestNews = News::isActive()->isNotMainNews()->latest()->limit(5)->get();
+        $latestNews = News::isActive()->latest()->limit(5)->get();
         // return $latestNews;
         $trendingNews = News::isTrending()->isActive()->latest()->take(6)->get();
         $categoryWiseNews = Category::has('news','>=', 4)->where('show_on_homepage', 1)->with('news')->orderBy('sort','asc')->get();
