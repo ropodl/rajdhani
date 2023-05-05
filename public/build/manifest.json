@@ -1,0 +1,176 @@
+{
+  "VBtn.css": {
+    "file": "assets/VBtn-747fb7db.css",
+    "src": "VBtn.css"
+  },
+  "VImg.css": {
+    "file": "assets/VImg-3a095760.css",
+    "src": "VImg.css"
+  },
+  "VRow.css": {
+    "file": "assets/VRow-37f80755.css",
+    "src": "VRow.css"
+  },
+  "_VBtn-c1e6bc52.js": {
+    "css": [
+      "assets/VBtn-747fb7db.css"
+    ],
+    "file": "assets/VBtn-c1e6bc52.js",
+    "imports": [
+      "resources/js/app.js",
+      "_dimensions-bd87e5fb.js"
+    ]
+  },
+  "_VCol-3000576b.js": {
+    "file": "assets/VCol-3000576b.js",
+    "imports": [
+      "_VRow-2c32def9.js",
+      "resources/js/app.js"
+    ]
+  },
+  "_VImg-6a84bb45.js": {
+    "css": [
+      "assets/VImg-3a095760.css"
+    ],
+    "file": "assets/VImg-6a84bb45.js",
+    "imports": [
+      "resources/js/app.js",
+      "_dimensions-bd87e5fb.js"
+    ]
+  },
+  "_VRow-2c32def9.js": {
+    "css": [
+      "assets/VRow-37f80755.css"
+    ],
+    "file": "assets/VRow-2c32def9.js",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "_VSpacer-33729c67.js": {
+    "file": "assets/VSpacer-33729c67.js",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "__plugin-vue_export-helper-c27b6911.js": {
+    "file": "assets/_plugin-vue_export-helper-c27b6911.js"
+  },
+  "_dimensions-bd87e5fb.js": {
+    "file": "assets/dimensions-bd87e5fb.js",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "_webfontloader-523643f5.js": {
+    "file": "assets/webfontloader-523643f5.js",
+    "isDynamicEntry": true
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-93128a73.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "css": [
+      "assets/app-93128a73.css"
+    ],
+    "dynamicImports": [
+      "_webfontloader-523643f5.js",
+      "resources/js/components/layout/topbar.vue",
+      "resources/js/components/layout/midbar.vue",
+      "resources/js/components/layout/navbar.vue",
+      "resources/js/components/layout/bottombar.vue",
+      "resources/js/pages/search.vue",
+      "resources/js/pages/index.vue"
+    ],
+    "file": "assets/app-a2b621e1.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/js/components/layout/bottombar.vue": {
+    "file": "assets/bottombar-458726b7.js",
+    "imports": [
+      "resources/js/app.js",
+      "__plugin-vue_export-helper-c27b6911.js",
+      "_VRow-2c32def9.js",
+      "_VCol-3000576b.js",
+      "_VImg-6a84bb45.js",
+      "_dimensions-bd87e5fb.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/components/layout/bottombar.vue"
+  },
+  "resources/js/components/layout/midbar.vue": {
+    "file": "assets/midbar-19852b34.js",
+    "imports": [
+      "resources/js/app.js",
+      "_VRow-2c32def9.js",
+      "_VCol-3000576b.js",
+      "_VBtn-c1e6bc52.js",
+      "_VImg-6a84bb45.js",
+      "_dimensions-bd87e5fb.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/components/layout/midbar.vue"
+  },
+  "resources/js/components/layout/navbar.css": {
+    "file": "assets/navbar-5001dc07.css",
+    "src": "resources/js/components/layout/navbar.css"
+  },
+  "resources/js/components/layout/navbar.vue": {
+    "css": [
+      "assets/navbar-5001dc07.css"
+    ],
+    "file": "assets/navbar-4ed9708e.js",
+    "imports": [
+      "resources/js/app.js",
+      "_VBtn-c1e6bc52.js",
+      "_VImg-6a84bb45.js",
+      "_VRow-2c32def9.js",
+      "_dimensions-bd87e5fb.js",
+      "_VSpacer-33729c67.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/components/layout/navbar.vue"
+  },
+  "resources/js/components/layout/topbar.css": {
+    "file": "assets/topbar-71d41e37.css",
+    "src": "resources/js/components/layout/topbar.css"
+  },
+  "resources/js/components/layout/topbar.vue": {
+    "css": [
+      "assets/topbar-71d41e37.css"
+    ],
+    "file": "assets/topbar-83aa86df.js",
+    "imports": [
+      "resources/js/app.js",
+      "_VBtn-c1e6bc52.js",
+      "_VRow-2c32def9.js",
+      "_VCol-3000576b.js",
+      "_VSpacer-33729c67.js",
+      "_dimensions-bd87e5fb.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/components/layout/topbar.vue"
+  },
+  "resources/js/pages/index.vue": {
+    "file": "assets/index-36e0bbe2.js",
+    "imports": [
+      "resources/js/app.js",
+      "__plugin-vue_export-helper-c27b6911.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/pages/index.vue"
+  },
+  "resources/js/pages/search.vue": {
+    "file": "assets/search-e9b6c531.js",
+    "imports": [
+      "resources/js/app.js",
+      "__plugin-vue_export-helper-c27b6911.js",
+      "_VRow-2c32def9.js",
+      "_VCol-3000576b.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/pages/search.vue"
+  }
+}

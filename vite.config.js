@@ -1,29 +1,46 @@
 // Plugins
-import vue from "@vitejs/plugin-vue";
-import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
-
+import Vue from "@vitejs/plugin-vue";
+import laravel from "laravel-vite-plugin";
+import vuetify from "vite-plugin-vuetify";
 // Utilities
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 
-//optimize css some day
-
+import VueMacros from "unplugin-vue-macros/vite";
 // Vite Pwa
 import { VitePWA } from "vite-plugin-pwa";
 
-// https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
-        vue({
-            template: { transformAssetUrls },
+        laravel({
+            input: [
+                // frontend
+                "resources/sass/frontend.scss",
+                "resources/js/app.js",
+                // backend
+                // "resources/scss/backend.scss",
+                // "resources/js/backend/backend.js",
+                // inertia
+                // "resources/js/inertia/index.js",
+            ],
+            refresh: true,
         }),
-        // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
+        VueMacros({
+            plugins: {
+                vue: Vue({
+                    template: {
+                        transformAssetUrls: {
+                            base: null,
+                            includeAbsolute: false,
+                        },
+                    },
+                }),
+            },
+        }),
         vuetify({
+            treeshaking: true,
             autoImport: true,
         }),
-        // styles: {
-        //   configFile: "src/styles/settings.scss",
-        // },
         VitePWA({
             registerType: "autoUpdate",
             injectRegister: "auto",
@@ -56,6 +73,7 @@ export default defineConfig({
     resolve: {
         alias: {
             "@": fileURLToPath(new URL("./src", import.meta.url)),
+            vue: "vue/dist/vue.esm-bundler.js",
         },
         extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue"],
     },

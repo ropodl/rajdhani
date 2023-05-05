@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\Image\Manipulations;
-use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class News extends Model implements HasMedia
 {
-    use HasFactory, HasMediaTrait;
+    use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
         'category_id',
@@ -29,12 +29,12 @@ class News extends Model implements HasMedia
     ];
     protected $appends = ['image'];
 
-    public function registerMediaConversions(Media $media = null)
+    public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-              ->width(368)
-              ->height(232)
-              ->sharpen(10);
+            ->width(368)
+            ->height(232)
+            ->sharpen(10);
     }
 
     public function getImageAttribute($value)
@@ -53,21 +53,26 @@ class News extends Model implements HasMedia
         // Storage::buildTemporaryUrlsUsing()
     }
 
-    public function getFormatedPostDateAttribute(){
+    public function getFormatedPostDateAttribute()
+    {
         return $this->created_at->diffForHumans();
     }
 
-    public function scopeIsTrending($query){
+    public function scopeIsTrending($query)
+    {
         return $query->where('is_trending', 1)->orderBy('id', 'desc');
     }
-    public function scopeIsMainNews($query){
-        return $query->where('is_main_news', 1)->where('status', 1)->where('created_at','>=', Carbon::now()->subHours(12) )->take(3);
+    public function scopeIsMainNews($query)
+    {
+        return $query->where('is_main_news', 1)->where('status', 1)->where('created_at', '>=', Carbon::now()->subHours(12))->take(3);
     }
-    public function scopeIsPhotoFeatures($query){
+    public function scopeIsPhotoFeatures($query)
+    {
         return $query->where('is_photo_feature', 1)->where('status', 1)->take(8);
     }
-    public function scopeIsNotMainNews($query){
-        return $query->where('is_main_news', 1)->where('status', 1)->where('created_at','<',Carbon::now()->subHours(12));
+    public function scopeIsNotMainNews($query)
+    {
+        return $query->where('is_main_news', 1)->where('status', 1)->where('created_at', '<', Carbon::now()->subHours(12));
     }
 
     public function scopeIsActive($query)
@@ -75,7 +80,8 @@ class News extends Model implements HasMedia
         return $query->where('status', 1)->orderBy('id', 'desc');
     }
 
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 
@@ -103,7 +109,6 @@ class News extends Model implements HasMedia
             $this->RelatedNews()->delete();
             $this->RelatedNews()->saveMany($relatedIds);
         }
-
     }
 
     public function pluckRelatedNewsIds()

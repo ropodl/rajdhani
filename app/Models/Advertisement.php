@@ -6,21 +6,24 @@ use App\Http\Requests\Backend\AdvertisementPageLayoutRequest;
 use http\Env\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Advertisement extends Model implements HasMedia
 {
-    use HasFactory,  HasMediaTrait;
-    protected $fillable = ['title', 'url','advertisement_layout_id'];
+    use HasFactory,  InteractsWithMedia;
+    protected $fillable = ['title', 'url', 'advertisement_layout_id'];
 
     protected $appends = ['image'];
 
-    public function getImageAttribute($value){
+    public function getImageAttribute($value)
+    {
         return $this->hasMedia() ? $this->getMedia()[0]->getFullUrl() : '';
     }
 
-        public function advertisementLayout(){
+    public function advertisementLayout()
+    {
         return $this->belongsTo(AdvertisementLayout::class);
     }
 
@@ -31,7 +34,7 @@ class Advertisement extends Model implements HasMedia
 
     public function layoutPages()
     {
-        return $this->belongsToMany( LayoutPage::class,AdvertisementPageLayout::class,'advertisement_id','layout_page_id');
+        return $this->belongsToMany(LayoutPage::class, AdvertisementPageLayout::class, 'advertisement_id', 'layout_page_id');
     }
 
     public function syncAdvertisementPageLayout()
@@ -48,7 +51,6 @@ class Advertisement extends Model implements HasMedia
             $this->AdvertisementPageLayouts()->delete();
             $this->AdvertisementPageLayouts()->saveMany($advertisementPageLayoutIds);
         }
-
     }
 
     public function pluckAdvertisementLayoutPageIds()
@@ -59,5 +61,4 @@ class Advertisement extends Model implements HasMedia
         }
         return null;
     }
-
 }

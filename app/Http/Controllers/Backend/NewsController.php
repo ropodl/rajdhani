@@ -35,7 +35,7 @@ class NewsController extends Controller
         $categories = Category::isActive()->get();
         $provinces = Province::all();
         $newses = News::isActive()->get();
-        return view('backend.news.create', compact('tags','categories', 'newses', 'provinces'));
+        return view('backend.news.create', compact('tags', 'categories', 'newses', 'provinces'));
     }
 
     /**
@@ -50,8 +50,8 @@ class NewsController extends Controller
         $news->tags()->sync($request->tags);
         $news->syncRelatedNews();
 
-        if ($request->hasFile('news_image')){
-            $news->addMedia($request->file('news_image'))->toMediaCollection();
+        if ($request->hasFile('news_image')) {
+            $news->addMedia($request->file('news_image'))->withResponsiveImages()->toMediaCollection();
         }
         return redirect()->route('news.index')->withMsg('Your News has been successfully created.');
     }
@@ -77,9 +77,9 @@ class NewsController extends Controller
     {
         $tags = Tag::all();
         $newses = News::isActive()->whereNotIn('id', [$news->id])->where('category_id', $news->category_id)->get();
-         $provinces = Province::all();
+        $provinces = Province::all();
         $categories = Category::isActive()->get();
-        return view('backend.news.create', compact('tags','news', 'categories', 'newses', 'provinces'));
+        return view('backend.news.create', compact('tags', 'news', 'categories', 'newses', 'provinces'));
     }
 
     /**
@@ -91,7 +91,7 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        if ($request->hasFile('news_image')){
+        if ($request->hasFile('news_image')) {
             $news->deleteMedia($news->getMedia()[0]);
             $news->addMedia($request->file('news_image'))->toMediaCollection();
         }
@@ -101,7 +101,6 @@ class NewsController extends Controller
         $news->tags()->sync($request->tags);
 
         return redirect()->route('news.index')->withMsg('Your News has been successfully updated.');
-
     }
 
     /**
@@ -112,7 +111,7 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        if ($news->hasMedia()){
+        if ($news->hasMedia()) {
             $news->deleteMedia($news->getMedia()[0]);
         }
         $news->delete();

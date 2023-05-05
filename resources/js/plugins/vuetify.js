@@ -1,16 +1,18 @@
+import { createVuetify } from "vuetify";
 // Styles
-import { md3 } from "vuetify/blueprints";
+// import { md3 } from "vuetify/blueprints";
 import colors from "vuetify/lib/util/colors";
 import "vuetify/styles";
 // Icons
-// import { fa } from "vuetify/iconsets/fa-svg";
+import { fa } from "vuetify/iconsets/fa-svg";
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
 // Composables
-import { createVuetify } from "vuetify";
+import { VApp, VLayout, VMain } from "vuetify/components";
 
-// https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
-    blueprint: md3,
+    ssr: true,
+    // blueprint: md3,
+    components: { VApp, VMain, VLayout },
     icons: {
         defaultSet: "mdi",
         aliases,
@@ -37,7 +39,7 @@ export default createVuetify({
             light: {
                 dark: false,
                 colors: {
-                    primary: colors.blue.darken1,
+                    primary: "#3870c5",
                     accent: colors.grey.darken3,
                     secondary: colors.amber.darken3,
                     info: colors.teal.lighten1,
@@ -49,7 +51,7 @@ export default createVuetify({
             dark: {
                 dark: true,
                 colors: {
-                    primary: colors.blue.darken1,
+                    primary: "#3870c5",
                     accent: colors.grey.darken3,
                     secondary: colors.amber.darken3,
                     info: colors.teal.lighten1,
