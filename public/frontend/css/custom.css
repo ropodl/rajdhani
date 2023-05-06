@@ -43,12 +43,6 @@ section.topbar ul.info-text li{
   height: 500px;
   object-fit: cover;
 }
-.all-news-text .category h5 {
-}
-.all-news-text .heading h3 {
-}
-.all-news-text .content p {
-}
 .single-main-news {
   position: relative;
   overflow: hidden;

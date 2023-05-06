@@ -33,12 +33,17 @@ const relatedNews = defineAsyncComponent(() =>
                             {{ currentnews["title"] }}
                         </v-card-title>
                     </v-card>
+
                     <v-card-text class="px-0">
                         <v-icon :icon="mdiClockOutline"></v-icon>
                         {{ currentnewsdate }}
                     </v-card-text>
 
-                    <v-img contain :src="currentnews['image']"></v-img>
+                    <v-img
+                        contain
+                        class="rounded-lg"
+                        :src="currentnews['image']"
+                    ></v-img>
 
                     <v-card-text
                         class="px-0 news"
