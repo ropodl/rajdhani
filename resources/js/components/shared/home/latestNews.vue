@@ -1,5 +1,5 @@
 <script setup>
-import { mdiArrowRight, mdiClock } from "@mdi/js";
+import { mdiArrowRight, mdiClockOutline } from "@mdi/js";
 import moment from "moment";
 
 defineProps({
@@ -24,7 +24,7 @@ defineProps({
                             <v-list>
                                 <v-list-item>
                                     <v-list-item-title
-                                        class="text-h5 mb-2"
+                                        class="text-h5 font-weight-bold mb-2"
                                         style="line-height: 2rem"
                                     >
                                         {{ latest[0].title }}
@@ -33,7 +33,7 @@ defineProps({
                                         <v-icon
                                             start
                                             size="small"
-                                            :icon="mdiClock"
+                                            :icon="mdiClockOutline"
                                         ></v-icon>
                                         {{
                                             moment(latest[0].created_at)
@@ -51,44 +51,48 @@ defineProps({
         <v-col cols="12" md="6">
             <v-list color="primary" class="py-0 pl-0">
                 <template v-for="(item, index) in latest">
-                    <v-card
-                        flat
-                        v-if="index != 0"
-                        rounded="0"
-                        class="mb-3"
-                        :href="'/news/' + item['id']"
-                    >
-                        <v-list-item class="py-0 pl-0">
-                            <template #prepend>
-                                <v-avatar rounded="lg" size="auto">
-                                    <v-img
-                                        cover
-                                        width="150"
-                                        height="120"
-                                        :src="item['image']"
-                                    ></v-img>
-                                </v-avatar>
-                            </template>
-                            <v-list-item-title
-                                class="text-h5 text-wrap line-clamp-3 mb-2"
-                                style="line-height: 2rem"
-                            >
-                                {{ item["title"] }}
-                            </v-list-item-title>
-                            <v-list-item-subtitle>
-                                <v-icon
-                                    start
-                                    size="small"
-                                    :icon="mdiClock"
-                                ></v-icon>
-                                {{
-                                    moment(item["created_at"])
-                                        .startOf("day")
-                                        .fromNow()
-                                }}
-                            </v-list-item-subtitle>
-                        </v-list-item>
-                    </v-card>
+                    <v-hover v-slot="{ isHovering, props }">
+                        <v-card
+                            flat
+                            v-if="index != 0"
+                            rounded="0"
+                            class="mb-3"
+                            :href="'/news/' + item['id']"
+                            v-bind="props"
+                        >
+                            <v-list-item class="py-0 pl-0">
+                                <template #prepend>
+                                    <v-avatar rounded="lg" size="auto">
+                                        <v-img
+                                            cover
+                                            width="150"
+                                            height="120"
+                                            :class="isHovering ? 'zoom' : ''"
+                                            :src="item['image']"
+                                        ></v-img>
+                                    </v-avatar>
+                                </template>
+                                <v-list-item-title
+                                    class="text-h5 text-wrap line-clamp-3 font-weight-bold mb-2"
+                                    style="line-height: 2rem; white-space: wrap"
+                                >
+                                    {{ item["title"] }}
+                                </v-list-item-title>
+                                <v-list-item-subtitle>
+                                    <v-icon
+                                        start
+                                        size="small"
+                                        :icon="mdiClockOutline"
+                                    ></v-icon>
+                                    {{
+                                        moment(item["created_at"])
+                                            .startOf("day")
+                                            .fromNow()
+                                    }}
+                                </v-list-item-subtitle>
+                            </v-list-item>
+                        </v-card>
+                    </v-hover>
                 </template>
             </v-list>
             <v-btn

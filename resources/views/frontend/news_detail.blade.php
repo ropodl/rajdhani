@@ -11,25 +11,27 @@
     @endphp
 @endif
 @section('meta')
-    @component('frontend.components.meta',
-        [
-            'title' => $news->title,
-            'description' => strip_tags($news->description, ''),
-            'image' => $news->image,
-            'url' => request()->url(),
-        ])
+    @component('frontend.components.meta', [
+        'title' => $news->title,
+        'description' => strip_tags($news->description, ''),
+        'image' => $news->image,
+        'url' => request()->url(),
+    ])
     @endcomponent()
 @endsection
 {{-- <!-- @section('styles') -->
 <!-- @endsection --> --}}
 @section('content')
-    @if (!empty($news))
+    <newsdetail :currentnews="{{ json_encode($news) }}" :currentnewsdate="{{ json_encode(nepalidate($news->created_at)) }}"
+        :latest="{{ json_encode($latestNews) }}" :trending="{{ json_encode($trendingNews) }}"
+        :related="{{ json_encode($relatedNews) }}">
+    </newsdetail>
+    {{-- @if (!empty($news))
         <section class="home-news mt-3">
             <div class="container">
                 <div class="row detail-row">
                     <div class="col-md-8">
                         <div class="news-box px-md-3 px-2 py-md-4 bg-white mb-3">
-                            <!-- <hr> -->
                             <div class="banner-image">
                                 <img src="{{ $news->image }}" alt="">
                                 <h6 class="news-detail-title"> {{ $news->title }}</h6>
@@ -56,7 +58,6 @@
                                     @endif
                                     {!! $paragraph !!}</p>
                                 @endforeach
-                                <!-- <div class="sharethis-inline-reaction-buttons"></div> -->
                             </div>
                         </div>
                     </div>
@@ -69,12 +70,6 @@
                                 ])
                             </div>
                         @endif
-                        {{-- <div class=" bg-white p-md-3 p-2 news-taja mt-3"> --}}
-                        {{-- <img src="{{asset ('frontend/img/biswas/ad4.gif') }}" alt="" class="img-fluid"> --}}
-                        {{-- </div> --}}
-                        {{-- <div class=" bg-white p-md-3 p-2 news-taja mt-3"> --}}
-                        {{-- <img src="{{asset ('frontend/img/biswas/ad4.gif') }}" alt="" class="img-fluid"> --}}
-                        {{-- </div> --}}
                         <div class="tab-part mt-3">
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item">
@@ -117,8 +112,8 @@
                                                     <li>
                                                         <div class="media">
                                                             <a href="{{ route('frontend.news.detail', $tnews) }}">
-                                                                <img loading="lazy" class="mr-3" src="{{ $tnews->image }}"
-                                                                    alt="image">
+                                                                <img loading="lazy" class="mr-3"
+                                                                    src="{{ $tnews->image }}" alt="image">
                                                             </a>
                                                             <div class="media-body align-self-center">
                                                                 <h5 class="mt-0">
@@ -161,31 +156,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div id="disqus_thread"></div>
-                        <script>
-                            /**
-                             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-                            /*
-                            var disqus_config = function () {
-                            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                            };
-                            */
-                            (function() { // DON'T EDIT BELOW THIS LINE
-                                var d = document,
-                                    s = d.createElement('script');
-                                s.src = 'https://https-rajdhanipress-com-1.disqus.com/embed.js';
-                                s.setAttribute('data-timestamp', +new Date());
-                                (d.head || d.body).appendChild(s);
-                            })();
-                        </script>
-                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
-                                powered by Disqus.</a></noscript>
-                    </div>
-                </div>
                 <div class="rajniti pt-3 pb-3">
                     <div class="category-title">
                         <span>
@@ -197,12 +167,6 @@
                             <a>सबै</a>
                         @endif
                     </div>
-                    <!-- <div class="section-title d-flex justify-content-between mt-4">
-                            <a href="#" class="head">सम्बन्धित खबर</a>
-                            @if (!$news->relatedNews->isEmpty())
-    <a href="#" class="all">सबै</a>
-    @endif
-                        </div> -->
                     <div class="row">
                         @forelse($relatedNews as $related)
                             <div class="col-md-3 mb-3">
@@ -221,11 +185,6 @@
                 </div>
             </div>
         </section>
-    @endif
+    @endif --}}
 
-    <style>
-        .tab-general {
-            display: none;
-        }
-    </style>
 @endsection

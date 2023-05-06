@@ -24,12 +24,12 @@ setInterval(function () {
                 <v-col cols="12" md="4" class="py-0 text-right">
                     <div class="d-flex">
                         <v-spacer></v-spacer>
-                        <ul class="d-flex ml-auto mb-0">
+                        <ul class="d-flex list-style-none ml-auto mb-0">
                             <li v-if="socials['facebook_link']">
                                 <v-btn
                                     variant="text"
                                     rounded="0"
-                                    size="small"
+                                    size="x-small"
                                     height="24"
                                     :icon="'fa:fa-brands fa-facebook-f'"
                                     :href="socials['facebook_link']"
@@ -41,7 +41,7 @@ setInterval(function () {
                                 <v-btn
                                     variant="text"
                                     rounded="0"
-                                    size="small"
+                                    size="x-small"
                                     height="24"
                                     :icon="'fa:fa-brands fa-instagram'"
                                     :href="socials['instagram_link']"
@@ -53,7 +53,7 @@ setInterval(function () {
                                 <v-btn
                                     variant="text"
                                     rounded="0"
-                                    size="small"
+                                    size="x-small"
                                     height="24"
                                     :icon="'fa:fa-brands fa-youtube'"
                                     :href="socials['youtube_link']"
@@ -65,7 +65,7 @@ setInterval(function () {
                                 <v-btn
                                     variant="text"
                                     rounded="0"
-                                    size="small"
+                                    size="x-small"
                                     height="24"
                                     :icon="'fa:fa-brands fa-twitter'"
                                     :href="socials['twitter_link']"
@@ -77,7 +77,7 @@ setInterval(function () {
                                 <v-btn
                                     variant="text"
                                     rounded="0"
-                                    size="small"
+                                    size="x-small"
                                     height="24"
                                     :icon="'fa:fa-brands fa-linkedin'"
                                     :href="socials['linkedin_link']"

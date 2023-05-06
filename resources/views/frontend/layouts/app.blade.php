@@ -49,9 +49,9 @@
         </v-app>
     </div>
     {{-- @yield('content') --}}
-    <div class="go-to-top">
+    {{-- <div class="go-to-top">
         <i class="fa fa-arrow-up"></i>
-    </div>
+    </div> --}}
     {{-- @include('frontend.scripts.js')
     @yield('js')
     @stack('inlinejs') --}}

@@ -19,13 +19,13 @@ const app = createApp({
         bottombar: defineAsyncComponent(() =>
             import("./components/layout/bottombar.vue")
         ),
+        gotop: defineAsyncComponent(() =>
+            import("./components/layout/gotop.vue")
+        ),
         // Pages second
-        searchpage: defineAsyncComponent(() =>
-            import("./pages/search.vue")
-        ),
-        home: defineAsyncComponent(() =>
-            import("./pages/index.vue")
-        ),
+        searchpage: defineAsyncComponent(() => import("./pages/search.vue")),
+        home: defineAsyncComponent(() => import("./pages/index.vue")),
+        newsdetail: defineAsyncComponent(() => import("./pages/news_detail.vue")),
     },
 });
 

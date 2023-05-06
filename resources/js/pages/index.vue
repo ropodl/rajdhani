@@ -4,6 +4,8 @@ import { defineAsyncComponent } from "vue";
 defineProps({
     mainnews: Object,
     latestnews: Object,
+    photos: Object,
+    videos: Object,
 });
 
 const mainNews = defineAsyncComponent(() =>
@@ -12,9 +14,17 @@ const mainNews = defineAsyncComponent(() =>
 const latestNews = defineAsyncComponent(() =>
     import("../components/shared/home/latestNews.vue")
 );
+const photoFeature = defineAsyncComponent(() =>
+    import("../components/shared/home/photofeature.vue")
+);
+const videoFeature = defineAsyncComponent(() =>
+    import("../components/shared/home/videofeature.vue")
+);
 </script>
 <template>
-    <mainNews />
+    <template v-if="mainnews.length > 0">
+        <mainNews :mainnews="mainnews" />
+    </template>
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
@@ -34,4 +44,6 @@ const latestNews = defineAsyncComponent(() =>
             </v-col>
         </v-row>
     </v-container>
+    <photoFeature :photos="photos"></photoFeature>
+    <videoFeature :videos="videos"></videoFeature>
 </template>

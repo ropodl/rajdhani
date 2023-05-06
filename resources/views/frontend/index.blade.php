@@ -14,10 +14,9 @@
             $fourthSmAdv = $advertisements['sm_ad'][3]->advertisement ?? '';
         @endphp
     @endif
-    {{-- {{ $latestNews }} --}}
-    <home :mainnews="{{ json_encode($mainNews) }}" :latestnews="{{ json_encode($latestNews) }}"></home>
+    <home :mainnews="{{ json_encode($mainNews) }}" :latestnews="{{ json_encode($latestNews) }}"
+        :photos="{{ $photoFeatures }}" :videos="{{ $videos }}"></home>
 
-    {{-- {{ json_encode($latestNews) }} --}}
     <!-- Main News -->
 
     @if (!$mainNews->isEmpty())
@@ -58,7 +57,7 @@
 
     <!-- Latest News -->
 
-    @if (count($latestNews) > 0)
+    {{-- @if (count($latestNews) > 0)
         @php $firstNews = $latestNews[0]; @endphp
         <section class="top-part-section mt-3">
             <div class="container">
@@ -130,7 +129,7 @@
                 </div>
             </div>
         </section>
-    @endif
+    @endif --}}
 
     <!-- End Latest News -->
 
@@ -297,9 +296,9 @@
                             </a>
                         </div>
                         <!-- <div class="section-title d-flex justify-content-between">
-                                                                                                                        <a href="#" class="head">{{ $secondNews->name }}</a>
-                                                                                                                        <a href="#" class="all">सबै</a>
-                                                                                                                    </div> -->
+                                                                                                                                                                        <a href="#" class="head">{{ $secondNews->name }}</a>
+                                                                                                                                                                        <a href="#" class="all">सबै</a>
+                                                                                                                                                                    </div> -->
                         <div class="row">
                             @foreach ($secondNews->news->take(8) as $news)
                                 <div class="col-md-3">
@@ -361,17 +360,17 @@
                     </ul>
                 </div>
                 <!-- <div class="section-title">
-                                                                                                                    <a href="#" class="head">प्रदेश समाचार </a>
-                                                                                                                    <ul class="nav nav-pills pradesh-li" id="pills-tab" role="tablist">
-                                                                                                                        @foreach ($provinces as $key => $province)
+                                                                                                                                                                    <a href="#" class="head">प्रदेश समाचार </a>
+                                                                                                                                                                    <ul class="nav nav-pills pradesh-li" id="pills-tab" role="tablist">
+                                                                                                                                                                        @foreach ($provinces as $key => $province)
     <li class="nav-item">
-                                                                                                                                <a class="nav-link" href="{{ route('frontend.province_news', $province->slug) }}">
-                                                                                                                                    {{ $province->name }}
-                                                                                                                                </a>
-                                                                                                                            </li>
+                                                                                                                                                                                <a class="nav-link" href="{{ route('frontend.province_news', $province->slug) }}">
+                                                                                                                                                                                    {{ $province->name }}
+                                                                                                                                                                                </a>
+                                                                                                                                                                            </li>
     @endforeach
-                                                                                                                    </ul>
-                                                                                                                </div> -->
+                                                                                                                                                                    </ul>
+                                                                                                                                                                </div> -->
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade active show" role="tabpanel" aria-labelledby="{{ $news->id }}-tab">
                         <div class="row" style="width:100%;">
@@ -445,9 +444,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- <div class="section-title d-flex justify-content-between">
-                                                                                                                        <a href="#" class="head">{{ $category->name }}</a>
-                                                                                                                        <a href="#" class="all">सबै</a>
-                                                                                                                    </div> -->
+                                                                                                                                                                        <a href="#" class="head">{{ $category->name }}</a>
+                                                                                                                                                                        <a href="#" class="all">सबै</a>
+                                                                                                                                                                    </div> -->
                                 <div class="category-title">
                                     <span>
                                         <a href="#">

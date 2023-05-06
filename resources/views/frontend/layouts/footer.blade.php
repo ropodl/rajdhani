@@ -1,4 +1,5 @@
 <bottombar></bottombar>
+<gotop></gotop>
 {{-- <section class="footer-section mt-3">
     <div class="container">
         <div class="row">
