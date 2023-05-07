@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <searchpage></searchpage>
+    <searchpage :result="{{ json_encode($searchNews) }}"></searchpage>
     {{-- {{ !$searchNews->isEmpty() }} --}}
     <section class="sc-news2 pb-4 mt-4">
         <div class="container">

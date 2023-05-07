@@ -166,12 +166,13 @@ const switchThemeMode = () => {
         </v-container>
     </v-app-bar>
 </template>
-<style>
+<style scoped>
 .v-app-bar {
     position: sticky !important;
     top: 0 !important;
 }
-
+</style>
+<style>
 .font-rajdhani {
     font-family: "Rajdhani" !important;
     font-weight: 600;

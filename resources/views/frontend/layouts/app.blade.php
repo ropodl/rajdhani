@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @include('frontend.scripts.css')
-    @yield('styles')
+    {{-- @include('frontend.scripts.css')
+    @yield('styles') --}}
     @yield('meta')
     <title>{{ $siteSetting->name }}</title>
     <link rel="icon" type="image/x-icon" href="{{ $siteSetting->logo }}">

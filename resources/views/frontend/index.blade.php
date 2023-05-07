@@ -19,10 +19,11 @@
         :provinces="{{ $provinces }}" :provincenews="{{ json_encode($provinceWiseNews) }}" :photos="{{ $photoFeatures }}"
         :videos="{{ $videos }}">
     </home>
+@endsection
 
-    <!-- Main News -->
+<!-- Main News -->
 
-    {{-- @if (!$mainNews->isEmpty())
+{{-- @if (!$mainNews->isEmpty())
         <section class="top-news-section">
             <div class="container">
                 <div class="row">
@@ -58,9 +59,9 @@
     @endif --}}
 
 
-    <!-- Latest News -->
+<!-- Latest News -->
 
-    {{-- @if (count($latestNews) > 0)
+{{-- @if (count($latestNews) > 0)
         @php $firstNews = $latestNews[0]; @endphp
         <section class="top-part-section mt-3">
             <div class="container">
@@ -134,9 +135,9 @@
         </section>
     @endif --}}
 
-    <!-- End Latest News -->
+<!-- End Latest News -->
 
-    <section class="gif-section">
+{{-- <section class="gif-section">
         <div class="container">
             <div class="row">
                 @if (!empty($firstXlAdv))
@@ -147,10 +148,10 @@
                 @endif
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
-    @if (!$categoryWiseNews->isEmpty())
+{{-- @if (!$categoryWiseNews->isEmpty())
         <section class="business-section">
             <div class="container">
                 <div class="row">
@@ -317,7 +318,7 @@
                                                 <a
                                                     href="{{ route('frontend.news.detail', $news) }}">{{ $news->title }}</a>
                                             </h3>
-                                            {{-- <span><a href="{{ route('frontend.news.detail', $news->slug) }}" class="read-more">Read More  <i class="fa fa-angle-double-right"></i></a></span> --}}
+                                            <span><a href="{{ route('frontend.news.detail', $news->slug) }}" class="read-more">Read More  <i class="fa fa-angle-double-right"></i></a></span>
                                         </div>
                                     </div>
 
@@ -341,9 +342,9 @@
                 </div>
             </div>
         </section>
-    @endif
+    @endif --}}
 
-    {{-- @if (!$provinceWiseNews->isEmpty())
+{{-- @if (!$provinceWiseNews->isEmpty())
         <section class="pradesh-section mt-3">
             <div class="container">
                 <div class="category-title">
@@ -418,22 +419,22 @@
         </section>
     @endif --}}
 
-
-    @if (!empty($firstXlAdv))
-        <section class="gif-section">
-            <div class="container">
-                <div class="row">
-                    {{-- @php $ad = $advertisements['xl_ad'][1]->advertisement ?? ''; @endphp --}}
-                    @include('frontend.advertisement.xl_ad', [
-                        'url' => $firstXlAdv->url,
-                        'image' => $firstXlAdv->image,
-                    ])
-                </div>
+{{-- 
+@if (!empty($firstXlAdv))
+    <section class="gif-section">
+        <div class="container">
+            <div class="row">
+                @php $ad = $advertisements['xl_ad'][1]->advertisement ?? ''; @endphp
+                @include('frontend.advertisement.xl_ad', [
+                    'url' => $firstXlAdv->url,
+                    'image' => $firstXlAdv->image,
+                ])
             </div>
-        </section>
-    @endif
+        </div>
+    </section>
+@endif --}}
 
-    @if (count($categoryWiseNews) > 2)
+{{-- @if (count($categoryWiseNews) > 2)
         <section class="popular-section mt-3">
             <div class="container">
                 @foreach ($categoryWiseNews as $key => $category)
@@ -470,7 +471,7 @@
                                                             <a
                                                                 href="{{ route('frontend.news.detail', $news) }}">{{ $news->title }}</a>
                                                         </h3>
-                                                        {{-- <span><a href="{{ route('frontend.news.detail', $news->slug) }}" class="read-more">Read More  <i class="fa fa-angle-double-right"></i></a></span> --}}
+                                                        <span><a href="{{ route('frontend.news.detail', $news->slug) }}" class="read-more">Read More  <i class="fa fa-angle-double-right"></i></a></span>
                                                     </div>
                                                 </div>
 
@@ -511,12 +512,12 @@
                 @endforeach
             </div>
         </section>
-    @endif
+    @endif --}}
 
-    <!-- News Category News -->
-    <!-- End of News Category News -->
-    <!-- image new section -->
-    {{-- <section class="image-section-wrapper">
+<!-- News Category News -->
+<!-- End of News Category News -->
+<!-- image new section -->
+{{-- <section class="image-section-wrapper">
         <div class="bg-dark">
             <div class="container">
                 <div class="row py-5 image-section">
@@ -549,10 +550,10 @@
     </section> --}}
 
 
-    <section class="video-section mt-4">
+{{-- <section class="video-section mt-4">
         <div class="container">
             <div class="row">
-                {{-- <div class="col-md-9">
+                <div class="col-md-9">
                     <div class="section-title d-flex justify-content-between">
                         <a href="#" class="head">भिडियो</a>
                     </div>
@@ -567,7 +568,7 @@
                             </div>
                         @endforeach
                     </div>
-                </div> --}}
+                </div>
                 <div class="col-md-3">
                     <div class="ads-part">
                         @if (!empty($thirdSmAdv))
@@ -588,8 +589,7 @@
                 </div>
             </div>
         </div>
-    </section>
-@endsection
+    </section> --}}
 {{-- @push('inlinejs')
     <script>
         $('.video-slider').owlCarousel({

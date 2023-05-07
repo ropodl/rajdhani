@@ -45,8 +45,7 @@ const relatedNews = defineAsyncComponent(() =>
                         {{ currentnewsdate }}
                     </v-card-text>
 
-                    <v-img
-                        contain
+                    <v-img eager
                         class="rounded-lg"
                         :src="currentnews['image']"
                     ></v-img>

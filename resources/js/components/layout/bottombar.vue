@@ -4,18 +4,7 @@ defineProps({
 });
 </script>
 <template>
-    <!-- <div class="bg-grey-darken-3">
-        <v-container class="py-16">
-            <v-row>
-                <v-col cols="12" md="3">this is a test</v-col>
-                <v-col cols="12" md="3">this is a test</v-col>
-                <v-col cols="12" md="3">this is a test</v-col>
-                <v-col cols="12" md="3">this is a test</v-col>
-            </v-row>
-        </v-container>
-    </div> -->
     <div class="bg-grey-darken-4">
-        {{ info }}
         <v-container class="py-8">
             <v-row>
                 <v-col cols="12" md="3">
@@ -54,7 +43,7 @@ defineProps({
                     <div class="font-rajdhani text-h6 font-weight-bold">
                         सम्पर्क
                     </div>
-                    <ul>
+                    <ul class="list-style-none">
                         <li>
                             {{ info["address"] }}
                         </li>
@@ -72,12 +61,19 @@ defineProps({
             </v-row>
         </v-container>
     </div>
-    <v-divider></v-divider>
-    <v-app-bar>
+    <v-app-bar flat class="bg-grey-darken-4">
         <v-container>
             <v-row justify="center">
-                <v-col cols="3"> Copyright © 2023 राजधानी प्रेस </v-col>
+                <v-col cols="3">
+                    Copyright © {{ new Date().getFullYear() }} राजधानी प्रेस
+                </v-col>
             </v-row>
         </v-container>
     </v-app-bar>
 </template>
+<style scoped>
+.v-app-bar {
+    position: static !important;
+    z-index: 1 !important;
+}
+</style>
