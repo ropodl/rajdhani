@@ -24,7 +24,13 @@ const relatedNews = defineAsyncComponent(() =>
                     <v-card
                         flat
                         rounded="0"
-                        style="position: sticky; top: 60px; z-index: 99"
+                        style="
+                            position: sticky;
+                            top: 60px;
+                            z-index: 99;
+                            backdrop-filter: blur(10px);
+                            background-color: rgba(var(--v-theme-background),0.8);
+                        "
                     >
                         <v-card-title
                             class="text-h3 font-weight-bold text-wrap px-0"

@@ -14,12 +14,15 @@
             $fourthSmAdv = $advertisements['sm_ad'][3]->advertisement ?? '';
         @endphp
     @endif
+
     <home :mainnews="{{ json_encode($mainNews) }}" :latestnews="{{ json_encode($latestNews) }}"
-        :photos="{{ $photoFeatures }}" :videos="{{ $videos }}"></home>
+        :provinces="{{ $provinces }}" :provincenews="{{ json_encode($provinceWiseNews) }}" :photos="{{ $photoFeatures }}"
+        :videos="{{ $videos }}">
+    </home>
 
     <!-- Main News -->
 
-    @if (!$mainNews->isEmpty())
+    {{-- @if (!$mainNews->isEmpty())
         <section class="top-news-section">
             <div class="container">
                 <div class="row">
@@ -52,7 +55,7 @@
                 </div>
             </div>
         </section>
-    @endif
+    @endif --}}
 
 
     <!-- Latest News -->
@@ -296,9 +299,9 @@
                             </a>
                         </div>
                         <!-- <div class="section-title d-flex justify-content-between">
-                                                                                                                                                                        <a href="#" class="head">{{ $secondNews->name }}</a>
-                                                                                                                                                                        <a href="#" class="all">सबै</a>
-                                                                                                                                                                    </div> -->
+                                                                                                                                                                                                        <a href="#" class="head">{{ $secondNews->name }}</a>
+                                                                                                                                                                                                        <a href="#" class="all">सबै</a>
+                                                                                                                                                                                                    </div> -->
                         <div class="row">
                             @foreach ($secondNews->news->take(8) as $news)
                                 <div class="col-md-3">
@@ -340,7 +343,7 @@
         </section>
     @endif
 
-    @if (!$provinceWiseNews->isEmpty())
+    {{-- @if (!$provinceWiseNews->isEmpty())
         <section class="pradesh-section mt-3">
             <div class="container">
                 <div class="category-title">
@@ -359,18 +362,12 @@
                         @endforeach
                     </ul>
                 </div>
-                <!-- <div class="section-title">
-                                                                                                                                                                    <a href="#" class="head">प्रदेश समाचार </a>
-                                                                                                                                                                    <ul class="nav nav-pills pradesh-li" id="pills-tab" role="tablist">
-                                                                                                                                                                        @foreach ($provinces as $key => $province)
-    <li class="nav-item">
-                                                                                                                                                                                <a class="nav-link" href="{{ route('frontend.province_news', $province->slug) }}">
-                                                                                                                                                                                    {{ $province->name }}
-                                                                                                                                                                                </a>
-                                                                                                                                                                            </li>
-    @endforeach
-                                                                                                                                                                    </ul>
-                                                                                                                                                                </div> -->
+                <div class="section-title">
+                                                                                                                                                                                    <a href="#" class="head">प्रदेश समाचार </a>
+                                                                                                                                                                                    <ul class="nav nav-pills pradesh-li" id="pills-tab" role="tablist">
+                                                                                                                                                                                        @foreach ($provinces as $key => $province)
+    <li class="nav-item">                                                                                                            </li>
+    @endforeach                                                                                                   </div>
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade active show" role="tabpanel" aria-labelledby="{{ $news->id }}-tab">
                         <div class="row" style="width:100%;">
@@ -419,7 +416,7 @@
                 </div>
             </div>
         </section>
-    @endif
+    @endif --}}
 
 
     @if (!empty($firstXlAdv))
@@ -444,9 +441,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- <div class="section-title d-flex justify-content-between">
-                                                                                                                                                                        <a href="#" class="head">{{ $category->name }}</a>
-                                                                                                                                                                        <a href="#" class="all">सबै</a>
-                                                                                                                                                                    </div> -->
+                                                                                                                                                                                                        <a href="#" class="head">{{ $category->name }}</a>
+                                                                                                                                                                                                        <a href="#" class="all">सबै</a>
+                                                                                                                                                                                                    </div> -->
                                 <div class="category-title">
                                     <span>
                                         <a href="#">
@@ -517,12 +514,9 @@
     @endif
 
     <!-- News Category News -->
-
     <!-- End of News Category News -->
-
-
     <!-- image new section -->
-    <section class="image-section-wrapper">
+    {{-- <section class="image-section-wrapper">
         <div class="bg-dark">
             <div class="container">
                 <div class="row py-5 image-section">
@@ -552,13 +546,13 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     <section class="video-section mt-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-9">
+                {{-- <div class="col-md-9">
                     <div class="section-title d-flex justify-content-between">
                         <a href="#" class="head">भिडियो</a>
                     </div>
@@ -573,7 +567,7 @@
                             </div>
                         @endforeach
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-md-3">
                     <div class="ads-part">
                         @if (!empty($thirdSmAdv))
@@ -596,7 +590,7 @@
         </div>
     </section>
 @endsection
-@push('inlinejs')
+{{-- @push('inlinejs')
     <script>
         $('.video-slider').owlCarousel({
             loop: false,
@@ -614,4 +608,4 @@
             }
         });
     </script>
-@endpush
+@endpush --}}

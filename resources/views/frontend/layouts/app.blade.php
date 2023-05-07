@@ -13,7 +13,7 @@
         src='https://platform-api.sharethis.com/js/sharethis.js#property=60794599181bcb00113f8a4f&product=inline-share-buttons'
         async='async'></script> --}}
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRSHM8QWGN"></script>
+    {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRSHM8QWGN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -23,7 +23,7 @@
         gtag('js', new Date());
         gtag('config', 'G-KRSHM8QWGN');
     </script>
-    <!-- End of Google Analytics -->
+    <!-- End of Google Analytics --> --}}
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     @vite(['resources/js/app.js', 'resources/sass/frontend.scss'])
     <style>

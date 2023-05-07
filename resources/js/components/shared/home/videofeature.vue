@@ -6,6 +6,10 @@ defineProps({
 });
 
 let tab = ref("0");
+
+const getWatchUrl = (link) => {
+    return link.replace("watch?v=", "embed/");
+};
 </script>
 <template>
     <div class="bg-grey-darken-4">
@@ -23,7 +27,7 @@ let tab = ref("0");
                             :value="index"
                             class="text-capitalize"
                         >
-                            Video {{ index }}
+                            Video {{ index+ 1 }}
                         </v-tab>
                     </v-tabs>
                 </v-col>
@@ -33,17 +37,14 @@ let tab = ref("0");
                             :value="index"
                             v-for="(video, index) in videos"
                         >
-                            <v-responsive aspect-ratio="16 / 9">
                                 <iframe
                                     width="100%"
                                     height="490"
-                                    src="https://www.youtube.com/embed/crvb25tOE2c"
+                                    :src="getWatchUrl(video['iframe'])"
                                     title="YouTube video player"
                                     frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen
                                 ></iframe>
-                            </v-responsive>
                         </v-window-item>
                     </v-window>
                 </v-col>

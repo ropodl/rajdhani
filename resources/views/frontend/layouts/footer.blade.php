@@ -1,6 +1,6 @@
-<bottombar></bottombar>
+<bottombar :info="{{ json_encode($siteSetting) }}"></bottombar>
 <gotop></gotop>
-{{-- <section class="footer-section mt-3">
+<section class="footer-section mt-3">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-lg-4">
@@ -152,4 +152,4 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>

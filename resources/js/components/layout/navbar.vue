@@ -1,6 +1,15 @@
 <script setup>
-import { mdiChevronDown, mdiClose, mdiHome, mdiMagnify } from "@mdi/js";
-import { ref } from "vue";
+import {
+    mdiChevronDown,
+    mdiClose,
+    mdiHome,
+    mdiMagnify,
+    mdiWeatherSunny,
+} from "@mdi/js";
+import { onMounted, ref } from "vue";
+
+import { useTheme } from "vuetify";
+const theme = useTheme();
 
 defineProps({
     provinces: Object,
@@ -8,7 +17,20 @@ defineProps({
     tags: Object,
 });
 
+onMounted(() => {
+    isDarkMode.value = localStorage.getItem("isDarkMode") === "true";
+    theme.global.name.value = isDarkMode.value ? "dark" : "light";
+});
+
 let dialog = ref(false);
+
+let isDarkMode = ref(false);
+
+const switchThemeMode = () => {
+    isDarkMode.value = localStorage.getItem("isDarkMode") !== "true";
+    localStorage.setItem("isDarkMode", isDarkMode.value);
+    theme.global.name.value = isDarkMode.value ? "dark" : "light";
+};
 </script>
 <template>
     <v-app-bar
@@ -41,7 +63,7 @@ let dialog = ref(false);
                             color="white"
                             height="60"
                             v-bind="props"
-                            class="font-rajdhani text-h6"
+                            class="font-rajdhani font-weight-bold text-h6"
                         >
                             प्रदेश
                             <v-icon
@@ -67,7 +89,7 @@ let dialog = ref(false);
                         rounded="0"
                         height="60"
                         color="white"
-                        class="text-h6"
+                        class="text-h6 font-weight-bold font-rajdhani"
                         :href="'/category/' + category['slug']"
                     >
                         {{ category.name }}
@@ -75,7 +97,15 @@ let dialog = ref(false);
                 </template>
 
                 <v-spacer></v-spacer>
-                <v-dialog v-model="dialog" max-width="650">
+                <v-btn
+                    rounded="0"
+                    height="60"
+                    class="font-weight-bold text-subtitle-1"
+                    @click="switchThemeMode"
+                    :icon="mdiWeatherSunny"
+                >
+                </v-btn>
+                <v-dialog v-model="dialog" scrim="black" max-width="650">
                     <template v-slot:activator="{ props }">
                         <v-btn
                             color="white"

@@ -13,7 +13,7 @@ defineProps({
                     </div>
                 </v-col>
                 <template v-for="(photo, i) in photos">
-                    <v-col cols="12" md="3" v-if="i < 4">
+                    <v-col cols="12" md="3">
                         <v-hover v-slot="{ isHovering, props }">
                             <v-card
                                 :href="'/news/' + photo['id']"

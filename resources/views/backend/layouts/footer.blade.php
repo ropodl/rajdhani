@@ -24,4 +24,3 @@
   </span>
 </footer>
 <!-- <script src="{{asset('scripts/app/app-blog-overview.1.1.0.js')}}"></script> -->
-

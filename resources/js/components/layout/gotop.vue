@@ -23,6 +23,6 @@ const onScroll = (e) => {
             zIndex: '999',
             transition: 'all 250ms cubic-bezier(.17,.26,1,.32) 0s',
         }"
-        @click="useScrollTo('app', 0)"
+        @click="useScrollTo('app', 10)"
     ></v-btn>
 </template>
