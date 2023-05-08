@@ -20,7 +20,7 @@ class SearchController extends Controller
         if($request->has('search')){
             $searchNews->where('title','like', '%'.$search. '%');
         }
-        $searchNews = $searchNews->paginate(12);
+        $searchNews = $searchNews->paginate(10);
         return view('frontend.search', compact('searchNews', 'search'));
     }
 }

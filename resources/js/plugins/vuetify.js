@@ -22,7 +22,7 @@ export default createVuetify({
         },
     },
     theme: {
-        defaultTheme: "dark",
+        defaultTheme: "light",
         variations: {
             colors: [
                 "primary",

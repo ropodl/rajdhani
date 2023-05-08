@@ -12,7 +12,7 @@ const getWatchUrl = (link) => {
 };
 </script>
 <template>
-    <div class="bg-grey-darken-4">
+    <div class="bg-grey-darken-4 pt-16">
         <v-container>
             <v-row>
                 <v-col cols="12">

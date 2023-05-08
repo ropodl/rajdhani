@@ -1,8 +1,9 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <searchpage :result="{{ json_encode($searchNews) }}"></searchpage>
+    {{-- {{$searchNews}} --}}
+    <searchpage :result="{{ json_encode($searchNews) }}" :search={{ json_encode($search) }}></searchpage>
     {{-- {{ !$searchNews->isEmpty() }} --}}
-    <section class="sc-news2 pb-4 mt-4">
+    {{-- <section class="sc-news2 pb-4 mt-4">
         <div class="container">
             @if (!$searchNews->isEmpty())
                 <div class="row">
@@ -21,8 +22,8 @@
                                         <div class="news-detail-small-th">
                                             <p>{!! str_limit(strip_tags($new->description, ''), 200, '...') !!}</p>
                                         </div>
-                                        {{--                                        <span><a href="" class="read-more ml-2">Read More  <i --}}
-                                        {{--                                                    class="fa fa-angle-double-right"></i></a></span> --}}
+                                                                               <span><a href="" class="read-more ml-2">Read More  <i
+                                                                                           class="fa fa-angle-double-right"></i></a></span>
                                     </div>
                                 </div>
                             </div>
@@ -32,9 +33,9 @@
             @else
                 @include('frontend.components.no_search_news')
             @endif
-            <div class="mt-3">
-                {{ $searchNews->links() }}
-            </div>
         </div>
-    </section>
+    </section> --}}
+    {{-- <div class="mt-3">
+        {{ $searchNews->links() }}
+    </div> --}}
 @endsection

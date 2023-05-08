@@ -25,7 +25,12 @@ const app = createApp({
         // Pages second
         searchpage: defineAsyncComponent(() => import("./pages/search.vue")),
         home: defineAsyncComponent(() => import("./pages/index.vue")),
-        newsdetail: defineAsyncComponent(() => import("./pages/news_detail.vue")),
+        newsdetail: defineAsyncComponent(() =>
+            import("./pages/news_detail.vue")
+        ),
+        categorynews: defineAsyncComponent(() =>
+            import("./pages/category_news.vue")
+        ),
     },
 });
 

@@ -13,12 +13,12 @@ class HomeController extends Controller
     public function index()
     {
         $mainNews = News::isMainNews()->get();
-        $photoFeatures = News::isPhotoFeatures()->limit(4)->get();
+        $photoFeatures = News::isPhotoFeatures()->latest()->limit(4)->get();
         $latestNews = News::isActive()->isNotMainNews()->latest()->limit(5)->get();
         // return $latestNews;
         $trendingNews = News::isTrending()->isActive()->latest()->take(6)->get();
-        $categoryWiseNews = Category::has('news', '>=', 4)->where('show_on_homepage', 1)->with('news')->orderBy('sort', 'asc')->get();
-        $provinceWiseNews = News::has('province')->isActive()->limit(6)->get();
+        $categoryWiseNews = Category::has('news', '>=', 4)->latest()->where('show_on_homepage', 1)->with('news')->orderBy('sort', 'asc')->get();
+        $provinceWiseNews = News::has('province')->latest()->isActive()->limit(6)->get();
         $provinces = Province::get();
         $videos = VideoIframe::limit(8)->orderBy('sort', 'asc')->get();
         // $newsCategoryNews = Category::has('news')->where('under_news', 1)->with(['news' => function($query){

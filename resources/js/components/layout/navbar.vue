@@ -4,6 +4,7 @@ import {
     mdiClose,
     mdiHome,
     mdiMagnify,
+    mdiWeatherNight,
     mdiWeatherSunny,
 } from "@mdi/js";
 import { onMounted, ref } from "vue";
@@ -17,14 +18,13 @@ defineProps({
     tags: Object,
 });
 
+let dialog = ref(false);
+let isDarkMode = ref(false);
+
 onMounted(() => {
     isDarkMode.value = localStorage.getItem("isDarkMode") === "true";
     theme.global.name.value = isDarkMode.value ? "dark" : "light";
 });
-
-let dialog = ref(false);
-
-let isDarkMode = ref(false);
 
 const switchThemeMode = () => {
     isDarkMode.value = localStorage.getItem("isDarkMode") !== "true";
@@ -102,7 +102,7 @@ const switchThemeMode = () => {
                     height="60"
                     class="font-weight-bold text-subtitle-1"
                     @click="switchThemeMode"
-                    :icon="mdiWeatherSunny"
+                    :icon="isDarkMode ? mdiWeatherSunny : mdiWeatherNight"
                 >
                 </v-btn>
                 <v-dialog v-model="dialog" scrim="black" max-width="650">

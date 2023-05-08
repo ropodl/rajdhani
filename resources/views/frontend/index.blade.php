@@ -15,9 +15,12 @@
         @endphp
     @endif
 
-    <home :mainnews="{{ json_encode($mainNews) }}" :latestnews="{{ json_encode($latestNews) }}"
-        :provinces="{{ $provinces }}" :provincenews="{{ json_encode($provinceWiseNews) }}" :photos="{{ $photoFeatures }}"
-        :videos="{{ $videos }}">
+    {{-- {{ $advertisements }} --}}
+
+    <home :mainnews="{{ json_encode($mainNews) }}" :latest="{{ json_encode($latestNews) }}"
+        :trending="{{ json_encode($trendingNews) }}" :provinces="{{ $provinces }}"
+        :provincenews="{{ json_encode($provinceWiseNews) }}" :photos="{{ $photoFeatures }}" :videos="{{ $videos }}"
+        :catnews="{{ json_encode($categoryWiseNews) }}" :advertisements="{{ json_encode($advertisements) }}">
     </home>
 @endsection
 

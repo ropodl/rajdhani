@@ -11,27 +11,32 @@ defineProps({
     <v-container>
         <v-row>
             <v-col cols="12">
-                <div class="d-flex align-end">
-                    <div class="font-rajdhani text-h3 font-weight-bold">
-                        प्रदेश समाचार
-                    </div>
-                    <v-spacer></v-spacer>
-                    <v-tabs hide-slider>
-                        <v-tab
-                            v-for="item in provinces"
-                            class="font-rajdhani font-weight-bold text-subtitle-1"
-                            :href="'/province/' + item['name']"
-                        >
-                            {{ item["name"] }}
-                        </v-tab>
-                    </v-tabs>
-                </div>
+                <v-row align="center">
+                    <v-col cols="12" md="4">
+                        <div class="font-rajdhani text-h3 font-weight-bold">
+                            प्रदेश समाचार
+                        </div>
+                    </v-col>
+                    <v-col cols="12" md="8">
+                        <div class="d-flex justify-space-between">
+                            <v-chip
+                                v-for="item in provinces"
+                                variant="tonal"
+                                color="primary"
+                                class="font-rajdhani font-weight-bold text-subtitle-1"
+                                :href="'/province/' + item['name']"
+                            >
+                                {{ item["name"] }}
+                            </v-chip>
+                        </div>
+                    </v-col>
+                </v-row>
             </v-col>
             <v-col cols="12" md="7">
                 <v-row>
                     <v-col cols="6">
                         <v-hover v-slot="{ isHovering, props }">
-                            <v-card
+                            <v-card variant="text"
                                 class="mb-3"
                                 :href="'/news/' + provincenews[0].id"
                             >
@@ -85,7 +90,7 @@ defineProps({
                     </v-col>
                     <v-col cols="6">
                         <v-hover v-slot="{ isHovering, props }">
-                            <v-card :href="'/news/' + provincenews[1].id">
+                            <v-card variant="text" :href="'/news/' + provincenews[1].id">
                                 <v-img
                                     cover
                                     height="516"

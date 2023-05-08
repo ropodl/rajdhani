@@ -7,7 +7,7 @@
     {{-- @include('frontend.scripts.css')
     @yield('styles') --}}
     @yield('meta')
-    <title>{{ $siteSetting->name }}</title>
+    {{-- <title>{{ $siteSetting->name }}</title> --}}
     <link rel="icon" type="image/x-icon" href="{{ $siteSetting->logo }}">
     {{-- <script type='text/javascript'
         src='https://platform-api.sharethis.com/js/sharethis.js#property=60794599181bcb00113f8a4f&product=inline-share-buttons'

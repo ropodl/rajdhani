@@ -24,7 +24,7 @@
 @section('content')
     <newsdetail :currentnews="{{ json_encode($news) }}" :currentnewsdate="{{ json_encode(nepalidate($news->created_at)) }}"
         :latest="{{ json_encode($latestNews) }}" :trending="{{ json_encode($trendingNews) }}"
-        :related="{{ json_encode($relatedNews) }}">
+        :related="{{ json_encode($relatedNews) }}" :advertisement="{{ json_encode($detailAdvs) }}">
     </newsdetail>
     {{-- @if (!empty($news))
         <section class="home-news mt-3">
@@ -186,5 +186,4 @@
             </div>
         </section>
     @endif --}}
-
 @endsection

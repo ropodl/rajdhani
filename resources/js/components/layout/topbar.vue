@@ -1,27 +1,22 @@
 <script setup>
+import { useNow } from "@vueuse/core";
 import moment from "moment";
-import { ref } from "vue";
 
 defineProps({
     date: String,
     socials: Object,
 });
 
-let currentTime = ref();
-
-setInterval(function () {
-    currentTime.value = moment().format("h:mm:ss a");
-}, 1000);
+const now = useNow();
 </script>
 <template>
     <v-system-bar>
         <v-container class="py-0">
             <v-row align="center">
-                <v-col cols="12" md="4" class="text-left py-0">
-                    {{ date }} | {{ currentTime }}
+                <v-col cols="6" sm="6" md="6" class="text-left py-0">
+                    {{ date }} | {{ moment(now).format("hh:mm:ss a") }}
                 </v-col>
-                <v-spacer></v-spacer>
-                <v-col cols="12" md="4" class="py-0 text-right">
+                <v-col cols="6" sm="6" md="6" class="py-0 text-right">
                     <div class="d-flex">
                         <v-spacer></v-spacer>
                         <ul class="d-flex list-style-none ml-auto mb-0">

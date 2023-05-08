@@ -28,6 +28,8 @@ defineProps({
                                     <v-overlay
                                         :model-value="true"
                                         contained
+                                        persistent
+                                        no-click-animation
                                         scrim="black"
                                         class="align-end"
                                     >

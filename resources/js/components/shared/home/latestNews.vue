@@ -1,5 +1,5 @@
 <script setup>
-import { mdiArrowRight, mdiClockOutline } from "@mdi/js";
+import { mdiClockOutline } from "@mdi/js";
 import moment from "moment";
 
 defineProps({
@@ -10,7 +10,7 @@ defineProps({
     <v-row>
         <v-col cols="12" md="6">
             <v-hover v-slot="{ isHovering, props }">
-                <v-card :href="'/news/' + latest[0].id">
+                <v-card variant="text" :href="'/news/' + latest[0].id">
                     <v-img
                         cover
                         v-bind="props"
@@ -70,8 +70,8 @@ defineProps({
                                 <v-avatar rounded="lg" size="auto">
                                     <v-img
                                         cover
-                                        width="150"
-                                        height="120"
+                                        width="140"
+                                        height="133"
                                         :class="isHovering ? 'zoom' : ''"
                                         :src="item['image']"
                                     ></v-img>
@@ -99,16 +99,6 @@ defineProps({
                     </v-hover>
                 </template>
             </v-list>
-            <v-btn
-                flat
-                block
-                variant="tonal"
-                color="primary"
-                class="text-capitalize font-rajdhani"
-            >
-                थप समाचारहरू हेर्नुहोस्
-                <v-icon end :icon="mdiArrowRight"></v-icon>
-            </v-btn>
         </v-col>
     </v-row>
 </template>
