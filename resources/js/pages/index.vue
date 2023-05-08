@@ -75,12 +75,12 @@ const twoFour = defineAsyncComponent(() =>
         </v-row>
     </v-container>
     <template v-for="(item, index) in catnews">
-        <template v-if="item['name'] == 'राजनीति'">
+        <template v-if="item['name'] == 'राजनीति' && item['news'].length > 0">
             <v-container>
                 <overlayFull :data="item"></overlayFull>
             </v-container>
         </template>
-        <template v-if="item['name'] == 'समाज'">
+        <template v-if="item['name'] == 'समाज' && item['news'].length > 0">
             <v-container>
                 <v-row>
                     <v-col cols="12" md="9">
@@ -95,22 +95,24 @@ const twoFour = defineAsyncComponent(() =>
                 </v-row>
             </v-container>
         </template>
-        <template v-if="item['name'] == 'खेलकुद़़'">
+        <template v-if="item['name'] == 'खेलकुद़़' && item['news'].length > 0">
             <v-container>
                 <overlayFull :data="item"></overlayFull>
             </v-container>
         </template>
-        <template v-if="item['name'] == 'अन्तर्राष्ट्रिय'">
+        <template
+            v-if="item['name'] == 'अन्तर्राष्ट्रिय' && item['news'].length > 0"
+        >
             <v-container>
                 <threeCol :data="item"></threeCol>
             </v-container>
         </template>
-        <template v-if="item['name'] == 'मनोरञ्जन'">
+        <template v-if="item['name'] == 'मनोरञ्जन' && item['news'].length > 0">
             <v-container>
                 <twoFour :data="item"></twoFour>
             </v-container>
         </template>
-        <template v-if="item['name'] == 'स्वास्थ्य'">
+        <template v-if="item['name'] == 'स्वास्थ्य' && item['news'].length > 0">
             <v-container>
                 <v-row>
                     <v-col cols="12">
