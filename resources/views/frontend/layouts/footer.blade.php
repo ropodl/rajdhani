@@ -9,7 +9,7 @@
                         <img src="{{ $siteSetting->logo_with_text }}" class="img-fluid" style="max-height:60px;">
                     </div>
                     <div class="footer-text">
-                        <p>खबर प्रालिद्वारा प्रकाशित</p>
+                        <p>राजधानी प्रेस हब प्रालि द्वारा प्रकाशित</p>
                     </div>
                 </div>
             </div>

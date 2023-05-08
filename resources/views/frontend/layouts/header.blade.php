@@ -26,7 +26,6 @@
                 <div class="d-flex">
                     <ul class="info-text">
                         <li>Email: Rajdhanipress1@gmail.com</li>
-                        <li>Phone No.: 01-444444,01-5555555 </li>
                     </ul>
                 </div>
             </div>
@@ -123,11 +122,13 @@
                     </ul>
                 </li>
                 @foreach ($headerCats as $category)
-                    @if ($category->sort < 6)
-                        <li>
-                            <a href="{{ route('frontend.category_news', $category->slug) }}">{{ $category->name }}</a>
-                        </li>
-                    @endif
+                @if ($category->sort < 6 && $category->sort != 0)
+                    <li>
+                        <a href="{{ route('frontend.category_news' , $category->slug)}}">{{$category->name}}</a>
+                    </li>
+                @endif
+
+                
                 @endforeach
                 <li>
                     <a href="#">अर्थ</a>

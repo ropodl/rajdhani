@@ -60,7 +60,7 @@ class News extends Model implements HasMedia
 
     public function scopeIsTrending($query)
     {
-        return $query->where('is_trending', 1)->orderBy('id', 'desc');
+        return $query->where('is_main_news', 1)->orderBy('id', 'desc');
     }
     public function scopeIsMainNews($query)
     {
@@ -72,7 +72,7 @@ class News extends Model implements HasMedia
     }
     public function scopeIsNotMainNews($query)
     {
-        return $query->where('is_main_news', 1)->where('status', 1)->where('created_at', '<', Carbon::now()->subHours(12));
+        return $query->where('is_main_news', 0)->where('status', 1)->where('created_at', '<', Carbon::now()->subHours(12));
     }
 
     public function scopeIsActive($query)
@@ -84,6 +84,10 @@ class News extends Model implements HasMedia
     {
         return $this->belongsTo(Category::class);
     }
+
+    // public function categories(){
+    //     return $this->hasMany(Category::class, 'news_categories');
+    // }
 
     public function relatedNews()
     {
@@ -123,5 +127,10 @@ class News extends Model implements HasMedia
     public function tags()
     {
         return $this->morphToMany(Tag::class, 'taggable');
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'news_categories', 'news_id', 'category_id');
     }
 }

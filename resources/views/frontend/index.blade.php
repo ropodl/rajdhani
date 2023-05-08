@@ -303,9 +303,9 @@
                             </a>
                         </div>
                         <!-- <div class="section-title d-flex justify-content-between">
-                                                                                                                                                                                                        <a href="#" class="head">{{ $secondNews->name }}</a>
-                                                                                                                                                                                                        <a href="#" class="all">सबै</a>
-                                                                                                                                                                                                    </div> -->
+                                                                                            <a href="#" class="head">{{ $secondNews->name }}</a>
+                                                                                            <a href="#" class="all">सबै</a>
+                                                                                        </div> -->
                         <div class="row">
                             @foreach ($secondNews->news->take(8) as $news)
                                 <div class="col-md-3">
@@ -366,12 +366,18 @@
                         @endforeach
                     </ul>
                 </div>
-                <div class="section-title">
-                                                                                                                                                                                    <a href="#" class="head">प्रदेश समाचार </a>
-                                                                                                                                                                                    <ul class="nav nav-pills pradesh-li" id="pills-tab" role="tablist">
-                                                                                                                                                                                        @foreach ($provinces as $key => $province)
-    <li class="nav-item">                                                                                                            </li>
-    @endforeach                                                                                                   </div>
+                <!-- <div class="section-title">
+                                                                                        <a href="#" class="head">प्रदेश समाचार </a>
+                                                                                        <ul class="nav nav-pills pradesh-li" id="pills-tab" role="tablist">
+                                                                                            @foreach ($provinces as $key => $province)
+    <li class="nav-item">
+                                                                                                    <a class="nav-link" href="{{ route('frontend.province_news', $province->slug) }}">
+                                                                                                        {{ $province->name }}
+                                                                                                    </a>
+                                                                                                </li>
+    @endforeach
+                                                                                        </ul>
+                                                                                    </div> -->
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade active show" role="tabpanel" aria-labelledby="{{ $news->id }}-tab">
                         <div class="row" style="width:100%;">
@@ -445,9 +451,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- <div class="section-title d-flex justify-content-between">
-                                                                                                                                                                                                        <a href="#" class="head">{{ $category->name }}</a>
-                                                                                                                                                                                                        <a href="#" class="all">सबै</a>
-                                                                                                                                                                                                    </div> -->
+                                                                                            <a href="#" class="head">{{ $category->name }}</a>
+                                                                                            <a href="#" class="all">सबै</a>
+                                                                                        </div> -->
                                 <div class="category-title">
                                     <span>
                                         <a href="#">
@@ -460,7 +466,7 @@
                                 </div>
                                 <div class="row">
                                     @foreach ($category->news->take(8) as $news)
-                                        @if ($key % 3 !== 0)
+                                        @if ($key % 2 !== 0)
                                             <div class="col-md-3">
                                                 <div class="most-popular-news">
                                                     <div class="popular-news-image">
