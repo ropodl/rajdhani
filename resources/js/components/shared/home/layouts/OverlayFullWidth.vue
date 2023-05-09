@@ -44,6 +44,7 @@ defineProps({
                             >
                                 <v-card-title v-if="item['is_trending']">
                                     <v-btn
+                                        size="x-small"
                                         variant="tonal"
                                         color="red"
                                         :icon="mdiFire"
