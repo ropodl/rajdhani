@@ -31,15 +31,7 @@
             font-family: "Mukta Mahee", sans-serif !important;
         }
     </style>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/build/sw.js', {
-                    scope: '/'
-                })
-            })
-        }
-    </script>
+    <script src="/build/registerSW.js"></script>
 </head>
 
 <body>

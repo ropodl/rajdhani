@@ -43,7 +43,7 @@ export default defineConfig({
         }),
         VitePWA({
             registerType: "autoUpdate",
-            injectRegister: "inline",
+            injectRegister: "script",
             // includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
             workbox: {
                 cleanupOutdatedCaches: true,
