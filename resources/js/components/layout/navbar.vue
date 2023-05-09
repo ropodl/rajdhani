@@ -33,6 +33,7 @@ const switchThemeMode = () => {
 };
 </script>
 <template>
+    <!-- {{ categories }} -->
     <v-app-bar
         color="primary"
         height="60"

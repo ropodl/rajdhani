@@ -31,6 +31,7 @@ const app = createApp({
         categorynews: defineAsyncComponent(() =>
             import("./pages/category_news.vue")
         ),
+        contactus: defineAsyncComponent(() => import("./pages/contactus.vue")),
     },
 });
 

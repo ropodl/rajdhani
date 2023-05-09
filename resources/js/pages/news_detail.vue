@@ -55,12 +55,12 @@ const imageGallery = () => {
         <v-row>
             <v-col cols="12" md="9">
                 <article>
-                    <!-- class="position-sticky" -->
-                    <!-- top: 60px; -->
                     <v-card
                         flat
                         rounded="0"
+                        class="position-sticky"
                         style="
+                            top: 60px;
                             z-index: 99;
                             background-color: rgb(var(--v-theme-background));
                         "

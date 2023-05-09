@@ -176,5 +176,5 @@ const twoFour = defineAsyncComponent(() =>
             <photoFeature :photos="photos"></photoFeature>
         </template>
     </template>
-    <videoFeature :videos="videos"></videoFeature>
+    <videoFeature v-if="videos.length > 0" :videos="videos"></videoFeature>
 </template>
