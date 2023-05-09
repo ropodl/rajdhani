@@ -170,10 +170,10 @@ const twoFour = defineAsyncComponent(() =>
                 </v-row>
             </v-container>
         </template>
-        <template v-if="index == 1">
+        <template v-if="index == 4">
             <provinceNews :provinces="provinces" :provincenews="provincenews" />
         </template>
-        <template v-if="index == 3">
+        <template v-if="index == 6">
             <photoFeature :photos="photos"></photoFeature>
         </template>
     </template>
