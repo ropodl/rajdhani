@@ -1,5 +1,4 @@
 <script setup>
-import { mdiFire } from "@mdi/js";
 defineProps({
     data: Object,
 });
@@ -42,15 +41,6 @@ defineProps({
                                 scrim="black"
                                 class="align-end"
                             >
-                                <v-card-title v-if="item['is_trending']">
-                                    <v-btn
-                                        size="x-small"
-                                        variant="tonal"
-                                        color="red"
-                                        :icon="mdiFire"
-                                    >
-                                    </v-btn>
-                                </v-card-title>
                                 <v-card-title
                                     class="font-rajdhani text-h5 text-wrap font-weight-bold text-white"
                                 >

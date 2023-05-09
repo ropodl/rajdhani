@@ -40,16 +40,6 @@ defineProps({
                                 :src="data.news[0].image"
                                 :alt="data.news[0].media[0].file_name"
                             >
-                                <v-btn
-                                    v-if="data.news[0].is_trending"
-                                    variant="tonal"
-                                    color="red"
-                                    class="position-absolute"
-                                    :icon="mdiFire"
-                                    style="top: 10px; right: 10px"
-                                >
-                                </v-btn>
-
                                 <v-card
                                     style="
                                         background-color: rgba(
@@ -103,16 +93,6 @@ defineProps({
                                 :src="data.news[1].image"
                                 :alt="data.news[1].media[0].file_name"
                             >
-                                <v-btn
-                                    v-if="data.news[1].is_trending"
-                                    variant="tonal"
-                                    color="red"
-                                    class="position-absolute"
-                                    :icon="mdiFire"
-                                    style="top: 10px; right: 10px"
-                                >
-                                </v-btn>
-
                                 <v-card
                                     style="
                                         background-color: rgba(
@@ -173,17 +153,7 @@ defineProps({
                                         height="120"
                                         :class="isHovering ? 'zoom' : ''"
                                         :src="item['image']"
-                                    >
-                                        <v-btn
-                                            v-if="item['is_trending']"
-                                            variant="tonal"
-                                            color="red"
-                                            class="position-absolute"
-                                            :icon="mdiFire"
-                                            style="top: 10px; right: 10px"
-                                        >
-                                        </v-btn>
-                                    </v-img>
+                                    ></v-img>
                                 </v-avatar>
                             </template>
                             <v-list-item-title

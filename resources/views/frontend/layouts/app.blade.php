@@ -55,6 +55,7 @@
     {{-- @include('frontend.scripts.js')
     @yield('js')
     @stack('inlinejs') --}}
+    <script src="/"></script>
 </body>
 
 </html>
