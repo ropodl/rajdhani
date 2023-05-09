@@ -31,6 +31,15 @@
             font-family: "Mukta Mahee", sans-serif !important;
         }
     </style>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/build/sw.js', {
+                    scope: '/'
+                })
+            })
+        }
+    </script>
 </head>
 
 <body>
@@ -55,7 +64,6 @@
     {{-- @include('frontend.scripts.js')
     @yield('js')
     @stack('inlinejs') --}}
-    <script src="/build/registerSW.js" defer></script>
 </body>
 
 </html>
