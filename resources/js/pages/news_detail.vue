@@ -99,7 +99,7 @@ const imageCollector = () => {
                         :src="currentnews['image']"
                     >
                         <!-- <v-card class="w-100 h-100"> -->
-                        <v-card-title>
+                        <v-card-title v-if="currentnews['is_trending']">
                             <v-btn icon color="grey-darken-4">
                                 <v-icon color="red" :icon="mdiFire"></v-icon>
                             </v-btn>
