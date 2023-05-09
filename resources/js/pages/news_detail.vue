@@ -9,7 +9,7 @@ defineProps({
     latest: Object,
     trending: Object,
     related: Object,
-    advertisement: Object,
+    advertisements: Object,
 });
 
 const tabNews = defineAsyncComponent(() =>
@@ -43,7 +43,6 @@ const imageCollector = () => {
                 );
                 imageSrcList.push(element.src);
                 element.addEventListener("click", function () {
-                    // alert("ads");
                     thumbIndex.value = index;
                     showGallery.value = true;
                     nextTick(() => {
@@ -65,12 +64,12 @@ const imageCollector = () => {
 };
 </script>
 <template>
-    {{ advertisement.sm_ad[0] }}
-    <ul>
+    <!-- {{ advertisement }} -->
+    <!-- <ul>
         <li v-for="img in advertisement.sm_ad">
             {{ img }}
         </li>
-    </ul>
+    </ul> -->
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
@@ -116,20 +115,43 @@ const imageCollector = () => {
                 </article>
             </v-col>
             <v-col cols="12" md="3">
-                <v-card class="mb-3">
-                    <v-img
-                        eager
-                        height="274"
-                        src="https://www.rajdhanipress.com/media/138/received_1128184614782496.webp"
-                    ></v-img>
-                </v-card>
-                <v-card class="mb-3">
-                    <v-img
-                        eager
-                        height="274"
-                        src="https://www.rajdhanipress.com/media/74/goldenget.jpg"
-                    ></v-img>
-                </v-card>
+                <template v-if="advertisements.sm_ad[0]">
+                    <div class="d-flex flex-wrap justify-space-between">
+                        <v-card
+                            class="mb-3 w-100 h-100"
+                            :href="advertisements.sm_ad[0].advertisement.url"
+                            target="_blank"
+                            max-height="290"
+                            max-width="290"
+                        >
+                            <v-img
+                                :src="
+                                    advertisements.sm_ad[0].advertisement.image
+                                "
+                                :alt="
+                                    advertisements.sm_ad[0].advertisement.title
+                                "
+                            ></v-img>
+                        </v-card>
+                        <v-card
+                            v-if="advertisements.sm_ad[1]"
+                            class="mb-3 w-100 h-100"
+                            :href="advertisements.sm_ad[1].advertisement.url"
+                            target="_blank"
+                            max-height="290"
+                            max-width="290"
+                        >
+                            <v-img
+                                :src="
+                                    advertisements.sm_ad[1].advertisement.image
+                                "
+                                :alt="
+                                    advertisements.sm_ad[1].advertisement.title
+                                "
+                            ></v-img>
+                        </v-card>
+                    </div>
+                </template>
                 <tabNews :latest="latest" :trending="trending" />
             </v-col>
             <v-col cols="12" v-if="related.length > 0">
