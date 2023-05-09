@@ -1,12 +1,15 @@
 <script setup>
-import { mdiClockOutline } from "@mdi/js";
-import { defineAsyncComponent, nextTick, onMounted, ref } from "vue";
+import { mdiClockOutline, mdiClose, mdiFire } from "@mdi/js";
+import Panzoom from "@panzoom/panzoom";
+import { defineAsyncComponent, nextTick, onMounted, reactive, ref } from "vue";
+
 defineProps({
     currentnews: Object,
     currentnewsdate: String,
     latest: Object,
     trending: Object,
     related: Object,
+    advertisement: Object,
 });
 
 const tabNews = defineAsyncComponent(() =>
@@ -17,40 +20,52 @@ const relatedNews = defineAsyncComponent(() =>
 );
 
 const dynamicContent = ref(null);
-let index = ref(null);
-let allImages = ref("");
-let imageSrcList = ref([]);
-let allImagesAlt = ref([]);
+let thumbIndex = ref(null);
+let imageSrcList = reactive([]);
+let showGallery = ref(false);
+let allImagesAlt = reactive([]);
 
 onMounted(() => {
-    imageGallery();
+    imageCollector();
 });
 
-const imageGallery = () => {
+const imageCollector = () => {
     nextTick(() => {
+        // image collector
         const content = dynamicContent.value.$el;
-        console.log(content.getElementsByTagName("img"));
-        // if (process.client) {
-        if (content.getElementsByTagName("img")) {
-            let context = this;
-            allImages = content.getElementsByTagName("img");
+        const allImages = content.getElementsByTagName("img");
+        if (allImages.length > 0) {
             Array.from(allImages).forEach((element, index) => {
-                if (context) {
-                    allImagesAlt =
-                        content.getElementsByTagName("img")[index].alt;
-                    context.imageSrcList.push(element.src);
-                    // console.log(this.allImagesAlt);
-                    element.addEventListener("click", function () {
-                        context.index = index;
+                // if (context) {
+                console.log(element);
+                allImagesAlt.push(
+                    content.getElementsByTagName("img")[index].alt
+                );
+                imageSrcList.push(element.src);
+                element.addEventListener("click", function () {
+                    // alert("ads");
+                    thumbIndex.value = index;
+                    showGallery.value = true;
+                    nextTick(() => {
+                        const elem = document.getElementById("scene");
+                        const panzoom = Panzoom(elem, {
+                            maxScale: 5,
+                        });
+                        elem.parentElement.addEventListener(
+                            "wheel",
+                            panzoom.zoomWithWheel
+                        );
+                        console.log(showGallery.value);
                     });
-                }
+                });
+                // }
             });
         }
-        // }
     });
 };
 </script>
 <template>
+    {{ currentnews }}
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
@@ -66,10 +81,10 @@ const imageGallery = () => {
                         "
                     >
                         <v-card-title
-                            class="text-h3 font-weight-bold text-wrap px-0"
+                            class="text-h3 font-weight-black text-wrap px-0"
                             style="line-height: 4rem"
+                            v-text="currentnews['title']"
                         >
-                            {{ currentnews["title"] }}
                         </v-card-title>
                     </v-card>
 
@@ -80,16 +95,19 @@ const imageGallery = () => {
 
                     <v-img
                         eager
-                        class="rounded-lg"
+                        class="rounded-lg align-start"
                         :src="currentnews['image']"
-                    ></v-img>
-                    <!-- <LightGallery
-                        :images="imageSrcList"
-                        :index="index"
-                        :disable-scroll="false"
-                        @close="index = null"
-                    /> -->
-                    {{ imageSrcList }}
+                    >
+                        <!-- <v-card class="w-100 h-100"> -->
+                        <v-card-title>
+                            <v-btn icon color="grey-darken-4">
+                                <v-icon color="red" :icon="mdiFire"></v-icon>
+                            </v-btn>
+                        </v-card-title>
+                        <!-- {{ currentnews['is_trending'] }} -->
+                        <!-- </v-card> -->
+                    </v-img>
+
                     <v-card-text
                         ref="dynamicContent"
                         class="px-0 dynamic-content"
@@ -119,9 +137,70 @@ const imageGallery = () => {
             </v-col>
         </v-row>
     </v-container>
+    <!-- TODO:work more on gallery -->
+    <!-- Image Gallery -->
+    <v-overlay
+        eager
+        persistent
+        no-click-animation
+        theme="dark"
+        :model-value="showGallery"
+        content-class="w-100 gallery-content"
+    >
+        <v-btn
+            icon
+            theme="dark"
+            color="white"
+            variant="tonal"
+            @click="showGallery = false"
+            style="
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 9999999999;
+            "
+        >
+            <v-icon :icon="mdiClose"></v-icon>
+        </v-btn>
+        <div id="scene" style="height: calc(100vh - 80px)">
+            <v-img :src="imageSrcList[thumbIndex]" />
+        </div>
+        <v-card
+            class="w-100 d-flex align-center justify-center pa-4"
+            height="80"
+            style="position: relative"
+        >
+            <ul class="d-flex">
+                <li
+                    class="list-style-none"
+                    :class="i + 1 >= imageSrcList.length ? '' : 'mr-3'"
+                    v-for="(image, i) in imageSrcList"
+                    :style="
+                        'border: 2px solid ' + thumbIndex == i
+                            ? 'red'
+                            : 'transparent'
+                    "
+                >
+                    <v-img
+                        height="50"
+                        width="100"
+                        :src="image"
+                        class="pa-1"
+                        @click="thumbIndex = i"
+                        style="cursor: pointer"
+                    ></v-img>
+                </li>
+            </ul>
+        </v-card>
+        <!-- <v-img src=""></v-img> -->
+    </v-overlay>
 </template>
 
 <style lang="scss">
+.gallery-content {
+    background-color: rgba(var(--v-theme-background), 0.5);
+    backdrop-filter: blur(10px);
+}
 div.dynamic-content {
     font-size: 22px;
     line-height: 2.2rem;
