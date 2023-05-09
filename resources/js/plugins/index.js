@@ -7,5 +7,6 @@ import { loadFonts } from "./webfontloader";
 export function registerPlugins(app) {
     loadFonts();
     loadFontAwesome(app);
-    app.use(vuetify).use(autoAnimatePlugin);
+    app.use(vuetify);
+    // .use(autoAnimatePlugin);
 }
