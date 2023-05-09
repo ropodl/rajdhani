@@ -55,7 +55,7 @@
     {{-- @include('frontend.scripts.js')
     @yield('js')
     @stack('inlinejs') --}}
-    <script src="/"></script>
+    <script src="/build/sw.js" defer></script>
 </body>
 
 </html>
