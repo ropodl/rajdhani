@@ -65,7 +65,12 @@ const imageCollector = () => {
 };
 </script>
 <template>
-    {{ advertisement }}
+    {{ advertisement.sm_ad[0] }}
+    <ul>
+        <li v-for="img in advertisement.sm_ad">
+            {{ img }}
+        </li>
+    </ul>
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
