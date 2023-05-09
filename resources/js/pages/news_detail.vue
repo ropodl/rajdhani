@@ -65,7 +65,7 @@ const imageCollector = () => {
 };
 </script>
 <template>
-    {{ currentnews }}
+    {{ advertisement }}
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
@@ -73,9 +73,7 @@ const imageCollector = () => {
                     <v-card
                         flat
                         rounded="0"
-                        class="position-sticky"
                         style="
-                            top: 60px;
                             z-index: 99;
                             background-color: rgb(var(--v-theme-background));
                         "
@@ -98,14 +96,11 @@ const imageCollector = () => {
                         class="rounded-lg align-start"
                         :src="currentnews['image']"
                     >
-                        <!-- <v-card class="w-100 h-100"> -->
                         <v-card-title v-if="currentnews['is_trending']">
                             <v-btn icon color="grey-darken-4">
                                 <v-icon color="red" :icon="mdiFire"></v-icon>
                             </v-btn>
                         </v-card-title>
-                        <!-- {{ currentnews['is_trending'] }} -->
-                        <!-- </v-card> -->
                     </v-img>
 
                     <v-card-text
@@ -176,9 +171,9 @@ const imageCollector = () => {
                     :class="i + 1 >= imageSrcList.length ? '' : 'mr-3'"
                     v-for="(image, i) in imageSrcList"
                     :style="
-                        'border: 2px solid ' + thumbIndex == i
-                            ? 'red'
-                            : 'transparent'
+                        thumbIndex == i
+                            ? 'border: 2px solid red'
+                            : 'border: 2px solid transparent'
                     "
                 >
                     <v-img
