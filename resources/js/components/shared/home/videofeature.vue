@@ -32,7 +32,7 @@ const getWatchUrl = (link) => {
                     </v-tabs>
                 </v-col>
                 <v-col cols="12" md="9">
-                    <v-window v-model="tab">
+                    <v-window transition="fade-transition" v-model="tab">
                         <v-window-item
                             :value="index"
                             v-for="(video, index) in videos"

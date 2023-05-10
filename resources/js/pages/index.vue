@@ -51,12 +51,12 @@ const twoFour = defineAsyncComponent(() =>
     </template>
     <v-container>
         <v-row>
-            <v-col cols="12" :md="advertisements.sm_ad ? '9' : '12'">
+            <v-col cols="12" md="9">
                 <latestNews :latest="latest" />
             </v-col>
-            <template v-if="advertisements.sm_ad">
-                <v-col cols="12" md="3">
-                    <div class="d-flex flex-wrap justify-space-between">
+            <v-col cols="12" md="3">
+                <div class="d-flex flex-wrap justify-space-between">
+                    <v-responsive :aspect-ratio="1">
                         <v-card
                             class="mb-3 w-100 h-100"
                             :href="advertisements.sm_ad[0].advertisement.url"
@@ -65,7 +65,6 @@ const twoFour = defineAsyncComponent(() =>
                             max-width="290"
                         >
                             <v-img
-                                eager
                                 :src="
                                     advertisements.sm_ad[0].advertisement.image
                                 "
@@ -74,26 +73,21 @@ const twoFour = defineAsyncComponent(() =>
                                 "
                             ></v-img>
                         </v-card>
-                        <v-card
-                            class="mb-3 w-100 h-100"
-                            :href="advertisements.sm_ad[1].advertisement.url"
-                            target="_blank"
-                            max-height="290"
-                            max-width="290"
-                        >
-                            <v-img
-                                eager
-                                :src="
-                                    advertisements.sm_ad[1].advertisement.image
-                                "
-                                :alt="
-                                    advertisements.sm_ad[1].advertisement.title
-                                "
-                            ></v-img>
-                        </v-card>
-                    </div>
-                </v-col>
-            </template>
+                    </v-responsive>
+                    <v-card
+                        class="mb-3 w-100 h-100"
+                        :href="advertisements.sm_ad[1].advertisement.url"
+                        target="_blank"
+                        max-height="290"
+                        max-width="290"
+                    >
+                        <v-img
+                            :src="advertisements.sm_ad[1].advertisement.image"
+                            :alt="advertisements.sm_ad[1].advertisement.title"
+                        ></v-img>
+                    </v-card>
+                </div>
+            </v-col>
         </v-row>
     </v-container>
     <template
@@ -134,7 +128,7 @@ const twoFour = defineAsyncComponent(() =>
         </template>
         <template v-if="item['name'] == 'साहित्य' && item['news'].length > 0">
             <v-container>
-                <twoFive :data="item"></twoFive>
+                <threeCol :data="item"></threeCol>
             </v-container>
         </template>
         <template
@@ -155,7 +149,61 @@ const twoFour = defineAsyncComponent(() =>
             </v-container>
         </template>
         <template v-if="item['name'] == 'शिक्षा' && item['news'].length > 0">
-            <v-container> </v-container>
+            <v-container>
+                <v-row>
+                    <v-col cols="12">
+                        <div class="d-flex align-center flex-wrap">
+                            <span
+                                class="text-h3 font-rajdhani font-weight-bold"
+                            >
+                                {{ item["name"] }}
+                            </span>
+                            <v-spacer></v-spacer>
+                            <v-btn
+                                rounded
+                                color="primary"
+                                variant="tonal"
+                                :href="'/category/' + item['slug']"
+                            >
+                                थप {{ item["name"] }} समाचार
+                            </v-btn>
+                        </div>
+                    </v-col>
+                    <template v-for="(item, i) in item['news']">
+                        <v-hover v-if="i < 6" v-slot="{ isHovering, props }">
+                            <v-col cols="12" md="4" v-bind="props">
+                                <v-card :href="'/news/' + item['id']">
+                                    <v-img
+                                        cover
+                                        height="250"
+                                        :class="[
+                                            'align-end px-2 pb-2',
+                                            isHovering ? 'zoom' : '',
+                                        ]"
+                                        :src="item['image']"
+                                    >
+                                        <v-card
+                                            style="
+                                                background-color: rgba(
+                                                    var(--v-theme-background),
+                                                    0.8
+                                                );
+                                                backdrop-filter: blur(10px);
+                                            "
+                                        >
+                                            <v-card-title
+                                                class="text-h6 text-wrap font-weight-bold line-clamp-3"
+                                            >
+                                                {{ item["title"] }}
+                                            </v-card-title>
+                                        </v-card>
+                                    </v-img>
+                                </v-card>
+                            </v-col>
+                        </v-hover>
+                    </template>
+                </v-row>
+            </v-container>
         </template>
         <template v-if="item['name'] == 'स्वास्थ्य' && item['news'].length > 0">
             <v-container>
