@@ -4,42 +4,11 @@
     @endphp
 @endif --}}
 <topbar class="hidden-sm-and-down" date="{{ nepalidate(now()) }}" :socials="{{ json_encode($media) }}"></topbar>
-{{-- {{ !$headerAds['advertisement']->isEmpty() }} --}}
-<midbar @empty(!$headerAds['advertisement'])
-    :ads="{{ json_encode($headerAds['advertisement']) }}">
-    @endempty
-    </midbar>
-    {{-- <template #ads>
-        <v-img height="110" :src="{{ json_encode($headerAds['advertisement']->image) }}"></v-img>
-        {{ json_encode($headerAds['advertisement']->image) }}
-    </template> --}}
+<midbar :ads="{{ !empty($headerAds) ? json_encode($headerAds['advertisement']) : 'false' }}">
+</midbar>
 </midbar>
 <navbar :provinces="{{ json_encode($provinces) }}" :categories="{{ json_encode($headerCats) }}"
     :tags="{{ json_encode($tags) }}"></navbar>
-<!-- topbar -->
-{{-- <section class="topbar">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <ul class="social-links">
-                    <li><a href="{{ $media->facebook_link }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="{{ $media->instagram_link }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="{{ $media->youtube_link }}" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
-                    <li><a href="{{ $media->twitter_link }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="{{ $media->linkedin_link }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-            <div class="col-sm-hidden col-md-6">
-                <div class="d-flex">
-                    <ul class="info-text">
-                        <li>Email: Rajdhanipress1@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
-
 <!-- middle logo section -->
 {{-- <section class="sc-logo">
     <div class="container">

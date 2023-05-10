@@ -1,7 +1,10 @@
 <script setup>
 defineProps({
     date: String,
-    ads: Object,
+    ads: {
+        type: [Boolean, Object],
+        required: true,
+    },
 });
 </script>
 <template>
@@ -23,9 +26,8 @@ defineProps({
                     ></v-img>
                 </v-btn>
             </v-col>
-            <!-- <v-spacer></v-spacer> -->
             <v-col cols="12" md="8">
-                <div class="d-flex">
+                <div class="d-flex" v-if="ads">
                     <v-card
                         flat
                         class="w-100 ml-auto rounded-0 bg-transparent"
@@ -37,11 +39,10 @@ defineProps({
                             height="90"
                             class="w-100 h-100"
                             :src="ads['image']"
-                            ></v-img>
-                        </v-card>
-                    </div>
-                </v-col>
-            </v-row>
-        </v-container>
-        <!-- {{ ads }} -->
+                        ></v-img>
+                    </v-card>
+                </div>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
