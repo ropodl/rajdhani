@@ -8,12 +8,6 @@
             display: flex;
         }
     </style>
-    {{-- <v-container>
-        <v-row justify="center">
-            <v-col cols="12" md="6">
-            </v-col>
-        </v-row>
-    </v-container> --}}
     <section class="no-news-section">
         <div class="container align-self-center">
             <div class="row">

@@ -24,7 +24,7 @@
         "vite-plugin-pwa": "^0.14.7",
         "vite-plugin-vuetify": "^1.0.2",
         "vue-social-sharing": "^4.0.0-alpha4",
-        "vuetify": "^3.2.2",
+        "vuetify": "^3.2.3",
         "webfontloader": "^1.6.28"
     }
 }

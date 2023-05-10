@@ -30,6 +30,10 @@
         html {
             font-family: "Mukta Mahee", sans-serif !important;
         }
+
+        .font-rajdhani {
+            font-family: "Rajdhani" !important
+        }
     </style>
     <script src="/build/registerSW.js"></script>
 </head>
