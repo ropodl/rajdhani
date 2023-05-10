@@ -1,10 +1,14 @@
-@if (!empty($headerAds['l_ad']))
+{{-- @if (!empty($headerAds['l_ad']))
     @php
         $firstHeaderAdv = $headerAds['l_ad'][0]->advertisement ?? '';
     @endphp
-@endif
+@endif --}}
 <topbar class="hidden-sm-and-down" date="{{ nepalidate(now()) }}" :socials="{{ json_encode($media) }}"></topbar>
-<midbar :ads="{{ json_encode($headerAds['advertisement']) }}">
+{{-- {{ !$headerAds['advertisement']->isEmpty() }} --}}
+<midbar @empty(!$headerAds['advertisement'])
+    :ads="{{ json_encode($headerAds['advertisement']) }}">
+    @endempty
+    </midbar>
     {{-- <template #ads>
         <v-img height="110" :src="{{ json_encode($headerAds['advertisement']->image) }}"></v-img>
         {{ json_encode($headerAds['advertisement']->image) }}
