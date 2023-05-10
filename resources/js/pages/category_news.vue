@@ -1,4 +1,6 @@
 <script setup>
+import moment from "moment";
+import { mdiClockOutline } from "@mdi/js";
 defineProps({
     news: Object,
     title: String,
@@ -40,17 +42,20 @@ const paginate = (e) => {
                                             <v-avatar rounded="lg" size="auto">
                                                 <v-img
                                                     cover
-                                                    width="150"
-                                                    height="120"
+                                                    width="200"
+                                                    height="150"
                                                     :class="
                                                         isHovering ? 'zoom' : ''
                                                     "
                                                     :src="item['image']"
+                                                    :alt="
+                                                        item.media[0].file_name
+                                                    "
                                                 ></v-img>
                                             </v-avatar>
                                         </template>
                                         <v-list-item-title
-                                            class="text-h5 text-wrap line-clamp-2 font-weight-bold"
+                                            class="text-h5 text-wrap line-clamp-3 font-weight-bold mb-3"
                                             style="
                                                 line-height: 2rem;
                                                 white-space: wrap;
@@ -58,7 +63,7 @@ const paginate = (e) => {
                                         >
                                             {{ item["title"] }}
                                         </v-list-item-title>
-                                        <!-- <v-list-item-subtitle>
+                                        <v-list-item-subtitle>
                                             <v-icon
                                                 start
                                                 size="small"
@@ -69,7 +74,7 @@ const paginate = (e) => {
                                                     .startOf("day")
                                                     .fromNow()
                                             }}
-                                        </v-list-item-subtitle> -->
+                                        </v-list-item-subtitle>
                                         <v-list-item-subtitle
                                             class="line-clamp-3"
                                             v-html="item['description']"

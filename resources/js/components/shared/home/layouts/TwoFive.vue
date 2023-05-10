@@ -52,7 +52,7 @@ defineProps({
                                     <v-list class="bg-transparent">
                                         <v-list-item>
                                             <v-list-item-title
-                                                class="text-h5 font-weight-bold mb-2"
+                                                class="text-h5 font-weight-bold mb-2 text-wrap"
                                                 style="line-height: 2rem"
                                             >
                                                 {{ data.news[0].title }}
@@ -105,7 +105,7 @@ defineProps({
                                     <v-list class="bg-transparent">
                                         <v-list-item>
                                             <v-list-item-title
-                                                class="text-h5 font-weight-bold mb-2"
+                                                class="text-h5 font-weight-bold mb-2 text-wrap"
                                                 style="line-height: 2rem"
                                             >
                                                 {{ data.news[1].title }}

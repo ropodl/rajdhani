@@ -32,7 +32,7 @@ defineProps({
                             <v-list class="bg-transparent">
                                 <v-list-item>
                                     <v-list-item-title
-                                        class="text-h5 font-weight-bold mb-2"
+                                        class="text-h5 font-weight-bold mb-3"
                                         style="line-height: 2rem"
                                     >
                                         {{ latest[0].title }}
@@ -74,11 +74,12 @@ defineProps({
                                         height="133"
                                         :class="isHovering ? 'zoom' : ''"
                                         :src="item['image']"
+                                        :alt="item.media[0].file_name"
                                     ></v-img>
                                 </v-avatar>
                             </template>
                             <v-list-item-title
-                                class="text-h5 text-wrap line-clamp-3 font-weight-bold"
+                                class="text-h5 text-wrap line-clamp-3 font-weight-bold mb-3"
                                 style="line-height: 2rem; white-space: wrap"
                             >
                                 {{ item["title"] }}

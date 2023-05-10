@@ -18,17 +18,18 @@ defineProps({
                         </div>
                     </v-col>
                     <v-col cols="12" md="8">
-                        <div class="d-flex justify-space-between flex-wrap">
+                        <!-- <div class="d-flex justify-space-between flex-wrap"> -->
+                        <v-chip-group class="justify-space-between">
                             <v-chip
                                 v-for="item in provinces"
-                                variant="tonal"
-                                color="primary"
                                 class="font-rajdhani font-weight-bold text-subtitle-1 mb-2"
                                 :href="'/province/' + item['name']"
+                                style="max-width: min-content !important"
                             >
                                 {{ item["name"] }}
                             </v-chip>
-                        </div>
+                        </v-chip-group>
+                        <!-- </div> -->
                     </v-col>
                 </v-row>
             </v-col>
@@ -36,7 +37,8 @@ defineProps({
                 <v-row>
                     <v-col cols="12" md="6">
                         <v-hover v-slot="{ isHovering, props }">
-                            <v-card variant="text"
+                            <v-card
+                                variant="text"
                                 class="mb-3"
                                 :href="'/news/' + provincenews[0].id"
                             >
@@ -90,7 +92,10 @@ defineProps({
                     </v-col>
                     <v-col cols="12" md="6">
                         <v-hover v-slot="{ isHovering, props }">
-                            <v-card variant="text" :href="'/news/' + provincenews[1].id">
+                            <v-card
+                                variant="text"
+                                :href="'/news/' + provincenews[1].id"
+                            >
                                 <v-img
                                     cover
                                     height="516"
