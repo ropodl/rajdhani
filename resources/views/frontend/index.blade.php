@@ -15,8 +15,6 @@
         @endphp
     @endif
 
-    {{-- {{ $latestNews }} --}}
-
     <home :mainnews="{{ json_encode($mainNews) }}" :latest="{{ json_encode($latestNews) }}"
         :trending="{{ json_encode($trendingNews) }}" :provinces="{{ $provinces }}"
         :provincenews="{{ json_encode($provinceWiseNews) }}" :photos="{{ $photoFeatures }}" :videos="{{ $videos }}"
