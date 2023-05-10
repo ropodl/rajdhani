@@ -75,12 +75,12 @@ const imageCollector = () => {
                             background-color: rgb(var(--v-theme-background));
                         "
                     > -->
-                        <v-card-title
-                            class="text-h3 font-weight-black text-wrap px-0"
-                            style="line-height: 4rem"
-                            v-text="currentnews['title']"
-                        >
-                        </v-card-title>
+                    <v-card-title
+                        class="text-h3 font-weight-black text-wrap px-0"
+                        style="line-height: 4rem"
+                        v-text="currentnews['title']"
+                    >
+                    </v-card-title>
                     <!-- </v-card> -->
 
                     <v-card-text class="px-0">
@@ -93,11 +93,11 @@ const imageCollector = () => {
                         class="rounded-lg align-start"
                         :src="currentnews['image']"
                     >
-                        <v-card-title v-if="currentnews['is_trending']">
+                        <!-- <v-card-title v-if="currentnews['is_trending']">
                             <v-btn icon color="grey-darken-4">
                                 <v-icon color="red" :icon="mdiFire"></v-icon>
                             </v-btn>
-                        </v-card-title>
+                        </v-card-title> -->
                     </v-img>
 
                     <v-card-text
@@ -108,7 +108,7 @@ const imageCollector = () => {
                 </article>
             </v-col>
             <v-col cols="12" md="3">
-                <template v-if="advertisements.sm_ad[0]">
+                <template v-if="advertisements.sm_ad">
                     <div class="d-flex flex-wrap justify-space-between">
                         <v-card
                             class="mb-3 w-100 h-100"

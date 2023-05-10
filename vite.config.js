@@ -6,7 +6,7 @@ import vuetify from "vite-plugin-vuetify";
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 
-import VueMacros from "unplugin-vue-macros/vite";
+// import VueMacros from "unplugin-vue-macros/vite";
 // Vite Pwa
 import { VitePWA } from "vite-plugin-pwa";
 
@@ -16,18 +16,18 @@ export default defineConfig({
             input: ["resources/sass/frontend.scss", "resources/js/app.js"],
             refresh: true,
         }),
-        VueMacros({
-            plugins: {
-                vue: Vue({
-                    template: {
-                        transformAssetUrls: {
-                            base: null,
-                            includeAbsolute: false,
-                        },
-                    },
-                }),
+        // VueMacros({
+        //     plugins: {
+        Vue({
+            template: {
+                transformAssetUrls: {
+                    base: null,
+                    includeAbsolute: false,
+                },
             },
         }),
+        //     },
+        // }),
         vuetify({
             treeshaking: true,
             autoImport: true,
