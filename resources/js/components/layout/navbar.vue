@@ -59,7 +59,8 @@ const switchThemeMode = () => {
                         <v-icon :icon="mdiHome"></v-icon>
                     </v-btn>
                     <v-btn rounded="0" height="60">
-                        <v-icon start
+                        <v-icon
+                            start
                             class="font-weight-bold text-subtitle-1 hidden-md-and-up"
                             :icon="mdiMenu"
                         >
@@ -114,7 +115,7 @@ const switchThemeMode = () => {
                         </v-btn>
                     </template>
                 </v-col>
-                <v-col cols="6" sm="3" md="2">
+                <!-- <v-col cols="6" sm="3" md="2">
                     <div class="d-flex">
                         <v-spacer></v-spacer>
 
@@ -195,7 +196,7 @@ const switchThemeMode = () => {
                             </v-card>
                         </v-dialog>
                     </div>
-                </v-col>
+                </v-col> -->
             </v-row>
         </v-container>
     </v-app-bar>
@@ -204,5 +205,10 @@ const switchThemeMode = () => {
 .v-app-bar {
     position: sticky !important;
     top: 0 !important;
+}
+</style>
+<style lang="scss">
+.font-rajdhani{
+    font-family: Rajdhani !important;
 }
 </style>
