@@ -1,4 +1,13 @@
 @extends('frontend.layouts.app')
+@section('meta')
+    @component('frontend.components.meta', [
+        'title' => $title,
+        // 'description' => $title,
+        'image' => asset('frontend/img/logo.png'),
+        'url' => request()->url(),
+    ])
+    @endcomponent()
+@endsection
 @section('content')
     {{-- {{ $news }} --}}
     <categorynews :news="{{ json_encode($news) }}" :title="{{ json_encode($title) }}"></categorynews>

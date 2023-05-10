@@ -84,7 +84,12 @@ const twoFour = defineAsyncComponent(() =>
             </v-col>
         </v-row>
     </v-container>
-    <template v-for="(item, index) in catnews">
+    <template
+        v-for="(item, index) in catnews.sort((a, b) =>
+            a.sort > b.sort ? 1 : -1
+        )"
+    >
+        <!-- {{ item["name"] }}{{ item["sort"] }} -->
         <template v-if="item['name'] == 'राजनीति' && item['news'].length > 0">
             <v-container>
                 <overlayFull :data="item"></overlayFull>
@@ -110,6 +115,16 @@ const twoFour = defineAsyncComponent(() =>
                 <overlayFull :data="item"></overlayFull>
             </v-container>
         </template>
+        <template v-if="item['name'] == 'अर्थ' && item['news'].length > 0">
+            <v-container>
+                <overlayFull :data="item"></overlayFull>
+            </v-container>
+        </template>
+        <template v-if="item['name'] == 'साहित्य' && item['news'].length > 0">
+            <v-container>
+                <twoFive :data="item"></twoFive>
+            </v-container>
+        </template>
         <template
             v-if="item['name'] == 'अन्तर्राष्ट्रिय' && item['news'].length > 0"
         >
@@ -122,7 +137,12 @@ const twoFour = defineAsyncComponent(() =>
                 <twoFour :data="item"></twoFour>
             </v-container>
         </template>
-        <template v-if="item['name'] == 'स्वास्थ्य' && item['news'].length > 0">
+        <template v-if="item['name'] == 'विचार' && item['news'].length > 0">
+            <v-container>
+                <twoFour :data="item"></twoFour>
+            </v-container>
+        </template>
+        <template v-if="item['name'] == 'शिक्षा' && item['news'].length > 0">
             <v-container>
                 <v-row>
                     <v-col cols="12">
@@ -179,7 +199,12 @@ const twoFour = defineAsyncComponent(() =>
                 </v-row>
             </v-container>
         </template>
-        <template v-if="index == 4">
+        <template v-if="item['name'] == 'स्वास्थ्य' && item['news'].length > 0">
+            <v-container>
+                <twoFour :data="item"></twoFour>
+            </v-container>
+        </template>
+        <template v-if="index == 1">
             <provinceNews :provinces="provinces" :provincenews="provincenews" />
         </template>
         <template v-if="index == 6">

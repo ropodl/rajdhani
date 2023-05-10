@@ -7,7 +7,7 @@ defineProps({
 <template>
     <v-row>
         <v-col cols="12">
-            <div class="text-h4 font-rajdhani text-primary font-weight-bold">
+            <div class="text-h3 font-rajdhani text-primary font-weight-bold">
                 सम्बन्धित खबर
             </div>
         </v-col>

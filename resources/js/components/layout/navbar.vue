@@ -40,7 +40,7 @@ const switchThemeMode = () => {
         class="overflow-visible position-relative"
     >
         <v-container>
-            <v-row>
+            <v-row class="d-flex align-center">
                 <v-btn
                     eager
                     color="white"
@@ -52,6 +52,7 @@ const switchThemeMode = () => {
                     <v-icon :icon="mdiHome"></v-icon>
                 </v-btn>
                 <!-- TODO:menu not working a intended -->
+
                 <v-menu
                     contained
                     width="150"
@@ -84,6 +85,7 @@ const switchThemeMode = () => {
                         </template>
                     </v-list>
                 </v-menu>
+
                 <template v-for="category in categories">
                     <v-btn
                         v-if="category['show_on_menu']"

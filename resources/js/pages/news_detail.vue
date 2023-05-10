@@ -64,31 +64,25 @@ const imageCollector = () => {
 };
 </script>
 <template>
-    <!-- {{ advertisement }} -->
-    <!-- <ul>
-        <li v-for="img in advertisement.sm_ad">
-            {{ img }}
-        </li>
-    </ul> -->
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
                 <article>
-                    <v-card
+                    <!-- <v-card
                         flat
                         rounded="0"
                         style="
                             z-index: 99;
                             background-color: rgb(var(--v-theme-background));
                         "
-                    >
+                    > -->
                         <v-card-title
                             class="text-h3 font-weight-black text-wrap px-0"
                             style="line-height: 4rem"
                             v-text="currentnews['title']"
                         >
                         </v-card-title>
-                    </v-card>
+                    <!-- </v-card> -->
 
                     <v-card-text class="px-0">
                         <v-icon :icon="mdiClockOutline"></v-icon>
