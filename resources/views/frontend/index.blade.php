@@ -15,7 +15,7 @@
         @endphp
     @endif
 
-    {{-- {{ $advertisements }} --}}
+    {{ $latestNews }}
 
     <home :mainnews="{{ json_encode($mainNews) }}" :latest="{{ json_encode($latestNews) }}"
         :trending="{{ json_encode($trendingNews) }}" :provinces="{{ $provinces }}"

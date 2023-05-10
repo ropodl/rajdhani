@@ -6,7 +6,6 @@
 <topbar class="hidden-sm-and-down" date="{{ nepalidate(now()) }}" :socials="{{ json_encode($media) }}"></topbar>
 <midbar :ads="{{ !empty($headerAds) ? json_encode($headerAds['advertisement']) : 'false' }}">
 </midbar>
-</midbar>
 <navbar :provinces="{{ json_encode($provinces) }}" :categories="{{ json_encode($headerCats) }}"
     :tags="{{ json_encode($tags) }}"></navbar>
 <!-- middle logo section -->

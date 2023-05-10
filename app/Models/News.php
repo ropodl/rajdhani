@@ -62,6 +62,21 @@ class News extends Model implements HasMedia
     {
         return $query->where('is_main_news', 1)->orderBy('id', 'desc');
     }
+    public function scopeWithOutDesc($query)
+    {
+        return $query->select(
+            'title',
+            'slug',
+            'category_id',
+            'province_id',
+            'description',
+            'status',
+            'is_trending',
+            'is_main_news',
+            'is_photo_feature',
+            'author'
+        );
+    }
     public function scopeIsMainNews($query)
     {
         return $query->where('is_main_news', 1)->where('status', 1)->where('created_at', '>=', Carbon::now()->subHours(12))->take(3);
