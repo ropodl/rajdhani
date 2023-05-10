@@ -35,7 +35,6 @@
             font-family: "Rajdhani" !important
         }
     </style>
-    <script src="/build/registerSW.js"></script>
 </head>
 
 <body>
@@ -60,6 +59,7 @@
     {{-- @include('frontend.scripts.js')
     @yield('js')
     @stack('inlinejs') --}}
+    <script src="/build/registerSW.js" defer></script>
 </body>
 
 </html>
