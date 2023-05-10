@@ -24,8 +24,9 @@ defineProps({
                 </v-btn>
             </div>
         </v-col>
+        <!-- test -->
         <template v-for="(item, index) in data['news']">
-            <v-col cols="12" md="4" class="pb-0" v-if="index < 9">
+            <v-col cols="12" sm="6" md="6" lg="4" class="pb-0" v-if="index < 9">
                 <v-hover v-slot="{ isHovering, props }">
                     <v-list-item
                         :href="'/news/' + item['id']"

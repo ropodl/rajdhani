@@ -25,7 +25,7 @@ defineProps({
         </v-col>
         <v-col cols="12" md="6">
             <v-row>
-                <v-col cols="12" class="pb-0">
+                <v-col cols="12" sm="6" md="12" class="pb-0">
                     <v-hover v-slot="{ isHovering, props }">
                         <v-card
                             variant="text"
@@ -78,7 +78,7 @@ defineProps({
                         </v-card>
                     </v-hover>
                 </v-col>
-                <v-col cols="12">
+                <v-col cols="12" sm="6" md="12">
                     <v-hover v-slot="{ isHovering, props }">
                         <v-card
                             variant="text"

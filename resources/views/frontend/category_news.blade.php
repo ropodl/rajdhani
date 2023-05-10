@@ -3,14 +3,24 @@
     @component('frontend.components.meta', [
         'title' => $title,
         // 'description' => $title,
-        'image' => asset('frontend/img/logo.png'),
+        'image' => 'https://rajdhanipress.com/media/83/logo-removebg-preview.png',
         'url' => request()->url(),
     ])
     @endcomponent()
 @endsection
 @section('content')
     {{-- {{ $news }} --}}
-    <categorynews :news="{{ json_encode($news) }}" :title="{{ json_encode($title) }}"></categorynews>
+    @if (!$news->isEmpty())
+        <categorynews :news="{{ json_encode($news) }}" :title="{{ json_encode($title) }}"></categorynews>
+    @else
+        <v-container>
+            <v-row>
+                <v-col cols="12" md="12">
+                    माफ गर्नुहोस्! " {{ $title }} " नामको कुनै पोस्ट फेला परेन
+                </v-col>
+            </v-row>
+        </v-container>
+    @endif
     {{-- <section class="sc-news2 pb-4">
         <div class="container">
             <div class="section-title d-flex justify-content-between mt-4">

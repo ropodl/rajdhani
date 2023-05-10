@@ -64,7 +64,7 @@ defineProps({
     <v-app-bar flat class="bg-grey-darken-4">
         <v-container>
             <v-row justify="center">
-                <v-col cols="3">
+                <v-col cols="12" class="text-center">
                     Copyright © {{ new Date().getFullYear() }} राजधानी प्रेस
                 </v-col>
             </v-row>

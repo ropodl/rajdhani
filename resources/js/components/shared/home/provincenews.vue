@@ -18,12 +18,12 @@ defineProps({
                         </div>
                     </v-col>
                     <v-col cols="12" md="8">
-                        <div class="d-flex justify-space-between">
+                        <div class="d-flex justify-space-between flex-wrap">
                             <v-chip
                                 v-for="item in provinces"
                                 variant="tonal"
                                 color="primary"
-                                class="font-rajdhani font-weight-bold text-subtitle-1"
+                                class="font-rajdhani font-weight-bold text-subtitle-1 mb-2"
                                 :href="'/province/' + item['name']"
                             >
                                 {{ item["name"] }}
@@ -34,7 +34,7 @@ defineProps({
             </v-col>
             <v-col cols="12" md="7">
                 <v-row>
-                    <v-col cols="6">
+                    <v-col cols="12" md="6">
                         <v-hover v-slot="{ isHovering, props }">
                             <v-card variant="text"
                                 class="mb-3"
@@ -88,7 +88,7 @@ defineProps({
                             </v-card>
                         </v-hover>
                     </v-col>
-                    <v-col cols="6">
+                    <v-col cols="12" md="6">
                         <v-hover v-slot="{ isHovering, props }">
                             <v-card variant="text" :href="'/news/' + provincenews[1].id">
                                 <v-img
