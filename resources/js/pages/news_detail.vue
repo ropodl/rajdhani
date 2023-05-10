@@ -36,7 +36,6 @@ const imageCollector = () => {
         const allImages = content.getElementsByTagName("img");
         if (allImages.length > 0) {
             Array.from(allImages).forEach((element, index) => {
-                // if (context) {
                 console.log(element);
                 allImagesAlt.push(
                     content.getElementsByTagName("img")[index].alt

@@ -206,9 +206,3 @@ const switchThemeMode = () => {
     top: 0 !important;
 }
 </style>
-<style>
-.font-rajdhani {
-    font-family: "Rajdhani" !important;
-    font-weight: 600;
-}
-</style>
