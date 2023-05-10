@@ -27,7 +27,7 @@ const getWatchUrl = (link) => {
                             :value="index"
                             class="text-capitalize"
                         >
-                            Video {{ index+ 1 }}
+                            Video {{ index + 1 }}
                         </v-tab>
                     </v-tabs>
                 </v-col>
@@ -37,14 +37,15 @@ const getWatchUrl = (link) => {
                             :value="index"
                             v-for="(video, index) in videos"
                         >
-                                <iframe
-                                    width="100%"
-                                    height="490"
-                                    :src="getWatchUrl(video['iframe'])"
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allowfullscreen
-                                ></iframe>
+                            <iframe
+                                loading="lazy"
+                                width="100%"
+                                height="490"
+                                :src="getWatchUrl(video['iframe'])"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allowfullscreen
+                            ></iframe>
                         </v-window-item>
                     </v-window>
                 </v-col>
