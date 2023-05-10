@@ -28,7 +28,7 @@ defineProps({
                 <div class="d-flex">
                     <v-card
                         flat
-                        class="w-100 ml-auto rounded-0"
+                        class="w-100 ml-auto rounded-0 bg-transparent"
                         max-width="728"
                         :href="ads['url']"
                         target="_blank"
