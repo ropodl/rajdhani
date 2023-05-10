@@ -1,6 +1,7 @@
 <script setup>
 defineProps({
     date: String,
+    ads: Object,
 });
 </script>
 <template>
@@ -22,12 +23,25 @@ defineProps({
                     ></v-img>
                 </v-btn>
             </v-col>
+            <!-- <v-spacer></v-spacer> -->
             <v-col cols="12" md="8">
-                <v-img
-                    height="100"
-                    src="https://www.onlinekhabar.com/wp-content/uploads/2023/03/ezgif.com-video-to-gif.gif"
-                ></v-img>
-            </v-col>
-        </v-row>
-    </v-container>
+                <div class="d-flex">
+                    <v-card
+                        flat
+                        class="w-100 ml-auto rounded-0"
+                        max-width="728"
+                        :href="ads['url']"
+                        target="_blank"
+                    >
+                        <v-img
+                            height="90"
+                            class="w-100 h-100"
+                            :src="ads['image']"
+                            ></v-img>
+                        </v-card>
+                    </div>
+                </v-col>
+            </v-row>
+        </v-container>
+        <!-- {{ ads }} -->
 </template>

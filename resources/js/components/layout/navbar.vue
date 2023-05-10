@@ -50,60 +50,64 @@ const switchThemeMode = () => {
                     :icon="mdiHome"
                 >
                 </v-btn>
-                <div class="hidden-sm-and-down">
-                    <template
-                        v-for="(item, i) in categories.sort((a, b) =>
-                            a.sort > b.sort ? 1 : -1
-                        )"
-                    >
-                        <v-btn
-                            height="60"
-                            size="small"
-                            class="font-rajdhani text-h6 font-weight-bold rounded-0"
-                            :href="'/category/' + item['slug']"
+                <template v-if="categories.length > 0">
+                    <div class="hidden-sm-and-down">
+                        <template
+                            v-for="(item, i) in categories.sort((a, b) =>
+                                a.sort > b.sort ? 1 : -1
+                            )"
                         >
-                            {{ item["name"] }}
-                        </v-btn>
-                        <template v-if="i == 1">
-                            <v-menu
-                                stacked
-                                contained
-                                width="150"
-                                location="top"
-                                location-strategy="connected"
+                            <v-btn
+                                height="60"
+                                size="small"
+                                class="font-rajdhani text-h6 font-weight-bold rounded-0"
+                                :href="'/category/' + item['slug']"
                             >
-                                <template v-slot:activator="{ props }">
-                                    <v-btn
-                                        rounded="0"
-                                        color="white"
-                                        height="60"
-                                        size="small"
-                                        v-bind="props"
-                                        class="font-rajdhani font-weight-bold text-h6"
-                                    >
-                                        प्रदेश
-                                        <v-icon
-                                            end
-                                            size="x-small"
-                                            :icon="mdiChevronDown"
-                                        ></v-icon>
-                                    </v-btn>
-                                </template>
-                                <v-list class="rounded-t-0">
-                                    <template v-for="item in provinces">
-                                        <v-list-item
-                                            :href="'/province/' + item['name']"
+                                {{ item["name"] }}
+                            </v-btn>
+                            <template v-if="i == 1">
+                                <v-menu
+                                    stacked
+                                    contained
+                                    width="150"
+                                    location="top"
+                                    location-strategy="connected"
+                                >
+                                    <template v-slot:activator="{ props }">
+                                        <v-btn
+                                            rounded="0"
+                                            color="white"
+                                            height="60"
+                                            size="small"
+                                            v-bind="props"
+                                            class="font-rajdhani font-weight-bold text-h6"
                                         >
-                                            <v-list-item-title>
-                                                {{ item["name"] }}
-                                            </v-list-item-title>
-                                        </v-list-item>
+                                            प्रदेश
+                                            <v-icon
+                                                end
+                                                size="x-small"
+                                                :icon="mdiChevronDown"
+                                            ></v-icon>
+                                        </v-btn>
                                     </template>
-                                </v-list>
-                            </v-menu>
+                                    <v-list class="rounded-t-0">
+                                        <template v-for="item in provinces">
+                                            <v-list-item
+                                                :href="
+                                                    '/province/' + item['name']
+                                                "
+                                            >
+                                                <v-list-item-title>
+                                                    {{ item["name"] }}
+                                                </v-list-item-title>
+                                            </v-list-item>
+                                        </template>
+                                    </v-list>
+                                </v-menu>
+                            </template>
                         </template>
-                    </template>
-                </div>
+                    </div>
+                </template>
                 <v-spacer> </v-spacer>
                 <v-btn
                     rounded="0"

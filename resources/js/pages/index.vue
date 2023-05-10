@@ -51,37 +51,39 @@ const twoFour = defineAsyncComponent(() =>
     </template>
     <v-container>
         <v-row>
-            <v-col cols="12" md="9">
+            <v-col cols="12" :md="advertisements.sm_ad?'9':'12'">
                 <latestNews :latest="latest" />
             </v-col>
-            <v-col cols="12" md="3">
-                <div class="d-flex flex-wrap justify-space-between">
-                    <v-card
-                        class="mb-3 w-100 h-100"
-                        :href="advertisements.sm_ad[0].advertisement.url"
-                        target="_blank"
-                        max-height="290"
-                        max-width="290"
-                    >
-                        <v-img
-                            :src="advertisements.sm_ad[0].advertisement.image"
-                            :alt="advertisements.sm_ad[0].advertisement.title"
-                        ></v-img>
-                    </v-card>
-                    <v-card
-                        class="mb-3 w-100 h-100"
-                        :href="advertisements.sm_ad[1].advertisement.url"
-                        target="_blank"
-                        max-height="290"
-                        max-width="290"
-                    >
-                        <v-img
-                            :src="advertisements.sm_ad[1].advertisement.image"
-                            :alt="advertisements.sm_ad[1].advertisement.title"
-                        ></v-img>
-                    </v-card>
-                </div>
-            </v-col>
+            <template v-if="advertisements.sm_ad">
+                <v-col cols="12" md="3">
+                    <div class="d-flex flex-wrap justify-space-between">
+                        <v-card
+                            class="mb-3 w-100 h-100"
+                            :href="advertisements.sm_ad[0].advertisement.url"
+                            target="_blank"
+                            max-height="290"
+                            max-width="290"
+                        >
+                            <v-img
+                                :src="advertisements.sm_ad[0].advertisement.image"
+                                :alt="advertisements.sm_ad[0].advertisement.title"
+                            ></v-img>
+                        </v-card>
+                        <v-card
+                            class="mb-3 w-100 h-100"
+                            :href="advertisements.sm_ad[1].advertisement.url"
+                            target="_blank"
+                            max-height="290"
+                            max-width="290"
+                        >
+                            <v-img
+                                :src="advertisements.sm_ad[1].advertisement.image"
+                                :alt="advertisements.sm_ad[1].advertisement.title"
+                            ></v-img>
+                        </v-card>
+                    </div>
+                </v-col>
+            </template>
         </v-row>
     </v-container>
     <template

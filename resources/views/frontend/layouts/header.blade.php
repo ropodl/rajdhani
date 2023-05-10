@@ -3,10 +3,13 @@
         $firstHeaderAdv = $headerAds['l_ad'][0]->advertisement ?? '';
     @endphp
 @endif
-<div class="hidden-sm-and-down">
-    <topbar date="{{ nepalidate(now()) }}" :socials="{{ json_encode($media) }}"></topbar>
-</div>
-<midbar></midbar>
+<topbar class="hidden-sm-and-down" date="{{ nepalidate(now()) }}" :socials="{{ json_encode($media) }}"></topbar>
+<midbar :ads="{{ json_encode($headerAds['advertisement']) }}">
+    {{-- <template #ads>
+        <v-img height="110" :src="{{ json_encode($headerAds['advertisement']->image) }}"></v-img>
+        {{ json_encode($headerAds['advertisement']->image) }}
+    </template> --}}
+</midbar>
 <navbar :provinces="{{ json_encode($provinces) }}" :categories="{{ json_encode($headerCats) }}"
     :tags="{{ json_encode($tags) }}"></navbar>
 <!-- topbar -->
