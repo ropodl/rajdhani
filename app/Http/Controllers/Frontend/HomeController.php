@@ -23,7 +23,7 @@ class HomeController extends Controller
                         }]
                 )->orderBy('sort', 'asc')->get();
                 $provinceWiseNews = News::has('province')->latest()->isActive()->limit(6)->select('id', 'title', 'slug')->get();
-                dd(json_encode($provinceWiseNews));
+                // dd(json_encode($provinceWiseNews));
                 $provinces = Province::get();
                 $videos = VideoIframe::limit(8)->orderBy('sort', 'asc')->select('iframe')->get();
                 // $newsCategoryNews = Category::has('news')->where('under_news', 1)->with(['news' => function($query){
@@ -33,7 +33,7 @@ class HomeController extends Controller
                         $query->underNews();
                         $query->isActive();
                 })->isActive()->select('id', 'title', 'slug')->get();
-                dd($newsCategoryNews);
+                // dd($newsCategoryNews);
                 return view('frontend.index', compact('latestNews', 'categoryWiseNews', 'trendingNews', 'mainNews', 'provinces', 'provinceWiseNews', 'newsCategoryNews', 'photoFeatures', 'videos'));
         }
 }
