@@ -80,7 +80,7 @@ const youtube = defineAsyncComponent(() =>
                                     size="x-small"
                                     height="24"
                                     :icon="twitter"
-                                    :href="twitter"
+                                    :href="socials['twitter_link']"
                                     target="_blank"
                                 >
                                 </v-btn>

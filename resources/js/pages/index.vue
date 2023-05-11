@@ -52,7 +52,12 @@ const twoFour = defineAsyncComponent(() =>
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
-                <latestNews :latest="latest" />
+                <v-lazy
+                    :options="{ threshold: 0.5 }"
+                    transition="fade-transition"
+                >
+                    <latestNews :latest="latest" />
+                </v-lazy>
             </v-col>
             <v-col cols="12" md="3">
                 <div class="d-flex flex-wrap justify-space-between">
@@ -93,124 +98,193 @@ const twoFour = defineAsyncComponent(() =>
         <!-- {{ item["name"] }}{{ item["sort"] }} -->
         <template v-if="item['name'] == 'राजनीति' && item['news'].length > 0">
             <v-container>
-                <overlayFull :data="item"></overlayFull>
+                <v-lazy
+                    :options="{ threshold: 0.5 }"
+                    transition="fade-transition"
+                >
+                    <overlayFull :data="item"></overlayFull>
+                </v-lazy>
             </v-container>
         </template>
         <template v-if="item['name'] == 'समाज' && item['news'].length > 0">
             <v-container>
                 <v-row>
                     <v-col cols="12" md="9">
-                        <twoFive :data="item"></twoFive>
+                        <v-lazy
+                            :options="{ threshold: 0.5 }"
+                            transition="fade-transition"
+                        >
+                            <twoFive :data="item"></twoFive>
+                        </v-lazy>
                     </v-col>
                     <v-col cols="12" md="3">
-                        <tabNews
-                            :latest="latest"
-                            :trending="trending"
-                        ></tabNews>
+                        <v-lazy
+                            :options="{ threshold: 0.5 }"
+                            transition="fade-transition"
+                        >
+                            <tabNews
+                                :latest="latest"
+                                :trending="trending"
+                            ></tabNews>
+                        </v-lazy>
                     </v-col>
                 </v-row>
             </v-container>
         </template>
         <template v-if="item['name'] == 'खेलकुद़़' && item['news'].length > 0">
             <v-container>
-                <overlayFull :data="item"></overlayFull>
+                <v-lazy
+                    :options="{ threshold: 0.5 }"
+                    transition="fade-transition"
+                >
+                    <overlayFull :data="item"></overlayFull>
+                </v-lazy>
             </v-container>
         </template>
         <template v-if="item['name'] == 'अर्थ' && item['news'].length > 0">
             <v-container>
-                <overlayFull :data="item"></overlayFull>
+                <v-lazy
+                    :options="{ threshold: 0.5 }"
+                    transition="fade-transition"
+                >
+                    <overlayFull :data="item"></overlayFull>
+                </v-lazy>
             </v-container>
         </template>
         <template v-if="item['name'] == 'साहित्य' && item['news'].length > 0">
             <v-container>
-                <threeCol :data="item"></threeCol>
+                <v-lazy
+                    :options="{ threshold: 0.5 }"
+                    transition="fade-transition"
+                >
+                    <threeCol :data="item"></threeCol>
+                </v-lazy>
             </v-container>
         </template>
         <template
             v-if="item['name'] == 'अन्तर्राष्ट्रिय' && item['news'].length > 0"
         >
             <v-container>
-                <threeCol :data="item"></threeCol>
+                <v-lazy
+                    :options="{ threshold: 0.5 }"
+                    transition="fade-transition"
+                >
+                    <threeCol :data="item"></threeCol>
+                </v-lazy>
             </v-container>
         </template>
         <template v-if="item['name'] == 'मनोरञ्जन' && item['news'].length > 0">
             <v-container>
-                <twoFour :data="item"></twoFour>
+                <v-lazy
+                    :options="{ threshold: 0.5 }"
+                    transition="fade-transition"
+                >
+                    <twoFour :data="item"></twoFour>
+                </v-lazy>
             </v-container>
         </template>
         <template v-if="item['name'] == 'विचार' && item['news'].length > 0">
             <v-container>
-                <twoFour :data="item"></twoFour>
+                <v-lazy
+                    :options="{ threshold: 0.5 }"
+                    transition="fade-transition"
+                >
+                    <twoFour :data="item"></twoFour>
+                </v-lazy>
             </v-container>
         </template>
         <template v-if="item['name'] == 'शिक्षा' && item['news'].length > 0">
             <v-container>
-                <v-row>
-                    <v-col cols="12">
-                        <div class="d-flex align-center flex-wrap">
-                            <span
-                                class="text-h3 font-rajdhani font-weight-bold"
+                <v-lazy
+                    :options="{ threshold: 0.5 }"
+                    transition="fade-transition"
+                >
+                    <v-row>
+                        <v-col cols="12">
+                            <div class="d-flex align-center flex-wrap">
+                                <span
+                                    class="text-h3 font-rajdhani font-weight-bold"
+                                >
+                                    {{ item["name"] }}
+                                </span>
+                                <v-spacer></v-spacer>
+                                <v-btn
+                                    rounded
+                                    color="primary"
+                                    variant="tonal"
+                                    :href="'/category/' + item['slug']"
+                                >
+                                    थप {{ item["name"] }} समाचार
+                                </v-btn>
+                            </div>
+                        </v-col>
+                        <template v-for="(item, i) in item['news']">
+                            <v-hover
+                                v-if="i < 6"
+                                v-slot="{ isHovering, props }"
                             >
-                                {{ item["name"] }}
-                            </span>
-                            <v-spacer></v-spacer>
-                            <v-btn
-                                rounded
-                                color="primary"
-                                variant="tonal"
-                                :href="'/category/' + item['slug']"
-                            >
-                                थप {{ item["name"] }} समाचार
-                            </v-btn>
-                        </div>
-                    </v-col>
-                    <template v-for="(item, i) in item['news']">
-                        <v-hover v-if="i < 6" v-slot="{ isHovering, props }">
-                            <v-col cols="12" md="4" v-bind="props">
-                                <v-card :href="'/news/' + item['id']">
-                                    <v-img
-                                        cover
-                                        height="250"
-                                        :class="[
-                                            'align-end px-2 pb-2',
-                                            isHovering ? 'zoom' : '',
-                                        ]"
-                                        :src="item['image']"
-                                    >
-                                        <v-card
-                                            style="
-                                                background-color: rgba(
-                                                    var(--v-theme-background),
-                                                    0.8
-                                                );
-                                                backdrop-filter: blur(10px);
-                                            "
+                                <v-col cols="12" md="4" v-bind="props">
+                                    <v-card :href="'/news/' + item['id']">
+                                        <v-img
+                                            cover
+                                            height="250"
+                                            :class="[
+                                                'align-end px-2 pb-2',
+                                                isHovering ? 'zoom' : '',
+                                            ]"
+                                            :src="item['image']"
                                         >
-                                            <v-card-title
-                                                class="text-h6 text-wrap font-weight-bold line-clamp-3"
+                                            <v-card
+                                                style="
+                                                    background-color: rgba(
+                                                        var(
+                                                            --v-theme-background
+                                                        ),
+                                                        0.8
+                                                    );
+                                                    backdrop-filter: blur(10px);
+                                                "
                                             >
-                                                {{ item["title"] }}
-                                            </v-card-title>
-                                        </v-card>
-                                    </v-img>
-                                </v-card>
-                            </v-col>
-                        </v-hover>
-                    </template>
-                </v-row>
+                                                <v-card-title
+                                                    class="text-h6 text-wrap font-weight-bold line-clamp-3"
+                                                >
+                                                    {{ item["title"] }}
+                                                </v-card-title>
+                                            </v-card>
+                                        </v-img>
+                                    </v-card>
+                                </v-col>
+                            </v-hover>
+                        </template>
+                    </v-row>
+                </v-lazy>
             </v-container>
         </template>
         <template v-if="item['name'] == 'स्वास्थ्य' && item['news'].length > 0">
             <v-container>
-                <twoFour :data="item"></twoFour>
+                <v-lazy
+                    :options="{ threshold: 0.5 }"
+                    transition="fade-transition"
+                >
+                    <twoFour :data="item"></twoFour>
+                </v-lazy>
             </v-container>
         </template>
         <template v-if="index == 1">
-            <provinceNews :provinces="provinces" :provincenews="provincenews" />
+            <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
+                <provinceNews
+                    :provinces="provinces"
+                    :provincenews="provincenews"
+                />
+            </v-lazy>
         </template>
         <template v-if="index == 6">
-            <photoFeature :photos="photos"></photoFeature>
+            <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
+                <photoFeature :photos="photos"></photoFeature>
+            </v-lazy>
         </template>
     </template>
-    <videoFeature v-if="videos.length > 0" :videos="videos"></videoFeature>
+    <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
+        <videoFeature v-if="videos.length > 0" :videos="videos"></videoFeature>
+    </v-lazy>
 </template>
