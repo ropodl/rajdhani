@@ -25,7 +25,6 @@ export default defineConfig({
         vuetify({
             treeshaking: true,
             autoImport: true,
-            styles: { configFile: "resources/sass/frontend.scss" },
         }),
         VitePWA({
             registerType: "autoUpdate",
