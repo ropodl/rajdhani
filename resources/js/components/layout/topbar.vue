@@ -1,12 +1,28 @@
 <script setup>
 import { useNow } from "@vueuse/core";
-
+import { defineAsyncComponent } from "vue";
 defineProps({
     date: String,
     socials: Object,
 });
 
 const now = useNow();
+
+const facebook = defineAsyncComponent(() =>
+    import("../shared/home/icons/facebook.vue")
+);
+const instagram = defineAsyncComponent(() =>
+    import("../shared/home/icons/instagram.vue")
+);
+const twitter = defineAsyncComponent(() =>
+    import("../shared/home/icons/twitter.vue")
+);
+const linkedin = defineAsyncComponent(() =>
+    import("../shared/home/icons/linkedin.vue")
+);
+const youtube = defineAsyncComponent(() =>
+    import("../shared/home/icons/youtube.vue")
+);
 </script>
 <template>
     <v-system-bar>
@@ -24,21 +40,22 @@ const now = useNow();
                                 <v-btn
                                     variant="text"
                                     rounded="0"
+                                    color="primary"
                                     size="x-small"
                                     height="24"
-                                    :icon="'fa:fa-brands fa-facebook-f'"
+                                    :icon="facebook"
                                     :href="socials['facebook_link']"
                                     target="_blank"
-                                >
-                                </v-btn>
+                                ></v-btn>
                             </li>
                             <li v-if="socials['instagram_link']">
                                 <v-btn
                                     variant="text"
                                     rounded="0"
+                                    color="primary"
                                     size="x-small"
                                     height="24"
-                                    :icon="'fa:fa-brands fa-instagram'"
+                                    :icon="instagram"
                                     :href="socials['instagram_link']"
                                     target="_blank"
                                 >
@@ -50,7 +67,7 @@ const now = useNow();
                                     rounded="0"
                                     size="x-small"
                                     height="24"
-                                    :icon="'fa:fa-brands fa-youtube'"
+                                    :icon="youtube"
                                     :href="socials['youtube_link']"
                                     target="_blank"
                                 >
@@ -62,8 +79,8 @@ const now = useNow();
                                     rounded="0"
                                     size="x-small"
                                     height="24"
-                                    :icon="'fa:fa-brands fa-twitter'"
-                                    :href="socials['twitter_link']"
+                                    :icon="twitter"
+                                    :href="twitter"
                                     target="_blank"
                                 >
                                 </v-btn>
@@ -74,7 +91,7 @@ const now = useNow();
                                     rounded="0"
                                     size="x-small"
                                     height="24"
-                                    :icon="'fa:fa-brands fa-linkedin'"
+                                    :icon="linkedin"
                                     :href="socials['linkedin_link']"
                                     target="_blank"
                                 >
