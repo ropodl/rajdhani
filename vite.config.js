@@ -29,6 +29,8 @@ export default defineConfig({
         //     },
         // }),
         vuetify({
+            treeshaking: true,
+            autoImport: true,
         }),
         VitePWA({
             registerType: "autoUpdate",
