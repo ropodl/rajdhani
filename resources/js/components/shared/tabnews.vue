@@ -1,6 +1,4 @@
 <script setup>
-import { mdiClockOutline } from "@mdi/js";
-import moment from "moment";
 import { ref } from "vue";
 
 defineProps({
@@ -12,7 +10,7 @@ let tab = ref("1");
 </script>
 <template>
     <v-card border flat class="rounded-t-0">
-        <v-tabs grow color="primary" v-model="tab" :show-arrows="false" >
+        <v-tabs grow color="primary" v-model="tab" :show-arrows="false">
             <v-tab
                 class="font-rajdhani text-subtitle-1 font-weight-bold rounded-0"
                 value="1"
@@ -36,7 +34,7 @@ let tab = ref("1");
                             >
                                 {{ item["title"] }}
                             </v-list-item-title>
-                            <v-list-item-subtitle>
+                            <!-- <v-list-item-subtitle>
                                 <v-icon
                                     start
                                     size="small"
@@ -47,7 +45,7 @@ let tab = ref("1");
                                         .startOf("day")
                                         .fromNow()
                                 }}
-                            </v-list-item-subtitle>
+                            </v-list-item-subtitle> -->
                         </v-list-item>
                         <v-divider
                             v-if="index + 1 != trending.length"
@@ -65,7 +63,7 @@ let tab = ref("1");
                             >
                                 {{ item["title"] }}
                             </v-list-item-title>
-                            <v-list-item-subtitle>
+                            <!-- <v-list-item-subtitle>
                                 <v-icon
                                     start
                                     size="small"
@@ -76,7 +74,7 @@ let tab = ref("1");
                                         .startOf("day")
                                         .fromNow()
                                 }}
-                            </v-list-item-subtitle>
+                            </v-list-item-subtitle> -->
                         </v-list-item>
                         <v-divider
                             v-if="index + 1 != latest.length"

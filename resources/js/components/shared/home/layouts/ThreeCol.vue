@@ -1,7 +1,4 @@
 <script setup>
-import { mdiClockOutline } from "@mdi/js";
-import moment from "moment";
-
 defineProps({
     data: Object,
 });
@@ -51,7 +48,7 @@ defineProps({
                         >
                             {{ item["title"] }}
                         </v-list-item-title>
-                        <v-list-item-subtitle>
+                        <!-- <v-list-item-subtitle>
                             <v-icon
                                 start
                                 size="small"
@@ -62,12 +59,10 @@ defineProps({
                                     .startOf("day")
                                     .fromNow()
                             }}
-                        </v-list-item-subtitle>
+                        </v-list-item-subtitle> -->
                     </v-list-item>
                 </v-hover>
             </v-col>
         </template>
     </v-row>
 </template>
-
-<style lang="scss" scoped></style>

@@ -1,7 +1,4 @@
 <script setup>
-import { mdiClockOutline } from "@mdi/js";
-import moment from "moment";
-
 defineProps({
     latest: Object,
 });
@@ -37,7 +34,7 @@ defineProps({
                                     >
                                         {{ latest[0].title }}
                                     </v-list-item-title>
-                                    <v-list-item-subtitle>
+                                    <!-- <v-list-item-subtitle>
                                         <v-icon
                                             start
                                             size="small"
@@ -48,7 +45,7 @@ defineProps({
                                                 .startOf("day")
                                                 .fromNow()
                                         }}
-                                    </v-list-item-subtitle>
+                                    </v-list-item-subtitle> -->
                                 </v-list-item>
                             </v-list>
                         </v-card>
@@ -84,18 +81,19 @@ defineProps({
                             >
                                 {{ item["title"] }}
                             </v-list-item-title>
-                            <v-list-item-subtitle>
+                            <!-- <v-list-item-subtitle>
                                 <v-icon
                                     start
                                     size="small"
                                     :icon="mdiClockOutline"
                                 ></v-icon>
+                                {{ new Date().getMonth(item["created_at"]) }}a
                                 {{
                                     moment(item["created_at"])
                                         .startOf("day")
                                         .fromNow()
                                 }}
-                            </v-list-item-subtitle>
+                            </v-list-item-subtitle> -->
                         </v-list-item>
                     </v-hover>
                 </template>

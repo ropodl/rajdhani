@@ -1,6 +1,4 @@
 <script setup>
-import moment from "moment";
-import { mdiClockOutline } from "@mdi/js";
 defineProps({
     news: Object,
     title: String,
@@ -63,7 +61,7 @@ const paginate = (e) => {
                                         >
                                             {{ item["title"] }}
                                         </v-list-item-title>
-                                        <v-list-item-subtitle>
+                                        <!-- <v-list-item-subtitle>
                                             <v-icon
                                                 start
                                                 size="small"
@@ -74,7 +72,7 @@ const paginate = (e) => {
                                                     .startOf("day")
                                                     .fromNow()
                                             }}
-                                        </v-list-item-subtitle>
+                                        </v-list-item-subtitle> -->
                                         <v-list-item-subtitle
                                             class="line-clamp-3"
                                             v-html="item['description']"

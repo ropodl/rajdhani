@@ -61,7 +61,11 @@ defineProps({
             </v-row>
         </v-container>
     </div>
-    <v-app-bar flat class="bg-grey-darken-4">
+    <v-app-bar
+        flat
+        class="bg-grey-darken-4 position-static"
+        style="z-index: 1 !important"
+    >
         <v-container>
             <v-row justify="center">
                 <v-col cols="12" class="text-center">
@@ -71,9 +75,3 @@ defineProps({
         </v-container>
     </v-app-bar>
 </template>
-<style scoped>
-.v-app-bar {
-    position: static !important;
-    z-index: 1 !important;
-}
-</style>

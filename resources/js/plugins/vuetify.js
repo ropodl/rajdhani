@@ -10,7 +10,6 @@ import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
 import { VApp, VLayout, VMain } from "vuetify/components";
 
 export default createVuetify({
-    ssr: true,
     // blueprint: md3,
     components: { VApp, VMain, VLayout },
     icons: {

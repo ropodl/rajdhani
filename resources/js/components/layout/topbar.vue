@@ -1,6 +1,6 @@
 <script setup>
 import { useNow } from "@vueuse/core";
-import moment from "moment";
+import moment from "moment/min/moment.min.js";
 
 defineProps({
     date: String,

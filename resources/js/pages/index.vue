@@ -61,10 +61,10 @@ const twoFour = defineAsyncComponent(() =>
                             class="mb-3 w-100 h-100"
                             :href="advertisements.sm_ad[0].advertisement.url"
                             target="_blank"
-                            max-height="290"
+                            height="290"
                             max-width="290"
                         >
-                            <v-img
+                            <v-img class="w-100 h-100"
                                 :src="
                                     advertisements.sm_ad[0].advertisement.image
                                 "

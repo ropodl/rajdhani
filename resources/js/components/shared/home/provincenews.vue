@@ -1,7 +1,4 @@
 <script setup>
-import { mdiClockOutline } from "@mdi/js";
-import moment from "moment";
-
 defineProps({
     provincenews: Object,
     provinces: Object,
@@ -68,7 +65,7 @@ defineProps({
                                                 >
                                                     {{ provincenews[0].title }}
                                                 </v-list-item-title>
-                                                <v-list-item-subtitle>
+                                                <!-- <v-list-item-subtitle>
                                                     <v-icon
                                                         start
                                                         size="small"
@@ -82,7 +79,7 @@ defineProps({
                                                             .startOf("day")
                                                             .fromNow()
                                                     }}
-                                                </v-list-item-subtitle>
+                                                </v-list-item-subtitle> -->
                                             </v-list-item>
                                         </v-list>
                                     </v-card>
@@ -122,7 +119,7 @@ defineProps({
                                                 >
                                                     {{ provincenews[1].title }}
                                                 </v-list-item-title>
-                                                <v-list-item-subtitle>
+                                                <!-- <v-list-item-subtitle>
                                                     <v-icon
                                                         start
                                                         size="small"
@@ -136,7 +133,7 @@ defineProps({
                                                             .startOf("day")
                                                             .fromNow()
                                                     }}
-                                                </v-list-item-subtitle>
+                                                </v-list-item-subtitle> -->
                                             </v-list-item>
                                         </v-list>
                                     </v-card>
@@ -173,7 +170,7 @@ defineProps({
                                 >
                                     {{ item["title"] }}
                                 </v-list-item-title>
-                                <v-list-item-subtitle>
+                                <!-- <v-list-item-subtitle>
                                     <v-icon
                                         start
                                         size="small"
@@ -184,7 +181,7 @@ defineProps({
                                             .startOf("day")
                                             .fromNow()
                                     }}
-                                </v-list-item-subtitle>
+                                </v-list-item-subtitle> -->
                             </v-list-item>
                         </v-hover>
                     </template>

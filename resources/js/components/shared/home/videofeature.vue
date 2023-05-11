@@ -53,9 +53,3 @@ const getWatchUrl = (link) => {
         </v-container>
     </div>
 </template>
-
-<style lang="scss" scoped>
-.iframe {
-    width: 100% !important;
-}
-</style>
