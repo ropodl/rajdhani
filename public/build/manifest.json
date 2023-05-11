@@ -675,5 +675,10 @@
     ],
     "isDynamicEntry": true,
     "src": "resources/js/pages/search.vue"
+  },
+  "resources/sass/frontend.scss": {
+    "file": "assets/frontend-66fcaa7d.css",
+    "isEntry": true,
+    "src": "resources/sass/frontend.scss"
   }
 }
