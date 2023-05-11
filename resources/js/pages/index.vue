@@ -56,24 +56,19 @@ const twoFour = defineAsyncComponent(() =>
             </v-col>
             <v-col cols="12" md="3">
                 <div class="d-flex flex-wrap justify-space-between">
-                    <v-responsive :aspect-ratio="1">
-                        <v-card
-                            class="mb-3 w-100 h-100"
-                            :href="advertisements.sm_ad[0].advertisement.url"
-                            target="_blank"
-                            height="290"
-                            max-width="290"
-                        >
-                            <v-img class="w-100 h-100"
-                                :src="
-                                    advertisements.sm_ad[0].advertisement.image
-                                "
-                                :alt="
-                                    advertisements.sm_ad[0].advertisement.title
-                                "
-                            ></v-img>
-                        </v-card>
-                    </v-responsive>
+                    <v-card
+                        class="mb-3 w-100 h-100"
+                        :href="advertisements.sm_ad[0].advertisement.url"
+                        target="_blank"
+                        height="290"
+                        max-width="290"
+                    >
+                        <v-img
+                            class="w-100 h-100"
+                            :src="advertisements.sm_ad[0].advertisement.image"
+                            :alt="advertisements.sm_ad[0].advertisement.title"
+                        ></v-img>
+                    </v-card>
                     <v-card
                         class="mb-3 w-100 h-100"
                         :href="advertisements.sm_ad[1].advertisement.url"
