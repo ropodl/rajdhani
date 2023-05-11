@@ -1,4 +1,7 @@
 <script setup>
+import { useNow } from "@vueuse/core";
+const now = useNow();
+
 defineProps({
     date: String,
     ads: {
@@ -25,6 +28,10 @@ defineProps({
                         src="/frontend/img/logo.png"
                     ></v-img>
                 </v-btn>
+                <div class="text-caption text-center">
+                    {{ date }} |
+                    {{ new Date(now).toLocaleString([], { hour12: true }) }}
+                </div>
             </v-col>
             <v-col cols="12" md="8">
                 <div class="d-flex" v-if="ads">

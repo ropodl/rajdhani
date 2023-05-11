@@ -3,8 +3,9 @@
         $firstHeaderAdv = $headerAds['l_ad'][0]->advertisement ?? '';
     @endphp
 @endif --}}
-<topbar class="hidden-sm-and-down" date="{{ nepalidate(now()) }}" :socials="{{ json_encode($media) }}"></topbar>
-<midbar :ads="{{ !empty($headerAds) ? json_encode($headerAds['advertisement']) : 'false' }}">
+{{-- <topbar class="hidden-sm-and-down" ></topbar> --}}
+<midbar date="{{ nepalidate(now()) }}"
+    :ads="{{ !empty($headerAds) ? json_encode($headerAds['advertisement']) : 'false' }}">
 </midbar>
 <navbar :provinces="{{ json_encode($provinces) }}" :categories="{{ json_encode($headerCats) }}"
     :tags="{{ json_encode($tags) }}"></navbar>

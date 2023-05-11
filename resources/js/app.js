@@ -8,9 +8,9 @@ import vuetify from "./plugins/vuetify";
 const app = createApp({
     components: {
         // Layouts first
-        topbar: defineAsyncComponent(() =>
-            import("./components/layout/topbar.vue")
-        ),
+        // topbar: defineAsyncComponent(() =>
+        //     import("./components/layout/topbar.vue")
+        // ),
         midbar: defineAsyncComponent(() =>
             import("./components/layout/midbar.vue")
         ),

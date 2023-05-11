@@ -1,7 +1,25 @@
 <script setup>
+import { defineAsyncComponent } from "vue";
 defineProps({
     info: Object,
+    socials: Object,
 });
+
+const facebook = defineAsyncComponent(() =>
+    import("../shared/home/icons/facebook.vue")
+);
+const instagram = defineAsyncComponent(() =>
+    import("../shared/home/icons/instagram.vue")
+);
+const twitter = defineAsyncComponent(() =>
+    import("../shared/home/icons/twitter.vue")
+);
+const linkedin = defineAsyncComponent(() =>
+    import("../shared/home/icons/linkedin.vue")
+);
+const youtube = defineAsyncComponent(() =>
+    import("../shared/home/icons/youtube.vue")
+);
 </script>
 <template>
     <div class="bg-grey-darken-4">
@@ -13,7 +31,60 @@ defineProps({
                         height="50"
                         src="/frontend/img/logo.png"
                     ></v-img>
-                    <div v-html="info['description']"></div>
+                    <div class="mb-3" v-html="info['description']"></div>
+                    <ul
+                        class="d-flex justify-space-between list-style-none ml-auto mb-0"
+                    >
+                        <li v-if="socials['facebook_link']">
+                            <v-btn
+                                variant="tonal"
+                                color="white"
+                                :icon="facebook"
+                                :href="socials['facebook_link']"
+                                target="_blank"
+                            ></v-btn>
+                        </li>
+                        <li v-if="socials['instagram_link']">
+                            <v-btn
+                                variant="tonal"
+                                color="white"
+                                :icon="instagram"
+                                :href="socials['instagram_link']"
+                                target="_blank"
+                            >
+                            </v-btn>
+                        </li>
+                        <li v-if="socials['youtube_link']">
+                            <v-btn
+                                variant="tonal"
+                                color="white"
+                                :icon="youtube"
+                                :href="socials['youtube_link']"
+                                target="_blank"
+                            >
+                            </v-btn>
+                        </li>
+                        <li v-if="socials['twitter_link']">
+                            <v-btn
+                                variant="tonal"
+                                color="white"
+                                :icon="twitter"
+                                :href="socials['twitter_link']"
+                                target="_blank"
+                            >
+                            </v-btn>
+                        </li>
+                        <li v-if="socials['linkedin_link']">
+                            <v-btn
+                                variant="tonal"
+                                color="white"
+                                :icon="linkedin"
+                                :href="socials['linkedin_link']"
+                                target="_blank"
+                            >
+                            </v-btn>
+                        </li>
+                    </ul>
                 </v-col>
                 <v-col cols="12" md="2">
                     <div class="font-rajdhani text-h6 font-weight-bold">
