@@ -5,15 +5,16 @@ import vuetify from "vite-plugin-vuetify";
 // Utilities
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
-
+import { ssr } from "vite-plugin-ssr/plugin";
 // import VueMacros from "unplugin-vue-macros/vite";
 // Vite Pwa
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
     plugins: [
+        ssr({ prerender: true }),
         laravel({
-            input: ["resources/sass/frontend.scss", "resources/js/app.js"],
+            input: ["resources/js/app.js"],
             refresh: true,
         }),
         // VueMacros({
@@ -31,6 +32,7 @@ export default defineConfig({
         vuetify({
             treeshaking: true,
             autoImport: true,
+            styles: { configFile: "resources/sass/frontend.scss" },
         }),
         VitePWA({
             registerType: "autoUpdate",
@@ -65,7 +67,7 @@ export default defineConfig({
     resolve: {
         alias: {
             "@": fileURLToPath(new URL("./src", import.meta.url)),
-            vue: "vue/dist/vue.esm-bundler.js",
+            // vue: "vue/dist/vue.esm-bundler.js",
         },
         extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue"],
     },

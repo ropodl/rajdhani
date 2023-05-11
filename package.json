@@ -17,6 +17,7 @@
         "laravel-vite-plugin": "^0.7.4",
         "vite": "^4.3.5",
         "vite-plugin-pwa": "^0.14.7",
+        "vite-plugin-ssr": "^0.4.123",
         "vite-plugin-vuetify": "^1.0.2",
         "vue-social-sharing": "^4.0.0-alpha4",
         "vuetify": "^3.2.3",
