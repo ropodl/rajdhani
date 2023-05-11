@@ -9,7 +9,10 @@ defineProps({
             <v-row align="center">
                 <v-col cols="12" md="12">
                     <div class="d-flex align-center">
-                        <span class="font-rajdhani text-h3 font-weight-bold">
+                        <span
+                            class="text-h3 font-weight-bold"
+                            style="font-family: 'Rajdhani' !important"
+                        >
                             {{ data["name"] }}
                         </span>
                         <v-spacer></v-spacer>
@@ -56,24 +59,13 @@ defineProps({
                                         <v-list-item>
                                             <v-list-item-title
                                                 class="text-h5 text-wrap font-weight-bold mb-2"
-                                                style="line-height: 2rem"
+                                                style="
+                                                    line-height: 2rem;
+                                                    font-family: 'Rajdhani' !important;
+                                                "
                                             >
                                                 {{ data.news[0].title }}
                                             </v-list-item-title>
-                                            <!-- <v-list-item-subtitle>
-                                                <v-icon
-                                                    start
-                                                    size="small"
-                                                    :icon="mdiClockOutline"
-                                                ></v-icon>
-                                                {{
-                                                    moment(
-                                                        data.news[0].created_at
-                                                    )
-                                                        .startOf("day")
-                                                        .fromNow()
-                                                }}
-                                            </v-list-item-subtitle> -->
                                         </v-list-item>
                                     </v-list>
                                 </v-card>
@@ -109,24 +101,13 @@ defineProps({
                                         <v-list-item>
                                             <v-list-item-title
                                                 class="text-h5 text-wrap font-weight-bold mb-2"
-                                                style="line-height: 2rem"
+                                                style="
+                                                    line-height: 2rem;
+                                                    font-family: 'Rajdhani' !important;
+                                                "
                                             >
                                                 {{ data.news[1].title }}
                                             </v-list-item-title>
-                                            <!-- <v-list-item-subtitle>
-                                                <v-icon
-                                                    start
-                                                    size="small"
-                                                    :icon="mdiClockOutline"
-                                                ></v-icon>
-                                                {{
-                                                    moment(
-                                                        data.news[1].created_at
-                                                    )
-                                                        .startOf("day")
-                                                        .fromNow()
-                                                }}
-                                            </v-list-item-subtitle> -->
                                         </v-list-item>
                                     </v-list>
                                 </v-card>
@@ -163,18 +144,6 @@ defineProps({
                             >
                                 {{ item["title"] }}
                             </v-list-item-title>
-                            <!-- <v-list-item-subtitle>
-                                <v-icon
-                                    start
-                                    size="small"
-                                    :icon="mdiClockOutline"
-                                ></v-icon>
-                                {{
-                                    moment(item["created_at"])
-                                        .startOf("day")
-                                        .fromNow()
-                                }}
-                            </v-list-item-subtitle> -->
                         </v-list-item>
                     </v-hover>
                 </template>
@@ -182,5 +151,3 @@ defineProps({
         </v-col>
     </v-row>
 </template>
-
-<style lang="scss" scoped></style>
