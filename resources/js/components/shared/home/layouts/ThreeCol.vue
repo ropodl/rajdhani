@@ -7,7 +7,10 @@ defineProps({
     <v-row>
         <v-col cols="12">
             <div class="d-flex align-center">
-                <span class="font-rajdhani text-h3 font-weight-bold">
+                <span
+                    class="text-h3 font-weight-bold"
+                    style="font-family: 'Rajdhani' !important"
+                >
                     {{ data["name"] }}
                 </span>
                 <v-spacer></v-spacer>
