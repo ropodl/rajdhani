@@ -1,5 +1,5 @@
 <script setup>
-import { mdiClockOutline, mdiClose, mdiFire } from "@mdi/js";
+import { mdiClockOutline, mdiClose } from "@mdi/js";
 import Panzoom from "@panzoom/panzoom";
 import { defineAsyncComponent, nextTick, onMounted, reactive, ref } from "vue";
 
@@ -67,21 +67,12 @@ const imageCollector = () => {
         <v-row>
             <v-col cols="12" md="9">
                 <article>
-                    <!-- <v-card
-                        flat
-                        rounded="0"
-                        style="
-                            z-index: 99;
-                            background-color: rgb(var(--v-theme-background));
-                        "
-                    > -->
                     <v-card-title
                         class="text-h3 font-weight-black text-wrap px-0"
                         style="line-height: 4rem"
                         v-text="currentnews['title']"
                     >
                     </v-card-title>
-                    <!-- </v-card> -->
 
                     <v-card-text class="px-0">
                         <v-icon :icon="mdiClockOutline"></v-icon>
@@ -93,11 +84,6 @@ const imageCollector = () => {
                         class="rounded-lg align-start"
                         :src="currentnews['image']"
                     >
-                        <!-- <v-card-title v-if="currentnews['is_trending']">
-                            <v-btn icon color="grey-darken-4">
-                                <v-icon color="red" :icon="mdiFire"></v-icon>
-                            </v-btn>
-                        </v-card-title> -->
                     </v-img>
 
                     <v-card-text

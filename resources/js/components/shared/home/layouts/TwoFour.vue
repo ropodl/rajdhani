@@ -105,8 +105,8 @@ defineProps({
                                                     line-height: 2rem;
                                                     font-family: 'Rajdhani' !important;
                                                 "
+                                                v-html="data.news[1].title"
                                             >
-                                                {{ data.news[1].title }}
                                             </v-list-item-title>
                                         </v-list-item>
                                     </v-list>

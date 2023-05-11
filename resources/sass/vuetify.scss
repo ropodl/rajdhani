@@ -1,0 +1,7 @@
+$font: "Rajdhani", sans-serif;
+
+@use "vuetify/settings" with (
+    // $utilities: false,
+    // $button-height: 400px,
+    $heading-font-family: $font
+);
