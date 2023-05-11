@@ -2,7 +2,8 @@ import { createApp } from "vue";
 
 // Plugins
 import { defineAsyncComponent } from "vue";
-import { registerPlugins } from "./plugins";
+// import { registerPlugins } from "./plugins";
+import vuetify from "./plugins/vuetify";
 
 const app = createApp({
     components: {
@@ -35,6 +36,8 @@ const app = createApp({
     },
 });
 
-registerPlugins(app);
+// registerPlugins(app);
+
+app.use(vuetify);
 
 app.mount("#app");

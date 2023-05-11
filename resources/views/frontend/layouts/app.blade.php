@@ -24,15 +24,32 @@
         gtag('config', 'G-KRSHM8QWGN');
     </script>
     <!-- End of Google Analytics --> --}}
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@700&display=swap"
+        rel="stylesheet">
     @vite(['resources/js/app.js', 'resources/sass/frontend.scss'])
     <style>
         html {
-            font-family: "Mukta Mahee", sans-serif !important;
+            font-family: "Mukta", sans-serif !important;
         }
 
-        .font-rajdhani {
-            font-family: "Rajdhani" !important
+        .font-rajdhani,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .text-h1,
+        .text-h2,
+        .text-h3,
+        .text-h4,
+        .text-h5,
+        .text-h6 {
+            font-family: "Rajdhani" !important;
+            font-weight: bold !important;
         }
     </style>
 </head>

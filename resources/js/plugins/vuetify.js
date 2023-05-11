@@ -6,11 +6,11 @@ import "vuetify/styles";
 // Icons
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
 // Composables
-import * as components from "vuetify/components";
+import { VApp, VLayout, VMain } from "vuetify/components";
 
 export default createVuetify({
     // blueprint: md3,
-    components,
+    components: { VApp, VMain, VLayout },
     icons: {
         defaultSet: "mdi",
         aliases,
