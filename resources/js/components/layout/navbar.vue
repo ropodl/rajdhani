@@ -60,8 +60,9 @@ const switchThemeMode = () => {
                             <v-btn
                                 height="60"
                                 size="small"
-                                class="font-rajdhani text-h6 font-weight-bold rounded-0"
+                                class="text-h6 font-weight-bold rounded-0"
                                 :href="'/category/' + item['slug']"
+                                style="font-family: 'Rajdhani' !important"
                             >
                                 {{ item["name"] }}
                             </v-btn>
@@ -80,7 +81,10 @@ const switchThemeMode = () => {
                                             height="60"
                                             size="small"
                                             v-bind="props"
-                                            class="font-rajdhani font-weight-bold text-h6"
+                                            class="font-weight-bold text-h6"
+                                            style="
+                                                font-family: 'Rajdhani' !important;
+                                            "
                                         >
                                             प्रदेश
                                             <v-icon

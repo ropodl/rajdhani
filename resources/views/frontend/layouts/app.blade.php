@@ -36,12 +36,6 @@
         }
 
         .font-rajdhani,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
         .text-h1,
         .text-h2,
         .text-h3,
