@@ -4,7 +4,6 @@ import { createVuetify } from "vuetify";
 import colors from "vuetify/lib/util/colors";
 import "vuetify/styles";
 // Icons
-import { fa } from "vuetify/iconsets/fa-svg";
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
 // Composables
 import { VApp, VLayout, VMain } from "vuetify/components";
@@ -16,7 +15,6 @@ export default createVuetify({
         defaultSet: "mdi",
         aliases,
         sets: {
-            fa,
             mdi,
         },
     },
