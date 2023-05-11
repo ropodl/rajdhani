@@ -31,20 +31,15 @@ export default createVuetify({
             lighten: 5,
             darken: 5,
         },
-        themes: false,
+        themes: {
+            light: {
+                dark: false,
+                colors: {
+                    primary: "#3870c5",
+                },
+            },
+        },
         //  {
-        //     light: {
-        //         dark: false,
-        //         colors: {
-        //             primary: "#3870c5",
-        //             accent: colors.grey.darken3,
-        //             secondary: colors.amber.darken3,
-        //             info: colors.teal.lighten1,
-        //             warning: colors.amber.base,
-        //             error: colors.deepOrange.accent4,
-        //             success: colors.green.accent3,
-        //         },
-        //     },
         //     dark: {
         //         dark: true,
         //         colors: {
