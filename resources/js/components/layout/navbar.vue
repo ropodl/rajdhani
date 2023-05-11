@@ -62,7 +62,7 @@ const switchThemeMode = () => {
                                 size="small"
                                 class="text-h6 font-weight-bold rounded-0"
                                 :href="'/category/' + item['slug']"
-                                style="font-family: 'Rajdhani' !important"
+                                
                             >
                                 {{ item["name"] }}
                             </v-btn>
@@ -82,9 +82,6 @@ const switchThemeMode = () => {
                                             size="small"
                                             v-bind="props"
                                             class="font-weight-bold text-h6"
-                                            style="
-                                                font-family: 'Rajdhani' !important;
-                                            "
                                         >
                                             प्रदेश
                                             <v-icon
