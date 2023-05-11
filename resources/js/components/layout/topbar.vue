@@ -25,7 +25,7 @@ const youtube = defineAsyncComponent(() =>
 );
 </script>
 <template>
-    <v-system-bar>
+    <v-system-bar class="position-relative" style="height: 24px">
         <v-container class="py-0">
             <v-row align="center">
                 <v-col cols="6" sm="6" md="6" class="text-left py-0">
@@ -104,10 +104,3 @@ const youtube = defineAsyncComponent(() =>
         </v-container>
     </v-system-bar>
 </template>
-<style>
-.v-system-bar {
-    position: relative !important;
-    height: 24px;
-    max-height: 24px;
-}
-</style>
