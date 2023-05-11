@@ -27,25 +27,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     @vite(['resources/js/app.js', 'resources/sass/frontend.scss'])
-    <style>
-        html {
-            font-family: "Mukta", sans-serif !important;
-        }
-
-        .font-rajdhani,
-        .text-h1,
-        .text-h2,
-        .text-h3,
-        .text-h4,
-        .text-h5,
-        .text-h6 {
-            font-family: "Rajdhani" !important;
-            font-weight: bold !important;
-        }
-    </style>
 </head>
 
 <body>

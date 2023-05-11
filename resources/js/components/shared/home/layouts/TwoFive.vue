@@ -1,27 +1,18 @@
 <script setup>
+import { defineAsyncComponent } from "vue";
+
 defineProps({
     data: Object,
 });
+
+const sectionTitle = defineAsyncComponent(() =>
+    import("../../sectionTitle.vue")
+);
 </script>
 <template>
     <v-row>
         <v-col cols="12">
-            <div class="d-flex align-center">
-                <span
-                    class="font-weight-bold text-h3"
-                    style="font-family: 'Rajdhani' !important"
-                >
-                    {{ data["name"] }}
-                </span>
-                <v-spacer></v-spacer>
-                <v-btn
-                    rounded
-                    color="primary"
-                    variant="tonal"
-                    :href="'/category/' + data['slug']"
-                    >थप {{ data["name"] }} समाचार</v-btn
-                >
-            </div>
+            <sectionTitle :data="data" />
         </v-col>
         <v-col cols="12" md="6">
             <v-row>
