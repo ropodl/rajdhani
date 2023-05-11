@@ -1,6 +1,5 @@
 <script setup>
 import { useNow } from "@vueuse/core";
-import moment from "moment/min/moment.min.js";
 
 defineProps({
     date: String,
@@ -14,7 +13,8 @@ const now = useNow();
         <v-container class="py-0">
             <v-row align="center">
                 <v-col cols="6" sm="6" md="6" class="text-left py-0">
-                    {{ date }} | {{ moment(now).format("hh:mm:ss a") }}
+                    {{ date }} |
+                    {{ new Date(now).toLocaleString([], { hour12: true }) }}
                 </v-col>
                 <v-col cols="6" sm="6" md="6" class="py-0 text-right">
                     <div class="d-flex">
