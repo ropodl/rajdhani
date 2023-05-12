@@ -7,7 +7,10 @@ defineProps({
 <template>
     <v-row>
         <v-col cols="12">
-            <div class="text-h3 font-rajdhani text-primary font-weight-bold">
+            <div
+                class="text-h3 text-primary font-weight-bold"
+                style="font-family: 'Rajdhani' !important"
+            >
                 सम्बन्धित खबर
             </div>
         </v-col>
@@ -32,7 +35,7 @@ defineProps({
                                 class="align-end"
                             >
                                 <v-card-title
-                                    class="font-rajdhani text-h5 text-wrap font-weight-bold text-white"
+                                    class="text-h6 text-wrap font-weight-bold text-white"
                                 >
                                     {{ item["title"] }}
                                 </v-card-title>
