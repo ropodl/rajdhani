@@ -34,7 +34,7 @@ const sectionTitle = defineAsyncComponent(() =>
                             </v-avatar>
                         </template>
                         <v-list-item-title
-                            class="text-h6 text-wrap line-clamp-3 mb-3"
+                            class="text-h6 font-weight-medium text-wrap line-clamp-3 mb-3"
                             style="line-height: 2rem; white-space: wrap"
                         >
                             {{ item["title"] }}

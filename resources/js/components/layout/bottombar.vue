@@ -87,7 +87,10 @@ const youtube = defineAsyncComponent(() =>
                     </ul>
                 </v-col>
                 <v-col cols="12" md="2">
-                    <div class="font-rajdhani text-h6 font-weight-bold">
+                    <div
+                        class="text-h6 font-weight-bold"
+                        style="font-family: 'Rajdhani' !important"
+                    >
                         कार्यकारी प्रवन्धक
                     </div>
                     <div>
@@ -95,7 +98,10 @@ const youtube = defineAsyncComponent(() =>
                     </div>
                 </v-col>
                 <v-col cols="12" md="2">
-                    <div class="font-rajdhani text-h6 font-weight-bold">
+                    <div
+                        class="text-h6 font-weight-bold"
+                        style="font-family: 'Rajdhani' !important"
+                    >
                         सम्पादक :
                     </div>
                     <div>
@@ -103,7 +109,10 @@ const youtube = defineAsyncComponent(() =>
                     </div>
                 </v-col>
                 <v-col cols="12" md="2">
-                    <div class="font-rajdhani text-h6 font-weight-bold">
+                    <div
+                        class="text-h6 font-weight-bold"
+                        style="font-family: 'Rajdhani' !important"
+                    >
                         सूचना विभाग दर्ता नं :
                     </div>
                     <div>
@@ -111,7 +120,10 @@ const youtube = defineAsyncComponent(() =>
                     </div>
                 </v-col>
                 <v-col cols="12" md="2">
-                    <div class="font-rajdhani text-h6 font-weight-bold">
+                    <div
+                        class="text-h6 font-weight-bold"
+                        style="font-family: 'Rajdhani' !important"
+                    >
                         सम्पर्क
                     </div>
                     <ul class="list-style-none">

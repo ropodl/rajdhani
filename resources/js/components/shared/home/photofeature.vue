@@ -12,7 +12,7 @@ const sectionTitle = defineAsyncComponent(() => import("../sectionTitle.vue"));
         <v-container>
             <v-row>
                 <v-col cols="12">
-                    <sectionTitle :data="data" />
+                    <sectionTitle :data="{ name: 'फोटो फिचर' }" />
                 </v-col>
                 <template v-for="(photo, i) in photos">
                     <v-col cols="12" md="3">

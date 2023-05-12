@@ -9,13 +9,15 @@ defineProps({
             {{ data["name"] }}
         </span>
         <v-spacer></v-spacer>
-        <v-btn
-            rounded
-            color="primary"
-            variant="tonal"
-            :href="'/category/' + data['slug']"
-            >थप {{ data["name"] }} समाचार</v-btn
-        >
+        <template v-if="data['slug']">
+            <v-btn
+                rounded
+                color="primary"
+                variant="tonal"
+                :href="'/category/' + data['slug']"
+                >थप {{ data["name"] }} समाचार</v-btn
+            >
+        </template>
     </div>
 </template>
 

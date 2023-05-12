@@ -37,7 +37,7 @@ const sectionTitle = defineAsyncComponent(() =>
                                 "
                             >
                                 <v-card-title
-                                    class="text-h6 text-wrap font-weight-bold line-clamp-3"
+                                    class="text-h6 text-wrap font-weight-medium line-clamp-3"
                                 >
                                     {{ item["title"] }}
                                 </v-card-title>

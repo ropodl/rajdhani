@@ -43,7 +43,7 @@ const sectionTitle = defineAsyncComponent(() =>
                                     <v-list class="bg-transparent">
                                         <v-list-item>
                                             <v-list-item-title
-                                                class="text-h6 font-weight-bold mb-2 text-wrap"
+                                                class="text-h6 font-weight-medium mb-2 text-wrap"
                                                 style="line-height: 2.2rem"
                                             >
                                                 {{ data.news[0].title }}
@@ -82,7 +82,7 @@ const sectionTitle = defineAsyncComponent(() =>
                                     <v-list class="bg-transparent">
                                         <v-list-item>
                                             <v-list-item-title
-                                                class="text-h6 font-weight-bold mb-2 text-wrap"
+                                                class="text-h6 font-weight-medium mb-2 text-wrap"
                                                 style="line-height: 2.2rem"
                                             >
                                                 {{ data.news[1].title }}
@@ -120,7 +120,7 @@ const sectionTitle = defineAsyncComponent(() =>
                                 </v-avatar>
                             </template>
                             <v-list-item-title
-                                class="text-h6 font-weight-bold text-wrap line-clamp-3"
+                                class="text-h6 font-weight-medium text-wrap line-clamp-3"
                                 style="line-height: 2.2rem; white-space: wrap"
                             >
                                 {{ item["title"] }}

@@ -48,11 +48,8 @@ const sectionTitle = defineAsyncComponent(() =>
                                     <v-list class="bg-transparent">
                                         <v-list-item>
                                             <v-list-item-title
-                                                class="text-h5 text-wrap font-weight-bold mb-2"
-                                                style="
-                                                    line-height: 2rem;
-                                                    font-family: 'Rajdhani' !important;
-                                                "
+                                                class="text-h6 font-weight-medium text-wrap mb-2"
+                                                style="line-height: 2rem"
                                             >
                                                 {{ data.news[0].title }}
                                             </v-list-item-title>
@@ -90,11 +87,8 @@ const sectionTitle = defineAsyncComponent(() =>
                                     <v-list class="bg-transparent">
                                         <v-list-item>
                                             <v-list-item-title
-                                                class="text-h5 text-wrap font-weight-bold mb-2"
-                                                style="
-                                                    line-height: 2rem;
-                                                    font-family: 'Rajdhani' !important;
-                                                "
+                                                class="text-h5 font-weight-medium text-wrap mb-2"
+                                                style="line-height: 2rem"
                                                 v-html="data.news[1].title"
                                             >
                                             </v-list-item-title>
@@ -129,7 +123,7 @@ const sectionTitle = defineAsyncComponent(() =>
                                 </v-avatar>
                             </template>
                             <v-list-item-title
-                                class="text-h5 text-wrap line-clamp-3 font-weight-bold"
+                                class="text-h5 font-weight-medium text-wrap line-clamp-3"
                                 style="line-height: 2rem; white-space: wrap"
                             >
                                 {{ item["title"] }}
