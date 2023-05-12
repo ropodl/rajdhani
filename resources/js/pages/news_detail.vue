@@ -68,7 +68,7 @@ const imageCollector = () => {
             <v-col cols="12" md="9">
                 <article>
                     <v-card-title
-                        class="text-h3 font-weight-black text-wrap px-0"
+                        class="text-h3 font-weight-bold text-wrap px-0"
                         style="line-height: 4rem"
                         v-text="currentnews['title']"
                     >

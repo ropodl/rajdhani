@@ -26,16 +26,16 @@ defineProps({
                                 backdrop-filter: blur(10px);
                             "
                         >
-                            <v-list class="bg-transparent">
-                                <v-list-item>
-                                    <v-list-item-title
-                                        class="text-h6 font-weight-medium mb-3 line-clamp-3"
-                                        style="line-height: 2rem"
-                                    >
-                                        {{ latest[0].title }}
-                                    </v-list-item-title>
-                                </v-list-item>
-                            </v-list>
+                            <!-- <v-list class="bg-transparent"> -->
+                            <v-list-item>
+                                <v-list-item-title
+                                    class="text-h6 font-weight-medium mb-3 line-clamp-3"
+                                    style="line-height: 2rem"
+                                >
+                                    {{ latest[0].title }}
+                                </v-list-item-title>
+                            </v-list-item>
+                            <!-- </v-list> -->
                         </v-card>
                     </v-img>
                 </v-card>

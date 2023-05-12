@@ -20,7 +20,7 @@ const sectionTitle = defineAsyncComponent(() =>
                     <v-card :href="'/news/' + item['id']">
                         <v-img
                             cover
-                            height="250"
+                            height="300"
                             :class="[
                                 'align-end px-2 pb-2',
                                 isHovering ? 'zoom' : '',

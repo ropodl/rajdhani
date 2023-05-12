@@ -39,10 +39,7 @@ class News extends Model implements HasMedia
 
     public function getImageAttribute($value)
     {
-        // dd($this->getMedia()[0]->getAvailableUrl(['small', 'medium', 'large']));
         return $this->hasMedia() ? $this->getMedia()[0]->getFullUrl() : '';
-
-        // Storage::buildTemporaryUrlsUsing()
     }
 
     public function getSmallImageAttribute($value)
