@@ -28,7 +28,7 @@ defineProps({
                         >
                             <v-list-item class="py-3">
                                 <v-list-item-title
-                                    class="text-h6 font-weight-medium line-clamp-3"
+                                    class="text-h6 font-weight-medium line-clamp-3 text-wrap"
                                     style="line-height: 2rem"
                                 >
                                     {{ latest[0].title }}
