@@ -53,7 +53,7 @@ const paginate = (e) => {
                                             </v-avatar>
                                         </template>
                                         <v-list-item-title
-                                            class="text-h5 text-wrap line-clamp-3 font-weight-bold mb-3"
+                                            class="text-h5 text-wrap line-clamp-3 font-weight-medium mb-3"
                                             style="
                                                 line-height: 2rem;
                                                 white-space: wrap;
@@ -61,18 +61,6 @@ const paginate = (e) => {
                                         >
                                             {{ item["title"] }}
                                         </v-list-item-title>
-                                        <!-- <v-list-item-subtitle>
-                                            <v-icon
-                                                start
-                                                size="small"
-                                                :icon="mdiClockOutline"
-                                            ></v-icon>
-                                            {{
-                                                moment(item["created_at"])
-                                                    .startOf("day")
-                                                    .fromNow()
-                                            }}
-                                        </v-list-item-subtitle> -->
                                         <v-list-item-subtitle
                                             class="line-clamp-3"
                                             v-html="item['description']"
@@ -99,5 +87,3 @@ const paginate = (e) => {
         </v-row>
     </v-container>
 </template>
-
-<style lang="scss" scoped></style>

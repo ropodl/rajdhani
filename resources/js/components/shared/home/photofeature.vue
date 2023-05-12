@@ -8,7 +8,6 @@ defineProps({
 const sectionTitle = defineAsyncComponent(() => import("../sectionTitle.vue"));
 </script>
 <template>
-    {{ photos }}
     <div class="bg-grey-darken-4 py-16">
         <v-container>
             <v-row>
@@ -37,7 +36,7 @@ const sectionTitle = defineAsyncComponent(() => import("../sectionTitle.vue"));
                                         class="align-end"
                                     >
                                         <v-card-title
-                                            class="font-rajdhani text-h5 text-wrap font-weight-bold text-white"
+                                            class="text-h6 text-wrap font-weight-bold text-white"
                                         >
                                             {{ photo["title"] }}
                                         </v-card-title>
