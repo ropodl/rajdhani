@@ -59,9 +59,7 @@ const vuetify = createVuetify({
                 "info",
                 "success",
                 "warning",
-            ],
-            lighten: 5,
-            darken: 5,
+            ]
         },
         themes: {
             light: {
