@@ -49,5 +49,3 @@ const sectionTitle = defineAsyncComponent(() =>
         </template>
     </v-row>
 </template>
-
-<style lang="scss" scoped></style>

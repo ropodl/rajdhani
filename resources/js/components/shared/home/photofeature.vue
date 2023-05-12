@@ -1,16 +1,18 @@
 <script setup>
+import { defineAsyncComponent } from "vue";
+
 defineProps({
     photos: Object,
 });
+
+const sectionTitle = defineAsyncComponent(() => import("../sectionTitle.vue"));
 </script>
 <template>
     <div class="bg-grey-darken-4 py-16">
         <v-container>
             <v-row>
                 <v-col cols="12">
-                    <div class="font-rajdhani font-weight-bold text-h3">
-                        फोटो फिचर
-                    </div>
+                    <sectionTitle :data="data" />
                 </v-col>
                 <template v-for="(photo, i) in photos">
                     <v-col cols="12" md="3">
@@ -48,5 +50,3 @@ defineProps({
         </v-container>
     </div>
 </template>
-
-<style lang="scss" scoped></style>

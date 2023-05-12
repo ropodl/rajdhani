@@ -34,23 +34,11 @@ const sectionTitle = defineAsyncComponent(() =>
                             </v-avatar>
                         </template>
                         <v-list-item-title
-                            class="text-h5 text-wrap line-clamp-3 font-weight-bold mb-3"
+                            class="text-h6 text-wrap line-clamp-3 mb-3"
                             style="line-height: 2rem; white-space: wrap"
                         >
                             {{ item["title"] }}
                         </v-list-item-title>
-                        <!-- <v-list-item-subtitle>
-                            <v-icon
-                                start
-                                size="small"
-                                :icon="mdiClockOutline"
-                            ></v-icon>
-                            {{
-                                moment(item["created_at"])
-                                    .startOf("day")
-                                    .fromNow()
-                            }}
-                        </v-list-item-subtitle> -->
                     </v-list-item>
                 </v-hover>
             </v-col>
