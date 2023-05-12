@@ -22,7 +22,10 @@ const paginate = (e) => {
             </v-col>
             <template v-else>
                 <v-col cols="12">
-                    <div class="font-rajdhani font-weight-bold text-h3">
+                    <div
+                        class="font-weight-bold text-h3"
+                        style="font-family: 'Rajdhani' !important"
+                    >
                         {{ title }}
                     </div>
                 </v-col>

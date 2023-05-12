@@ -31,9 +31,9 @@ const youtube = defineAsyncComponent(() =>
                         height="50"
                         src="/frontend/img/logo.png"
                     ></v-img>
-                    <div class="mb-3" v-html="info['description']"></div>
+                    <div class="mb-6" v-html="info['description']"></div>
                     <ul
-                        class="d-flex justify-space-between list-style-none ml-auto mb-0"
+                        class="d-flex justify-space-between list-style-none ml-auto"
                     >
                         <li v-if="socials['facebook_link']">
                             <v-btn

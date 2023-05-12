@@ -12,12 +12,12 @@ let tab = ref("1");
     <v-card border flat class="rounded-t-0">
         <v-tabs grow color="primary" v-model="tab" :show-arrows="false">
             <v-tab
-                class="font-rajdhani text-subtitle-1 font-weight-bold rounded-0"
+                class="text-h6 font-weight-medium rounded-0"
                 value="1"
                 >लोकप्रिय</v-tab
             >
             <v-tab
-                class="font-rajdhani text-subtitle-1 font-weight-bold rounded-0"
+                class="text-h6 font-weight-medium rounded-0"
                 value="2"
                 >ताजा</v-tab
             >
@@ -29,7 +29,7 @@ let tab = ref("1");
                     <template v-for="(item, index) in trending">
                         <v-list-item :href="'/news/' + item['id']">
                             <v-list-item-title
-                                class="text-h6 font-weight-medium text-wrap line-clamp-3 mb-2"
+                                class="text-h6 font-weight-medium text-wrap line-clamp-3 my-2"
                                 style="line-height: 2rem; white-space: wrap"
                             >
                                 {{ item["title"] }}
