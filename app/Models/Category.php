@@ -13,9 +13,7 @@ class Category extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
     protected $fillable = ['name', 'slug', 'description', 'status', 'show_on_menu', 'sort', 'show_on_homepage', 'show_on_footer', 'under_news'];
-    protected $casts = [
-        'sort' => 'integer',
-    ];
+    protected $casts = ['sort' => 'integer'];
 
     public function scopeIsActive($query)
     {
@@ -33,12 +31,10 @@ class Category extends Model implements HasMedia
     {
         return $this->belongsToMany(News::class, 'news_categories', 'category_id', 'news_id')->isActive()->latest();
     }
-
     public function group()
     {
         return $this->belongsTo(Group::class);
     }
-
     public function groupCategories()
     {
         return $this->hasMany(GroupCategory::class);

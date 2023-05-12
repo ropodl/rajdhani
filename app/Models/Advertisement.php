@@ -17,22 +17,18 @@ class Advertisement extends Model implements HasMedia
     {
         return $this->hasMedia() ? $this->getMedia()[0]->getFullUrl() : '';
     }
-
     public function advertisementLayout()
     {
         return $this->belongsTo(AdvertisementLayout::class);
     }
-
     public function advertisementPageLayouts()
     {
         return $this->hasMany(AdvertisementPageLayout::class);
     }
-
     public function layoutPages()
     {
         return $this->belongsToMany(LayoutPage::class, AdvertisementPageLayout::class, 'advertisement_id', 'layout_page_id');
     }
-
     public function syncAdvertisementPageLayout()
     {
         $advertisementPageLayoutIds = [];
@@ -48,7 +44,6 @@ class Advertisement extends Model implements HasMedia
             $this->AdvertisementPageLayouts()->saveMany($advertisementPageLayoutIds);
         }
     }
-
     public function pluckAdvertisementLayoutPageIds()
     {
         $this->load('advertisementPageLayouts.advertisement');
