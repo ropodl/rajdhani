@@ -66,7 +66,7 @@ const imageCollector = () => {
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
-                {{ currentnews }}
+                <!-- {{ currentnews }} -->
                 <article>
                     <v-card-title
                         class="text-h3 font-weight-bold text-wrap px-0"

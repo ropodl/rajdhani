@@ -20,7 +20,7 @@ defineProps({
                     <v-card :href="'/news/' + item['id']">
                         <v-img
                             cover
-                            height="150"
+                            height="250"
                             class="align-end"
                             :class="isHovering ? 'zoom' : ''"
                             :src="item['image']"
