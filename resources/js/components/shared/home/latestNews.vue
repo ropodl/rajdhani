@@ -26,8 +26,7 @@ defineProps({
                                 backdrop-filter: blur(10px);
                             "
                         >
-                            <!-- <v-list class="bg-transparent"> -->
-                            <v-list-item>
+                            <v-list-item class="py-3">
                                 <v-list-item-title
                                     class="text-h6 font-weight-medium line-clamp-3"
                                     style="line-height: 2rem"
@@ -35,7 +34,6 @@ defineProps({
                                     {{ latest[0].title }}
                                 </v-list-item-title>
                             </v-list-item>
-                            <!-- </v-list> -->
                         </v-card>
                     </v-img>
                 </v-card>
