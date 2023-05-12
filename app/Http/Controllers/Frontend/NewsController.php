@@ -16,9 +16,8 @@ class NewsController extends Controller
     {
         // $slug = str_replace( '-',' ', $slug);
         $province = Province::where('name', $slug)->firstOrfail();
-        $news = News::isActive()->select('id', 'title')->where('province_id', $province->id)->paginate(10);
+        $news = News::isActive()->where('province_id', $province->id)->select('id', 'title')->paginate(10);
         $title = $province->name;
-        // dd($news);
         return view('frontend.category_news', compact('title', 'news'));
     }
 

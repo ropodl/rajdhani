@@ -88,11 +88,7 @@ const twoFour = defineAsyncComponent(() =>
             </v-col>
         </v-row>
     </v-container>
-    <template
-        v-for="(item, index) in catnews.sort((a, b) =>
-            a.sort > b.sort ? 1 : -1
-        )"
-    >
+    <template v-for="(item, index) in catnews">
         <template v-if="item['name'] == 'राजनीति' && item['news'].length > 0">
             <v-container>
                 <overlayFull :data="item"></overlayFull>
