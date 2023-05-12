@@ -29,7 +29,7 @@ defineProps({
                             <!-- <v-list class="bg-transparent"> -->
                             <v-list-item>
                                 <v-list-item-title
-                                    class="text-h6 font-weight-medium mb-3 line-clamp-3"
+                                    class="text-h6 font-weight-medium line-clamp-3"
                                     style="line-height: 2rem"
                                 >
                                     {{ latest[0].title }}
