@@ -5,7 +5,7 @@ defineProps({
 </script>
 <template>
     <div class="d-flex align-center">
-        <span class="font-weight-bold text-h3">
+        <span class="font-weight-bold section-title">
             {{ data["name"] }}
         </span>
         <v-spacer></v-spacer>
@@ -19,4 +19,10 @@ defineProps({
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.section-title {
+    font-family: "Rajdhani";
+    font-size: 3rem;
+    font-weight: 700;
+}
+</style>

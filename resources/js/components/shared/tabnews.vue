@@ -34,18 +34,6 @@ let tab = ref("1");
                             >
                                 {{ item["title"] }}
                             </v-list-item-title>
-                            <!-- <v-list-item-subtitle>
-                                <v-icon
-                                    start
-                                    size="small"
-                                    :icon="mdiClockOutline"
-                                ></v-icon>
-                                {{
-                                    moment(item["created_at"])
-                                        .startOf("day")
-                                        .fromNow()
-                                }}
-                            </v-list-item-subtitle> -->
                         </v-list-item>
                         <v-divider
                             v-if="index + 1 != trending.length"
@@ -63,18 +51,6 @@ let tab = ref("1");
                             >
                                 {{ item["title"] }}
                             </v-list-item-title>
-                            <!-- <v-list-item-subtitle>
-                                <v-icon
-                                    start
-                                    size="small"
-                                    :icon="mdiClockOutline"
-                                ></v-icon>
-                                {{
-                                    moment(item["created_at"])
-                                        .startOf("day")
-                                        .fromNow()
-                                }}
-                            </v-list-item-subtitle> -->
                         </v-list-item>
                         <v-divider
                             v-if="index + 1 != latest.length"

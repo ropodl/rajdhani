@@ -52,12 +52,7 @@ const twoFour = defineAsyncComponent(() =>
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
-                <v-lazy
-                    :options="{ threshold: 0.5 }"
-                    transition="fade-transition"
-                >
-                    <latestNews :latest="latest" />
-                </v-lazy>
+                <latestNews :latest="latest" />
             </v-col>
             <v-col cols="12" md="3">
                 <div class="d-flex flex-wrap justify-space-between">

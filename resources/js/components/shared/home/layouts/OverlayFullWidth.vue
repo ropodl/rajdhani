@@ -1,28 +1,18 @@
 <script setup>
+import { defineAsyncComponent } from "vue";
+
 defineProps({
     data: Object,
 });
+
+const sectionTitle = defineAsyncComponent(() =>
+    import("../../sectionTitle.vue")
+);
 </script>
 <template>
     <v-row>
         <v-col cols="12">
-            <div class="d-flex align-center flex-wrap">
-                <span
-                    class="text-h3 font-rajdhani font-weight-bold"
-                    style="font-family: 'Rajdhani' !important"
-                >
-                    {{ data["name"] }}
-                </span>
-                <v-spacer></v-spacer>
-                <v-btn
-                    rounded
-                    color="primary"
-                    variant="tonal"
-                    :href="'/category/' + data['slug']"
-                >
-                    थप {{ data["name"] }} समाचार
-                </v-btn>
-            </div>
+            <sectionTitle :data="data" />
         </v-col>
         <template v-for="(item, i) in data['news']">
             <v-col cols="12" sm="6" md="4" v-if="i < 6">
@@ -45,7 +35,7 @@ defineProps({
                                 class="align-end"
                             >
                                 <v-card-title
-                                    class="font-rajdhani text-h5 text-wrap font-weight-bold text-white"
+                                    class="text-h6 text-wrap font-weight-bold text-white"
                                 >
                                     {{ item["title"] }}
                                 </v-card-title>

@@ -1,28 +1,18 @@
 <script setup>
+import { defineAsyncComponent } from "vue";
+
 defineProps({
     data: Object,
 });
+
+const sectionTitle = defineAsyncComponent(() =>
+    import("../../sectionTitle.vue")
+);
 </script>
 <template>
     <v-row>
         <v-col cols="12">
-            <div class="d-flex align-center flex-wrap">
-                <span
-                    class="text-h3 font-rajdhani font-weight-bold"
-                    style="font-family: 'Rajdhani' !important"
-                >
-                    {{ data["name"] }}
-                </span>
-                <v-spacer></v-spacer>
-                <v-btn
-                    rounded
-                    color="primary"
-                    variant="tonal"
-                    :href="'/category/' + data['slug']"
-                >
-                    थप {{ data["name"] }} समाचार
-                </v-btn>
-            </div>
+            <sectionTitle :data="data" />
         </v-col>
         <template v-for="(item, i) in data['news']">
             <v-hover v-if="i < 6" v-slot="{ isHovering, props }">
