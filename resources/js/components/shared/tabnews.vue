@@ -29,7 +29,7 @@ let tab = ref("1");
                     <template v-for="(item, index) in trending">
                         <v-list-item :href="'/news/' + item['id']">
                             <v-list-item-title
-                                class="text-h6 text-wrap line-clamp-3 font-weight-bold mb-2"
+                                class="text-h6 font-weight-medium text-wrap line-clamp-3 mb-2"
                                 style="line-height: 2rem; white-space: wrap"
                             >
                                 {{ item["title"] }}
@@ -46,7 +46,7 @@ let tab = ref("1");
                     <template v-for="(item, index) in latest">
                         <v-list-item :href="'/news/' + item['id']">
                             <v-list-item-title
-                                class="text-h6 text-wrap line-clamp-3 font-weight-bold mb-2"
+                                class="text-h6 font-weight-medium text-wrap line-clamp-3 mb-2"
                                 style="line-height: 2rem; white-space: wrap"
                             >
                                 {{ item["title"] }}
