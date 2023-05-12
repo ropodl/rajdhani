@@ -8,8 +8,8 @@ import "vuetify/styles";
 // Icons
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
 // Composables
-import { VApp, VLayout, VMain } from "vuetify/components";
-// import vuetify from "./plugins/vuetify";
+import { VApp } from "vuetify/components/VApp";
+import { VMain } from "vuetify/components/VMain";
 
 const app = createApp({
     components: {
@@ -43,7 +43,7 @@ const app = createApp({
 
 const vuetify = createVuetify({
     // blueprint: md3,
-    components: { VApp, VMain, VLayout },
+    components: { VApp, VMain },
     icons: {
         defaultSet: "mdi",
         aliases,
