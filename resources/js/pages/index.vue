@@ -93,139 +93,74 @@ const twoFour = defineAsyncComponent(() =>
             a.sort > b.sort ? 1 : -1
         )"
     >
-        <!-- {{ item["name"] }}{{ item["sort"] }} -->
         <template v-if="item['name'] == 'राजनीति' && item['news'].length > 0">
             <v-container>
-                <v-lazy
-                    :options="{ threshold: 0.5 }"
-                    transition="fade-transition"
-                >
-                    <overlayFull :data="item"></overlayFull>
-                </v-lazy>
+                <overlayFull :data="item"></overlayFull>
             </v-container>
         </template>
         <template v-if="item['name'] == 'समाज' && item['news'].length > 0">
             <v-container>
                 <v-row>
                     <v-col cols="12" md="9">
-                        <v-lazy
-                            :options="{ threshold: 0.5 }"
-                            transition="fade-transition"
-                        >
-                            <twoFive :data="item"></twoFive>
-                        </v-lazy>
+                        <twoFive :data="item"></twoFive>
                     </v-col>
                     <v-col cols="12" md="3">
-                        <v-lazy
-                            :options="{ threshold: 0.5 }"
-                            transition="fade-transition"
-                        >
-                            <tabNews
-                                :latest="latest"
-                                :trending="trending"
-                            ></tabNews>
-                        </v-lazy>
+                        <tabNews
+                            :latest="latest"
+                            :trending="trending"
+                        ></tabNews>
                     </v-col>
                 </v-row>
             </v-container>
         </template>
         <template v-if="item['name'] == 'खेलकुद़़' && item['news'].length > 0">
             <v-container>
-                <v-lazy
-                    :options="{ threshold: 0.5 }"
-                    transition="fade-transition"
-                >
-                    <overlayFull :data="item"></overlayFull>
-                </v-lazy>
+                <overlayFull :data="item"></overlayFull>
             </v-container>
         </template>
         <template v-if="item['name'] == 'अर्थ' && item['news'].length > 0">
             <v-container>
-                <v-lazy
-                    :options="{ threshold: 0.5 }"
-                    transition="fade-transition"
-                >
-                    <overlayFull :data="item"></overlayFull>
-                </v-lazy>
+                <overlayFull :data="item"></overlayFull>
             </v-container>
         </template>
         <template v-if="item['name'] == 'साहित्य' && item['news'].length > 0">
             <v-container>
-                <v-lazy
-                    :options="{ threshold: 0.5 }"
-                    transition="fade-transition"
-                >
-                    <threeCol :data="item"></threeCol>
-                </v-lazy>
+                <threeCol :data="item"></threeCol>
             </v-container>
         </template>
         <template
             v-if="item['name'] == 'अन्तर्राष्ट्रिय' && item['news'].length > 0"
         >
             <v-container>
-                <v-lazy
-                    :options="{ threshold: 0.5 }"
-                    transition="fade-transition"
-                >
-                    <threeCol :data="item"></threeCol>
-                </v-lazy>
+                <threeCol :data="item"></threeCol>
             </v-container>
         </template>
         <template v-if="item['name'] == 'मनोरञ्जन' && item['news'].length > 0">
             <v-container>
-                <v-lazy
-                    :options="{ threshold: 0.5 }"
-                    transition="fade-transition"
-                >
-                    <twoFour :data="item"></twoFour>
-                </v-lazy>
+                <twoFour :data="item"></twoFour>
             </v-container>
         </template>
         <template v-if="item['name'] == 'विचार' && item['news'].length > 0">
             <v-container>
-                <v-lazy
-                    :options="{ threshold: 0.5 }"
-                    transition="fade-transition"
-                >
-                    <twoFour :data="item"></twoFour>
-                </v-lazy>
+                <twoFour :data="item"></twoFour>
             </v-container>
         </template>
         <template v-if="item['name'] == 'शिक्षा' && item['news'].length > 0">
             <v-container>
-                <v-lazy
-                    :options="{ threshold: 0.5 }"
-                    transition="fade-transition"
-                >
-                    <imageWithCard :data="item" />
-                </v-lazy>
+                <imageWithCard :data="item" />
             </v-container>
         </template>
         <template v-if="item['name'] == 'स्वास्थ्य' && item['news'].length > 0">
             <v-container>
-                <v-lazy
-                    :options="{ threshold: 0.5 }"
-                    transition="fade-transition"
-                >
-                    <twoFour :data="item"></twoFour>
-                </v-lazy>
+                <twoFour :data="item"></twoFour>
             </v-container>
         </template>
         <template v-if="index == 1">
-            <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
-                <provinceNews
-                    :provinces="provinces"
-                    :provincenews="provincenews"
-                />
-            </v-lazy>
+            <provinceNews :provinces="provinces" :provincenews="provincenews" />
         </template>
         <template v-if="index == 6">
-            <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
-                <photoFeature :photos="photos"></photoFeature>
-            </v-lazy>
+            <photoFeature :photos="photos"></photoFeature>
         </template>
     </template>
-    <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
-        <videoFeature v-if="videos.length > 0" :videos="videos"></videoFeature>
-    </v-lazy>
+    <videoFeature v-if="videos.length > 0" :videos="videos"></videoFeature>
 </template>

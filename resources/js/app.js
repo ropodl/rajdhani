@@ -4,7 +4,7 @@ import { createApp } from "vue";
 import { defineAsyncComponent } from "vue";
 // import { registerPlugins } from "./plugins";
 import { createVuetify } from "vuetify";
-import "vuetify/styles";
+// import "vuetify/styles";
 // Icons
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
 // Composables

@@ -6,9 +6,9 @@ import vuetify from "vite-plugin-vuetify";
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 // Vite Pwa
-import htmlPurge from "vite-plugin-html-purgecss";
+// import htmlPurge from "vite-plugin-html-purgecss";
 import { VitePWA } from "vite-plugin-pwa";
-import purgeConfig from "./purge";
+// import purgeConfig from "./purge";
 
 export default defineConfig({
     plugins: [
@@ -57,7 +57,7 @@ export default defineConfig({
                 ],
             },
         }),
-        htmlPurge(purgeConfig),
+        // htmlPurge(purgeConfig),
     ],
     define: { "process.env": {} },
     resolve: {

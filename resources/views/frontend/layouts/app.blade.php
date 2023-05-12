@@ -26,6 +26,7 @@
     <!-- End of Google Analytics --> --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@3.2.4/dist/vuetify.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap&family=Rajdhani:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">

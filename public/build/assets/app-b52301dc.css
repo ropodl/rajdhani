@@ -1,5 +1,0 @@
-@charset "UTF-8";@keyframes v-shake{59%{margin-left:0}60%,80%{margin-left:2px}70%,90%{margin-left:-2px}}/*!
- * ress.css • v2.0.4
- * MIT License
- * github.com/filipelinhares/ress
- */*,:before,:after{background-repeat:no-repeat;box-sizing:inherit}:before,:after{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0}::-webkit-file-upload-button{-webkit-appearance:button;color:inherit;font:inherit}::-ms-clear,::-ms-reveal{display:none}:root{--v-theme-overlay-multiplier: 1;--v-scrollbar-offset: 0px}
