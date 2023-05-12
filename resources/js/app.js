@@ -3,7 +3,13 @@ import { createApp } from "vue";
 // Plugins
 import { defineAsyncComponent } from "vue";
 // import { registerPlugins } from "./plugins";
-import vuetify from "./plugins/vuetify";
+import { createVuetify } from "vuetify";
+import "vuetify/styles";
+// Icons
+import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
+// Composables
+import { VApp, VLayout, VMain } from "vuetify/components";
+// import vuetify from "./plugins/vuetify";
 
 const app = createApp({
     components: {
@@ -37,6 +43,47 @@ const app = createApp({
 });
 
 // registerPlugins(app);
+
+const vuetify = createVuetify({
+    // blueprint: md3,
+    components: { VApp, VMain, VLayout },
+    icons: {
+        defaultSet: "mdi",
+        aliases,
+        sets: {
+            mdi,
+        },
+    },
+    theme: {
+        defaultTheme: "light",
+        variations: {
+            colors: [
+                "primary",
+                "secondary",
+                "error",
+                "info",
+                "success",
+                "warning",
+            ],
+            lighten: 5,
+            darken: 5,
+        },
+        themes: {
+            light: {
+                dark: false,
+                colors: {
+                    primary: "#3870c5",
+                },
+            },
+            dark: {
+                dark: true,
+                colors: {
+                    primary: "#3870c5",
+                },
+            },
+        },
+    },
+});
 
 app.use(vuetify);
 

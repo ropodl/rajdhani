@@ -43,165 +43,165 @@
     "file": "assets/VTabs-303294de.css",
     "src": "VTabs.css"
   },
-  "_VAppBar-f57f7c20.js": {
+  "_VAppBar-4252b5ec.js": {
     "css": [
       "assets/VAppBar-05efd720.css"
     ],
-    "file": "assets/VAppBar-f57f7c20.js",
+    "file": "assets/VAppBar-4252b5ec.js",
     "imports": [
       "resources/js/app.js",
-      "_index-a2f951b6.js",
-      "_router-6ac45149.js",
-      "_VRow-89f2150f.js"
+      "_index-9efe2cba.js",
+      "_router-1c9a454e.js",
+      "_VRow-3db06f20.js"
     ]
   },
-  "_VAvatar-4f84b722.js": {
+  "_VAvatar-484fd80c.js": {
     "css": [
       "assets/VAvatar-ab88a885.css"
     ],
-    "file": "assets/VAvatar-4f84b722.js",
+    "file": "assets/VAvatar-484fd80c.js",
     "imports": [
       "resources/js/app.js",
-      "_router-6ac45149.js",
-      "_VRow-89f2150f.js"
+      "_router-1c9a454e.js",
+      "_VRow-3db06f20.js"
     ]
   },
-  "_VBtn-081588ff.js": {
+  "_VBtn-18c7711c.js": {
     "css": [
       "assets/VBtn-6e2dfe86.css"
     ],
-    "file": "assets/VBtn-081588ff.js",
+    "file": "assets/VBtn-18c7711c.js",
     "imports": [
       "resources/js/app.js",
-      "_router-6ac45149.js",
-      "_group-97e3e713.js"
+      "_router-1c9a454e.js",
+      "_group-6e3f7e1d.js"
     ]
   },
-  "_VCard-094a72fb.js": {
+  "_VCard-65215535.js": {
     "css": [
       "assets/VCard-f7bfd9e0.css"
     ],
-    "file": "assets/VCard-094a72fb.js",
+    "file": "assets/VCard-65215535.js",
     "imports": [
       "resources/js/app.js",
-      "_VAvatar-4f84b722.js",
-      "_router-6ac45149.js",
-      "_VRow-89f2150f.js"
+      "_VAvatar-484fd80c.js",
+      "_router-1c9a454e.js",
+      "_VRow-3db06f20.js"
     ]
   },
-  "_VCol-8a867465.js": {
-    "file": "assets/VCol-8a867465.js",
+  "_VCol-aec83997.js": {
+    "file": "assets/VCol-aec83997.js",
     "imports": [
-      "_VRow-89f2150f.js",
+      "_VRow-3db06f20.js",
       "resources/js/app.js"
     ]
   },
-  "_VForm-840a58f2.js": {
+  "_VForm-c986a186.js": {
     "css": [
       "assets/VForm-fa883102.css"
     ],
-    "file": "assets/VForm-840a58f2.js",
+    "file": "assets/VForm-c986a186.js",
     "imports": [
       "resources/js/app.js",
-      "_index-a2f951b6.js",
-      "_router-6ac45149.js",
+      "_index-9efe2cba.js",
+      "_router-1c9a454e.js",
       "_easing-9f15041e.js",
-      "_VRow-89f2150f.js"
+      "_VRow-3db06f20.js"
     ]
   },
-  "_VHover-28c66683.js": {
-    "file": "assets/VHover-28c66683.js",
+  "_VHover-4ecc5944.js": {
+    "file": "assets/VHover-4ecc5944.js",
     "imports": [
-      "_delay-6bc500ff.js",
+      "_delay-6e312ed1.js",
       "resources/js/app.js"
     ]
   },
-  "_VList-a444a598.js": {
+  "_VList-75f3d705.js": {
     "css": [
       "assets/VList-5ec505d6.css"
     ],
-    "file": "assets/VList-a444a598.js",
+    "file": "assets/VList-75f3d705.js",
     "imports": [
       "resources/js/app.js",
-      "_index-a2f951b6.js",
-      "_VRow-89f2150f.js",
-      "_VListItem-3116c7cf.js",
-      "_router-6ac45149.js"
+      "_index-9efe2cba.js",
+      "_VRow-3db06f20.js",
+      "_VListItem-b48d6847.js",
+      "_router-1c9a454e.js"
     ]
   },
-  "_VListItem-3116c7cf.js": {
+  "_VListItem-b48d6847.js": {
     "css": [
       "assets/VListItem-ffbe5b16.css"
     ],
-    "file": "assets/VListItem-3116c7cf.js",
+    "file": "assets/VListItem-b48d6847.js",
     "imports": [
       "resources/js/app.js",
-      "_VAvatar-4f84b722.js",
-      "_router-6ac45149.js"
+      "_VAvatar-484fd80c.js",
+      "_router-1c9a454e.js"
     ]
   },
-  "_VOverlay-11547fd6.js": {
+  "_VOverlay-f15d95bf.js": {
     "css": [
       "assets/VOverlay-2c01b8e6.css"
     ],
-    "file": "assets/VOverlay-11547fd6.js",
+    "file": "assets/VOverlay-f15d95bf.js",
     "imports": [
       "resources/js/app.js",
-      "_delay-6bc500ff.js",
-      "_router-6ac45149.js",
-      "_lazy-22663b7e.js",
+      "_delay-6e312ed1.js",
+      "_router-1c9a454e.js",
+      "_lazy-7c4745b4.js",
       "_easing-9f15041e.js",
-      "_VRow-89f2150f.js"
+      "_VRow-3db06f20.js"
     ]
   },
-  "_VPagination-ad96011e.js": {
+  "_VPagination-0052decc.js": {
     "css": [
       "assets/VPagination-c6d9cd9e.css"
     ],
-    "file": "assets/VPagination-ad96011e.js",
+    "file": "assets/VPagination-0052decc.js",
     "imports": [
       "resources/js/app.js",
-      "_router-6ac45149.js",
-      "_VBtn-081588ff.js"
+      "_router-1c9a454e.js",
+      "_VBtn-18c7711c.js"
     ]
   },
-  "_VRow-89f2150f.js": {
+  "_VRow-3db06f20.js": {
     "css": [
       "assets/VRow-84e8b235.css"
     ],
-    "file": "assets/VRow-89f2150f.js",
+    "file": "assets/VRow-3db06f20.js",
     "imports": [
       "resources/js/app.js",
-      "_router-6ac45149.js"
+      "_router-1c9a454e.js"
     ]
   },
-  "_VSpacer-d710e4e3.js": {
-    "file": "assets/VSpacer-d710e4e3.js",
+  "_VSpacer-7188f47f.js": {
+    "file": "assets/VSpacer-7188f47f.js",
     "imports": [
-      "_VAvatar-4f84b722.js"
+      "_VAvatar-484fd80c.js"
     ]
   },
-  "_VTabs-123825a8.js": {
+  "_VTabs-9604e3a8.js": {
     "css": [
       "assets/VTabs-303294de.css"
     ],
-    "file": "assets/VTabs-123825a8.js",
+    "file": "assets/VTabs-9604e3a8.js",
     "imports": [
       "resources/js/app.js",
-      "_group-97e3e713.js",
-      "_lazy-22663b7e.js",
-      "_VRow-89f2150f.js",
-      "_VBtn-081588ff.js",
-      "_index-a2f951b6.js",
-      "_router-6ac45149.js",
+      "_group-6e3f7e1d.js",
+      "_lazy-7c4745b4.js",
+      "_VRow-3db06f20.js",
+      "_VBtn-18c7711c.js",
+      "_index-9efe2cba.js",
+      "_router-1c9a454e.js",
       "_easing-9f15041e.js"
     ]
   },
   "__plugin-vue_export-helper-c27b6911.js": {
     "file": "assets/_plugin-vue_export-helper-c27b6911.js"
   },
-  "_delay-6bc500ff.js": {
-    "file": "assets/delay-6bc500ff.js",
+  "_delay-6e312ed1.js": {
+    "file": "assets/delay-6e312ed1.js",
     "imports": [
       "resources/js/app.js"
     ]
@@ -209,20 +209,20 @@
   "_easing-9f15041e.js": {
     "file": "assets/easing-9f15041e.js"
   },
-  "_group-97e3e713.js": {
-    "file": "assets/group-97e3e713.js",
+  "_group-6e3f7e1d.js": {
+    "file": "assets/group-6e3f7e1d.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
-  "_index-a2f951b6.js": {
-    "file": "assets/index-a2f951b6.js",
+  "_index-9efe2cba.js": {
+    "file": "assets/index-9efe2cba.js",
     "imports": [
       "resources/js/app.js"
     ]
   },
-  "_lazy-22663b7e.js": {
-    "file": "assets/lazy-22663b7e.js",
+  "_lazy-7c4745b4.js": {
+    "file": "assets/lazy-7c4745b4.js",
     "imports": [
       "resources/js/app.js"
     ]
@@ -230,11 +230,11 @@
   "_mdi-74b5fd1c.js": {
     "file": "assets/mdi-74b5fd1c.js"
   },
-  "_router-6ac45149.js": {
+  "_router-1c9a454e.js": {
     "css": [
       "assets/router-b2aaa870.css"
     ],
-    "file": "assets/router-6ac45149.js",
+    "file": "assets/router-1c9a454e.js",
     "imports": [
       "resources/js/app.js"
     ]
@@ -258,7 +258,7 @@
       "resources/js/pages/category_news.vue",
       "resources/js/pages/contactus.vue"
     ],
-    "file": "assets/app-4a8f921f.js",
+    "file": "assets/app-68c11f2a.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
@@ -270,43 +270,43 @@
       "resources/js/components/shared/home/icons/linkedin.vue",
       "resources/js/components/shared/home/icons/youtube.vue"
     ],
-    "file": "assets/bottombar-ebc1b1e0.js",
+    "file": "assets/bottombar-e5652ad8.js",
     "imports": [
       "resources/js/app.js",
-      "_VRow-89f2150f.js",
-      "_VCol-8a867465.js",
-      "_VBtn-081588ff.js",
-      "_VAppBar-f57f7c20.js",
-      "_router-6ac45149.js",
-      "_group-97e3e713.js",
-      "_index-a2f951b6.js"
+      "_VRow-3db06f20.js",
+      "_VCol-aec83997.js",
+      "_VBtn-18c7711c.js",
+      "_VAppBar-4252b5ec.js",
+      "_router-1c9a454e.js",
+      "_group-6e3f7e1d.js",
+      "_index-9efe2cba.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/layout/bottombar.vue"
   },
   "resources/js/components/layout/gotop.vue": {
-    "file": "assets/gotop-7a5427ff.js",
+    "file": "assets/gotop-461d3b9b.js",
     "imports": [
       "resources/js/app.js",
       "_mdi-74b5fd1c.js",
-      "_VBtn-081588ff.js",
-      "_router-6ac45149.js",
-      "_group-97e3e713.js"
+      "_VBtn-18c7711c.js",
+      "_router-1c9a454e.js",
+      "_group-6e3f7e1d.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/layout/gotop.vue"
   },
   "resources/js/components/layout/midbar.vue": {
-    "file": "assets/midbar-ff648389.js",
+    "file": "assets/midbar-62e424f3.js",
     "imports": [
       "resources/js/app.js",
-      "_VCol-8a867465.js",
-      "_VBtn-081588ff.js",
-      "_VRow-89f2150f.js",
-      "_VCard-094a72fb.js",
-      "_router-6ac45149.js",
-      "_group-97e3e713.js",
-      "_VAvatar-4f84b722.js"
+      "_VCol-aec83997.js",
+      "_VBtn-18c7711c.js",
+      "_VRow-3db06f20.js",
+      "_VCard-65215535.js",
+      "_router-1c9a454e.js",
+      "_group-6e3f7e1d.js",
+      "_VAvatar-484fd80c.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/layout/midbar.vue"
@@ -319,33 +319,33 @@
     "css": [
       "assets/navbar-58d13e93.css"
     ],
-    "file": "assets/navbar-60c25f49.js",
+    "file": "assets/navbar-335c62b5.js",
     "imports": [
       "resources/js/app.js",
       "_mdi-74b5fd1c.js",
       "__plugin-vue_export-helper-c27b6911.js",
-      "_VRow-89f2150f.js",
-      "_VBtn-081588ff.js",
-      "_VForm-840a58f2.js",
-      "_VOverlay-11547fd6.js",
+      "_VRow-3db06f20.js",
+      "_VBtn-18c7711c.js",
+      "_VForm-c986a186.js",
+      "_VOverlay-f15d95bf.js",
       "_easing-9f15041e.js",
-      "_router-6ac45149.js",
-      "_VList-a444a598.js",
-      "_VListItem-3116c7cf.js",
-      "_VSpacer-d710e4e3.js",
-      "_VCard-094a72fb.js",
-      "_VAppBar-f57f7c20.js",
-      "_group-97e3e713.js",
-      "_index-a2f951b6.js",
-      "_delay-6bc500ff.js",
-      "_lazy-22663b7e.js",
-      "_VAvatar-4f84b722.js"
+      "_router-1c9a454e.js",
+      "_VList-75f3d705.js",
+      "_VListItem-b48d6847.js",
+      "_VSpacer-7188f47f.js",
+      "_VCard-65215535.js",
+      "_VAppBar-4252b5ec.js",
+      "_group-6e3f7e1d.js",
+      "_index-9efe2cba.js",
+      "_delay-6e312ed1.js",
+      "_lazy-7c4745b4.js",
+      "_VAvatar-484fd80c.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/layout/navbar.vue"
   },
   "resources/js/components/shared/home/icons/facebook.vue": {
-    "file": "assets/facebook-fd9a9ebe.js",
+    "file": "assets/facebook-dcc8f84c.js",
     "imports": [
       "resources/js/app.js",
       "__plugin-vue_export-helper-c27b6911.js"
@@ -354,7 +354,7 @@
     "src": "resources/js/components/shared/home/icons/facebook.vue"
   },
   "resources/js/components/shared/home/icons/instagram.vue": {
-    "file": "assets/instagram-2a052cf3.js",
+    "file": "assets/instagram-ed07d24b.js",
     "imports": [
       "resources/js/app.js",
       "__plugin-vue_export-helper-c27b6911.js"
@@ -363,7 +363,7 @@
     "src": "resources/js/components/shared/home/icons/instagram.vue"
   },
   "resources/js/components/shared/home/icons/linkedin.vue": {
-    "file": "assets/linkedin-b2b27199.js",
+    "file": "assets/linkedin-15c0b20a.js",
     "imports": [
       "resources/js/app.js",
       "__plugin-vue_export-helper-c27b6911.js"
@@ -372,7 +372,7 @@
     "src": "resources/js/components/shared/home/icons/linkedin.vue"
   },
   "resources/js/components/shared/home/icons/twitter.vue": {
-    "file": "assets/twitter-b802534a.js",
+    "file": "assets/twitter-aeb5c265.js",
     "imports": [
       "resources/js/app.js",
       "__plugin-vue_export-helper-c27b6911.js"
@@ -381,7 +381,7 @@
     "src": "resources/js/components/shared/home/icons/twitter.vue"
   },
   "resources/js/components/shared/home/icons/youtube.vue": {
-    "file": "assets/youtube-3f66c280.js",
+    "file": "assets/youtube-78826a44.js",
     "imports": [
       "resources/js/app.js",
       "__plugin-vue_export-helper-c27b6911.js"
@@ -390,19 +390,19 @@
     "src": "resources/js/components/shared/home/icons/youtube.vue"
   },
   "resources/js/components/shared/home/latestNews.vue": {
-    "file": "assets/latestNews-bfda42ff.js",
+    "file": "assets/latestNews-4ab090e4.js",
     "imports": [
       "resources/js/app.js",
-      "_VHover-28c66683.js",
-      "_VCard-094a72fb.js",
-      "_VRow-89f2150f.js",
-      "_VList-a444a598.js",
-      "_VListItem-3116c7cf.js",
-      "_VCol-8a867465.js",
-      "_VAvatar-4f84b722.js",
-      "_delay-6bc500ff.js",
-      "_router-6ac45149.js",
-      "_index-a2f951b6.js"
+      "_VHover-4ecc5944.js",
+      "_VCard-65215535.js",
+      "_VRow-3db06f20.js",
+      "_VList-75f3d705.js",
+      "_VListItem-b48d6847.js",
+      "_VCol-aec83997.js",
+      "_VAvatar-484fd80c.js",
+      "_delay-6e312ed1.js",
+      "_router-1c9a454e.js",
+      "_index-9efe2cba.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/shared/home/latestNews.vue"
@@ -411,16 +411,16 @@
     "dynamicImports": [
       "resources/js/components/shared/sectionTitle.vue"
     ],
-    "file": "assets/ImageWithCard-e30a30e0.js",
+    "file": "assets/ImageWithCard-993ef268.js",
     "imports": [
       "resources/js/app.js",
-      "_VCol-8a867465.js",
-      "_VHover-28c66683.js",
-      "_VCard-094a72fb.js",
-      "_VRow-89f2150f.js",
-      "_delay-6bc500ff.js",
-      "_VAvatar-4f84b722.js",
-      "_router-6ac45149.js"
+      "_VCol-aec83997.js",
+      "_VHover-4ecc5944.js",
+      "_VCard-65215535.js",
+      "_VRow-3db06f20.js",
+      "_delay-6e312ed1.js",
+      "_VAvatar-484fd80c.js",
+      "_router-1c9a454e.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/shared/home/layouts/ImageWithCard.vue"
@@ -429,18 +429,18 @@
     "dynamicImports": [
       "resources/js/components/shared/sectionTitle.vue"
     ],
-    "file": "assets/OverlayFullWidth-63d98472.js",
+    "file": "assets/OverlayFullWidth-612d8adf.js",
     "imports": [
       "resources/js/app.js",
-      "_VCol-8a867465.js",
-      "_VCard-094a72fb.js",
-      "_VRow-89f2150f.js",
-      "_VOverlay-11547fd6.js",
-      "_VHover-28c66683.js",
-      "_VAvatar-4f84b722.js",
-      "_router-6ac45149.js",
-      "_delay-6bc500ff.js",
-      "_lazy-22663b7e.js",
+      "_VCol-aec83997.js",
+      "_VCard-65215535.js",
+      "_VRow-3db06f20.js",
+      "_VOverlay-f15d95bf.js",
+      "_VHover-4ecc5944.js",
+      "_VAvatar-484fd80c.js",
+      "_router-1c9a454e.js",
+      "_delay-6e312ed1.js",
+      "_lazy-7c4745b4.js",
       "_easing-9f15041e.js"
     ],
     "isDynamicEntry": true,
@@ -450,16 +450,16 @@
     "dynamicImports": [
       "resources/js/components/shared/sectionTitle.vue"
     ],
-    "file": "assets/ThreeCol-ebe0a210.js",
+    "file": "assets/ThreeCol-561da51f.js",
     "imports": [
       "resources/js/app.js",
-      "_VCol-8a867465.js",
-      "_VListItem-3116c7cf.js",
-      "_VAvatar-4f84b722.js",
-      "_VRow-89f2150f.js",
-      "_VHover-28c66683.js",
-      "_router-6ac45149.js",
-      "_delay-6bc500ff.js"
+      "_VCol-aec83997.js",
+      "_VListItem-b48d6847.js",
+      "_VAvatar-484fd80c.js",
+      "_VRow-3db06f20.js",
+      "_VHover-4ecc5944.js",
+      "_router-1c9a454e.js",
+      "_delay-6e312ed1.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/shared/home/layouts/ThreeCol.vue"
@@ -468,19 +468,19 @@
     "dynamicImports": [
       "resources/js/components/shared/sectionTitle.vue"
     ],
-    "file": "assets/TwoFive-66bb521e.js",
+    "file": "assets/TwoFive-baa5b747.js",
     "imports": [
       "resources/js/app.js",
-      "_VCol-8a867465.js",
-      "_VRow-89f2150f.js",
-      "_VHover-28c66683.js",
-      "_VCard-094a72fb.js",
-      "_VList-a444a598.js",
-      "_VListItem-3116c7cf.js",
-      "_VAvatar-4f84b722.js",
-      "_router-6ac45149.js",
-      "_delay-6bc500ff.js",
-      "_index-a2f951b6.js"
+      "_VCol-aec83997.js",
+      "_VRow-3db06f20.js",
+      "_VHover-4ecc5944.js",
+      "_VCard-65215535.js",
+      "_VList-75f3d705.js",
+      "_VListItem-b48d6847.js",
+      "_VAvatar-484fd80c.js",
+      "_router-1c9a454e.js",
+      "_delay-6e312ed1.js",
+      "_index-9efe2cba.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/shared/home/layouts/TwoFive.vue"
@@ -489,34 +489,34 @@
     "dynamicImports": [
       "resources/js/components/shared/sectionTitle.vue"
     ],
-    "file": "assets/TwoFour-98d1d9e2.js",
+    "file": "assets/TwoFour-e6e42262.js",
     "imports": [
       "resources/js/app.js",
-      "_VRow-89f2150f.js",
-      "_VCol-8a867465.js",
-      "_VHover-28c66683.js",
-      "_VCard-094a72fb.js",
-      "_VList-a444a598.js",
-      "_VListItem-3116c7cf.js",
-      "_VAvatar-4f84b722.js",
-      "_router-6ac45149.js",
-      "_delay-6bc500ff.js",
-      "_index-a2f951b6.js"
+      "_VRow-3db06f20.js",
+      "_VCol-aec83997.js",
+      "_VHover-4ecc5944.js",
+      "_VCard-65215535.js",
+      "_VList-75f3d705.js",
+      "_VListItem-b48d6847.js",
+      "_VAvatar-484fd80c.js",
+      "_router-1c9a454e.js",
+      "_delay-6e312ed1.js",
+      "_index-9efe2cba.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/shared/home/layouts/TwoFour.vue"
   },
   "resources/js/components/shared/home/mainnews.vue": {
-    "file": "assets/mainnews-837daaba.js",
+    "file": "assets/mainnews-dcc9b335.js",
     "imports": [
       "resources/js/app.js",
-      "_VCol-8a867465.js",
-      "_VHover-28c66683.js",
-      "_VCard-094a72fb.js",
-      "_VRow-89f2150f.js",
-      "_delay-6bc500ff.js",
-      "_VAvatar-4f84b722.js",
-      "_router-6ac45149.js"
+      "_VCol-aec83997.js",
+      "_VHover-4ecc5944.js",
+      "_VCard-65215535.js",
+      "_VRow-3db06f20.js",
+      "_delay-6e312ed1.js",
+      "_VAvatar-484fd80c.js",
+      "_router-1c9a454e.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/shared/home/mainnews.vue"
@@ -525,18 +525,18 @@
     "dynamicImports": [
       "resources/js/components/shared/sectionTitle.vue"
     ],
-    "file": "assets/photofeature-17c27354.js",
+    "file": "assets/photofeature-2a9c43d9.js",
     "imports": [
       "resources/js/app.js",
-      "_VRow-89f2150f.js",
-      "_VCol-8a867465.js",
-      "_VHover-28c66683.js",
-      "_VCard-094a72fb.js",
-      "_VOverlay-11547fd6.js",
-      "_router-6ac45149.js",
-      "_delay-6bc500ff.js",
-      "_VAvatar-4f84b722.js",
-      "_lazy-22663b7e.js",
+      "_VRow-3db06f20.js",
+      "_VCol-aec83997.js",
+      "_VHover-4ecc5944.js",
+      "_VCard-65215535.js",
+      "_VOverlay-f15d95bf.js",
+      "_router-1c9a454e.js",
+      "_delay-6e312ed1.js",
+      "_VAvatar-484fd80c.js",
+      "_lazy-7c4745b4.js",
       "_easing-9f15041e.js"
     ],
     "isDynamicEntry": true,
@@ -550,54 +550,54 @@
     "css": [
       "assets/provincenews-78595136.css"
     ],
-    "file": "assets/provincenews-1e906f99.js",
+    "file": "assets/provincenews-69dfe3b9.js",
     "imports": [
       "resources/js/app.js",
-      "_VCol-8a867465.js",
-      "_VRow-89f2150f.js",
-      "_group-97e3e713.js",
-      "_router-6ac45149.js",
-      "_index-a2f951b6.js",
-      "_VAvatar-4f84b722.js",
-      "_VHover-28c66683.js",
-      "_VCard-094a72fb.js",
-      "_VList-a444a598.js",
-      "_VListItem-3116c7cf.js",
-      "_delay-6bc500ff.js"
+      "_VCol-aec83997.js",
+      "_VRow-3db06f20.js",
+      "_group-6e3f7e1d.js",
+      "_router-1c9a454e.js",
+      "_index-9efe2cba.js",
+      "_VAvatar-484fd80c.js",
+      "_VHover-4ecc5944.js",
+      "_VCard-65215535.js",
+      "_VList-75f3d705.js",
+      "_VListItem-b48d6847.js",
+      "_delay-6e312ed1.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/shared/home/provincenews.vue"
   },
   "resources/js/components/shared/home/videofeature.vue": {
-    "file": "assets/videofeature-deccb107.js",
+    "file": "assets/videofeature-5ccb5309.js",
     "imports": [
       "resources/js/app.js",
-      "_VRow-89f2150f.js",
-      "_VCol-8a867465.js",
-      "_VTabs-123825a8.js",
-      "_router-6ac45149.js",
-      "_group-97e3e713.js",
-      "_lazy-22663b7e.js",
-      "_VBtn-081588ff.js",
-      "_index-a2f951b6.js",
+      "_VRow-3db06f20.js",
+      "_VCol-aec83997.js",
+      "_VTabs-9604e3a8.js",
+      "_router-1c9a454e.js",
+      "_group-6e3f7e1d.js",
+      "_lazy-7c4745b4.js",
+      "_VBtn-18c7711c.js",
+      "_index-9efe2cba.js",
       "_easing-9f15041e.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/shared/home/videofeature.vue"
   },
   "resources/js/components/shared/relatednews.vue": {
-    "file": "assets/relatednews-44f79bd9.js",
+    "file": "assets/relatednews-98e7655d.js",
     "imports": [
       "resources/js/app.js",
-      "_VCol-8a867465.js",
-      "_VCard-094a72fb.js",
-      "_VRow-89f2150f.js",
-      "_VOverlay-11547fd6.js",
-      "_VHover-28c66683.js",
-      "_VAvatar-4f84b722.js",
-      "_router-6ac45149.js",
-      "_delay-6bc500ff.js",
-      "_lazy-22663b7e.js",
+      "_VCol-aec83997.js",
+      "_VCard-65215535.js",
+      "_VRow-3db06f20.js",
+      "_VOverlay-f15d95bf.js",
+      "_VHover-4ecc5944.js",
+      "_VAvatar-484fd80c.js",
+      "_router-1c9a454e.js",
+      "_delay-6e312ed1.js",
+      "_lazy-7c4745b4.js",
       "_easing-9f15041e.js"
     ],
     "isDynamicEntry": true,
@@ -611,55 +611,55 @@
     "css": [
       "assets/sectionTitle-645883f8.css"
     ],
-    "file": "assets/sectionTitle-ade254d3.js",
+    "file": "assets/sectionTitle-8644dd25.js",
     "imports": [
       "resources/js/app.js",
       "__plugin-vue_export-helper-c27b6911.js",
-      "_VSpacer-d710e4e3.js",
-      "_VBtn-081588ff.js",
-      "_VAvatar-4f84b722.js",
-      "_router-6ac45149.js",
-      "_VRow-89f2150f.js",
-      "_group-97e3e713.js"
+      "_VSpacer-7188f47f.js",
+      "_VBtn-18c7711c.js",
+      "_VAvatar-484fd80c.js",
+      "_router-1c9a454e.js",
+      "_VRow-3db06f20.js",
+      "_group-6e3f7e1d.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/shared/sectionTitle.vue"
   },
   "resources/js/components/shared/tabnews.vue": {
-    "file": "assets/tabnews-b5fb43df.js",
+    "file": "assets/tabnews-aa41f01a.js",
     "imports": [
       "resources/js/app.js",
-      "_VTabs-123825a8.js",
-      "_VList-a444a598.js",
-      "_VListItem-3116c7cf.js",
-      "_VCard-094a72fb.js",
-      "_group-97e3e713.js",
-      "_lazy-22663b7e.js",
-      "_VRow-89f2150f.js",
-      "_router-6ac45149.js",
-      "_VBtn-081588ff.js",
-      "_index-a2f951b6.js",
+      "_VTabs-9604e3a8.js",
+      "_VList-75f3d705.js",
+      "_VListItem-b48d6847.js",
+      "_VCard-65215535.js",
+      "_group-6e3f7e1d.js",
+      "_lazy-7c4745b4.js",
+      "_VRow-3db06f20.js",
+      "_router-1c9a454e.js",
+      "_VBtn-18c7711c.js",
+      "_index-9efe2cba.js",
       "_easing-9f15041e.js",
-      "_VAvatar-4f84b722.js"
+      "_VAvatar-484fd80c.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/components/shared/tabnews.vue"
   },
   "resources/js/pages/category_news.vue": {
-    "file": "assets/category_news-7abee387.js",
+    "file": "assets/category_news-e8520992.js",
     "imports": [
       "resources/js/app.js",
-      "_VCol-8a867465.js",
-      "_VCard-094a72fb.js",
-      "_VRow-89f2150f.js",
-      "_VHover-28c66683.js",
-      "_VListItem-3116c7cf.js",
-      "_VAvatar-4f84b722.js",
-      "_VPagination-ad96011e.js",
-      "_router-6ac45149.js",
-      "_delay-6bc500ff.js",
-      "_VBtn-081588ff.js",
-      "_group-97e3e713.js"
+      "_VCol-aec83997.js",
+      "_VCard-65215535.js",
+      "_VRow-3db06f20.js",
+      "_VHover-4ecc5944.js",
+      "_VListItem-b48d6847.js",
+      "_VAvatar-484fd80c.js",
+      "_VPagination-0052decc.js",
+      "_router-1c9a454e.js",
+      "_delay-6e312ed1.js",
+      "_VBtn-18c7711c.js",
+      "_group-6e3f7e1d.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/pages/category_news.vue"
@@ -672,20 +672,20 @@
     "css": [
       "assets/contactus-13bfb6d6.css"
     ],
-    "file": "assets/contactus-4875f508.js",
+    "file": "assets/contactus-d1b469a2.js",
     "imports": [
       "resources/js/app.js",
-      "_VRow-89f2150f.js",
-      "_VCol-8a867465.js",
-      "_VList-a444a598.js",
-      "_VListItem-3116c7cf.js",
-      "_VForm-840a58f2.js",
-      "_VBtn-081588ff.js",
-      "_router-6ac45149.js",
-      "_index-a2f951b6.js",
-      "_VAvatar-4f84b722.js",
+      "_VRow-3db06f20.js",
+      "_VCol-aec83997.js",
+      "_VList-75f3d705.js",
+      "_VListItem-b48d6847.js",
+      "_VForm-c986a186.js",
+      "_VBtn-18c7711c.js",
+      "_router-1c9a454e.js",
+      "_index-9efe2cba.js",
+      "_VAvatar-484fd80c.js",
       "_easing-9f15041e.js",
-      "_group-97e3e713.js"
+      "_group-6e3f7e1d.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/pages/contactus.vue"
@@ -704,14 +704,14 @@
       "resources/js/components/shared/home/layouts/ThreeCol.vue",
       "resources/js/components/shared/home/layouts/TwoFour.vue"
     ],
-    "file": "assets/index-6c106494.js",
+    "file": "assets/index-8edde2ca.js",
     "imports": [
       "resources/js/app.js",
-      "_VRow-89f2150f.js",
-      "_VCol-8a867465.js",
-      "_VCard-094a72fb.js",
-      "_router-6ac45149.js",
-      "_VAvatar-4f84b722.js"
+      "_VRow-3db06f20.js",
+      "_VCol-aec83997.js",
+      "_VCard-65215535.js",
+      "_router-1c9a454e.js",
+      "_VAvatar-484fd80c.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/pages/index.vue"
@@ -728,40 +728,40 @@
       "resources/js/components/shared/tabnews.vue",
       "resources/js/components/shared/relatednews.vue"
     ],
-    "file": "assets/news_detail-f3e92cb5.js",
+    "file": "assets/news_detail-e44a57ba.js",
     "imports": [
       "resources/js/app.js",
       "_mdi-74b5fd1c.js",
-      "_VRow-89f2150f.js",
-      "_VCol-8a867465.js",
-      "_VCard-094a72fb.js",
-      "_router-6ac45149.js",
-      "_VBtn-081588ff.js",
-      "_VOverlay-11547fd6.js",
-      "_VAvatar-4f84b722.js",
-      "_group-97e3e713.js",
-      "_delay-6bc500ff.js",
-      "_lazy-22663b7e.js",
+      "_VRow-3db06f20.js",
+      "_VCol-aec83997.js",
+      "_VCard-65215535.js",
+      "_router-1c9a454e.js",
+      "_VBtn-18c7711c.js",
+      "_VOverlay-f15d95bf.js",
+      "_VAvatar-484fd80c.js",
+      "_group-6e3f7e1d.js",
+      "_delay-6e312ed1.js",
+      "_lazy-7c4745b4.js",
       "_easing-9f15041e.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/pages/news_detail.vue"
   },
   "resources/js/pages/search.vue": {
-    "file": "assets/search-0d8c6506.js",
+    "file": "assets/search-803b52cc.js",
     "imports": [
       "resources/js/app.js",
-      "_VCol-8a867465.js",
-      "_VCard-094a72fb.js",
-      "_VRow-89f2150f.js",
-      "_VHover-28c66683.js",
-      "_VListItem-3116c7cf.js",
-      "_VAvatar-4f84b722.js",
-      "_VPagination-ad96011e.js",
-      "_router-6ac45149.js",
-      "_delay-6bc500ff.js",
-      "_VBtn-081588ff.js",
-      "_group-97e3e713.js"
+      "_VCol-aec83997.js",
+      "_VCard-65215535.js",
+      "_VRow-3db06f20.js",
+      "_VHover-4ecc5944.js",
+      "_VListItem-b48d6847.js",
+      "_VAvatar-484fd80c.js",
+      "_VPagination-0052decc.js",
+      "_router-1c9a454e.js",
+      "_delay-6e312ed1.js",
+      "_VBtn-18c7711c.js",
+      "_group-6e3f7e1d.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/pages/search.vue"
