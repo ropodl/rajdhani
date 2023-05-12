@@ -2,19 +2,15 @@
 
 namespace App\Models;
 
-use App\Http\Requests\Backend\AdvertisementPageLayoutRequest;
-use http\Env\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Advertisement extends Model implements HasMedia
 {
     use HasFactory,  InteractsWithMedia;
     protected $fillable = ['title', 'url', 'advertisement_layout_id'];
-
     protected $appends = ['image'];
 
     public function getImageAttribute($value)

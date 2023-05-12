@@ -39,8 +39,7 @@ class AppServiceProvider extends ServiceProvider
             })->whereHas('advertisement.advertisementLayout', function ($query) {
                 $query->where('code', 'l_ad');
             })->first();
-            // dd($headerAds);
-            $provinces = Province::get();
+            $provinces = Province::select('name')->get();
             $headerCats = Category::isActive()->displayOnMenu()->limit(11)->orderBy('sort', 'asc')->get()->sortBy('sort');
             $underCats = Category::isActive()->underNews()->orderBy('sort', 'asc')->limit(10)->get();
 
@@ -48,9 +47,11 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer(['frontend/index'], function ($view) {
-            $advertisements = AdvertisementPageLayout::orderBy('order', 'asc')->with(['advertisement', 'advertisement.advertisementLayout'])->whereHas('layoutPages', function ($query) {
+            $advertisements = AdvertisementPageLayout::select('advertisement_id', 'layout_page_id', 'order')->orderBy('order', 'asc')->with('advertisement', 'advertisement.advertisementLayout')->whereHas('layoutPages', function ($query) {
                 $query->where('code', 'home_page');
+                // dd(($query));
             })->get()->groupBy('advertisement.advertisementLayout.code');
+            // dd(json_encode($advertisements));
             $popUpAdv = Advertisement::latest()->whereHas('layoutPages', function ($query) {
                 $query->where('code', 'popup_section');
             })->first();
@@ -67,9 +68,12 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer(['frontend/layouts/footer'], function ($view) {
-            $footerCategories = Category::has('news')->isActive()->where('show_on_footer', 1)->get();
+            // $footerCategories = Category::has('news')->isActive()->where('show_on_footer', 1)->get();
             $socials = SocialMediaLink::get();
-            $view->with(['socials' => $socials, 'footerCategories' => $footerCategories]);
+            $view->with([
+                'socials' => $socials
+            ]);
+            // , 'footerCategories' => $footerCategories]
         });
     }
 }
