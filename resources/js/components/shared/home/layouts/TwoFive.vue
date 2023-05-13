@@ -100,7 +100,7 @@ const sectionTitle = defineAsyncComponent(() =>
             <v-list color="primary" class="py-0 pl-0 bg-transparent">
                 <template v-for="(item, index) in data['news']">
                     <v-hover
-                        v-if="index > 2 && index <= 7"
+                        v-if="index > 1 && index <= 7"
                         v-slot="{ isHovering, props }"
                     >
                         <v-list-item

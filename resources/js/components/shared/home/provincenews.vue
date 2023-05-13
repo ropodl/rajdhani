@@ -22,7 +22,7 @@ defineProps({
                         <v-chip-group class="justify-space-between">
                             <v-chip
                                 v-for="item in provinces"
-                                class="font-rajdhani font-weight-bold text-subtitle-1 mb-2"
+                                class="font-weight-medium text-subtitle-1 mb-2"
                                 :href="'/province/' + item['name']"
                                 style="max-width: min-content !important"
                             >

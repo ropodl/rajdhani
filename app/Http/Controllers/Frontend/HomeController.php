@@ -20,14 +20,25 @@ class HomeController extends Controller
                         $query->select('news.id', 'title', 'news.created_at')->orderBy('created_at', 'desc');
                 })->orderBy('sort', 'asc')
                         ->get();
-                $categoryWiseNews->each(function ($category) {
-                        $category->setRelation('news', $category->news->take(9));
+
+
+                $categoryLimits = [
+                        'समाज' => 7,
+                        'राजनीति' => 6,
+                        'खेलकुद़़' => 6,
+                        'मनोरञ्जन' => 6,
+                        'अर्थ' => 6,
+                        'शिक्षा' => 6,
+                        'स्वास्थ्य' => 7,
+                        'विचार' => 6
+                ];
+                $categoryWiseNews->each(function ($category) use ($categoryLimits) {
+                        $limit = $categoryLimits[$category->name] ?? 9;
+                        $category->setRelation('news', $category->news->take($limit));
                 });
                 $provinceWiseNews = News::has('province')->isActive()->limit(6)->select('id', 'title')->with('province')->get();
                 $provinces = Province::select('name')->get();
-                // dd(json_encode($provinceWiseNews));
                 $videos = VideoIframe::limit(8)->orderBy('sort', 'asc')->select('iframe')->get();
-                // dd(json_encode($categoryWiseNews));
                 return view('frontend.index', compact('latestNews', 'categoryWiseNews', 'trendingNews', 'mainNews', 'provinces', 'provinceWiseNews', 'photoFeatures', 'videos'));
         }
 }
