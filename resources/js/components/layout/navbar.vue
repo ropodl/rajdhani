@@ -8,7 +8,6 @@ import {
     mdiWeatherSunny,
 } from "@mdi/js";
 import { onMounted, ref } from "vue";
-
 import { useTheme } from "vuetify";
 const theme = useTheme();
 
@@ -22,6 +21,7 @@ let dialog = ref(false);
 let isDarkMode = ref(false);
 
 onMounted(() => {
+    // dark mode
     isDarkMode.value = localStorage.getItem("isDarkMode") === "true";
     theme.global.name.value = isDarkMode.value ? "dark" : "light";
 });
@@ -33,7 +33,6 @@ const switchThemeMode = () => {
 };
 </script>
 <template>
-    <!-- {{ categories }} -->
     <v-app-bar
         color="primary"
         height="60"
@@ -180,33 +179,6 @@ const switchThemeMode = () => {
                 </v-dialog>
             </v-row>
         </v-container>
-        <!-- <v-container>
-            <v-row>
-                TODO:menu not working a intended
-                <template v-for="category in categories">
-                    <div>
-                        <v-btn
-                            v-if="category['show_on_menu']"
-                            rounded="0"
-                            height="60"
-                            color="white"
-                            size="small"
-                            class="text-h6 font-weight-bold font-rajdhani hidden-sm-and-down"
-                            :href="'/category/' + category['slug']"
-                        >
-                            {{ category.name }}
-                        </v-btn>
-                    </div>
-                </template>
-                <v-text-field
-                    class="hidden-md-and-up"
-                    hide-details
-                    placeholder="Search"
-                ></v-text-field>
-                <v-spacer></v-spacer>
-
-            </v-row>
-        </v-container> -->
     </v-app-bar>
 </template>
 <style scoped>

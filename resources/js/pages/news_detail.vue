@@ -1,7 +1,9 @@
 <script setup>
 import { mdiClockOutline, mdiClose } from "@mdi/js";
 import Panzoom from "@panzoom/panzoom";
+import { useWindowScroll } from "@vueuse/core";
 import { defineAsyncComponent, nextTick, onMounted, reactive, ref } from "vue";
+const { y } = useWindowScroll();
 
 defineProps({
     currentnews: Object,
@@ -25,18 +27,18 @@ let imageSrcList = reactive([]);
 let showGallery = ref(false);
 let allImagesAlt = reactive([]);
 
+let articleHeight = ref(0);
+
 onMounted(() => {
     imageCollector();
 });
 
 const imageCollector = () => {
     nextTick(() => {
-        // image collector
         const content = dynamicContent.value.$el;
         const allImages = content.getElementsByTagName("img");
         if (allImages.length > 0) {
             Array.from(allImages).forEach((element, index) => {
-                console.log(element);
                 allImagesAlt.push(
                     content.getElementsByTagName("img")[index].alt
                 );
@@ -53,21 +55,33 @@ const imageCollector = () => {
                             "wheel",
                             panzoom.zoomWithWheel
                         );
-                        console.log(showGallery.value);
                     });
                 });
-                // }
             });
         }
     });
 };
+const updateProgressbar = () => {
+    nextTick(() => {
+        articleHeight.value = document.getElementById("article").clientHeight;
+    });
+};
 </script>
 <template>
+    <template v-if="articleHeight > 0 || articleHeight<100">
+        <div class="position-sticky" style="top: 60px; z-index: 1006">
+            <v-progress-linear
+                :model-value="(y / articleHeight) * 100"
+                :max="100"
+                color="primary-darken-2"
+            ></v-progress-linear>
+        </div>
+    </template>
+    {{ currentnews }}
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
-                <!-- {{ currentnews }} -->
-                <article>
+                <article id="article">
                     <v-card-title
                         class="text-h3 font-weight-bold text-wrap px-0"
                         style="line-height: 4rem"
@@ -84,6 +98,7 @@ const imageCollector = () => {
                         eager
                         class="rounded-lg align-start"
                         :src="currentnews['image']"
+                        @load="updateProgressbar"
                     >
                     </v-img>
 
