@@ -8,6 +8,7 @@ defineProps({
 const sectionTitle = defineAsyncComponent(() => import("../sectionTitle.vue"));
 </script>
 <template>
+    <!-- {{ photos }} -->
     <div class="bg-grey-darken-4 py-16">
         <v-container>
             <v-row>

@@ -15,13 +15,19 @@ class HomeController extends Controller
                 $mainNews = News::isActive()->isMainNews()->get();
                 $photoFeatures = News::isActive()->isPhotoFeatures()->latest()->limit(4)->select('id', 'title')->get();
                 $latestNews = News::isActive()->isNotMainNews()->latest()->limit(5)->select('id', 'title')->get();
-                $trendingNews = News::isActive()->isTrending()->latest()->take(6)->select('id', 'title', 'slug')->get();
-                $categoryWiseNews = Category::where('show_on_homepage', 1)->has('news', '>=', 4)->with('news', function ($query) {
-                        $query->select('news.id', 'title', 'slug', 'news.created_at');
-                })->orderBy('sort', 'asc')->get();
+                $trendingNews = News::isActive()->isTrending()->latest()->take(5)->select('id', 'title')->get();
+                $categoryWiseNews = Category::where('show_on_homepage', 1)->has('news', '>=', 4)->select('id', 'name', 'slug')->with('news', function ($query) {
+                        $query->select('news.id', 'title', 'news.created_at')->orderBy('created_at', 'desc');
+                })->orderBy('sort', 'asc')
+                        ->get();
+                $categoryWiseNews->each(function ($category) {
+                        $category->setRelation('news', $category->news->take(9));
+                });
                 $provinceWiseNews = News::has('province')->isActive()->limit(6)->select('id', 'title')->with('province')->get();
                 $provinces = Province::select('name')->get();
+                // dd(json_encode($provinceWiseNews));
                 $videos = VideoIframe::limit(8)->orderBy('sort', 'asc')->select('iframe')->get();
+                // dd(json_encode($categoryWiseNews));
                 return view('frontend.index', compact('latestNews', 'categoryWiseNews', 'trendingNews', 'mainNews', 'provinces', 'provinceWiseNews', 'photoFeatures', 'videos'));
         }
 }

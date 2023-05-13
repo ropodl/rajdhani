@@ -89,6 +89,8 @@ const twoFour = defineAsyncComponent(() =>
         </v-row>
     </v-container>
     <template v-for="(item, index) in catnews">
+        <!-- {{ item }} -->
+        {{ item["news"].length }}
         <template v-if="item['name'] == 'राजनीति' && item['news'].length > 0">
             <v-container>
                 <overlayFull :data="item"></overlayFull>

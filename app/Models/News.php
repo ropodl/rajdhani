@@ -36,43 +36,21 @@ class News extends Model implements HasMedia
             ->height(232)
             ->sharpen(10);
     }
-
     public function getImageAttribute($value)
     {
         return $this->hasMedia() ? $this->getMedia()[0]->getFullUrl() : '';
     }
-
     public function getSmallImageAttribute($value)
     {
-        // dd($this->getMedia()[0]->getAvailableUrl(['small', 'medium', 'large']));
         return $this->hasMedia('thumb') ? $this->getMedia('thumb')[0]->getFullUrl() : $this->image;
-
-        // Storage::buildTemporaryUrlsUsing()
     }
-
     public function getFormatedPostDateAttribute()
     {
         return $this->created_at->diffForHumans();
     }
-
     public function scopeIsTrending($query)
     {
         return $query->where('is_main_news', 1)->orderBy('id', 'desc');
-    }
-    public function scopeWithOutDesc($query)
-    {
-        return $query->select(
-            'title',
-            'slug',
-            'category_id',
-            'province_id',
-            'description',
-            'status',
-            'is_trending',
-            'is_main_news',
-            'is_photo_feature',
-            'author'
-        );
     }
     public function scopeIsMainNews($query)
     {
@@ -80,27 +58,20 @@ class News extends Model implements HasMedia
     }
     public function scopeIsPhotoFeatures($query)
     {
-        return $query->where('is_photo_feature', 1)->where('status', 1)->take(8);
+        return $query->where('is_photo_feature', 1)->where('status', 1)->take(4);
     }
     public function scopeIsNotMainNews($query)
     {
         return $query->where('is_main_news', 0)->where('status', 1)->where('created_at', '<', Carbon::now()->subHours(12));
     }
-
     public function scopeIsActive($query)
     {
         return $query->where('status', 1)->orderBy('id', 'desc');
     }
-
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
-
-    // public function categories(){
-    //     return $this->hasMany(Category::class, 'news_categories');
-    // }
-
     public function relatedNews()
     {
         return $this->hasMany(RelatedNews::class);
