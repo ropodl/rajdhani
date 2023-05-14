@@ -77,7 +77,8 @@ const updateProgressbar = () => {
                 style="transition: none"
             ></v-progress-linear>
         </div>
-    </template>{{ currentnews }}
+    </template>
+    <!-- {{ currentnews }} -->
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
