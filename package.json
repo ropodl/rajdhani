@@ -6,8 +6,6 @@
     },
     "devDependencies": {
         "sass": "^1.32.11",
-        "unplugin-vue-macros": "^2.1.3",
-        "vite-plugin-html-purgecss": "^0.1.1",
         "vue": "^3.2.44"
     },
     "dependencies": {
@@ -18,9 +16,7 @@
         "laravel-vite-plugin": "^0.7.4",
         "vite": "^4.3.5",
         "vite-plugin-pwa": "^0.14.7",
-        "vite-plugin-ssr": "^0.4.123",
         "vite-plugin-vuetify": "^1.0.2",
-        "vue-social-sharing": "^4.0.0-alpha4",
         "vuetify": "^3.2.3",
         "webfontloader": "^1.6.28"
     }

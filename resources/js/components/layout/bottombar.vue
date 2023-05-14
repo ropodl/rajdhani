@@ -44,6 +44,16 @@ const youtube = defineAsyncComponent(() =>
                                 target="_blank"
                             ></v-btn>
                         </li>
+                        <li v-if="socials['twitter_link']">
+                            <v-btn
+                                variant="tonal"
+                                color="white"
+                                :icon="twitter"
+                                :href="socials['twitter_link']"
+                                target="_blank"
+                            >
+                            </v-btn>
+                        </li>
                         <li v-if="socials['instagram_link']">
                             <v-btn
                                 variant="tonal"
@@ -60,16 +70,6 @@ const youtube = defineAsyncComponent(() =>
                                 color="white"
                                 :icon="youtube"
                                 :href="socials['youtube_link']"
-                                target="_blank"
-                            >
-                            </v-btn>
-                        </li>
-                        <li v-if="socials['twitter_link']">
-                            <v-btn
-                                variant="tonal"
-                                color="white"
-                                :icon="twitter"
-                                :href="socials['twitter_link']"
                                 target="_blank"
                             >
                             </v-btn>

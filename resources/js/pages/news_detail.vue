@@ -68,16 +68,17 @@ const updateProgressbar = () => {
 };
 </script>
 <template>
-    <template v-if="articleHeight > 0 || articleHeight<100">
+    <template v-if="articleHeight > 0 || articleHeight < 100">
         <div class="position-sticky" style="top: 60px; z-index: 1006">
             <v-progress-linear
-                :model-value="(y / articleHeight) * 100"
+                :model-value="(y / (articleHeight + 180)) * 100"
                 :max="100"
                 color="primary-darken-2"
+                style="transition: none"
             ></v-progress-linear>
         </div>
     </template>
-    {{ currentnews }}
+    <!-- {{ currentnews }} -->
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
@@ -86,8 +87,7 @@ const updateProgressbar = () => {
                         class="text-h3 font-weight-bold text-wrap px-0"
                         style="line-height: 4rem"
                         v-text="currentnews['title']"
-                    >
-                    </v-card-title>
+                    ></v-card-title>
 
                     <v-card-text class="px-0">
                         <v-icon :icon="mdiClockOutline"></v-icon>
@@ -99,8 +99,8 @@ const updateProgressbar = () => {
                         class="rounded-lg align-start"
                         :src="currentnews['image']"
                         @load="updateProgressbar"
-                    >
-                    </v-img>
+                        @error="updateProgressbar"
+                    ></v-img>
 
                     <v-card-text
                         ref="dynamicContent"
