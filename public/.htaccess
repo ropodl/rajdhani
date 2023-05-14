@@ -51,3 +51,6 @@
   ExpiresByType application/pdf "access plus 1 year"
   ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
 </IfModule>
+<IfModule LiteSpeed>
+   CacheLookup on
+</IfModule>
