@@ -71,14 +71,13 @@ const updateProgressbar = () => {
     <template v-if="articleHeight > 0 || articleHeight < 100">
         <div class="position-sticky" style="top: 60px; z-index: 1006">
             <v-progress-linear
-                :model-value="(y / (articleHeight + 180)) * 100"
-                :max="100"
+                :model-value="(y / (articleHeight + 200)) * 100"
+                :max="100" bg-opacity="0"
                 color="primary-darken-2"
                 style="transition: none"
             ></v-progress-linear>
         </div>
-    </template>
-    <!-- {{ currentnews }} -->
+    </template>{{ currentnews }}
     <v-container>
         <v-row>
             <v-col cols="12" md="9">
