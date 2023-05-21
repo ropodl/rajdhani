@@ -80,7 +80,7 @@ const updateProgressbar = () => {
                 :model-value="(y / (articleHeight + 100)) * 100"
                 :max="100"
                 bg-opacity="0"
-                color="primary-darken-2"
+                color="#ff2424"
                 style="transition: none"
             ></v-progress-linear>
         </div>
