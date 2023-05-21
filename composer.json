@@ -18,7 +18,8 @@
         "litespeed/lscache-laravel": "^1.3",
         "pratiksh/nepalidate": "^1.3",
         "renatomarinho/laravel-page-speed": "dev-master",
-        "spatie/laravel-medialibrary": "^10.0.0"
+        "spatie/laravel-medialibrary": "^10.0.0",
+        "van-ons/laraberg": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

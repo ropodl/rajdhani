@@ -14,11 +14,17 @@ defineProps({
     advertisements: Object,
 });
 
-const tabNews = defineAsyncComponent(() =>
-    import("../components/shared/tabnews.vue")
+// const tabNews = defineAsyncComponent(() =>
+//     import("../components/shared/tabnews.vue")
+// );
+const socialSide = defineAsyncComponent(() =>
+    import("../components/shared/socialside.vue")
 );
 const relatedNews = defineAsyncComponent(() =>
     import("../components/shared/relatednews.vue")
+);
+const trendingNews = defineAsyncComponent(() =>
+    import("../components/shared/trending.vue")
 );
 
 const dynamicContent = ref(null);
@@ -71,25 +77,45 @@ const updateProgressbar = () => {
     <template v-if="articleHeight > 0 || articleHeight < 100">
         <div class="position-sticky" style="top: 60px; z-index: 1006">
             <v-progress-linear
-                :model-value="(y / (articleHeight + 200)) * 100"
-                :max="100" bg-opacity="0"
+                :model-value="(y / (articleHeight + 100)) * 100"
+                :max="100"
+                bg-opacity="0"
                 color="primary-darken-2"
                 style="transition: none"
             ></v-progress-linear>
         </div>
     </template>
-    <!-- {{ currentnews }} -->
     <v-container>
         <v-row>
-            <v-col cols="12" md="9">
+            <v-col cols="12" md="1">
+                <socialSide
+                    :pageLink="'test'"
+                    :pageTitle="currentnews['title']"
+                ></socialSide>
+            </v-col>
+            <v-col cols="12" md="8">
                 <article id="article">
-                    <v-card-title
-                        class="text-h3 font-weight-bold text-wrap px-0"
-                        style="line-height: 4rem"
-                        v-text="currentnews['title']"
-                    ></v-card-title>
-
-                    <v-card-text class="px-0">
+                    <v-card
+                        flat
+                        class="rounded-0 position-sticky"
+                        style="
+                            top: 60px;
+                            z-index: 9;
+                            background-color: rgb(var(--v-theme-background));
+                        "
+                    >
+                        <v-card-title
+                            class="font-weight-bold text-wrap px-0"
+                            :class="y > 140 ? 'text-h4' : 'text-h3'"
+                            :style="{
+                                'font-family': 'Rajdhani !important',
+                                'line-height': y > 140 ? 1.4 : 3.8 + 'rem',
+                                transition: 'font-size 200ms linear',
+                            }"
+                            v-text="currentnews['title']"
+                        ></v-card-title>
+                    </v-card>
+                    <v-card-text class="pt-0 px-0">
                         <v-icon :icon="mdiClockOutline"></v-icon>
                         {{ currentnewsdate }}
                     </v-card-text>
@@ -111,7 +137,7 @@ const updateProgressbar = () => {
             </v-col>
             <v-col cols="12" md="3">
                 <template v-if="advertisements.sm_ad">
-                    <div class="d-flex flex-wrap justify-space-between">
+                    <div class="d-flex flex-wrap justify-space-between mb-3">
                         <v-card
                             class="mb-3 w-100 h-100"
                             :href="advertisements.sm_ad[0].advertisement.url"
@@ -147,7 +173,8 @@ const updateProgressbar = () => {
                         </v-card>
                     </div>
                 </template>
-                <tabNews :latest="latest" :trending="trending" />
+                <trendingNews :trending="trending"></trendingNews>
+                <!-- <tabNews :latest="latest" :trending="trending" /> -->
             </v-col>
             <v-col cols="12" v-if="related.length > 0">
                 <relatedNews :related="related"></relatedNews>

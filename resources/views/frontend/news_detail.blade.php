@@ -22,6 +22,7 @@
 {{-- <!-- @section('styles') -->
 <!-- @endsection --> --}}
 @section('content')
+    {{-- {{ dd(URL::full()) }} --}}
     <newsdetail :currentnews="{{ json_encode($news) }}" :currentnewsdate="{{ json_encode(nepalidate($news->created_at)) }}"
         :latest="{{ json_encode($latestNews) }}" :trending="{{ json_encode($trendingNews) }}"
         :related="{{ json_encode($relatedNews) }}" :advertisements="{{ json_encode($detailAdvs) }}">

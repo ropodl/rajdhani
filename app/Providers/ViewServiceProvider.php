@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\Category;
-use App\Models\Group;
 use App\Models\SiteSetting;
 use App\Models\SocialMediaLink;
 use App\Models\Tag;
@@ -29,13 +27,19 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-         View::composer('*', function ($view) {
-             $siteSetting = SiteSetting::firstOrFail();
-             $media = SocialMediaLink::firstOrFail();
-             $tags = Tag::all();
-             $view->with('siteSetting', $siteSetting);
-             $view->with('media', $media);
-             $view->with('tags', $tags);
-         });
+        View::composer('*', function ($view) {
+            $siteSetting = SiteSetting::firstOrFail();
+            $media = SocialMediaLink::firstOrFail()->select(
+                "facebook_link",
+                "instagram_link",
+                "youtube_link",
+                "twitter_link",
+                "linkedin_link"
+            );
+            $tags = Tag::select('name')->get();
+            $view->with('siteSetting', $siteSetting);
+            $view->with('media', $media);
+            $view->with('tags', $tags);
+        });
     }
 }

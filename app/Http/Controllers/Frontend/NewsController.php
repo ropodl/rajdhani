@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Group;
 use App\Models\News;
 use App\Models\Province;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Str;
 
@@ -33,9 +34,10 @@ class NewsController extends Controller
     {
         $latestNews = News::isActive()->latest()->take(5)->get();
         $trendingNews = News::isTrending()->latest()->take(5)->get();
-        $relatedNews = News::latest()->limit(8)->where('category_id', $news->category_id)->where('id', '!=', $news->id)->get();
+        $relatedNews = News::latest()->limit(6)->where('category_id', $news->category_id)->where('id', '!=', $news->id)->get();
         // $news = News::isActive()->whereSlug($slug)->firstOrFail();
         $news->load(['relatedNews', 'media']);
+        // dd(json_encode($tags));
         return view('frontend.news_detail', compact('news', 'latestNews', 'trendingNews', 'relatedNews'));
     }
 

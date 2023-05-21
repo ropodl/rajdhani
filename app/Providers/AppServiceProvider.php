@@ -7,6 +7,7 @@ use App\Models\AdvertisementPageLayout;
 use App\Models\Category;
 use App\Models\Province;
 use App\Models\SocialMediaLink;
+use App\Models\Tag;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -83,7 +84,6 @@ class AppServiceProvider extends ServiceProvider
         view()->composer(['frontend/layouts/footer'], function ($view) {
             // $footerCategories = Category::has('news')->isActive()->where('show_on_footer', 1)->get();
             $socials = SocialMediaLink::get();
-            // dd(json_encode($socials));
             $view->with([
                 'socials' => $socials
             ]);

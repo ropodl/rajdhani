@@ -5,10 +5,8 @@ import vuetify from "vite-plugin-vuetify";
 // Utilities
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
-// Vite Pwa
-// import htmlPurge from "vite-plugin-html-purgecss";
+// Vite PWA
 import { VitePWA } from "vite-plugin-pwa";
-// import purgeConfig from "./purge";
 
 export default defineConfig({
     plugins: [
@@ -32,8 +30,6 @@ export default defineConfig({
         VitePWA({
             registerType: "autoUpdate",
             injectRegister: "script",
-            // strategies: 'injectManifest',
-            // includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
             workbox: {
                 cleanupOutdatedCaches: true,
                 globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
@@ -57,7 +53,6 @@ export default defineConfig({
                 ],
             },
         }),
-        // htmlPurge(purgeConfig),
     ],
     define: { "process.env": {} },
     resolve: {

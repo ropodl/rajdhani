@@ -1,24 +1,25 @@
 <script setup>
 import { defineAsyncComponent } from "vue";
+
 defineProps({
     info: Object,
     socials: Object,
 });
 
 const facebook = defineAsyncComponent(() =>
-    import("../shared/home/icons/facebook.vue")
+    import("../shared/icons/facebook.vue")
 );
 const instagram = defineAsyncComponent(() =>
-    import("../shared/home/icons/instagram.vue")
+    import("../shared/icons/instagram.vue")
 );
 const twitter = defineAsyncComponent(() =>
-    import("../shared/home/icons/twitter.vue")
+    import("../shared/icons/twitter.vue")
 );
 const linkedin = defineAsyncComponent(() =>
-    import("../shared/home/icons/linkedin.vue")
+    import("../shared/icons/linkedin.vue")
 );
 const youtube = defineAsyncComponent(() =>
-    import("../shared/home/icons/youtube.vue")
+    import("../shared/icons/youtube.vue")
 );
 </script>
 <template>

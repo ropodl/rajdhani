@@ -33,28 +33,24 @@
 </head>
 
 <body>
-    <!-- {{-- @dd($popUpAdv) --}} -->
-    @if (!empty($popUpAdv))
-        @include('frontend.advertisement.popup')
-    @endif
-    {{-- <!-- @include('frontend.layouts.topbar') --> --}}
     <div id="app">
-        <v-app>
-            @include('frontend.layouts.header')
-            <v-main class="pa-0">
+        <app>
+            @if (!empty($popUpAdv))
+                <template #popup>
+                    @include('frontend.advertisement.popup')
+                </template>
+            @endif
+            <template #header>
+                @include('frontend.layouts.header')
+            </template>
+            <template #content>
                 @yield('content')
-            </v-main>
-            @include('frontend.layouts.footer')
-        </v-app>
+            </template>
+            <template #footer>
+                @include('frontend.layouts.footer')
+            </template>
+        </app>
     </div>
-    {{-- @yield('content') --}}
-    {{-- <div class="go-to-top">
-        <i class="fa fa-arrow-up"></i>
-    </div> --}}
-    {{-- @include('frontend.scripts.js')
-    @yield('js')
-    @stack('inlinejs') --}}
     <script src="/build/registerSW.js" defer></script>
 </body>
-
 </html>

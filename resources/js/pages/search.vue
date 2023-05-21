@@ -2,6 +2,7 @@
 defineProps({
     result: Object,
     search: String,
+    param: String,
 });
 
 const paginate = (e) => {
@@ -13,10 +14,18 @@ const paginate = (e) => {
         <v-row>
             <v-col cols="12" v-if="result['data'].length == 0">
                 <v-card flat color="transparent" class="py-16">
-                    <div class="font-rajdhani text-h1 font-weight-bold">
+                    <div
+                        class="text-h1 font-weight-bold"
+                        style="
+                            font-family: 'Rajdhani' !important;
+                            line-height: 7.6rem;
+                        "
+                    >
                         माफ गर्नुहोस्!
-                        <span class="text-primary">" {{ search }} "</span> नामको
-                        कुनै पोस्ट फेला परेन
+                        <span class="text-primary">
+                            " {{ search || param }} "
+                        </span>
+                        नामको कुनै पोस्ट फेला परेन
                     </div>
                 </v-card>
             </v-col>
@@ -52,18 +61,6 @@ const paginate = (e) => {
                                     >
                                         {{ item["title"] }}
                                     </v-list-item-title>
-                                    <!-- <v-list-item-subtitle>
-                                        <v-icon
-                                            start
-                                            size="small"
-                                            :icon="mdiClockOutline"
-                                        ></v-icon>
-                                        {{
-                                            moment(item["created_at"])
-                                                .startOf("day")
-                                                .fromNow()
-                                        }}
-                                    </v-list-item-subtitle> -->
                                     <v-list-item-subtitle
                                         class="line-clamp-3"
                                         v-html="item['description']"

@@ -1,13 +1,11 @@
 <script setup>
 import {
     mdiChevronDown,
-    mdiClose,
     mdiHome,
-    mdiMagnify,
     mdiWeatherNight,
     mdiWeatherSunny,
 } from "@mdi/js";
-import { onMounted, ref } from "vue";
+import { defineAsyncComponent, onMounted, ref } from "vue";
 import { useTheme } from "vuetify";
 const theme = useTheme();
 
@@ -17,11 +15,11 @@ defineProps({
     tags: Object,
 });
 
-let dialog = ref(false);
+const searchDialog = defineAsyncComponent(() => import("./searchdialog.vue"));
+
 let isDarkMode = ref(false);
 
 onMounted(() => {
-    // dark mode
     isDarkMode.value = localStorage.getItem("isDarkMode") === "true";
     theme.global.name.value = isDarkMode.value ? "dark" : "light";
 });
@@ -33,11 +31,7 @@ const switchThemeMode = () => {
 };
 </script>
 <template>
-    <v-app-bar
-        color="primary"
-        height="60"
-        class="overflow-visible position-relative"
-    >
+    <v-app-bar floating color="primary" height="60" class="overflow-visible">
         <v-container>
             <v-row>
                 <v-btn
@@ -120,63 +114,7 @@ const switchThemeMode = () => {
                     :icon="isDarkMode ? mdiWeatherSunny : mdiWeatherNight"
                 >
                 </v-btn>
-                <v-dialog v-model="dialog" scrim="black" max-width="650">
-                    <template v-slot:activator="{ props }">
-                        <v-btn
-                            color="white"
-                            rounded="0"
-                            height="60"
-                            class="font-weight-bold text-h6"
-                            v-bind="props"
-                        >
-                            <v-icon :icon="mdiMagnify"></v-icon>
-                        </v-btn>
-                    </template>
-                    <v-card>
-                        <v-card-title class="d-flex">
-                            Search for news and articles
-                            <v-spacer></v-spacer>
-                            <v-btn
-                                size="x-small"
-                                color="primary"
-                                variant="tonal"
-                                :icon="mdiClose"
-                                @click="dialog = false"
-                                location-strategy="static"
-                            ></v-btn>
-                        </v-card-title>
-                        <v-form action="/search" method="get">
-                            <v-card-text class="py-0">
-                                <v-text-field
-                                    variant="outlined"
-                                    name="search"
-                                    placeholder="Type here to search"
-                                ></v-text-field>
-                            </v-card-text>
-                            <v-card-title>Recommended Tags</v-card-title>
-                            <v-card-text>
-                                <template v-for="tag in tags">
-                                    <v-btn
-                                        variant="text"
-                                        :href="'/search?tag=' + tag['name']"
-                                        >#{{ tag["name"] }}</v-btn
-                                    >
-                                </template>
-                            </v-card-text>
-                            <v-btn
-                                block
-                                type="submit"
-                                height="50"
-                                rounded="0"
-                                color="primary"
-                                class="text-capitalize"
-                                @click="dialog = false"
-                            >
-                                Search
-                            </v-btn>
-                        </v-form>
-                    </v-card>
-                </v-dialog>
+                <searchDialog :tags="tags"></searchDialog>
             </v-row>
         </v-container>
     </v-app-bar>

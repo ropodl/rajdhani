@@ -5,13 +5,14 @@ import { createVuetify } from "vuetify";
 import "vuetify/styles";
 // Icons
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
-// Composables
-import { VApp } from "vuetify/components/VApp";
-import { VMain } from "vuetify/components/VMain";
 
 const app = createApp({
     components: {
         // Layouts first
+        app: defineAsyncComponent(() => import("./app.vue")),
+        popupad: defineAsyncComponent(() =>
+            import("./components/layout/popupad.vue")
+        ),
         midbar: defineAsyncComponent(() =>
             import("./components/layout/midbar.vue")
         ),
@@ -37,11 +38,7 @@ const app = createApp({
     },
 });
 
-// registerPlugins(app);
-
 const vuetify = createVuetify({
-    // blueprint: md3,
-    components: { VApp, VMain },
     icons: {
         defaultSet: "mdi",
         aliases,
