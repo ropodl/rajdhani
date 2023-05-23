@@ -7,18 +7,11 @@ defineProps({
 });
 
 let popupAdv = ref(true);
-let btnEnabled = ref(false);
 let progress = ref(0);
 
 onMounted(() => {
     setInterval(() => {
-        if (progress.value >= 100) {
-            popupAdv.value = false;
-        }
-        // if (progress.value >= 75);
-        // {
-        //     btnEnabled.value = true;
-        // }
+        if (progress.value >= 100) popupAdv.value = false;
         progress.value += 5;
     }, 1000);
 });
@@ -50,5 +43,3 @@ onMounted(() => {
         </v-card>
     </v-dialog>
 </template>
-
-<style lang="scss" scoped></style>

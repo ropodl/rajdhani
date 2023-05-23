@@ -1,13 +1,9 @@
 <script setup>
 import { mdiClockOutline, mdiClose } from "@mdi/js";
 import Panzoom from "@panzoom/panzoom";
-import { useScriptTag, useWindowScroll } from "@vueuse/core";
+import { useWindowScroll } from "@vueuse/core";
 import { defineAsyncComponent, nextTick, onMounted, reactive, ref } from "vue";
-
-useScriptTag("https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0");
 const { y } = useWindowScroll();
-
-const a = window.location.href;
 
 defineProps({
     currentnews: Object,
@@ -18,9 +14,6 @@ defineProps({
     advertisements: Object,
 });
 
-// const tabNews = defineAsyncComponent(() =>
-//     import("../components/shared/tabnews.vue")
-// );
 const socialSide = defineAsyncComponent(() =>
     import("../components/shared/socialside.vue")
 );
@@ -80,13 +73,15 @@ const updateProgressbar = () => {
 <template>
     <template v-if="articleHeight > 0 || articleHeight < 100">
         <div class="position-sticky" style="top: 60px; z-index: 1006">
-            <v-progress-linear
-                :model-value="(y / (articleHeight + 100)) * 100"
-                :max="100"
-                bg-opacity="0"
-                color="#ff2424"
-                style="transition: none"
-            ></v-progress-linear>
+            <Teleport to="#readProgress">
+                <v-progress-linear
+                    :model-value="(y / (articleHeight + 100)) * 100"
+                    :max="100"
+                    bg-opacity="0"
+                    color="#ff2424"
+                    style="transition: none"
+                ></v-progress-linear>
+            </Teleport>
         </div>
     </template>
     <v-container>
@@ -138,21 +133,6 @@ const updateProgressbar = () => {
                         v-html="currentnews['description']"
                     ></v-card-text>
                 </article>
-                <div id="fb-root"></div>
-                <!-- <script
-                    async
-                    defer
-                    crossorigin="anonymous"
-                    src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0"
-                    nonce="25yEbl4A"
-                ></script> -->
-                <div
-                    class="fb-comments"
-                    :data-href="a"
-                    data-width="100%"
-                    data-numposts="5"
-                    data-colorscheme="dark"
-                ></div>
             </v-col>
             <v-col cols="12" md="3">
                 <template v-if="advertisements.sm_ad">

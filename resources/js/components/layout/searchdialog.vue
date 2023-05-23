@@ -13,7 +13,7 @@ let dialog = ref(false);
         v-model="dialog"
         scrim="black"
         max-width="500"
-        location-strategy="static"
+        
         transition="none"
         style="backdrop-filter: blur(2px)"
     >
@@ -30,10 +30,15 @@ let dialog = ref(false);
             ></v-btn>
         </v-card-title>
         <v-card border class="mb-3">
-            <v-card-title> Search for news and articles </v-card-title>
+            <v-card-title
+                class="text-h5 font-weight-bold"
+                style="font-family: 'Rajdhani' !important"
+                >समाचार र लेख खोज्नुहोस्</v-card-title
+            >
             <v-form action="/search" method="get">
                 <v-card-text class="py-0">
                     <v-text-field
+                        density="comfortable"
                         variant="outlined"
                         name="search"
                         placeholder="Press enter to submit"
@@ -43,11 +48,15 @@ let dialog = ref(false);
         </v-card>
         <template v-if="tags.length >= 4">
             <v-card border>
-                <v-card-title>Recommended Tags</v-card-title>
+                <v-card-title
+                    class="text-h5 font-weight-bold"
+                    style="font-family: 'Rajdhani' !important"
+                    >सुझाव गरिएको ट्यागहरू</v-card-title
+                >
                 <v-card-title class="pt-0 text-wrap">
-                    <v-chip-group>
+                    <v-chip-group color="primary">
                         <template v-for="tag in tags">
-                            <v-chip :href="'/search?tag=' + tag['name']"
+                            <v-chip variant="tonal" background-color="primary" :href="'/search?tag=' + tag['name']"
                                 >#{{ tag["name"] }}</v-chip
                             >
                         </template>
@@ -55,17 +64,6 @@ let dialog = ref(false);
                 </v-card-title>
             </v-card>
         </template>
-        <!-- <v-btn
-            block
-            type="submit"
-            height="50"
-            rounded="0"
-            color="primary"
-            class="text-capitalize"
-            @click="dialog = false"
-        >
-            Search
-        </v-btn> -->
     </v-dialog>
     <div></div>
 </template>

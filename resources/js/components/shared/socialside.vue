@@ -1,10 +1,6 @@
 <script setup>
-// import { useQRCode } from "@vueuse/integrations/useQRCode";
-import { defineAsyncComponent, ref } from "vue";
+import { defineAsyncComponent } from "vue";
 import { ShareNetwork } from "vue-social-sharing";
-
-// const qrcode = useQRCode();
-// console.log(pageTitle);
 
 defineProps({
     pageLink: String,
@@ -23,11 +19,6 @@ const linkedin = defineAsyncComponent(() =>
 const instagram = defineAsyncComponent(() =>
     import("../shared/icons/instagram.vue")
 );
-// const youtube = defineAsyncComponent(() =>
-//     import("../shared/icons/youtube.vue")
-// );
-
-let qrDialog = ref(false);
 
 const socials = [
     {
@@ -44,12 +35,7 @@ const socials = [
         icon: linkedin,
         network: "linkedin",
         color: "#0077B5",
-    },
-    // {
-    //     icon: instagram,
-    //     title: "instagram",
-    //     color: "#c32aa3",
-    // },
+    }
 ];
 </script>
 <template>

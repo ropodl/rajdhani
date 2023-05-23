@@ -1,4 +1,3 @@
-<script setup></script>
 <template>
     <v-app>
         <slot name="popup"></slot>
@@ -9,5 +8,3 @@
         <slot name="footer"></slot>
     </v-app>
 </template>
-
-<style lang="scss" scoped></style>

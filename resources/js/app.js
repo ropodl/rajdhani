@@ -39,6 +39,8 @@ const app = createApp({
 });
 
 const vuetify = createVuetify({
+    locale: false,
+    ssr: true,
     icons: {
         defaultSet: "mdi",
         aliases,

@@ -21,13 +21,11 @@ const sectionTitle = defineAsyncComponent(() =>
                         <v-img
                             cover
                             height="300"
-                            :class="[
-                                'align-end',
-                                isHovering ? 'zoom' : '',
-                            ]"
+                            :class="['align-end', isHovering ? 'zoom' : '']"
                             :src="item['image']"
                         >
-                            <v-card class="mx-2 mb-2"
+                            <v-card
+                                class="mx-2 mb-2"
                                 style="
                                     background-color: rgba(
                                         var(--v-theme-background),
