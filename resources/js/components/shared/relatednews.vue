@@ -15,7 +15,7 @@ defineProps({
             </div>
         </v-col>
         <template v-for="(item, i) in related">
-            <v-col cols="12" md="4" v-if="i < 6">
+            <v-col cols="12" sm="6" md="4" v-if="i < 6">
                 <v-hover v-slot="{ isHovering, props }">
                     <v-card :href="'/news/' + item['id']">
                         <v-img

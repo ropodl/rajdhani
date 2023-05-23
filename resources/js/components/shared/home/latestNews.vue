@@ -8,16 +8,15 @@ defineProps({
         <v-col cols="12" md="6">
             <v-hover v-slot="{ isHovering, props }">
                 <v-card variant="text" :href="'/news/' + latest[0].id">
-                    <v-img
-                        cover
+                    <v-img cover
                         v-bind="props"
                         height="570"
-                        class="pa-4 align-end"
+                        class="align-end"
                         :class="isHovering ? 'zoom' : ''"
                         :src="latest[0].image"
                         :alt="latest[0].media[0].file_name"
                     >
-                        <v-card
+                        <v-card class="ma-4"
                             style="
                                 background-color: rgba(
                                     var(--v-theme-background),

@@ -1,6 +1,10 @@
 <script setup>
-import { defineAsyncComponent } from "vue";
+// import { useQRCode } from "@vueuse/integrations/useQRCode";
+import { defineAsyncComponent, ref } from "vue";
 import { ShareNetwork } from "vue-social-sharing";
+
+// const qrcode = useQRCode();
+// console.log(pageTitle);
 
 defineProps({
     pageLink: String,
@@ -22,6 +26,8 @@ const instagram = defineAsyncComponent(() =>
 // const youtube = defineAsyncComponent(() =>
 //     import("../shared/icons/youtube.vue")
 // );
+
+let qrDialog = ref(false);
 
 const socials = [
     {
@@ -48,24 +54,24 @@ const socials = [
 </script>
 <template>
     <div class="position-sticky" style="top: 80px">
-    <ul class="list-style-none">
-        <template v-for="social in socials">
-            <li class="mb-4">
-                <ShareNetwork
-                    :network="social['network']"
-                    url="https://news.vuejs.org/issues/180"
-                    title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-                    description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
-                    quote="The hot reload is so fast it\'s near instant. - Evan You"
-                    hashtags="vuejs,vite"
-                >
-                    <v-btn
-                        :icon="social['icon']"
-                        :color="social['color']"
-                    ></v-btn>
-                </ShareNetwork>
-            </li>
-        </template>
-    </ul>
+        <ul class="list-style-none d-flex d-md-block">
+            <template v-for="social in socials">
+                <li class="mb-4">
+                    <ShareNetwork
+                        :network="social['network']"
+                        url="https://news.vuejs.org/issues/180"
+                        title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+                        description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+                        quote="The hot reload is so fast it\'s near instant. - Evan You"
+                        hashtags="vuejs,vite"
+                    >
+                        <v-btn
+                            :icon="social['icon']"
+                            :color="social['color']"
+                        ></v-btn>
+                    </ShareNetwork>
+                </li>
+            </template>
+        </ul>
     </div>
 </template>

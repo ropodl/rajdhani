@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@if (!empty($detailAdvs['xl_ad']) || !empty($detailAdvs['sm_ad']))
+{{-- @if (!empty($detailAdvs['xl_ad']) || !empty($detailAdvs['sm_ad']))
     @php
         $firstLAdv = $detailAdvs['xl_ad'][0]->advertisement ?? '';
         $secondLAdv = $detailAdvs['xl_ad'][1]->advertisement ?? '';
@@ -9,7 +9,7 @@
         $thirdSmAdv = $detailAdvs['sm_ad'][2]->advertisement ?? '';
         $fourthSmAdv = $detailAdvs['sm_ad'][3]->advertisement ?? '';
     @endphp
-@endif
+@endif --}}
 @section('meta')
     @component('frontend.components.meta', [
         'title' => $news->title,

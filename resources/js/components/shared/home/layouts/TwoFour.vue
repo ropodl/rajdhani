@@ -31,12 +31,12 @@ const sectionTitle = defineAsyncComponent(() =>
                                 cover
                                 height="516"
                                 v-bind="props"
-                                class="pa-4 align-end"
+                                class="align-end"
                                 :class="isHovering ? 'zoom' : ''"
                                 :src="data.news[0].image"
                                 :alt="data.news[0].media[0].file_name"
                             >
-                                <v-card
+                                <v-card  class="ma-4"
                                     style="
                                         background-color: rgba(
                                             var(--v-theme-background),
@@ -70,12 +70,12 @@ const sectionTitle = defineAsyncComponent(() =>
                                 cover
                                 height="516"
                                 v-bind="props"
-                                class="pa-4 align-end"
+                                class="align-end"
                                 :class="isHovering ? 'zoom' : ''"
                                 :src="data.news[1].image"
                                 :alt="data.news[1].media[0].file_name"
                             >
-                                <v-card
+                                <v-card class="ma-4"
                                     style="
                                         background-color: rgba(
                                             var(--v-theme-background),

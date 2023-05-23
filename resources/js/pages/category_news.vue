@@ -9,11 +9,15 @@ const paginate = (e) => {
 };
 </script>
 <template>
+    <!-- {{ news }} -->
     <v-container>
         <v-row>
             <v-col cols="12" v-if="news['data'].length == 0">
                 <v-card flat color="transparent" class="py-16">
-                    <div class="font-rajdhani text-h1 font-weight-bold" style="line-height: 7.4rem;">
+                    <div
+                        class="font-rajdhani text-h1 font-weight-bold"
+                        style="line-height: 7.4rem"
+                    >
                         माफ गर्नुहोस्!
                         <span class="text-primary">" {{ title || tag }} "</span>
                         नामको कुनै पोस्ट फेला परेन
@@ -22,12 +26,22 @@ const paginate = (e) => {
             </v-col>
             <template v-else>
                 <v-col cols="12">
-                    <div
-                        class="font-weight-bold text-h3"
-                        style="font-family: 'Rajdhani' !important"
-                    >
-                        {{ title }}
-                    </div>
+                    <v-row align="center">
+                        <v-col cols="12" md="8">
+                            <span
+                                class="font-weight-bold text-h3"
+                                style="font-family: 'Rajdhani' !important"
+                            >
+                                {{ title }}
+                            </span>
+                        </v-col>
+                        <v-col cols="12" md="4">
+                            <div class="d-md-flex align-md-end justify-md-end">
+                                Showing {{ news["from"] }} - {{ news["to"] }} out of
+                                {{ news.total }}
+                            </div>
+                        </v-col>
+                    </v-row>
                 </v-col>
                 <v-col cols="12">
                     <v-row>
