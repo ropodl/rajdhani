@@ -1,9 +1,7 @@
 <script setup>
 import { defineAsyncComponent } from "vue";
-import { ShareNetwork } from "vue-social-sharing";
 
-defineProps({
-    pageLink: String,
+const prop = defineProps({
     pageTitle: String,
 });
 
@@ -16,46 +14,69 @@ const twitter = defineAsyncComponent(() =>
 const linkedin = defineAsyncComponent(() =>
     import("../shared/icons/linkedin.vue")
 );
-const instagram = defineAsyncComponent(() =>
-    import("../shared/icons/instagram.vue")
+const whatsapp = defineAsyncComponent(() =>
+    import("../shared/icons/whatsapp.vue")
 );
+let pageLink = window.location.href;
 
 const socials = [
     {
         icon: facebook,
         network: "facebook",
         color: "#3B5998",
+        sharer:
+            "https://www.facebook.com/sharer/sharer.php?display=popup&u=" +
+            pageLink +
+            "&title=" +
+            prop["pageTitle"],
     },
     {
         icon: twitter,
         network: "twitter",
         color: "#00acee",
+        sharer:
+            "https://twitter.com/intent/tweet?url=" +
+            pageLink +
+            "&text=" +
+            prop["pageTitle"] +
+            "&via=rajdhanipress",
     },
     {
         icon: linkedin,
         network: "linkedin",
         color: "#0077B5",
-    }
+        sharer:
+            "https://www.linkedin.com/shareArticle?url=" +
+            pageLink +
+            "&title=" +
+            prop["pageTitle"],
+    },
+    {
+        icon: whatsapp,
+        network: "whatsapp",
+        color: "#25d366",
+        sharer:
+            "https://api.whatsapp.com/send?text=" +
+            prop["pageTitle"] +
+            " " +
+            pageLink,
+    },
 ];
+const share = (sharer) => {
+    window.open(sharer);
+};
 </script>
 <template>
     <div class="position-sticky" style="top: 80px">
         <ul class="list-style-none d-flex d-md-block">
             <template v-for="social in socials">
                 <li class="mb-4">
-                    <ShareNetwork
-                        :network="social['network']"
-                        url="https://news.vuejs.org/issues/180"
-                        title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-                        description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
-                        quote="The hot reload is so fast it\'s near instant. - Evan You"
-                        hashtags="vuejs,vite"
-                    >
-                        <v-btn
-                            :icon="social['icon']"
-                            :color="social['color']"
-                        ></v-btn>
-                    </ShareNetwork>
+                    <v-btn
+                        target="_blank"
+                        :icon="social['icon']"
+                        :color="social['color']"
+                        @click="share(social['sharer'])"
+                    ></v-btn>
                 </li>
             </template>
         </ul>

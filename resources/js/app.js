@@ -6,40 +6,7 @@ import "vuetify/styles";
 // Icons
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
 
-const app = createApp({
-    components: {
-        // Layouts first
-        app: defineAsyncComponent(() => import("./app.vue")),
-        popupad: defineAsyncComponent(() =>
-            import("./components/layout/popupad.vue")
-        ),
-        midbar: defineAsyncComponent(() =>
-            import("./components/layout/midbar.vue")
-        ),
-        navbar: defineAsyncComponent(() =>
-            import("./components/layout/navbar.vue")
-        ),
-        bottombar: defineAsyncComponent(() =>
-            import("./components/layout/bottombar.vue")
-        ),
-        gotop: defineAsyncComponent(() =>
-            import("./components/layout/gotop.vue")
-        ),
-        // Pages second
-        searchpage: defineAsyncComponent(() => import("./pages/search.vue")),
-        home: defineAsyncComponent(() => import("./pages/index.vue")),
-        newsdetail: defineAsyncComponent(() =>
-            import("./pages/news_detail.vue")
-        ),
-        categorynews: defineAsyncComponent(() =>
-            import("./pages/category_news.vue")
-        ),
-        contactus: defineAsyncComponent(() => import("./pages/contactus.vue")),
-    },
-});
-
 const vuetify = createVuetify({
-    ssr: true,
     icons: {
         defaultSet: "mdi",
         aliases,
@@ -75,6 +42,38 @@ const vuetify = createVuetify({
                 },
             },
         },
+    },
+});
+
+const app = createApp({
+    components: {
+        // Layouts first
+        app: defineAsyncComponent(() => import("./app.vue")),
+        popupad: defineAsyncComponent(() =>
+            import("./components/layout/popupad.vue")
+        ),
+        midbar: defineAsyncComponent(() =>
+            import("./components/layout/midbar.vue")
+        ),
+        navbar: defineAsyncComponent(() =>
+            import("./components/layout/navbar.vue")
+        ),
+        bottombar: defineAsyncComponent(() =>
+            import("./components/layout/bottombar.vue")
+        ),
+        gotop: defineAsyncComponent(() =>
+            import("./components/layout/gotop.vue")
+        ),
+        // Pages second
+        searchpage: defineAsyncComponent(() => import("./pages/search.vue")),
+        home: defineAsyncComponent(() => import("./pages/index.vue")),
+        newsdetail: defineAsyncComponent(() =>
+            import("./pages/news_detail.vue")
+        ),
+        categorynews: defineAsyncComponent(() =>
+            import("./pages/category_news.vue")
+        ),
+        contactus: defineAsyncComponent(() => import("./pages/contactus.vue")),
     },
 });
 

@@ -88,7 +88,6 @@ const updateProgressbar = () => {
         <v-row>
             <v-col cols="12" md="1">
                 <socialSide
-                    :pageLink="'test'"
                     :pageTitle="currentnews['title']"
                 ></socialSide>
             </v-col>
