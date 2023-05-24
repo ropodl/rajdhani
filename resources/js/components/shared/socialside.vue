@@ -25,7 +25,7 @@ const socials = [
         network: "facebook",
         color: "#3B5998",
         sharer:
-            "https://www.facebook.com/sharer/sharer.php?display=popup&u=" +
+            "https://www.facebook.com/sharer/sharer.php?u=" +
             pageLink +
             "&title=" +
             prop["pageTitle"] +
