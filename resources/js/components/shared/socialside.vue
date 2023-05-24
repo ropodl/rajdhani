@@ -48,7 +48,7 @@ const socials = [
         network: "linkedin",
         color: "#0077B5",
         sharer:
-            "https://www.linkedin.com/shareArticle?url=" +
+            "https://www.linkedin.com/sharing/share-offsite/?url=" +
             pageLink +
             "&title=" +
             prop["pageTitle"],
