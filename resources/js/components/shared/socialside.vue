@@ -28,6 +28,8 @@ const socials = [
             "https://www.facebook.com/sharer/sharer.php?display=popup&u=" +
             pageLink +
             "&title=" +
+            prop["pageTitle"] +
+            "&description=" +
             prop["pageTitle"],
     },
     {
