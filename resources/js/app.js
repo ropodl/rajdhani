@@ -1,6 +1,5 @@
-import { createApp } from "vue";
+import { createApp, defineAsyncComponent } from "vue";
 // Plugins
-import { defineAsyncComponent } from "vue";
 import { createVuetify } from "vuetify";
 import "vuetify/styles";
 // Icons

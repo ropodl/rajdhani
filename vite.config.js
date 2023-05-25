@@ -11,7 +11,11 @@ import { VitePWA } from "vite-plugin-pwa";
 export default defineConfig({
     plugins: [
         laravel({
-            input: ["resources/js/app.js", "resources/sass/frontend.scss"],
+            input: [
+                "resources/js/app.js",
+                "resources/sass/frontend.scss",
+                "resources/js/backend/main.js",
+            ],
             refresh: true,
         }),
         Vue({

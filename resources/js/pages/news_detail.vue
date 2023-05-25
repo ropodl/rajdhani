@@ -87,9 +87,7 @@ const updateProgressbar = () => {
     <v-container>
         <v-row>
             <v-col cols="12" md="1">
-                <socialSide
-                    :pageTitle="currentnews['title']"
-                ></socialSide>
+                <socialSide :pageTitle="currentnews['title']"></socialSide>
             </v-col>
             <v-col cols="12" md="8">
                 <article id="article">
